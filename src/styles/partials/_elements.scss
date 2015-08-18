@@ -1,0 +1,19 @@
+body {
+	padding-top: 68px;
+}
+p {
+//	font-size: 20px;
+}
+// don't line-wrap code blocks
+pre {
+    overflow-x: auto;
+}
+pre code {
+    word-wrap: normal;
+    white-space: pre;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

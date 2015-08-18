@@ -1,0 +1,76 @@
+.site-title {
+	text-transform: uppercase;
+}
+
+#banner {
+	margin-bottom: 30px;
+	text-align:center;
+	background-color: $site-lolight;
+	min-height: 200px;
+	.page-title {
+		margin: 100px auto;
+		color: #FFF;
+	}
+	#site-logo {
+		margin: 75px auto 75px;
+	}
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.contact-form-container {
+	background-color: $gray-lighter;
+	padding-bottom: $grid-gutter-width/2;
+	@media(max-width:$container-md){
+		padding-top: $grid-gutter-width /2;
+	}
+}
+
+img[data-sizes="auto"] { 
+	display: block; 
+	width: 100%; 
+}
+.lazyload, .lazyloading, .lazyloaded {
+    transition: opacity 300ms;
+}
+.lazyload {
+    opacity: 0;
+}
+.lazyloading {
+    opacity: 0.5;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.centered-heading {
+	@include centered-heading();
+}
+
+
+.bg-alternate {
+	background-color: lighten($site-primary,50%)
+}
+
+
+.embed-responsive {
+	width: 100%;
+}
+
+
+
+span {
+
+	&.gwwc {
+		color: $gwwc !important;
+	}
+
+	&.eightythousandhours {
+		color: $eightythousandhours !important;
+	}
+	&.gpp {
+		color: $gpp !important;
+	}
+}

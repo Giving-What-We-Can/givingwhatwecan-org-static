@@ -1,0 +1,9 @@
+footer.footer {
+	background-color: $site-lolight;
+	min-height: 130px;
+	margin-top: $grid-gutter-width;
+	padding: 30px 0;
+	.colophon{
+		min-height: 90px;
+	}
+}

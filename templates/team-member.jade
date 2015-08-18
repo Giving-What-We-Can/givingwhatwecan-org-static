@@ -1,0 +1,23 @@
+//- Team Member
+			
+-var organisations = {'cea':'Centre for Effective Altruism','gwwc':'Giving What We Can','eightythousandhours':'80,000 Hours','gpp':'Global Priorities Project','eao':'Effective Altruism Outreach'}
+.center
+	if person.featuredImage
+		img.img-responsive(src=person.featuredImage, alt=person.title)
+	else
+		img.img-responsive(src="http://placehold.it/400x400")
+
+h4.name
+	!= person.title
+if person.staffType !== 'trustee'
+	p.position-and-organisation
+		span.position!= person.position 
+		br
+		span.organisation
+			if person.organisation !== 'eao'
+				span.sr-only!= organisations[person.organisation]
+				img(src="/images/logos/"+person.organisation+'.png' alt=organisations[person.organisation] + ' logo')
+			else
+				!= organisations[person.organisation]
+div.description
+	!= person.contents

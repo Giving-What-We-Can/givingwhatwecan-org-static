@@ -1,0 +1,62 @@
+.team-heading {
+	background-color: $site-lolight;
+	padding-top: 0;
+	margin: $grid-gutter-width 0;
+	padding: $grid-gutter-width;
+	h3 {
+		color: #FFF;
+		margin: 0;
+	}
+}
+.team-member {
+	.name {
+		color: #FFF;
+		background-color: $cea;
+		padding: 5px;
+		margin: 0 0 10px;
+		text-align: center;
+		font-weight: 700;
+	}	
+	.position-and-organisation {
+		color: $site-primary;
+		padding-bottom: 10px;
+		border-bottom: 2px solid $site-primary;
+		text-align: center;
+		.position {
+			font-weight: 700;
+			word-wrap: nowrap;
+		}
+		img {
+			height: 50px;
+			margin: auto;
+		}
+	}
+	&.gwwc {
+		.name {
+			background-color: $gwwc;
+		}
+		.position-and-organisation {
+			color: $gwwc;
+			border-bottom-color: $gwwc;
+		}
+	}
+	&.eightythousandhours {
+		.name {
+			background-color: $eightythousandhours;
+		}
+		.position-and-organisation {
+			color: $eightythousandhours;
+			border-bottom-color: $eightythousandhours;
+		}
+	}
+	&.gpp {
+		.name {
+			background-color: $gpp;
+		}
+		.position-and-organisation {
+			color: $gpp;
+			border-bottom-color: $gpp;
+		}
+	}
+
+}

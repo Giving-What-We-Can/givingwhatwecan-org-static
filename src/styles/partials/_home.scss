@@ -1,0 +1,105 @@
+
+
+body.home {
+
+	.mission, .vision, .about {
+		h2, h3 {
+			@include centered-heading();
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
+	.mission, .vision {
+		text-align: center;
+		font-weight: 300;
+		h3 {
+			font-weight: 700;
+		}
+		p {
+			em {
+				font-weight: 400;
+			}
+		}
+	}
+
+	.about {
+		$border: 2px solid $site-lolight;
+		border-top: $border;
+		border-bottom: $border;
+		padding: 30px;
+		margin: 10px auto;
+		background-color: $site-lolight;
+		color: #FFF;
+	}
+
+	.organisations {
+		text-align: center;
+		h2,h3 {
+			@include centered-heading();
+		}
+		.current-projects, .previous-projects {
+			.project {
+				text-align: left;
+				.logo {
+					text-align: center;
+					height: 200px;
+					margin: 0 auto 30px;
+				}
+				h4 {
+					text-align: center;
+				}
+				p {
+					.btn {
+						width: 100%;
+					}
+				}
+				&.gwwc{
+					h4 {
+						color: $gwwc;
+					}
+					.btn {
+						background-color: $gwwc;
+						border-color: $gwwc;
+					}
+				}
+				&.eightythousandhours{
+					h4 {
+						color: $eightythousandhours;
+					}
+					.btn {
+						background-color: $eightythousandhours;
+						border-color: $eightythousandhours;
+					}
+				}
+				&.gpp {
+					h4 {
+						color: $gpp;
+					}
+					.btn {
+						background-color: $gpp;
+						border-color: $gpp;
+					}
+				}
+				&.tlycs {
+					h4 {
+						color: $tlycs;
+					}
+					.btn {
+						background-color: $tlycs;
+						border-color: $tlycs;
+					}
+				}
+				&.ace {
+					h4 {
+						color: $ace;
+					}
+					.btn {
+						background-color: $ace;
+						border-color: $ace;
+					}
+				}
+			}
+		}
+	}
+}

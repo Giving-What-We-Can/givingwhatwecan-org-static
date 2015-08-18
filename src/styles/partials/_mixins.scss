@@ -1,0 +1,18 @@
+@mixin text-content(){
+    @include make-lg-column(8);
+    @include make-lg-column-offset(2);
+}
+
+@mixin cover-background(){
+	background: no-repeat center center; 
+	background-size: cover;
+}
+
+@mixin centered-heading(){
+	width: 66%;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px solid $gray-light;
+	text-align: center;
+	padding-bottom: 0.2em;
+}

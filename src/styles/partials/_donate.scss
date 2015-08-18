@@ -1,0 +1,17 @@
+.donation-options {
+	.donation-option {
+		margin-bottom: 10px;
+		.btn {
+			width: 100%;
+		}
+	}
+}
+
+
+#donation-methods {
+	.donation-methods-header{
+		h2 {
+			@include centered-heading();
+		}
+	}
+}

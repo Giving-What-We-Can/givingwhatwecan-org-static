@@ -1,0 +1,49 @@
+.text-content{
+	@include text-content();
+}
+
+// highlight the text background
+.text-background {
+	background: $gray-darker;
+	display: inline-block;
+	padding: 0.2em 0.5em;
+	border-radius: 8px;
+	* {
+		display: inline-block;
+	}
+}
+
+
+// transparency for effects
+.transparent {
+	visibility: hidden;
+	.opacity &{
+		visibility: visible;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+
+// text alignment
+.left {
+	text-align: left;
+	img {
+		margin-left: 0;
+		margin-right: auto;
+	}
+}
+.right {
+	text-align: right;
+	img {
+		margin-left: auto;
+		margin-right: 0;
+	}
+}
+.center {
+	text-align: center;
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

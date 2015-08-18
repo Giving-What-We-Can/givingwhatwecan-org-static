@@ -1,0 +1,27 @@
+extends page
+
+block header
+	.container
+		h1.page-title!= title
+	
+block content
+	.container
+		div.page-content
+			-var typeTitles = ['Trustees','Staff','International Contactors']
+			each staffType,index in ['trustee','staff','contractor']
+				.row
+					.col-sm-12.team-heading
+						h3
+							!= typeTitles[index]
+				.row(class=[staffType,'team-member-container'])
+					//- keep count of how many times we've gone through this loop
+					- var c = 1;
+					each person,index in collections.people
+						if person.staffType === staffType
+							if c === 1
+								//- add a new row if we're on the first person in a group of 4
+								.row
+							div(class=[(staffType==="trustee"?"col-md-4":"col-md-3"),"col-sm-6","team-member",person.organisation])
+								include team-member
+							//- increment the counter for the first three people, reset when we get to the fourth to add a new row
+							- if(c<4) {c++;} else c = 1;

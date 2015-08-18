@@ -1,0 +1,35 @@
+article.post {
+	$pad: 4px;
+	padding-top: $pad;
+	margin-top: $pad;
+	transition: opacity .25s ease-in-out;
+	.feature-heading {
+		$padding: 120px;
+		padding-top: $padding;
+		padding-bottom: $padding;
+		margin-bottom: 40px;
+		text-align: center;
+		@include cover-background();
+		background-color: #333;
+		.post-title {
+			margin: 0;
+			color: #FFF;
+			a{
+				color: #FFF;
+			}
+		}
+		.date {
+			font-family: $font-family-sans-serif;
+			color: $gray-light;
+			margin-top: 5px;
+		}
+	}
+	.post-content {
+		@include text-content();
+	}
+
+	
+}
+.article-navigation {
+	text-align:center;
+}
