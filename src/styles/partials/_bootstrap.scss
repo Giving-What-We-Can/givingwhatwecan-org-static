@@ -29,9 +29,9 @@ $body-bg:               #fff;
 $text-color:            $gray;
 
 //** Global textual link color.
-$link-color:            $site-highlight;
+$link-color:            $site-primary;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      $site-primary;
+$link-hover-color:      $site-dark;
 //** Link hover decoration.
 $link-hover-decoration: underline;
 
@@ -39,7 +39,8 @@ $link-hover-decoration: underline;
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-
+$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base:        $font-family-sans-serif;
 $font-size-base:          16px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px

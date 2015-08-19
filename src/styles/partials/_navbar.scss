@@ -10,7 +10,7 @@
 // }
 .navbar {
 	transition: opacity .25s ease-in-out;
-	background-color: $site-lolight;
+	background-color: $site-primary;
 	box-shadow: 0px 0px 15px #333;
 }
 .navbar-header {
@@ -25,10 +25,16 @@
 	}
 }
 .navbar-default {
-	.navbar-brand:hover, 
-	.navbar-brand:focus,
+	// .navbar-brand:hover, 
+	// .navbar-brand:focus,
 	.navbar-nav>li>a:hover,
 	.navbar-nav>li>a:focus {
-		color: $site-highlight;
+		background-color: $site-dark;
+		color: #FFF;
+	}
+	.navbar-nav>.active>a,
+	.navbar-nav>.active>a:hover,
+	.navbar-nav>.active>a:focus{
+		background-color: $site-dark;
 	}
 }

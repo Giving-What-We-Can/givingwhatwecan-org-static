@@ -1,5 +1,13 @@
 footer.footer {
-	background-color: $site-lolight;
+	background-color: $site-primary;
+	a{
+		&:link,&:visited{
+			color: #FFF;
+		}
+		&:hover,&:focus,&:active{
+			color: $site-dark;
+		}
+	}
 	min-height: 130px;
 	margin-top: $grid-gutter-width;
 	padding: 30px 0;
