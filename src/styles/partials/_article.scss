@@ -1,4 +1,4 @@
-article.post {
+/* article.post {
 	$pad: 4px;
 	padding-top: $pad;
 	margin-top: $pad;
@@ -32,4 +32,9 @@ article.post {
 }
 .article-navigation {
 	text-align:center;
+} */
+
+article.post, div.page, div.author {
+	@include make-md-column(8);
+	@include make-md-column-offset(2);
 }

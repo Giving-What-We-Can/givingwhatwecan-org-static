@@ -1,0 +1,44 @@
+---
+title: 'Some General Concerns About GiveWell'
+redirects:
+    - blog/2012-12-24/some-general-concerns-about-givewell
+author: william-macaskill
+slug: blog/2012-12-24/some-general-concerns-about-givewell
+date: '2012-12-24'
+time: '07:48pm'
+updatedDate: '2014-02-11'
+updatedTime: '07:48pm'
+---
+In my [previous post](http://www.givingwhatwecan.org/blog/2012-11-30/givewell%E2%80%99s-recommendation-of-givedirectly), I explained why I was surprised by GiveWell's recent recommendation of GiveDirectly. In this post, I'll take the opportunity to explain some other general concerns I have with GiveWell. As before, I'll note that these just represent my view, rather than those of GWWC as a whole, and that such criticism should be taken as a sign of respect for an organisation which I generally think very highly of. We are making these suggestions in part because we draw heavily on GiveWell's own research and want it to be as compelling as possible.
+
+I'll also note that many of these concerns can also be applied to GWWC itself. This list therefore also represents a list of improvements we would like to make to our own research and publications in future.
+
+## Some specific points
+
+_Long run effects_
+
+Different countries vary dramatically in their rate of economic growth. In [2011](https://www.cia.gov/library/publications/the-world-factbook/fields/2003.html?countryName=World&countryCode=xx&regionCode=oc&), India's economy grew by 7.8%, whereas Namibia's economy grew by just 3.8%. In the long-run, insofar as your donation generates some jump in the productivity of the labour force, compounding effects will cause it to snowball into substantially more income if used in India than in Namibia. On this basis one might argue that donations to India constitute a better 'investment' than donations to Namibia. On the other hand, one might reason that, because we should expect people to be richer in India in the future, they will get less benefit from any extra income in the future. The economic trajectory of the country that you try to help could potentially be a 'crucial consideration' concerning which charity you should give to, but it hasn't yet been addressed by GiveWell.
+
+This is not even considering the magnitude and persistence of an intervention's impact on economic productivity. This is another crucial consideration which we understand GiveWell has looked into and found very difficult to answer.
+
+_External Evaluation_
+
+As far as I know, GiveWell haven't commissioned a thorough [external evaluation](http://www.givewell.org/about/self-evaluation) of their recommendations. (GiveWell have done some external evaluations in the past, but mainly in 2010 or 2011, and mainly done by volunteer undergraduates or recent graduates.) This surprises me. Whereas businesses have a natural feedback mechanism, namely profit or loss, research often doesn't, hence the need for peer-review within academia. This concern, when it comes to charity-evaluation, is even greater. If GiveWell's analysis and recommendations had major flaws, or were systematically biased in some way, it would be challenging for outsiders to work this out without a thorough independent evaluation. Fortunately, GiveWell has the resources to, for example, employ two top development economists to each do an independent review of their recommendations and the supporting research. This would make their recommendations more robust at a reasonable cost.
+
+_Billionaires and Room for More Funding_
+
+To put it simply: If GiveWell's top recommended charities are so good, why hasn't their room for more funding been used up?
+
+GiveWell's view is that there are [relatively few good giving opportunities](http://blog.givewell.org/2011/06/11/why-we-should-expect-good-giving-to-be-hard/), because the best ones tend to be snapped up quite quickly. But they have provided very public information on their top-recommended causes, some of which have been on the list for years. And we know that major philanthropic foundations (such as the Gates Foundation, and CIFF) are aware of their research. So it's surprising, in their view, that the room for more funding for their top-recommended organisations wasn't used up rather more rapidly. This either suggests that their model of how philanthropy works is wrong, or that their recommendations aren't believed by the big players in the 'philanthropic market'.
+
+Even if we accept that their model of an efficient market in philanthropy is inaccurate, and so could attribute the failure of big foundations to fund their recommended charities to irrationality or different values, there remains cause for concern. GiveWell functions in an advisory capacity to GoodVentures, which has very similar aims and attitudes to those of GiveWell. GoodVentures' endowment could easily use up the room for more funding at GiveWell's top charities. So it raises the question why GoodVentures doesn't donate to GiveWell's top charities: even if not exhausting their room for more funding, at least using up a considerable proportion of it. The most plausible explanation in my mind is that GiveWell thinks that GoodVentures can better spend its money at a later date after further research. In which case, it's hard to see why individual donors shouldn't save and donate later, or even try to give to GoodVentures. Perhaps that's wrong, but it's worthy of discussion.
+
+_What does GiveWell mean by 'good'_
+
+GiveWell claim that they want to maximise good done per dollar invested, but they haven't explained what they think 'good' consists in and why. Do future people count? If so, how much, and how far into the future? Do they have a discount rate? How much priority should they give to the worst off? Is an infant death worse, or better, than the death of a 20 year old? How do they weigh improvements in health against extensions in health? What do they think is the relationship between economic growth and wellbeing?
+
+These are just of theoretical interest - varying any of the parameters could lead to different charitable recommendations. For example, when they discuss AMF's cost-effectiveness, they focus on under-5 mortality. But they don't discuss the fact that most people think that an infant death is not as great a loss as a young adult death; an intuitive view that has good theoretical grounds. (This is something that will likely be taken into account in the next generation of the DALY metric, in the third edition of the Disease Control Priorities Project.) Depending on how, exactly, one thinks one should weigh saving infant lives against saving adult lives, this issue could make AMF several times less cost-effective relative to SCI than it is currently judged to be. This one methodological issue could therefore dramatically alter their recommendations.
+
+To their credit, GiveWell has moved towards helping people to tailor their choice to their values, by comparing the cost of bed nets delivered, children dewormed, and cash delivered. This can be done using spreadsheets and explanations provided in some recent [blog](http://blog.givewell.org/2012/11/26/our-top-charities-for-the-2012-giving-season/) [posts](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/). In its current form this requires more work than most donors would be willing to engage in. Making this easier, and guiding people through discovering the implications of their moral values would be worthwhile improvements. This kind of tailored advice is only possible for the minority of charities GiveWell has looked into in great detail, which means it is still important to be explicit about the value judgements that generated that shortlist.
+
+Once they allow the moral view or 'judgment calls' of the donor to be an input, providing a #1 #2 #3 ranking of charities becomes misleading. For example, I wrote previously that I was surprised by their recommendation of GiveDirectly. Most of my surprise would have been alleviated if, rather than ranking them #2, they gave them a conditional recommendation: "If you have such-and-such moral view, then GiveDirectly is an excellent option." Indeed, there are many reasonable views based on which giving to GiveDirectly could be the best option. Perhaps you do not want to be paternalistic towards the poor, even if being paternalistic would do more to improve their wellbeing in the long run. Or perhaps the reason you give is because you think you should redistribute your wealth as a matter of justice, and it's not your right to say how that money is spent. In either case, it's very useful to know that one has a good option to put wealth directly into the hands of the poor. But, if that's the motivation for recommending GiveDirectly, ranking them above SCI and below AMF disguises the fact that it is being judged on a different set of criteria.

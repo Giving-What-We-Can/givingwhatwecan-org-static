@@ -1,0 +1,44 @@
+---
+title: 'Giving What We Can''s Plans'
+redirects:
+    - blog/2013-11-08/giving-what-we-cans-plans
+author: michelle-hutchinson
+slug: blog/2013-11-08/giving-what-we-cans-plans
+date: '2013-11-08'
+time: '07:30pm'
+updatedDate: '2014-06-24'
+updatedTime: '07:30pm'
+---
+Giving What We Can aims to review its progress and plans every six months, and to publish the conclusions on the blog. This is the second of two blog posts, and contains a brief summary of our [six month plan](/files/6month_gwwc_plan_2013.pdf) for the second half of 2013\. In this period we are developing and trying out a system based around more personal contact and gradual involvement in Giving What We Can than we have previously employed.
+
+Giving What We Can aims to move as much money as we can to the most effective charities we can find by growing our membership base of people giving at least 10% of their income to the most effective charities. Therefore, our key metric is the number of members we have. Over this period, we hope to gain sixty new members, which means increasing our average new member rate from eight per month to ten per month. The recent impact evaluation done on Giving What We Can estimated the return from gaining one member as being $17,000 to the most effective charities, counterfactually adjusted and time discounted (with a very large range).
+
+During the coming period, Giving What We Can aims to focus primarily on outreach, and in particular on increasing the number of members it has, rather than on research. We will continue doing research into effective causes and charities, but cut back on more methodological research. We think we can have more impact working on outreach, given our progress over the last period.
+
+Talking to members, we have found that individual conversation was crucial for convincing people of the importance of donating to the most effective charities, and doing so substantially. Following the media attention we received in December and January, membership growth was somewhat lower than we were expecting. Given that, we hypothesise that since joining Giving What We Can is a large commitment it would be more effective to have a lower bar to entry, and then encourage people to increase their giving more gradually. ([For more details see the previous post](http://www.givingwhatwecan.org/blog/2013-10-24/six-month-retrospective-progress-review).)
+
+We are aiming to develop and try out a structured way to increase the number of people committed to giving to effective charities. Our current expectation for how that will work is the following. We would expect the first contact people have with us to be at an event that a representative of Giving What We Can speaks at, or through social media. We will then reach out to the people who show interest in effective giving, to answer their questions and chat with them more generally. We will aim to get people involved in a concrete way. For example, to sign up to [Try Giving](http://www.givingwhatwecan.org/try-giving). This allows people to become part of the community, to get into the habit of donating to effective charities, and hopefully to find that giving a proportion of their income is not the sacrifice it might appear to be. We will have regular contact with people signed up for [Try Giving](http://www.givingwhatwecan.org/try-giving), to support them and help them to maximise the good their donations do.
+
+Our main aim in this period is to test out and improve the various parts of our outreach. During this development stage, our full-time team will remain small. The following describes how we intend to carry out the outreach. It is separated into its two main sections. They will be run by the Director of Communications, Steph Crampin, and the Director of Community, Ben Clifford, respectively.
+
+### Attracting Interest
+
+The first stage of outreach is making people aware of Giving What We Can and effective giving, and attracting their interest. Over the coming period, our focus will be on generating interest among young professionals. We have a number of reasons for appealing to this audience in particular. They have immediate, measurable giving power, but also flexibility in their spending. In addition, a young professional vibe will appeal to students, while the reverse is not true. Therefore, this increases the breadth our appeal. To start off with, our geographic focus will be on London and Oxford.
+
+We aim to generate interest by holding and speaking at events, as well as by producing interesting content for social media, in the form of blog posts and infographics. These channels are both personal, making clear that Giving What We Can is a group of real people who have made a commitment, and also highlighting that the idea of effective giving is relevant to the person reading or attending. In the past, this kind of personal contact seems to have been more effective than less personal but more widespread media.
+
+We intend for these activities to drive traffic to the website. Therefore, the website needs to be user-friendly and modern, matching the expectations of young professionals audience. It also needs to have a clear path through it, encouraging people to get further involved if they are interested. To achieve these, we will improve the layout and design of the website. We will make it simpler, in order to make it more visually appealing and to create a clear pathway through it. We will implement personal dashboards, allowing people to track how much they have donated and how much good they have thereby done. (This is also important for impact tracking, as discussed in the previous blog post.)
+
+In order to develop the system described above, we are investigating the most appropriate events to appeal to young professionals. This takes the form of research into the kinds of events which are held and attended in general among that demographic, and also trying out different types of events ourselves. At all these events, we distribute feedback forms in order to be able to work out to what extent the events interested and engaged people. The metrics we use to determine success in this area are number of events, number of people per event and number of people who provided us with contact details and reported their interest in future involvement.
+
+### Increasing Involvement
+
+Our surveys of both members and non-members indicated that personal conversation is very important when people are making decisions about significant donations. Therefore, the second part of our model is an emphasis on engaging people in dialogue. Our aim is to start conversations with people who are interested in donating to effective charities but unsure how to act on that interest. For example, people who have come to our events and expressed an interest, or who are discussing effective giving on social media. We would begin these conversations via email or messaging, and provide the option of continuing them over the phone or in person.
+
+In conversations, we will aim to answer any questions and concerns people may have. We will also suggest signing up to [Try Giving](http://www.givingwhatwecan.org/try-giving). Many of our members reported expecting it to be a sacrifice to donate 10% of their salary, but then not finding it so when they did it. That indicates it would be beneficial for people to set themselves a target for a set time, allowing them to discover that giving a percentage of their income won’t affect their life as much as they expected.
+
+Again, our aim in this period is to try to find out what works. We will send out a certain number of messages to various different groups of people who have shown interest in effective charities, to see which are receptive. We intend to find out how well-received and how effective our [Try Giving](http://www.givingwhatwecan.org/try-giving) system is. It has been an option on the website for a while, but it has not previously been strongly promoted. We are therefore starting by talking to the people who have already signed up to it, to see how they have found it. We are also trying out promoting it at events, to see if that is successful. We keep track of the number of messages sent out and number of conversations had, in order to compare those against the number of people who sign up to Try Giving and the number of people who take the 10% pledge.
+
+### Conclusion
+
+As described in the previous blog post, we have found that it is important to provide personal discussion and support, as well as a gradual way to increase levels of giving. Therefore, in this period we are developing and testing a method of outreach which incorporates these lessons. In particular, we are reaching out to people face to face and through individual messages, we are encouraging people to join [Try Giving](http://www.givingwhatwecan.org/try-giving), and we are finding the best ways to follow up on these.

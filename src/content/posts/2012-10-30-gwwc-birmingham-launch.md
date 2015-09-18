@@ -1,0 +1,29 @@
+---
+title: 'GWWC: Birmingham Launch'
+redirects:
+    - blog/2012-10-30/gwwc-birmingham-launch
+    - blog/2014-02-28/gwwc-birmingham-launch
+author: false
+slug: blog/2012-10-30/gwwc-birmingham-launch
+date: '2012-10-30'
+time: '09:28pm'
+updatedDate: '2014-02-11'
+updatedTime: '09:28pm'
+---
+![](/images/uploads/simon_2012.jpg)
+
+This blog post is going to be a kind of summary of the recent and very exciting launch event for Giving What We Can: Birmingham. Summaries are rarely exciting, and I would have said “review” but I can’t really review an event that I had a hand in organising without being accused of bias. So, rather than trying to be guarded against bias by carefully selecting a spread of positive and negative things to say about the event, I’m just going to wholeheartedly embrace my bias and go on and on about how great the launch was. As well as being an opportunity to blow my own trumpet, this blog post might provide some useful tips for anyone else looking to launch a Giving What We Can chapter or similar event (though saying that might just be blowing my own trumpet too).
+
+The launch was quite a long time in the making. The first step and the thing that really got the ball rolling was contacting potential speakers to give lectures at the event. I had prepared a sizeable list of potential speakers, and my plan was to start from the top and work my way down. As it turned out I didn’t have to move down the list very much at all and I was pleasantly surprised by how willing and able everybody was to help. The first thing that speakers usually want to know is “when is this going to be?” and so contacting the speakers provided the impetus needed to fix a date for the launch. This, then, was a point to work towards. A _deadline_. And it got things working a lot faster.
+
+After this I spent many evenings staying late (later than usual anyway) in the office making all kinds of arrangements for the event. Professor Larry Temkin, one of our speakers, and I sent each other thousands of emails discussing travel arrangements, hotel ideas, timings and all the rest of it. I think I’m probably now qualified to work as some kind of travel rep, but as I’m committed to not being an evil person, that isn’t the life for me (1). Prof Temkin even asked me about must-see sights in Birmingham. I think my response was something to do with curry.
+
+After months of organising (obviously I was kind of doing other things too) the event finally loomed upon me, and on the day of the launch I was still desperately scrabbling around trying to get Skype installed in the room that we’d be using. Peter Singer was due to give his talk over Skype, and so obviously without Skype, this would have been deeply difficult to achieve. Fortunately some of the excellent people at Global Ethics and Political Science (departments here at the university who also helped greatly by funding the Birmingham leg of Larry Temkin’s European trip) came to the rescue and we got Skype set up, literally just a few minutes before Prof Singer was due to be live on the air, beamed into the room onto the screen of a laptop with a microphone pointed at the tinny laptop speakers. It was clumsy and lo-fi, and those with questions at the end had to come up to the front of the room and talk into the laptop like some bizarre audition, but it all worked pretty well.
+
+But that is a digression into a technical headache. Let me put some meat on the bones by telling you about the talks themselves. The content was of course of a very high quality, as to be expected with three eminent profs in the room (three if you count Peter Singer’s virtual presence anyway). Larry Temkin (Rutgers University) gave a talk that was enviable in the elegance of both its construction and delivery, talking directly to the “but I’m a poor student and can’t do anything” response to charitable giving by illuminating the multitudinous ways in which people waste their money, but with a warmth and honesty (admitting that he himself has two fondue pots) that stopped it from being preachy. Peter Singer (Princeton University) used his time-honoured thought experiment of the child drowning in a shallow pond, and the idea that some in the room might have been hearing this example for the first time was as inspiring as watching a child being born. Finally, Alan Fenwick (director of Schistosomiasis Control Initiative, one of Giving What We Can’s top recommended charities) gave a talk that was both moving and visceral, not shying away from graphic detail (and video clips) of the horrors of the neglected tropical diseases that his organisation fights.
+
+So there we have it. Giving What We Can: Birmingham has launched, and you can even watch a video of the launch event [here](https://www.youtube.com/watch?v=y2nyK5rherg). Thanks to everyone for their help (there isn’t room but you know who you are) and I’ll see you at the philanthropy games next week, which I may as well shamelessly plug here: it’s a debate about where to allocate a real sum of money. Room G41, 90 Vincent Drive, University of Birmingham (Edgbaston Campus), Wednesday November 7th, 5.30-7.30pm. No prior skills/knowledge required, and for every person that comes, an extra £10 will be donated!
+
+(1) DISCLAIMER: I DO NOT THINK ALL TRAVEL REPS ARE EVIL
+
+Read more on [our local chapters here►](/getting-involved/local-chapters)

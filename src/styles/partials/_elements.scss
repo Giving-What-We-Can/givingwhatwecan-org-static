@@ -2,7 +2,13 @@ body {
 	padding-top: 68px;
 }
 p {
-//	font-size: 20px;
+	font-weight: 200;
+	strong {
+		font-weight: 400;
+	}
+}
+h1,h2,h3,h4,h5,h6 {
+	color: $site-primary;
 }
 // don't line-wrap code blocks
 pre {
@@ -12,6 +18,7 @@ pre code {
     word-wrap: normal;
     white-space: pre;
 }
+// don't use a spinner for number inputs 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

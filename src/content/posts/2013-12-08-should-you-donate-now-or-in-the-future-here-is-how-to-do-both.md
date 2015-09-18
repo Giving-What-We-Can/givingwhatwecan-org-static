@@ -1,0 +1,27 @@
+---
+title: 'Should you donate now or in the future? Here is how to do both'
+redirects:
+    - blog/2013-12-08/should-you-donate-now-or-in-the-future-here-is-how-to-do-both
+    - blog/2014-03-01/should-you-donate-now-or-future-here-how-do-both
+author: michelle-hutchinson
+slug: blog/2013-12-08/should-you-donate-now-or-in-the-future-here-is-how-to-do-both
+date: '2013-12-08'
+time: '10:23pm'
+updatedDate: '2014-02-10'
+updatedTime: '10:23pm'
+---
+Should we donate in the future when we have more information rather than right now? If we put off donating, we miss out on important benefits like Gift Aid and commitment to giving. But there is a way to get these benefits, while putting off the decision of which charity to donate to - putting your money in a charitable trust.
+
+There are various reasons that you might want to [donate in the future rather than now](http://www.givingwhatwecan.org/about-us/our-research/donating-vs-investing). One is that you could invest the money you would otherwise donate, and by gaining interest on it, end up donating more than you would if you did so now. That's contentious, since giving to charities earns a 'social return' - people who get deworming tablets will get a better education, and therefore a better job. That will benefit not only them, but also others around them. That said, because this social return isn't reinvested in the charitable intervention, over the very long-term it may be that [it does worse than your investment](http://rationalaltruist.com/2013/03/12/giving-now-vs-later/).
+
+Another reason for delaying donating is if you think you'll have better information in future about which charities will be most effective with your donation. That possibility is particularly salient at the moment. The [Against Malaria Foundation](http://www.againstmalaria.com) has been thought by many to be the most effective charity in world, having been the number one recommended charity by GiveWell. However, in their most recent round of recommendations, GiveWell dropped AMF. They feel AMF has no room for more funding at present because it hasn't been able to secure a large distribution of nets recently.
+
+Many people think that AMF, if it did have room for more funding, would be more effective than the other options GiveWell now recommends. It's uncertain how soon AMF will find a partner to distribute nets. Therefore, AMF might very soon become their top recommended charity again, or it may have no room for funding for a long while. (We will release a more detailed blog post about AMF next week.) More speculatively, there are other causes which may be the most effective to donate to, but which it's currently unclear how to affect. These considerations are by no means conclusive, but some people might still want to put off donating until we have more information.
+
+However, by donating now, we can [send a strong signal](http://givingwhatwecan.org/how-to-give/why-pledge) about how much we care about ending extreme poverty - we can encourage others to join us in donating, and possibly governments to take poverty alleviation more seriously. By donating to the most effective charities, we can encourage other charities to care more about their own impact. By not donating on the other hand, we run the risk of falling out of the habit of giving every year. And there's even a risk of missing out on some gift aid or tax deductions you could receive (since you can only claim back as much tax as you paid in a year; and in the US only 50% of that).
+
+The benefits of delaying choosing a charity and of donating immediately can be combined by donating to a charitable trust (or in the US a donor advised fund). That's one of the reasons we had for setting up the Giving What We Can Trust. A trust is a scaled down charity in its own right, so you can claim Gift Aid when donating to it (if you're in the UK). However, the money can stay in the Trust for a prolonged period before being paid out. If someone gives to the GWWC Trust, the default is that it is paid out quarterly to whichever of our recommended charities the donor chose. But people can ask for it to be paid out immediately or for it to be left in the Trust until some future time.
+
+Unlike donor advised funds, charitable trusts typically do not charge management fees. By default, they are ordinary bank accounts. For that reason, money in the GWWC Trust currently neither diminishes nor accrues interest. However, we have the option of using a linked savings account, or of investing the money in bonds or stocks. The latter would involve some administrative work on our part, since trusts are regulated by the Charities Commission. That's an option we'll explore further if any donors come forward wanting to put a substantial donation (perhaps over £1000) in the trust for a prolonged period.
+
+If you'd like to wait to give in order to make sure you're donating to the most effective charity, but want to make sure you get the benefits of giving now, the answer is to donate to a trust! Please feel free to [get in touch](mailto:trust@givingwhatwecan.org), [read more about the GWWC Trust](http://givingwhatwecan.org/getting-involved/give-via-our-trust) or [sign up to start giving](http://givingwhatwecan.org/getting-involved/give-via-our-trust)!

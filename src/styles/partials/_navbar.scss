@@ -12,6 +12,7 @@
 	transition: opacity .25s ease-in-out;
 	background-color: $site-primary;
 	box-shadow: 0px 0px 15px #333;
+	font-weight: 200;
 }
 .navbar-header {
 	.navbar-brand {
@@ -19,22 +20,39 @@
 		@media(max-width:$screen-xs-max){
 			// padding-top:5px;
 		}
+	 	&:hover, &:focus {
+	 		background-color: transparent;
+	 	}
 	}
 	button {
 		color: #FFF;
 	}
+
 }
-.navbar-default {
-	// .navbar-brand:hover, 
-	// .navbar-brand:focus,
-	.navbar-nav>li>a:hover,
-	.navbar-nav>li>a:focus {
-		background-color: $site-dark;
-		color: #FFF;
+.navbar-primary {
+	border: none;
+	.navbar-nav {
+		> li > a {
+			color: #FFF;
+			&:hover, &:focus {
+				background-color: $site-dark;
+				color: #FFF;
+			}
+		}
+		> li.active > a, > li.open > a {
+			background-color: $site-dark;
+			color: #FFF;
+			&:hover, &:focus {
+				background-color: $site-dark;
+				color: #FFF;
+			}
+		}
 	}
-	.navbar-nav>.active>a,
-	.navbar-nav>.active>a:hover,
-	.navbar-nav>.active>a:focus{
-		background-color: $site-dark;
+}
+
+.dropdown-menu{
+	&>li>a:hover, &>li>a:focus {
+		background-color: $site-primary;
+		color: #FFF;
 	}
 }
