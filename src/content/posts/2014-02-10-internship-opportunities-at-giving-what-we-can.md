@@ -36,7 +36,7 @@ Do you want to join the fight against global poverty and gain experience of rese
 
 In this two week period (15th-26th September 2014) interns will gain training and experience in the area of their choice; either cost-effectiveness Research or Communications. For more details and to apply, see [this page](http://givingwhatwecan.org/getting-involved/september-internship-2014).
 
-## <a></a>Why Giving What We Can is a great place to work
+## <a name="why_work_at_gwwc"></a>Why Giving What We Can is a great place to work
 
 ### Be at the heart of an inspiring community of people who care about others and really put their passion into practice
 

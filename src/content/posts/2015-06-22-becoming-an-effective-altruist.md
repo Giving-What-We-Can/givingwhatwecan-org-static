@@ -1,7 +1,7 @@
 ---
 title: 'Becoming an Effective Altruist'
 meta:
-    ogImage: /images/uploads/coralie_becoming_an_ea_og_image.png
+    'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/coralie_becoming_an_ea_og_image.png'
 redirects:
     - blog/2015-06-22/becoming-effective-altruist
 author: coralie-oddy
@@ -31,7 +31,7 @@ Our evidence about the best methods for tackling poverty is constantly growing. 
 
 So I decided that I needed to give to the most effective charities – you can find these via [Giving What We Can](http://www.givingwhatwecan.org), and the detailed evidence for why they are the most effective from [GiveWell](http://www.givewell.org/). I also decided I needed to give consistently, and hold myself accountable for doing what I’d always wanted – **to make a difference, and to continue to make a difference throughout my life.**
 
-![](/images/uploads/coralie_becoming_an_ea.jpg)
+![](https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/coralie_becoming_an_ea.jpg)
 _Here I am taking the pledge!_
 
 After a period of underemployment, I now have a full time job. I don’t earn a lot (I’m working as a teaching assistant), but I earn more than enough to get by, and enough after that to give away to the people who aren’t able to say that yet. After giving away 10% of my salary, I’m still earning more than 99% of people in the world (you can see where you fit in with Giving What We Can’s [calculator](https://www.givingwhatwecan.org/get-involved/how-rich-am-i)).

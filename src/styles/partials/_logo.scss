@@ -1,0 +1,24 @@
+$whatwecan-size: 0.6em;
+h1, h2, h3, h4, h5, h6 {
+	&.givingwhatwecan-logo {
+		text-align: center !important;
+		text-shadow: none !important;
+		line-height: $whatwecan-size;
+		margin: 1em auto;
+		.giving {
+			color: #FFF !important;
+			font-weight: 700 !important;
+			text-transform: uppercase !important;
+			&:after {
+		    content: '\A';
+		    white-space: pre;
+			}
+		}
+		.whatwecan{
+			font-size: $whatwecan-size !important;
+			font-weight: 200 !important;
+			color: #c7c3c0 !important;
+			text-transform: lowercase !important;
+		}
+	}
+}

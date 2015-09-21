@@ -1,43 +1,88 @@
-extends page
+{% extends './layout.swig' %}
 
-block header
-	//- h1.page-title Welcome to the #{siteInfo.title}
-	img.img-responsive#site-logo(src="/images/logos/gwwc-logo-banner.png")
+{% block title %}
+{{siteInfo.title}}
+{% endblock %}
 
-block scripts
-	script.
-		// Only show site logo if user has scrolled past main logo
+{% block banner %}
+	
+{% endblock %}
+
+{% block content %}
+	{% for contentblock in contentBlocks %}
+		{% set contentblock.page = 'home' %}
+		{% if contentblock.pages.indexOf(contentblock.page) > -1 %}
+			{% include './partials/contentblock.swig' %}
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
+{% block scripts %}
+	<script>
 		(function($){
-			$(document).ready(function(){
-				// find the elements
-				var nav =  $('#main-nav');
-				var banner =  $('#site-logo');
-				var logo =  $('#main-nav .navbar-brand>img');
 
-
-				// function that detects scroll position and hides/shows logo accordingly
-				var showLogo = function(hard){
-					// hard transition on page load, otherwise fade
-					if(nav.offset().top + nav.outerHeight() > banner.offset().top + banner.outerHeight()){
-						if (hard) logo.show();
-						else logo.fadeIn();
-					} else {
-						if(hard) logo.hide();
-						else logo.fadeOut();
-					}
+			// animate our 'we are giving what we can' statements
+			$('.aim').attr('style','transition: opacity 1s ease-in-out;opacity:0;');
+			var delay = 0;
+			function doEffect(el){
+				var el = $(el)
+				setTimeout(function(){el.css({'opacity':1})},delay); 
+				if($(window).width()>=992){
+					delay+=300;
 				}
-				showLogo(true);
-				// scope var for debouncing 
-				var timeOut;
-				// listen for scrolling
-				$(document).scroll(function(){
-					// debounce by only calling function after 50ms
-					clearTimeout(timeOut);
-					timeOut = setTimeout(function(){
-						showLogo();
-						// call the function again after half a second — accounts for scroll momentum on iOS
-						setTimeout(showLogo,500);
-					},50);
-				});
+			}
+			$('.aim').each(function(){
+				var el = $(this);
+				el.waypoint(function(direction) {
+					 doEffect($(this.element));
+					this.destroy()
+				}, {
+				  offset: 'bottom-in-view'
+				})
+			})
+			// create our effectiveness chart
+			var effectivenessChart = $("#effectivenessChart");
+			resizeChart(effectivenessChart);
+
+			var effectivenessChartData = {
+			    labels: ["Average Charities","Good Charities", "The Best Charities"],
+			    datasets: [
+			        {
+			            label: "Charities",
+			            fillColor: "#6C0000",
+			            data: [0,0,0]
+			        }
+			    ]
+			};
+			var effectivenessChartOptions = {
+				scaleBeginAtZero : false,
+				scaleShowGridLines : false,
+				barDatasetSpacing : 2,
+			    showTooltips: false,
+			    scaleFontFamily: '"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif',
+			    scaleOverride: true,
+			    scaleSteps: 10,
+			    scaleStepWidth: 100,
+			    scaleStartValue: 0,
+			}
+			var ctx = effectivenessChart.get(0).getContext("2d");
+			var effectivenessChartRender = new Chart(ctx).Bar(effectivenessChartData, effectivenessChartOptions);
+			// use Waypoint to check whether the chart is in view
+			effectivenessChart.waypoint(function(direction) {
+				resizeChart(effectivenessChart);
+				effectivenessChartRender.datasets[0].bars[0].value = 1;
+				effectivenessChartRender.datasets[0].bars[1].value = 100;
+				effectivenessChartRender.datasets[0].bars[2].value = 1000;
+				effectivenessChartRender.update();
+				this.destroy();
+			}, {
+			  offset: 'bottom-in-view'
 			});
+			function resizeChart(el){
+				el = $(el);
+				el.height($(window).height()/2)
+				el.width(el.parent().width())
+			}
 		})(jQuery);
+	</script>
+{% endblock %}

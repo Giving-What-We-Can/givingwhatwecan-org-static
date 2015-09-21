@@ -18,24 +18,14 @@
 
 </head>
 
-<body class="collection-{{ collection }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}">
+<body class="collection-{{ collection }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
 
 
 {% include "./partials/nav.swig" %}
 
 
-	<div id="banner">
-		{% block banner %}
-			<div class="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<h1 class="page-title">{{ title }}</h1></div>
-					</div>
-				</div>
-			</div>
-		{% endblock %}
-	</div>
+	{% block banner %}
+	{% endblock %}
 	
 	
 	<div class="content">
@@ -53,11 +43,14 @@
 		</noscript>
 		{% block content %}
 		{% endblock %}
+	</div>
+
 	<footer class="footer">
 		{% block footer %}
 			{% include './partials/footer.swig' %}
 		{% endblock %}
 	</footer>
+
 	<script src="{{ relative('/scripts/app.min.js') }}"></script>
 	{% block scripts %}
 	{% endblock %}

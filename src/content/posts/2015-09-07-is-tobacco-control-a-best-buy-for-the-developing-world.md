@@ -11,7 +11,7 @@ updatedTime: '04:01pm'
 ---
 **[William Savedoff and Albert Alwang](http://www.cgdev.org/publication/single-best-health-policy-world-tobacco-taxes) recently identified taxes on tobacco as, “the single most  cost-effective way to save lives in developing countries” (2015, p.1).** This is a strong claim and one that should pique the interest of any effective altruist. Is the claim true? And, if so, does tobacco taxation present an opportunity to do the most good? In this post, I examine whether tobacco tax advocacy gives other highly effective interventions a run for their money. However, this post will not evaluate or recommend a particular charity. My aim is rather to assess whether tobacco tax advocacy is a cause that effective altruists and EA organizations should investigate further and, if so, where further investigation is needed.
 
-## <a></a>Tobacco control and tobacco taxation
+## <a name="h.s1wp9474778q"></a>Tobacco control and tobacco taxation
 
 The WHO assesses global progress on tobacco control in terms of a set of measures called [MPOWER](http://www.who.int/tobacco/mpower/publications/en/)  .
 
@@ -47,7 +47,7 @@ There are a few reasons to balk at recommending tobacco tax advocacy to those ai
 
 _Spoiler alert!_ I don’t have a charity to recommend. If, at the end of this post, you’re convinced by the cost-effectiveness of tobacco tax advocacy, there won’t be a donation link for you to click.However, I will have a few things to say about how effective altruists might make a difference in this area.
 
-## <a></a>Importance, tractability, and neglectedness
+## <a name="h.agon6bir8pd9"></a>Importance, tractability, and neglectedness
 
 Even if tobacco taxes are as cost-effective as their proponents suggest, and even if there were a charity capable of effectively advocating for tobacco taxes, we might still have reason not to support or recommend it. When deciding whether to support a particular cause, we typically assess the proposed project along three dimensions: importance, tractability, and neglectedness (or crowdedness).
 
@@ -86,7 +86,7 @@ However, I am not persuaded that tobacco control is as crowded as these critics 
 
 The academic research seems to suggest that spending more would be highly cost-effective. Gates and Bloomberg have contributed $600 million since 2007\. This represents about half of total DACT (Ross and Stoklosa, p.466). However, one estimate of the amount needed for the four “best buys” in tobacco control, which includes tobacco taxation, is $600 million _per year_ (or $0.11 per capita per year) (Eriksen et al., pp.76-77). Another estimate puts the cost of decreasing smoking prevalence in key LMICs to 5% by 2040 at $6 billion per year. Tobacco control accounts for about 10% of those costs, or $600 million per year (Beaglehole et al. 2011, pp.1440 and 1444). Finally, if we think that the estimated costs for advocacy are too low, then these numbers will be even higher.
 
-At the very least, these numbers suggest that the amounts of money currently moved by [GiveWell ($27 million as of April 2015), which includes the amount moved by Giving What We Can](http://www.givewell.org/about/impact) ( [$7 million over 5 years](/files/GivingWhatWeCan-FundraisingProspectus2015.pdf)), could all be used effectively for tobacco tax advocacy.
+At the very least, these numbers suggest that the amounts of money currently moved by [GiveWell ($27 million as of April 2015), which includes the amount moved by Giving What We Can](http://www.givewell.org/about/impact) ( [$7 million over 5 years](https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/GivingWhatWeCan-FundraisingProspectus2015.pdf)), could all be used effectively for tobacco tax advocacy.
 
 ## Questions about cost-effectiveness
 
@@ -136,7 +136,7 @@ Tobacco taxes appear to be a highly cost-effective way to save lives in the deve
 
 _Thanks to Hauke Hillebrandt, William Savedoff, and Scott Weathers for helpful feedback on an earlier draft of this post._
 
-## <a></a>References
+## <a name="h.js8we0hxfgpl"></a>References
 
 Asaria et al. 2007\. “Chronic disease prevention: health effects and ﬁnancial costs of strategies to reduce salt intake and control tobacco use.” _The Lancet_ 370, 2044-53.
 

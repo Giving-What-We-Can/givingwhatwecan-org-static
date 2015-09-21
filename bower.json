@@ -21,7 +21,9 @@
     "bootstrap-sass-official": "~3.3.3",
     "bootswatch-sass": "~3.3.1",
     "components-font-awesome": "~4.3.0",
-    "jquery-validation": "~1.14.0"
+    "jquery-validation": "~1.14.0",
+    "waypoints": "~4.0.0",
+    "Chart.js": "~1.0.2"
   },
   "resolutions": {
     "bootstrap-sass-official": "~3.3.3",

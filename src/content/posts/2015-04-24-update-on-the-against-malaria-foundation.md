@@ -9,7 +9,7 @@ time: '09:40pm'
 updatedDate: '2015-05-06'
 updatedTime: '09:40pm'
 ---
-# <a></a>Summary
+# <a name="h.yjad54omkb3u"></a>Summary
 
 The Against Malaria Foundation (AMF) has been one of our highly recommended charities for several years now. Our colleagues at Givewell have published an [extensive update](http://www.google.com/url?q=http%3A%2F%2Fwww.givewell.org%2Finternational%2Ftop-charities%2FAMF&sa=D&sntz=1&usg=AFQjCNE2Q8iGZGZw8YSLkg2No1vQBjg3fQ) recently that was generally very favourable and they continue to rank among Givewell’s top charities. You can read more about the general case for distributing insecticide treated bednets on [Givewell’s page.](http://www.google.com/url?q=http%3A%2F%2Fwww.givewell.org%2Finternational%2Ftechnical%2Fprograms%2Finsecticide-treated-nets&sa=D&sntz=1&usg=AFQjCNHmxQuLyZxd9SPR7_GnAVE0cQeBjQ) In this blog post, we give you an update about their efforts that we feel complement Givewell’s report. You can find more general information about AMF on our [website](https://www.google.com/url?q=https%3A%2F%2Fwww.givingwhatwecan.org%2Ftop-charities%2Fagainst-malaria-foundation&sa=D&sntz=1&usg=AFQjCNGxlWrI9vqKkCe49ZYkva7OMymqAA). In our opinion, AMF continues to be one of the most effective charities in the world.
 
@@ -61,19 +61,19 @@ The Against Malaria Foundation (AMF) has been one of our highly recommended char
 
 [Net distributions](#h.aujfsir2h85h)
 
-# <a></a>
+# <a name="h.qzk21f2xrluh"></a>
 
 * * *
 
-# <a></a>
+# <a name="h.m363c3t3b018"></a>
 
 * * *
 
-# <a></a>Recent Scientific findings that relate to AMF’s effectiveness
+# <a name="h.zh1jlxemp1lp"></a>Recent Scientific findings that relate to AMF’s effectiveness
 
-## <a></a>Malaria Disease interactions
+## <a name="h.4o3178scd3uu"></a>Malaria Disease interactions
 
-### <a></a>Does Malaria increase HIV infections?
+### <a name="h.vu9bzvqwjovj"></a>Does Malaria increase HIV infections?
 
 There is some evidence that malaria increases HIV transmission<sup class="c14">[[1]](#ftnt1)</sup>. In 2006, a paper published in Science showed that people who are HIV positive have shown a spike in HIV viral load during a malaria fever episode<sup class="c14">[[2]](#ftnt2)</sup>. They found that, a malaria fever can increase HIV viral load by almost one log (10 times) - and stay at an increased level for a duration of up to 6 weeks<sup class="c14">[[3]](#ftnt3)</sup>. A recent systematic review and meta-analysis found that acute malaria increases HIV viral load by only 0·67 log10 (see <sup class="c14">[[4]](#ftnt4)</sup>).
 
@@ -87,7 +87,7 @@ In sum, the research on HIV malaria interactions is inconclusive and more resear
 
 Finally, two recent studies suggest that independent of whether and by how much HIV transmission risk is increased, coinfections might have implications for distribution of malaria nets to people infected with HIV. One study suggested that people with HIV that were provided with bednets had slower progression to AIDS<sup class="c1">[[17]](#ftnt17)</sup> and another study showed that people with HIV who were provided nets and water filters delayed initiation of antiretroviral therapy, potentially due to this slower progression to AIDS<sup class="c1">[[18]](#ftnt18)</sup>. The later study estimated this intervention to be highly cost effective: when combining the benefits due delayed initiation of antiretroviral therapy with other health benefits due to fewer malaria cases, this interventions costs US$99 per disability-adjusted life year (DALY) averted (with net cost savings for the health system). Another recent study found that almost all the HIV positive patients in a sample with malaria infection were anemic<sup class="c1">[[19]](#ftnt19)</sup>. But can net distribution reduce the morbidity of people who are infected with HIV? A recent review concluded the data were very limited regarding the impact of net provision and/or use on malaria morbidity reduction in people with HIV. The quality of the four studies they reviewed was rated as “medium.”, the overall quality of evidence was rated as “fair”, and and the impact of net provision on malaria morbidity was rated as “uncertain”<sup class="c1">[[20]](#ftnt20)</sup>. More research needs to be done to investigate this interaction.
 
-### <a></a>Malaria and Anemia
+### <a name="h.ucuyf7x4octm"></a>Malaria and Anemia
 
 1.62 billion people have anemia. 41.8% of all pregnant women have anemia, with the majority living in Africa: 17 million pregnant women are known to be affected<sup class="c1">[[21]](#ftnt21)</sup><sup class="c1">[[22]](#ftnt22)</sup>.
 
@@ -95,7 +95,7 @@ The consequences of malaria-induced anemia in pregnancy has been well establishe
 
 Another affected group are HIV positive patients: a recent study found that almost all the people in a sample with malaria infection were anemic<sup class="c1">[[26]](#ftnt26)</sup>. Few studies have looked at the effect of malaria on anemia in non-pregnant, non HIV-infected adults. One study in Cameroon however suggested that in adult patients with fever, malaria parasitaemia contributes to anaemia and that this is of public health impact<sup class="c1">[[27]](#ftnt27)</sup>. This improves the case that reduction of malaria through net distributions also decreases incidences of anemia.
 
-### <a></a>Malaria and Lymphatic filariasis
+### <a name="h.hbfehqv6217c"></a>Malaria and Lymphatic filariasis
 
 Synergistic effects of using nets to prevent both malaria and lymphatic filariasis have been investigated for a long time<sup class="c1">[[28]](#ftnt28)</sup>,<sup class="c1">[[29]](#ftnt29)</sup>, as both diseases are transmitted by Anopheles mosquitoes (see Table 1 (adapted from<sup class="c1 c21">[[30]](#ftnt30)</sup>). A recent paper calls for integrated vector management and concludes that the available data show that the use of treated or untreated bed nets and indoor residual spraying for malaria control concomitantly also reduced lymphatic filariasis<sup class="c1">[[31]](#ftnt31)</sup>. For this reason, Nigeria has recently launched the first nationwide lymphatic filariasis and malaria co-implementation plan, based on distribution of both preventive chemotherapy medication and long-lasting insecticidal nets<sup class="c1">[[32]](#ftnt32)</sup>.
 
@@ -107,25 +107,25 @@ Malawi also has high prevalence of lymphatic filariasis and and mass drug admini
 
 Studies show that treating lymphatic filariasis coinfection in HIV‐positive patients significantly reduced their viral load<sup class="c1">[[37]](#ftnt37)</sup>. A modelling study estimated that this might increase transmission risk and that for every 100 HIV-infected people, each suffering from lymphatic filariasis, there are 13.3 (0.3–89.2) additional HIV-1 transmission events attributable to HIV-lymphatic filariasis coinfection<sup class="c14">[[38]](#ftnt38)</sup>.
 
-### <a></a>Malaria and Blood pressure
+### <a name="h.j207ndb462wt"></a>Malaria and Blood pressure
 
 One recent study suggests that malaria during pregnancy might affect blood pressure in children and that this might may contribute to the African burden of hypertension, which is higher than in developed countries<sup class="c14">[[39]](#ftnt39)</sup>.
 
-## <a></a>Prevalence of Malaria
+## <a name="h.zapmobtv3mks"></a>Prevalence of Malaria
 
 A recent paper<sup class="c1">[[40]](#ftnt40)</sup> used a more sensitive test for asymptomatic malaria and showed that malaria is more common than previously thought: the prevalence of malaria in the study’s population was underestimated by 8%. Asymptomatic malaria carriers influence the transmission potential of the disease <sup class="c1">[[41]](#ftnt41)</sup>. This suggest that the malaria burden might be underestimated.
 
 Another review has recently concluded that the morbidity burden of Malaria has been underestimated in particular with regards to adult morbidity<sup class="c1">[[42]](#ftnt42)</sup>.
 
-### <a></a>Malaria and climate change
+### <a name="h.afkczaftpjcl"></a>Malaria and climate change
 
 A recent study suggested that increasing temperatures due to climate change might mean that future climate becomes more suitable for malaria transmission in the tropical highland regions<sup class="c1">[[43]](#ftnt43)</sup>.
 
-## <a></a>Insecticide resistance
+## <a name="h.xjxsggrjij9t"></a>Insecticide resistance
 
 Evolution of resistance to insecticides continue to worry researchers: resistance in mosquitoes has been reported in 53 of 65 reporting countries around the world since 2010<sup class="c1">[[44]](#ftnt44)</sup>. However, a recent meta-analysis concluded that ITNs are still more effective than nets that are not treated with insecticides regardless of resistance<sup class="c1">[[45]](#ftnt45)</sup> and distributing nets remains a cost-effective health intervention, even in areas with strong insecticide resistance<sup class="c1">[[46]](#ftnt46)</sup>.
 
-## <a></a>Does providing free bednets increase the number of people sleeping under bednets?
+## <a name="h.fnajp82kwjol"></a>Does providing free bednets increase the number of people sleeping under bednets?
 
 It has been hypothesized that people who purchase nets will use them more than those who receive them for free and thus that free bednet distributions are not as good as selling them.
 
@@ -133,7 +133,7 @@ A recent Cochrane meta analysis<sup class="c1">[[47]](#ftnt47)</sup> reviewed th
 
 Two recent studies tried to answer the question of whether providing free bednets affects private net sales negatively. One study showed 34 per cent monthly decline immediately after a free bednet distribution campaign compared to ‘normal’ sales<sup class="c1">[[50]](#ftnt50)</sup>. They found that after 6 months, the total unsold nets reached 45 percent of normal sales, or 347 000 nets nationwide in Tanzania. They caution that free campaigns can hinder private net sales much more than previously observed in recent experimental trials and thus can cause trouble with continuous coverage delivery channels of bednets through private sales. In contrast, another study also in Tanzania, showed distribution of free insecticide-treated nets do not interfere with continuous net distribution<sup class="c1">[[51]](#ftnt51)</sup>. The authors argue that the discrepancy between the two studies is likely because they used to different data from different time points. We cannot conclude much from only two studies with opposite findings, but whether free net distributions displace private net sales should be subject of further study and observation.
 
-## <a></a>Net durability
+## <a name="h.ifh8rsp9i6tk"></a>Net durability
 
 Two recent papers challenge the previously held assumption that net durability is about 3 years.
 
@@ -141,7 +141,7 @@ Insecticide treated nets with holes in them are less effective at protecting peo
 
 Another recent analysis suggested that because of previously unaccounted factors such as uneven distribution of nets and rapid net loss, it will require substantially more nets than currently assumed in order to meet international coverage targets<sup class="c1">[[55]](#ftnt55)</sup>. All this suggest that more bednets are probably needed than previously assumed, which is favourable for AMF and their part in trying to close this gap.
 
-## <a></a>Misuse of Malaria nets
+## <a name="h.utsw8owi2s7i"></a>Misuse of Malaria nets
 
 A recent article in the New York Times<sup class="c14">[[56]](#ftnt56)</sup> “claimed countless [people in Africa] are not using their mosquito nets as global health experts have intended”, most often for fishing, which causes harm to fish stock due to the nets insecticides and fine gauges. Givewell has already commented on this piece<sup class="c14">[[57]](#ftnt57)</sup>, summarizing the data coming from actual monitoring as opposed to self-reported surveys that might be biased. The monitoring data is generally in line with this.
 
@@ -149,11 +149,11 @@ AMF<sup class="c14">[[58]](#ftnt58)</sup> and other organisations<sup class="c14
 
 We could only find one study that quantified the extent of bednet use in fishing: a small survey study with 196 respondents in seven villages surrounding a Lake Tanganyika reported that 87% of households surveyed have used a mosquito bed net for fishing at some point. However, another much more comprehensive analysis of 14 surveys in several countries with 14,196 households showed that that the overwhelming majority of nets were used for malaria prevention, and only 255 nets were repurposed (which make up less than 1% overall). Furthermore, the majority of the repurposed nets were already considered too torn, indicating they had already served out their useful life for malaria prevention<sup class="c1">[[62]](#ftnt62)</sup>. The authors conclude that national programmes and donor agencies should remain confident in the appropriate use of bednets.
 
-## <a></a>Mass drug administration against Malaria
+## <a name="h.i8pvvw7yil0x"></a>Mass drug administration against Malaria
 
 Mass drug administration (MDA) of ivermectin to humans for control and elimination of filarial parasites can kill biting malaria vectors and lead to Plasmodium transmission reduction<sup class="c1">[[63]](#ftnt63)</sup>,<sup class="c1">[[64]](#ftnt64)</sup>. A recent review suggested that there is good evidence for the significant reduction in malaria transmission following single ivermectin MDAs across diverse field sites<sup class="c1">[[65]](#ftnt65)</sup> and other highlight that this should be seriously considered as a new tool against Malaria as nets do little to prevent outdoor transmission<sup class="c1">[[66]](#ftnt66)</sup>. However, MDA is not going to replace bednet distribution, but rather be used in addition to it and thus this does not decrease AMF’s effectiveness.
 
-## <a></a>Economic effects
+## <a name="h.err6g4s09wcd"></a>Economic effects
 
 Givewell had previously cautiously suggested<sup class="c1">[[67]](#ftnt67)</sup> that a 2010 study from Bleakley et al.<sup class="c1">[[68]](#ftnt68)</sup> that looked malaria eradication programmes in the United States in the 1920s and in Latin America in the 1950s, and concluded that cross-regional differences in malaria might explain differences in income, with people in regions with less malaria had higher incomes.
 
@@ -171,21 +171,21 @@ A recent study examined the effects on the Global Fund’s malaria control progr
 
 * * *
 
-# <a></a>Updates on Room for additional funding
+# <a name="h.nyiv0ft9zcdd"></a>Updates on Room for additional funding
 
 Givewell estimates that total cost per distributed bednet by AMF is about $5.30 -$7.50 depending on the country. AMF estimates that it is only $4.80, because it does not account for pro bono services. This number is much lower than $5.80 (calculated on a similar basis, and therefore comparable to the $4.80 figure), which is what it costs other organisations to distribute a net.
 
 The recent [Givewell report on AMF estimates](http://www.google.com/url?q=http%3A%2F%2Fwww.givewell.org%2Finternational%2Ftop-charities%2FAMF&sa=D&sntz=1&usg=AFQjCNE2Q8iGZGZw8YSLkg2No1vQBjg3fQ) that AMF has room for up to $25 million of additional funding to support its activities in 2015 and that they hope to contribute about $10 million to them.
 
-## <a></a>Success in large scale distribution
+## <a name="h.pmvp3im5uyf0"></a>Success in large scale distribution
 
 Givewell was hesitant to recommend more funding due to AMF’s lack of track record of successfully completing large-scale net distributions (>100k nets) with partners other than Concern Universal in Malawi. However, now AMF reports that it has succeeded in completing its largest distribution of nets to date in in the DRC with a different partner: 676,000 nets were successfully distributed in late 2014 according to AMF and their distributor, though photo and video evidence of the distribution is still unavailable<sup class="c1">[[73]](#ftnt73)</sup>. This increases our confidence that AMF is able to successfully complete large scale distributions.
 
-## <a></a>Flood-related emergency need
+## <a name="h.7i1nnkafs3ax"></a>Flood-related emergency need
 
 In Malawi, a large scale distribution of 396,000 nets was planned in in January-February 2015<sup class="c1">[[74]](#ftnt74)</sup>. Incidentally, during this time, Malawi has experienced the worst floods in 50 years with at least 174,000 people have been displaced<sup class="c1">[[75]](#ftnt75)</sup>. AMF reports that they allocated a further 150,000 LLINs to support an immediate flood-related emergency need in Malawi<sup class="c1">[[76]](#ftnt76)</sup>, because there is increased malaria prevalence after heavy rains. Emergency responses are often viewed as more costly and less effective than preventive health intervention. However, in the case of emergency bednet distribution, the benefits are likely to be twofold: above and beyond the positive effect of the emergency response, there are preventative effects of the long lasting insecticide treated nets that last beyond the emergency response. Thus, emergency response net distributions can be seen as an additional benefit on top of preventative effects. We are not aware that this aspect has been taken into account when calculating room for more funding calculations in the past. Based on this one might argue that AMF is in a unique position to be deserving of building up larger reserves to avoid shortpasses. Givewell had in the past temporarily suspended their recommendation of AMF<sup class="c1">[[77]](#ftnt77)</sup>, because they believed that AMF had too many reserves, while we recommended AMF throughout<sup class="c1">[[78]](#ftnt78)</sup>.
 
-## <a></a>Long-term view on room for more funding
+## <a name="h.4vp4sy6xwlt9"></a>Long-term view on room for more funding
 
 We have previously reported that Schistosomiasis Control Initiative, one of our other top recommended charities, has a lot of room for more funding, if it were to scale up its operations, given the scale of the problem of parasitic infections and their unique expertise in conducting mass drug administrations. We assumed that SCI’s expertise could be transferred to conduct mass drug administrations against other diseases than worm infections such as lymphatic filariasis.
 
@@ -193,7 +193,7 @@ With AMF, the situation is slightly different, because their core operation is o
 
 However, there is still a massive gap in bednets needed in Africa. We now present some estimations of the net gap.
 
-### <a></a>Programmatic gap analysis of bednets for the short-term need in nets
+### <a name="h.e2nlgumrbtuz"></a>Programmatic gap analysis of bednets for the short-term need in nets
 
 The WHO’s ‘Roll Back Malaria’ Harmonization Working group has recently updated their estimates of the net gap for 2015<sup class="c1">[[79]](#ftnt79)</sup>. They estimate that there still exists a gap of about 49 Million nets in Africa, which translates to a funding gap of about 315 Million dollars for 2015 (for our calculation see our excel spreadsheet<sup class="c1">[[80]](#ftnt80)</sup> - and Table 2). Thus, we think there is room for more funding for AMF in the near term. Givewell too, reports that AMF could scale up its operations if it is successful in finalizing large scale bednet distributions. These calculations provide an indicator for a rough estimate of an upper bound of what AMF could conceivably spend in the near-term future.
 
@@ -366,15 +366,15 @@ In sum, we believe there is substantial room for more funding if AMF scales up i
 
 * * *
 
-# <a></a>Updates on Fundraising activities
+# <a name="h.109t36r6hdei"></a>Updates on Fundraising activities
 
 AMF told Givewell that it is not in conversations with any major funders to help fill its funding gap<sup class="c1">[[90]](#ftnt90)</sup>. They have also been criticized by Givewell for not expanding their small team consisting of only two full time staff that are assisted by volunteers - which Givewell has argued might limit their ability to raise funds as robustly as it potentially could, given AMFs effectiveness. We have talked to AMF about this issue<sup class="c1">[[91]](#ftnt91)</sup> and learned that they are potentially thinking about expanding their team in the near future, but do not need more staff at this point. We think it is good that they have a very lean organisation that is highly specialized and very effective in the area they are working on. We have also learned that AMF does try to raise funds from private donors and I planning to intensify their fundraising efforts in the future. They have also tried to work with an experienced grant writer in the past, but did not find this as effective as other means of raising funds.
 
 * * *
 
-# <a></a>Updates on AMF’s Operations
+# <a name="h.ucya4c5hf86s"></a>Updates on AMF’s Operations
 
-## <a></a>Net distributions
+## <a name="h.aujfsir2h85h"></a>Net distributions
 
 In the DRC (Congo), AMF reports that it has succeeded in the largest distribution of nets to date: 676,000 nets were successfully distributed in the Kasaï Occidental district in November last year<sup class="c1">[[92]](#ftnt92)</sup>. However, another smaller distribution in Congo’s North Idjwi Island of only 62,000 nets has been delayed. AMF has told us<sup class="c1">[[93]](#ftnt93)</sup> that this due to the distribution partner facing delays in carrying out the pre-distribution registration survey (net need per household) upon which the distribution is then based. <sup class="c1">[[94]](#ftnt94)</sup>,<sup class="c1">[[95]](#ftnt95)</sup>.
 

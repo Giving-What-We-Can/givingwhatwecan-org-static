@@ -1,0 +1,150 @@
+$min-height: 400px;
+
+.content-block-wrapper {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	color: #FFF;
+	text-align: center;
+	h1, h2, h3, h4, h5, h6, p {
+		color: #FFF;
+		a {
+			text-shadow: none;
+		}
+	}
+}
+.content-block {
+	.halfheight &,.fullheight &,
+	.halfheight-xs &,.fullheight-xs &,
+	.halfheight-sm &,.fullheight-sm &,
+	.halfheight-md &,.fullheight-md &,
+	.halfheight-lg &,.fullheight-lg & {
+		// ensures no blurry text from half-pixel rendering
+		transform-style: preserve-3d;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		bottom:0;
+		.container, .container-fluid {
+			position: absolute;
+		  	top: 50%;
+		  	transform: translateY(-50%);
+		}
+		.container-fluid {
+			width: 100%;
+		}
+		.container {
+			left: 0;
+			right: 0;
+		}
+	}
+	.fluidheight & {
+		padding: 40px 0;
+		@media(min-width:$screen-sm){
+			padding: 40px 0;
+		}
+	}
+}
+
+
+
+// specific content blocks
+.content-block-wrapper {
+	&.join-us {
+		background-position: center bottom;
+		background-size: auto 113%;
+		@media(min-width:$screen-xs-max){
+			background-position: 60% center;
+			background-size: cover;
+		}
+		@media(min-width:$screen-lg){
+			background-position: center center;
+		}
+		color: white;
+		font-size: 20px;
+		p {
+			text-shadow: none;
+			line-height: 1em;
+			font-weight: 700;
+		}
+		.btn {
+			font-size: 0.5em;
+			text-shadow: none;
+		}
+		.content-block {
+			.container, .container-fluid {
+				@media(max-width:$screen-xs-max){
+					text-align: center;
+					top: auto;
+					bottom: 0;
+					transform: none;
+					padding-top: 20px;
+					.btn {
+						font-size: 0.8em;	
+					}
+				}
+				@media(min-width:$screen-sm){
+					font-size: 40px;
+					text-align: left;
+				}
+				@media(min-width:$screen-lg){
+					font-size: 60px;
+				}
+			}
+		}
+	}
+	&.we-are-giving-what-we-can {
+		background-position: center center;
+		@media(min-width:$screen-sm){
+			background-position: center -40px;
+		}
+		.content-block {
+			background-color: transparentize($site-primary,0.3);
+			padding-bottom: 40px;
+			text-shadow: none;
+			.givingwhatwecan-logo {
+				font-size: 80px;
+				margin: 60px auto;
+				@media(min-width:$screen-sm){
+					font-size: 100px;
+					margin: 80px auto;
+				}
+
+			}
+			.aim {
+				.fa {
+					font-size: 4em;
+				}
+				.fa.fa-arrow-down {
+					font-size: 2em;
+				}
+			}
+			// a.btn.btn-default {
+			// 	background-color: #333;
+			// 	border-color: #333;
+			// }
+		}
+	}
+	&.amazing-difference {
+		h2, p {
+			color: #333;
+		}
+		h2 {
+			margin: 0 0 60px;
+			@media(max-width:$screen-xs-max){
+				font-size: 1em;
+				margin: 20px auto;
+			}
+		}
+		.content-block {
+			background-color: #FFF;
+		}
+	}
+	&.how-rich-am-i {
+		.content-block {
+			background-color: transparentize(#999,0.3);
+		}
+	}
+}

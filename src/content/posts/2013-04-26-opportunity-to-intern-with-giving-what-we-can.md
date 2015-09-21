@@ -10,7 +10,7 @@ time: '12:48pm'
 updatedDate: '2014-04-08'
 updatedTime: '12:48pm'
 ---
-![Job at Giving What We Can](/images/uploads/for-tom-blog-cea-office-first-day.jpg)_Recruiting now; apply by 9am (UK time) on Thursday the 16th of May._
+![Job at Giving What We Can](http://givingwhatwecan.org/sites/givingwhatwecan.org/files/Tom%20Ash/%3Cem%3EEdit%20Story%3C/em%3E%20Opportunity%20to%20intern%20with%20Giving%20What%20We%20Can%20/for-tom-blog-cea-office-first-day.jpg)_Recruiting now; apply by 9am (UK time) on Thursday the 16th of May._
 
 If you're here, you probably have a good idea of what Giving What We Can is about. Our mission is to find the charities which most effectively help those living in poverty and move as much money to them as possible, in part by encouraging people to pledge to donate 10% of their lifetime income to this end. That's a big project, and we're growing fast. To support this growth we now need someone to help manage our finances and fundraising, so if you'd like to join the team this is your chance!
 

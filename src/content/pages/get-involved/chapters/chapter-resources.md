@@ -17,15 +17,15 @@ Chapters are one of the most important parts of Giving What We Can’s efforts t
 
 If you’re running a Giving What We Can chapter, or you’d like to start one in your city or university, we’ve got a great set of resources to help you get started
 
-### <a></a>[Starter Pack](https://drive.google.com/file/d/0BxN9jkWGI8LFblFKakNrQU1Felk/view?usp=sharing)
+### <a name="h.4fgbm7fxylii"></a>[Starter Pack](https://drive.google.com/file/d/0BxN9jkWGI8LFblFKakNrQU1Felk/view?usp=sharing)
 
 The starter pack gives you a comprehensive overview of how to start a chapter, and is the first thing you should read before you begin.
 
 [Download Starter Pack](https://drive.google.com/file/d/0BxN9jkWGI8LFblFKakNrQU1Felk/view?usp=sharing)
 
-### <a></a>
+### <a name="h.nw5jgn2u0tdz"></a>
 
-### <a></a>[Chapter Resources](https://drive.google.com/open?id=0B9ou-zj3xxwbOW16N096d0tyUWc)
+### <a name="h.j3yx0cbfv94q"></a>[Chapter Resources](https://drive.google.com/open?id=0B9ou-zj3xxwbOW16N096d0tyUWc)
 
 These are resources that will help you to run your chapter more effectively, including ideas for activities, templates for pamphlets and banners, and supporting materials to help you run the best chapter you can!
 

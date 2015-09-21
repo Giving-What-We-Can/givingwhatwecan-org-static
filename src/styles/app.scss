@@ -19,6 +19,10 @@ Site partials
 	@import "partials/navbar";
 	@import "partials/article";
 	@import "partials/footer";
+	@import "partials/contentblock";
+	// utilities
+	@import "partials/responsive-heights";
+	@import "partials/logo";
 	// individual pages
 	@import "partials/home";
 	@import "partials/team";

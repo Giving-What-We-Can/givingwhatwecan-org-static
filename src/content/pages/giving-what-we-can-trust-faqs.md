@@ -46,49 +46,49 @@ Using the Trust couldn’t be simpler:
 *   [Is this connected to the Pledge?](#11)
 *   [Can I donate through Payroll Giving?](#12)
 
-### <a></a>Can I split my donations in any proportion?
+### <a name="1"></a>Can I split my donations in any proportion?
 
 Absolutely. Although the default is for donations to be split equally, we can split them in a any proportion. Just make this clear in the text box on the [sign-up page](/trust) or, if you forget, email us at trust@givingwhatwecan.org.
 
-### <a></a>Where can I donate?
+### <a name="2"></a>Where can I donate?
 
 You can donate to any of our currently recommended charities through the main Trust form [here](/trust). At present these are Against Malaria Foundation, Schistosomiasis Control Initiative, Deworm the World Initiative and Project Healthy Children.
 
 You can also use the Trust to donate to GiveDirectly [here](/trust/givedirectly), Development Media International [here](/trust/dmi) and Innovations for Poverty Action [here.](/trust/ipa)
 
-### <a></a>Can I give to the Trust if I'm not from the UK?
+### <a name="3"></a>Can I give to the Trust if I'm not from the UK?
 
 Yes, but the benefits will be fewer, as only UK citizens can claim tax relief on their donations. We are considering setting up a Donor Advised Fund in the U.S. in the future.
 
-### <a></a>Which is the best way of giving to the Trust?
+### <a name="4"></a>Which is the best way of giving to the Trust?
 
 We prefer donations via Gocardless as this service has a good balance between a low fee (1%, capped at £1.60) and easy administration for us. Paypal is an alternative if you want to use a card to donate, but has slightly more expensive fees (1.4% + 20p, uncapped). Bank transfers and cheques have no fee, but they impose more administrative costs - we recommend them only for large, infrequent donations.
 
-### <a></a>When will my donations go to my chosen charities?
+### <a name="5"></a>When will my donations go to my chosen charities?
 
 By default, we pay out every quarter. However, if you have a preference for donations to be sooner or later, let us know by emailing us at [trust@givingwhatwecan.org](mailto:trust@givingwhatwecan.org), and we will take reasonable steps to accommodate this.
 
-### <a></a>Is the Trust a part of Giving What We Can?
+### <a name="6"></a>Is the Trust a part of Giving What We Can?
 
 No, the Trust is an entirely separate legal entity from Giving What We Can and the Centre for Effective Altruism. To avoid any doubt, money from the Trust will never be paid to either organisation or their affiliates.
 
-### <a></a>Who runs the Trust?
+### <a name="7"></a>Who runs the Trust?
 
 The trustees are Michelle Hutchinson (Executive Director of Giving What We Can), Alison Woodman (Director of Community at Giving What We Can) and Jonathan Courtney (Director of Outreach at Giving What We Can).
 
-### <a></a>What will my data be used for?
+### <a name="8"></a>What will my data be used for?
 
 We will use your data to link it with donations to the Trust, so we can claim Gift Aid on it and direct donations to the charities of your choice. If you are a Giving What We Can member we may use it in our annual Giving Review. We may also use anonymised, aggregated data about the size of donations to our charities in our public materials. We will ask you about any further uses of your data.
 
-### <a></a>Can I give to the Trust in my will?
+### <a name="9"></a>Can I give to the Trust in my will?
 
 Yes, and we will make sure that the money always goes to the most cost-effective charities we can find, even if those charities change. Please email us at trust@givingwhatwecan.org if you are thinking of doing this.
 
-### <a></a>Is this connected to the Pledge?
+### <a name="11"></a>Is this connected to the Pledge?
 
 No, the Trust is just an option for way of donating, while the Pledge is a commitment to give a proportion of your income. The Trust can help you fulfil your Pledge, but non-members can use the Trust as well. Members are not obliged to give through the Trust, and can donate to other charities they believe to be effective if they wish.
 
-### <a></a>Can I donate through Payroll Giving?
+### <a name="12"></a>Can I donate through Payroll Giving?
 
 Yes, the Trust is registered with all of the UK’s main Payroll Giving Agencies. You may need the following details to set up your donation:
 

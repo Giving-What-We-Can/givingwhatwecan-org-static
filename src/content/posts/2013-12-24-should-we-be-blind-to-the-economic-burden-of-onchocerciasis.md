@@ -26,13 +26,13 @@ The success of these programmes has consigned onchocerciasis to the bottom of th
 
 _By Julia Heckenast, working pro bono on behalf of Costello Medical Consulting, with a wider team at Costello Medical Consulting_
 
-<a></a>
+<a name="_ENREF_1"></a>
 
-<a></a>
+<a name="_ENREF_1"></a>
 
-<a></a>
+<a name="_ENREF_1"></a>
 
-<a></a>
+<a name="_ENREF_1"></a>
 
 References
 

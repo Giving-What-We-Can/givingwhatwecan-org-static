@@ -9,7 +9,7 @@ time: '09:50pm'
 updatedDate: '2015-09-02'
 updatedTime: '09:50pm'
 ---
-<a></a>![](https://lh3.googleusercontent.com/OyOjR1yBUWvCk1lRbvyOO7O-qNJIi6s5gWBqta7eQcampDMG3_1FuQxSH5igzf22Vl5h7T_Re6aLE5gNYHp4YVRJGRW07grVZxX5-NBsj9vhgysvv94peuydMvJRZk-nHyExIzA)An update on the effectiveness of the micronutrient fortification programmes by Project Healthy Children (PHC) (Working Paper)
+<a name="h.eok61unv7r9p"></a>![](https://lh3.googleusercontent.com/OyOjR1yBUWvCk1lRbvyOO7O-qNJIi6s5gWBqta7eQcampDMG3_1FuQxSH5igzf22Vl5h7T_Re6aLE5gNYHp4YVRJGRW07grVZxX5-NBsj9vhgysvv94peuydMvJRZk-nHyExIzA)An update on the effectiveness of the micronutrient fortification programmes by Project Healthy Children (PHC) (Working Paper)
 
 Hauke Hillebrandt, Ph.D., Mark Engelbert, Ph.D.
 
@@ -17,7 +17,7 @@ Email: [hauke.hillebrandt@givingwhatwecan.org](mailto:hauke.hillebrandt@givingwh
 
 Online version:
 
-# <a></a>**Summary**
+# <a name="h.yjad54omkb3u"></a>**Summary**
 
 Project Healthy Children (PHC) is a charity that we began investigating in recent years, and it has been one of our promising charities for nearly 2 years. 
 
@@ -103,67 +103,67 @@ In this paper, we give you an update about their efforts that we feel complement
 
 [Fortification programs](#h.opsrxds5g7ww)
 
-# <a></a>
+# <a name="h.qzk21f2xrluh"></a>
 
-# <a></a>
-
-* * *
-
-# <a></a>
+# <a name="h.jfx4admwn9mc"></a>
 
 * * *
 
-# <a></a>
+# <a name="h.tensccegmtrv"></a>
 
-# <a></a>Recent Scientific findings that relate to PHC’s effectiveness
+* * *
 
-## <a></a>Differences between micronutrient supplementation and fortification
+# <a name="h.wy0xdgkg0k54"></a>
+
+# <a name="h.zh1jlxemp1lp"></a>Recent Scientific findings that relate to PHC’s effectiveness
+
+## <a name="h.s5lgzv4kibeg"></a>Differences between micronutrient supplementation and fortification
 
 To begin, note that there is a difference between micronutrient supplementation and micronutrient fortification. Micronutrient supplementation is here defined as taking capsules or foodstuffs (such as biscuits) that are specifically made to increase micronutrient status of the person eating it, whereas fortification means that commonly eaten staple foods are enriched with micronutrients. Although the aim of this report is to examine the effectiveness of micronutrient fortification, the close relation between supplementation and fortification means that sometimes results from micronutrient supplementation can provide insight into the effectiveness of fortification. Supplementation of all foods is often not as viable or as cost-effective as fortification. Also a recent study suggests that in pregnant adolescents, prenatal supplements cannot fully compensate for preexisting dietary deficiencies  <sup>[[1]](#ftnt1)</sup> ; thus, even if supplementation could be cost-effectively distributed to whole populations, it might still be less effective at improving nutritional outcomes than a continuous diet of enriched food by means of micronutrient fortification. Finally, there is also _bio_ fortification, which is increasing the micronutrient content of plants directly, which will not be discussed here.
 
-## <a></a>
+## <a name="h.szog7ubaklo4"></a>
 
 * * *
 
-## <a></a>
+## <a name="h.tg8lyikou61j"></a>
 
-## <a></a>General considerations of micronutrient fortification
+## <a name="h.men83sa3ht2u"></a>General considerations of micronutrient fortification
 
 A recent systematic review of 201 studies on the impact of micronutrient fortification of food and on woman and child health <sup>[[2]](#ftnt2)</sup> , concludes that fortification is promising, but because of high burdens of diarrhea and intestinal inflammation, widespread malabsorption may decrease its effectiveness. Further, even though fortification is potentially an effective strategy, evidence from the developing world is scarce and future programs should measure the direct impact of fortification on morbidity and mortality.
 
-<a></a>Epidemiology of malnutrition
+<a name="h.8e9ggdvy55ej"></a>Epidemiology of malnutrition
 
 While underweight is the number-one contributor to the burden of disease in sub-Saharan Africa <sup>[[3]](#ftnt3)</sup> , <sup>[[4]](#ftnt4)</sup> , nutritional deficiencies make up a large part of the overall _direct_ disease and disability burden in developing countries (see **Figure 1)** . However, nutritional deficiencies are linked to other diseases (see **Figure 2)**, and so over 50% of years lived with disability in children can be traced to these deficiencies <sup>[[5]](#ftnt5)</sup> , <sup>[[6]](#ftnt6)</sup> .
 
-## <a></a>![](https://lh5.googleusercontent.com/Uga0xi2HFSuzZz-6rUgQ755eNA2_sBtj_MqcF5871N3x5riLMrFpRcjfIEDCBJ65nDTup41EqIE4cmF02P6gnkbeaeoQYotDxCvIhtSDBXGXAHnxwZDybEEZ4_MfXJaEfPyXIIM)
+## <a name="h.9evj30jtf2i3"></a>![](https://lh5.googleusercontent.com/Uga0xi2HFSuzZz-6rUgQ755eNA2_sBtj_MqcF5871N3x5riLMrFpRcjfIEDCBJ65nDTup41EqIE4cmF02P6gnkbeaeoQYotDxCvIhtSDBXGXAHnxwZDybEEZ4_MfXJaEfPyXIIM)
 
 **Figure 1:**  Overall “Years Lost due to Disability (YLD)” in developing countries. Nutritional deficiencies are marked in black and make up 7.89% of the total YLDs. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3a5f](http://ihmeuw.org/3a5f) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/)  (Global burden of Disease data 2010, released 3/2013)
 
 [](http://washington.edu/)
 
-## <a></a>![](https://lh6.googleusercontent.com/I4kfoLsixDMtvt1fiAz22ir3bmgWhe4CRvfni4q1MAx13Vum2T7kzDusjsyg8nKXqB5Z_KWoQBdSBSjOM3El-rF65O7xUmlKjcq83Y0dVga9Kcp3VsmSr_hnUQIEOmsYuZvlSmc)
+## <a name="h.w88c32tbzzo6"></a>![](https://lh6.googleusercontent.com/I4kfoLsixDMtvt1fiAz22ir3bmgWhe4CRvfni4q1MAx13Vum2T7kzDusjsyg8nKXqB5Z_KWoQBdSBSjOM3El-rF65O7xUmlKjcq83Y0dVga9Kcp3VsmSr_hnUQIEOmsYuZvlSmc)
 
-## <a></a>
+## <a name="h.8cv4pd5dnjae"></a>
 
-## <a></a>
+## <a name="h.altamyq7pdj4"></a>
 
-## <a></a>
+## <a name="h.j8qvisg0n31a"></a>
 
-## <a></a>
+## <a name="h.mwqsywlx0lt"></a>
 
-## <a></a>
+## <a name="h.2ilwwx8xbu87"></a>
 
-## <a></a>
+## <a name="h.1dyvqb9p73fg"></a>
 
 * * *
 
-## <a></a>
+## <a name="h.5u7lgoq0n5ow"></a>
 
-## <a></a>Updates from countries in which PHC is currently active
+## <a name="h.h9zoevr817g0"></a>Updates from countries in which PHC is currently active
 
 The following updates are quotes from the World Bank’s 2013 ‘Nutrition at a Glance’ country reports of those countries in which PHC is active.
 
-1.  ### <a></a>Rwanda <sup>[[7]](#ftnt7)</sup>
+1.  ### <a name="h.92nkgtk5f1ew"></a>Rwanda <sup>[[7]](#ftnt7)</sup>
 
 Annually, Rwanda loses nearly US$50 million in GDP to vitamin and mineral deficiencies.
 
@@ -179,7 +179,7 @@ Rwanda has Higher Rates of Stunting than Lower-Income Peers GNI per capita (US$2
 
 **Figure 3:**  Figure shows risk factors for “Disability adjusted life years” in Rwanda. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-1.  ### <a></a>Malawi <sup>[[8]](#ftnt8)</sup>
+1.  ### <a name="h.8omqsh9cs6bp"></a>Malawi <sup>[[8]](#ftnt8)</sup>
 
 Annually, Malawi loses over US$600 million in GDP to vitamin and mineral deficiencies. Scaling up core micronutrient interventions would cost less than US$9 million per year.
 
@@ -191,7 +191,7 @@ Malawi’s stunting rates are higher than many of its income peers in Africa. Wh
 
 **Figure 4:**  Figure shows risk factors for “Disability adjusted life years” in Malawi. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-1.  ### <a></a>Liberia <sup>[[9]](#ftnt9)</sup>
+1.  ### <a name="h.nb5cc2q65mzs"></a>Liberia <sup>[[9]](#ftnt9)</sup>
 
 Annually, Liberia loses over US$11 million in GDP to vitamin and mineral deficiencies. Scaling up core micronutrient nutrition interventions would cost US$2 million per year
 
@@ -205,7 +205,7 @@ Liberia’s stunting rates are higher than many countries in the Africa region w
 
 **Figure 5:**  Figure shows risk factors for “Disability adjusted life years” in Liberia. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-1.  ### <a></a>Burundi <sup>[[10]](#ftnt10)</sup>
+1.  ### <a name="h.q426p0c8g3rs"></a>Burundi <sup>[[10]](#ftnt10)</sup>
 
 Annually, Burundi loses US$30 million to vitamin and mineral deficiencies. Scaling up core micronutrient interventions would cost US$4 million per year.
 
@@ -215,7 +215,7 @@ Annually, Burundi loses US$30 million to vitamin and mineral deficiencies. Scali
 
 **Figure 6:**  Figure shows risk factors for “Disability adjusted life years” in Burundi. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-1.  ### <a></a>Zimbabwe <sup>[[11]](#ftnt11)</sup>
+1.  ### <a name="h.xhio0zwzgnzd"></a>Zimbabwe <sup>[[11]](#ftnt11)</sup>
 
 Annually, Zimbabwe loses nearly US$24 million in GDP to vitamin and mineral deficiencies. Scaling up core micronutrient interventions would cost less than US$8 million per year.
 
@@ -225,7 +225,7 @@ Annually, Zimbabwe loses nearly US$24 million in GDP to vitamin and mineral defi
 
 **Figure 7:**  Figure shows risk factors for “Disability adjusted life years” in Zimbabwe. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-1.  ### <a></a>Sierra Leone <sup>[[12]](#ftnt12)</sup>
+1.  ### <a name="h.2j2i7ljaol85"></a>Sierra Leone <sup>[[12]](#ftnt12)</sup>
 
 Annually, Sierra Leone loses over US$28 million in GDP to vitamin and mineral deficiencies. Scaling up core micronutrient interventions would cost less than US$4 million per year.
 
@@ -237,11 +237,11 @@ Sierra Leone exhibits higher rates of child stunting relative to some other coun
 
 **Figure 8:**  Figure shows risk factors for “Disability adjusted life years” in Sierra Leone. Micronutritional deficiencies, such as Iron, Zinc, and Vitamin A deficiencies, are substantial risk factors. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3hck](http://ihmeuw.org/3hck) . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-### <a></a>Cost-effectiveness of different micronutrient fortification interventions
+### <a name="h.9sdi4fe1tj41"></a>Cost-effectiveness of different micronutrient fortification interventions
 
 Even though there are some uncertainties with regard to estimating the cost-effectiveness of micronutrient fortification programmes and there is variation in cost-effectiveness across programmes <sup>[[13]](#ftnt13)</sup> , fortification is generally considered to be a very cost-effective intervention. Early estimates suggested that fortification with iron, vitamin A and zinc were well below $100 per DALY averted (see **Figure 9** ).
 
-## <a></a>![](https://lh5.googleusercontent.com/smpm85H8gmHdnWWQj_HyAqRF13W7prLdCOZM_vgXYvSPCmxU_t5VM_Yv8HLyiqrf1dc8cJQy5gsJCPjBH9ltnf4eA-St_COj41Mn7Ou9IIK8Yb67tQrVVDfvfMxmbljVi4CO4lE)
+## <a name="h.l7nichia260f"></a>![](https://lh5.googleusercontent.com/smpm85H8gmHdnWWQj_HyAqRF13W7prLdCOZM_vgXYvSPCmxU_t5VM_Yv8HLyiqrf1dc8cJQy5gsJCPjBH9ltnf4eA-St_COj41Mn7Ou9IIK8Yb67tQrVVDfvfMxmbljVi4CO4lE)
 
 **Figure 9:**  Comparison of cost effectiveness of fortification in East Africa. Figure adapted from <sup>[[14]](#ftnt14)</sup>
 
@@ -254,7 +254,7 @@ There is now a vast literature on the cost effectiveness of micronutrient fortif
 
 A 2009 review by John Fiedler and Barbara MacDonald <sup>[[19]](#ftnt19)</sup>  provides cost-per-DALY-averted estimates for micronutrient fortification programmes in many countries. Although these were not programmes implemented by PHC, they were adopted in many of the same countries where PHC operates. Thus, these data provide some indication of likely cost effectiveness levels that can be expected for similar programmes implemented by PHC in these same countries. **Tables 1**  and **2**  are adapted from Fiedler and MacDonald’s review to show only countries in which Project Healthy Children is currently operating. These estimates suggest high cost-effectiveness at around $100 per DALY averted, similar to previous high cost-effectiveness estimates of fortification programmes in other countries (see **Table 1** ). **Table 2** summarizes key statistics for micronutrient programmes in a number of countries in which PHC operates, along with each programme’s ranking among worldwide programmes in terms of cost effectiveness. For instance, wheat fortification in Malawi was the 16th most cost-effective food fortification programme in the world. Taken together, these data indicate that PHC operates in countries where micronutrient fortification programmes have proved to be cost-effective. It should be noted, however, that this table is from 2009, and it is possible that many of the most cost-effective programmes (i.e., the ‘low hanging fruit’) have in the meantime been executed.
 
-## <a></a>
+## <a name="h.6ftdf1enc28k"></a>
 
 [](#)[](#)
 
@@ -284,11 +284,11 @@ A 2009 review by John Fiedler and Barbara MacDonald <sup>[[19]](#ftnt19)</sup> �
 
 In sum, even though these cost-effectiveness estimates are subject to limitations (i.e., up-to-date cost-effectiveness estimates of the exact fortification programmes that PHC conducts are unavailable, and cost-effectiveness estimates are sometimes uncertain and difficult to compare), overall we believe that that the available evidence suggests PHC’s cost-effectiveness is roughly similar to the reported estimates—in other words, that PHC’s programmes are highly cost-effective.
 
-### <a></a>Economic effects
+### <a name="h.6baukrn3e7xh"></a>Economic effects
 
 Nutritional deficiencies have been shown to have negative economic consequences. Out summary of these effects draws from several recent studies, including the Global Nutrition Report 2014 <sup>[[24]](#ftnt24)</sup> . Note that micronutrient deficiencies only account for _part_  of the economic losses from nutritional deficiencies—macronutrient deficiencies (i.e., hunger) also contribute to these losses.
 
-#### <a></a>Labour productivity lost
+#### <a name="h.vkl7eiiae9as"></a>Labour productivity lost
 
 A study from Guatemala suggests that preventing undernutrition in childhood increases productivity in several ways. Specifically, preventing undernutrition increases hourly earnings by 20% and wage rates by 48%. Moreover, children treated for undernutrition are 33% more likely to escape poverty, while treated girls are 10% more likely to own a business as adults <sup>[[25]](#ftnt25)</sup> , <sup>[[26]](#ftnt26)</sup> . Stunted growth or stunting, is a reduced growth rate in human development due to nutritional deficiencies, is highly prevalent in developing countries (see **Figure 10** ) and a significant contributor to lost productivity. Analyses suggest that growth failure in early life has profound adverse consequences over the life course on human, social, and economic capital <sup>[[27]](#ftnt27)</sup> . One study in particular showed that one extra centimeter of adult height corresponds to a 4.5% increase in wage rates <sup>[[28]](#ftnt28)</sup> , <sup>[[29]](#ftnt29)</sup> . Low birth weight is also associated with increased risk of hypertension and kidney disease in later life; however, micronutrient supplementation during pregnancy reduces the risk of low birth weight and prematurity <sup>[[30]](#ftnt30)</sup> .
 
@@ -296,13 +296,13 @@ A study from Guatemala suggests that preventing undernutrition in childhood incr
 
 **Figure 10:** Stunting among children under 5: latest national prevalence estimates. Figure taken from <sup>[[31]](#ftnt31)</sup>
 
-#### <a></a>
+#### <a name="h.seiuph959lau"></a>
 
 * * *
 
-#### <a></a>
+#### <a name="h.dd4jd6y53hl"></a>
 
-#### <a></a>Macroeconomic Impact
+#### <a name="h.lg5jbd5ey68d"></a>Macroeconomic Impact
 
 Economic analyses suggest that undernutrition within a country lowers the overall economic productivity of that country. Specifically, undernutrition has been suggested to lower GDP for Egypt by 1.9%; Ethiopia, 16.5%; Swaziland, 3.1%; and Uganda, 5.6% <sup>[[32]](#ftnt32)</sup> . Asia and Africa lose 11% of GNP every year owing to poor nutrition <sup>[[33]](#ftnt33)</sup> . One recent study suggests that, in Cambodia, malnutrition costs more than US $400 million annually, corresponding to -2.5% of the country’s GDP. In Pakistan, protein malnutrition, iodine deficiency and iron deficiency collectively accounted for about 3–4% of gross domestic product (GDP) loss annually <sup>[[34]](#ftnt34)</sup> , <sup>[[35]](#ftnt35)</sup> . A study of 10 developing countries suggest that iron-deficiency anaemia causes an average loss of 4.5% of GDP <sup>[[36]](#ftnt36)</sup> , <sup>[[37]](#ftnt37)</sup> .
 
@@ -310,7 +310,7 @@ A recent World Bank study estimated that investing in nutrition can increase a c
 
 We have calculated the average benefit-to-cost ratio of fortification programmes in the countries where PHC is active. Using the World Bank’s estimates of the economic on GDP loss annually to vitamin and mineral deficiencies alone <sup>[[40]](#ftnt40)</sup> , we have calculated <sup>[[41]](#ftnt41)</sup>  that the average benefit-to-cost ratio in these countries is about 23:1\. In other words, the cost of scale-up for fortification programmes is 23 times smaller than the economic benefits. Other researchers have found similarly high estimates of cost-effectiveness: a recent paper <sup>[[42]](#ftnt42)</sup>  looked at the value of stunting-reducing nutrition investments, such as micronutrient fortification, in 17 high-burden countries. The benefit-to-cost ratios ranged from 3.6 (Democratic Republic of Congo) to 48 (Indonesia) with a median value of 18 (Bangladesh). Another recent paper <sup>[[43]](#ftnt43)</sup> , <sup>[[44]](#ftnt44)</sup>  finds similarly impressive benefit-cost ratios for iodizing salt (80), iron supplements for mothers and small children (24), vitamin A supplementation (13), and zinc supplementation for children (3). Thus, these estimates in the literature are broadly comparable to our calculations.
 
-#### <a></a>Effects of micronutrients for mental development
+#### <a name="h.su1vioyr9fm4"></a>Effects of micronutrients for mental development
 
 A review and meta-analysis of 21 interventions examined the effects of multiple micronutrients on mental development, and yielded a very small but significant overall effect size of d = 0.09 <sup>[[45]](#ftnt45)</sup> , <sup>[[46]](#ftnt46)</sup>  (see **Figure 11)** . However, even small effect sizes can translate to very high cost-effectiveness, so long as the effects are robust and the interventions are very cheap to implement. However, it is very difficult to estimate the exact cost-effectiveness.
 
@@ -322,19 +322,19 @@ Moreover, another recent study showed that across several countries improving li
 
 * * *
 
-### <a></a>Micronutrient supplementation for children with HIV infection
+### <a name="h.gjff07wncdn5"></a>Micronutrient supplementation for children with HIV infection
 
 A recent systematic Cochrane review summarized the available evidence on micronutrient supplementation for children with HIV infection <sup>[[49]](#ftnt49)</sup> . The authors conclude that both Vitamin A and zinc supplementation are safe and carry benefits for children with HIV infection (in particular, zinc appears to have similar benefits in terms of reducing death due to diarrhea in children with HIV as in children without HIV infection. Finally, Cochrane suggests that multiple micronutrient supplements have some clinical benefit in poorly nourished, HIV-infected children.
 
 * * *
 
-## <a></a>Recent research on fortification with specific micronutrients
+## <a name="h.e985ybp0adug"></a>Recent research on fortification with specific micronutrients
 
-### <a></a>Iodine fortification
+### <a name="h.q85o0d9fezau"></a>Iodine fortification
 
 Iodine deficiency disorders are prevalent in many African countries (see **Figure 7** ), where they make up a substantial part of the overall disease burden (see **Figures 8 and 9** ).
 
-### <a></a>![](https://lh5.googleusercontent.com/w2wz-VM0gpn1jM_vem5FeSab7csfBKf115Z8SI66sbMjrJZCU66E8apkZCvPpPBSU2p1rkPV4fN0MheQZMqlY9m3Q4jXIZ71Y8NTeGwFJWw0fS6aQDLSTIcZze67qwaAhNSUNjQ)
+### <a name="h.7utp2bl5bsbd"></a>![](https://lh5.googleusercontent.com/w2wz-VM0gpn1jM_vem5FeSab7csfBKf115Z8SI66sbMjrJZCU66E8apkZCvPpPBSU2p1rkPV4fN0MheQZMqlY9m3Q4jXIZ71Y8NTeGwFJWw0fS6aQDLSTIcZze67qwaAhNSUNjQ)
 
 **Figure 12:**  Iodine nutrition based on the median urinary iodine concentration, by country <sup>[[50]](#ftnt50)</sup>
 
@@ -344,13 +344,13 @@ Iodine deficiency disorders are prevalent in many African countries (see **Figur
 
 **Figure 13** . Disability-adjusted life years (DALYs) (thousands) lost due to iodine deficiency in children younger than 5 years of age, by region <sup>[[51]](#ftnt51)</sup>
 
-### <a></a>![](https://lh4.googleusercontent.com/beG3KJjCVO2xDK2Pqi6qY6jQIGATNCb3LeiqZ1mo8xaK8LG5GAx10ARpTJLWYlFXH60UIonSKElmla7jY_3zcklXrB0Koa2dAxLHK76wiGZG2xAoCal0iKVu0zuDsJ1L3_UUq2A)
+### <a name="h.enx480xfzewb"></a>![](https://lh4.googleusercontent.com/beG3KJjCVO2xDK2Pqi6qY6jQIGATNCb3LeiqZ1mo8xaK8LG5GAx10ARpTJLWYlFXH60UIonSKElmla7jY_3zcklXrB0Koa2dAxLHK76wiGZG2xAoCal0iKVu0zuDsJ1L3_UUq2A)
 
 **Figure 14:**  Overall “Years Lost due to Disability (YLD)” in developing countries. Iodine deficiency are marked in black and make up 0.56% of the total YLDs. Figure adapted with ‘Global Burden of Disease Compare tool’- see [http://ihmeuw.org/3a5v](http://ihmeuw.org/3a5v)  . © 2013 [University of Washington](http://washington.edu/)  - [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) (Global burden of Disease data 2010, released 3/2013)
 
-#### <a></a>Benefits and Risks of Iodine
+#### <a name="h.8t3an2r7zd"></a>Benefits and Risks of Iodine
 
-### <a></a>
+### <a name="h.8t3an2r7zd"></a>
 
 One risk of iodine supplementation is the possibility of iodine excess. Iodine excess has been suggested to cause hyper- and hypothyroidism, goitre and thyroid autoimmunity, effects which can occur even near the upper recommended daily intake of iodine <sup>[[52]](#ftnt52)</sup> . In some instances, thyroid autoimmunity and hypothyroidism have been observed after the introduction of salt iodization programmes <sup>[[53]](#ftnt53)</sup> .
 
@@ -360,13 +360,13 @@ One review concludes that most individuals suffer no disturbance from iodine exc
 
 Similarly, a recent systematic review and meta-analysis on the effects and safety of salt iodization <sup>[[58]](#ftnt58)</sup>  also concludes that benefits outweigh costs. The review finds that in certain contexts, iodization of salt at the population level may cause a transient increase in the incidence of hyperthyroidism (though not hypothyroidism). However, on the benefits side, evidence suggests that salt fortification causes moderate to low reductions in the incidence of goitre (moderate), cretinism (moderate), low cognitive function (low) and urinary iodine concentration (moderate). Based on this evidence a recent WHO report <sup>[[59]](#ftnt59)</sup>  strongly recommends that all salt be fortified with iodine as a safe and effective strategy to prevent and control iodine deficiency disorders for all populations.
 
-#### <a></a>Effect of Iodine on (mental) development in children
+#### <a name="h.ee9zt9mhz3we"></a>Effect of Iodine on (mental) development in children
 
 Iodine is crucial for normal physiological and cognitive growth and development of children <sup>[[60]](#ftnt60)</sup> . A recent meta-analysis analyzed randomized controlled trials and found that iodine fortified foods are associated with increased urinary iodine concentration among children <sup>[[61]](#ftnt61)</sup> . Another recent systematic review and meta-analysis looked at the effects of iodine supplementation on _mental development_  of young children under 5 <sup>[[62]](#ftnt62)</sup> . The authors concluded that evidence from recent studies suggests iodine-deficient children suffer a loss of 6.9-10.2 IQ points as compared with children who are not iodine-deficient. However, the authors caution that some study designs were weak and call for more research on the relation between iodized salt and mental development. Another recent cluster randomized trial investigated the effectiveness of iodized salt programs to improve mental development and physical growth in young children under 3\. The trial found that the treatment group had higher scores on three out of four intelligence and motor tests. Although these results appear to provide support for the benefits of salt iodization programmes, it is worth noting that the study was funded by the Micronutrient Initiative, a non-profit agencies that works to eliminate vitamin and mineral deficiencies in developing countries, which may have biased the results <sup>[[63]](#ftnt63)</sup> . Another recent natural experiment showed that in iodine-deficient regions of the United States in the 1920s, iodization raised IQ scores by 15 points and the average IQ in the United States by 3.5 points <sup>[[64]](#ftnt64)</sup> .
 
 A recent double-blind, randomised, placebo-controlled trial compared direct iodine supplementation of infants versus supplementation of their breastfeeding mothers <sup>[[65]](#ftnt65)</sup> . They found direct supplementation of infants to actually be less effective in improving infant iodine status than giving supplements to the mothers. This suggests that breastfeeding mothers pass on improved iodine status to their children. Will this effect generalize to _salt iodization_ programmes in addition to direct supplementation? A systematic review examined iodine nutrition status among lactating mothers in countries with iodine fortification programmes (the review did not look at iodine status of the mother’s infants). The review concluded that although salt iodization is still the most feasible and cost effective approach for iodine deficiency control in pregnant and lactating mothers, iodine status in lactating mothers in most countries with voluntary programmes, but even in areas with mandatory iodine fortification is still within the iodine deficiency range, and so iodine supplementation in daily prenatal vitamin/ mineral supplements in lactating mothers is needed <sup>[[66]](#ftnt66)</sup> . We assume that in the absence of daily prenatal iodine supplements, iodine fortification, which is also less costly as an intervention, will at least contribute to bettering the iodine status of mothers and their children. Similarly, another recent study from Turkey concluded even after 8 years after introduction of mandatory iodization programmes iodine intake is in pregnant women is still inadequate <sup>[[67]](#ftnt67)</sup> .
 
-#### <a></a>Iodine loss due to storage and cooking
+#### <a name="h.v31rwryjue3l"></a>Iodine loss due to storage and cooking
 
 The iodine content of iodised table salt can decline over the course of long-term storage <sup>[[68]](#ftnt68)</sup> . Givewell has voiced concern that there might be substantial loss of iodine in salt, which could potentially render the iodization ineffective <sup>[[69]](#ftnt69)</sup> . We will now first review the evidence of the relative decrease in iodine content and whether a substantial amount of iodine remains, so that fortification programmes can adjust the absolute iodine content to take into account losses during storage.
 
@@ -378,7 +378,7 @@ Food preparation can also affect iodine loss: one study found that, in the lab, 
 
 The WHO advises that iodine losses under local conditions of production, climate, packaging and storage should be taken into account and additional amount of iodine should be added at factory level <sup>[[75]](#ftnt75)</sup> . PHC has told <sup>[[76]](#ftnt76)</sup>  us that they take local storage and cooking conditions into account when determining fortification levels for iodine, as well as for other nutrients, particularly vitamin A. Specifically, PHC assesses current and local consumption and storage conditions either by conducting their own assessment, relying on data from the World Food Programme, or adapting ECSA (East, Central, and Southern Africa) fortification standards that are specifically tailored for regional consumption, cooking, and storage patterns.
 
-### <a></a>Iron fortification
+### <a name="h.v93vzp62mcso"></a>Iron fortification
 
 Iron-deficiency anaemia causes around 45 (31–65) million DALYs a year <sup>[[77]](#ftnt77)</sup> . For comparison, malaria causes 83 million DALYs (63–110) <sup>[[78]](#ftnt78)</sup> . Iron deficiency anaemia also makes up a major part of years lived with disability (YLD) in developing countries (see Figure 15).
 
@@ -394,7 +394,7 @@ A recent systematic review and meta-analysis of randomized controlled trials on 
 
 Another systematic review examined 37 RCTs on iron supplementation in primary-school-aged children, and found evidence for improved haemoglobin response <sup>[[82]](#ftnt82)</sup> .These results were congruent with findings of similar studies in adult populations <sup>[[83]](#ftnt83)</sup> . Another, more recent systematic review and meta-analysis of RCTs looking at the effects of daily iron supplementation in children in low- and middle-income settings similarly found that iron improved cognition, height, weight, iron deficiency and anaemia and is well-tolerated <sup>[[84]](#ftnt84)</sup> . However, the evidence for effectiveness in younger children is less robust. A systematic review and meta-analysis examined randomised controlled trials of daily iron supplementation in 4–23 month-old children, and found evidence for , reduction of anaemia. The study concluded, however, that benefits for development of cognition, motor skills, height, and weight were uncertain <sup>[[85]](#ftnt85)</sup> .
 
-#### <a></a>Do the effects of supplementation generalize to cheaper population-level fortification of staple foods interventions?
+#### <a name="h.aou0ow3r5vgo"></a>Do the effects of supplementation generalize to cheaper population-level fortification of staple foods interventions?
 
 One very recent study evaluated the impact of Costa Rica's fortification program on anaemia in women and children  <sup>[[86]](#ftnt86)</sup> . Even though this was not a randomized controlled trial, the particularities of the data <sup>[[87]](#ftnt87)</sup>  strongly hint at a causal relationship between fortification and reduced anaemia . The results suggest that fortification markedly improved iron status and substantially reduced anaemia.
 
@@ -402,7 +402,7 @@ Another very recent study <sup>[[88]](#ftnt88)</sup>  used national-level surve
 
 There are two separate systematic Cochrane reviews underway that summarize the evidence for potential benefits of flour fortification with iron against anaemia, one on maize flour fortification <sup>[[90]](#ftnt90)</sup>  and one on wheat flour fortification <sup>[[91]](#ftnt91)</sup> . PHC conducts maize flour fortification in countries such as Malawi and wheat flour in countries such as Zimbabwe, so the results of these reviews will be interesting.
 
-#### <a></a>Does iron fortification increase malaria?
+#### <a name="h.yjm0uigqx5ko"></a>Does iron fortification increase malaria?
 
 It has been hypothesized that elevated iron status can increase malaria risk in areas where malaria is endemic. This possibility is concerning for some of PHC’s projects, such as the iron fortification programme in Malawi, where malaria is endemic <sup>[[92]](#ftnt92)</sup> , <sup>[[93]](#ftnt93)</sup> . The hypothesis is biologically plausible, because the malaria parasite needs iron to function (indeed, it has been suggested that anemia might be an evolved response to fight malaria and other parasites) <sup>[[94]](#ftnt94)</sup> . Studies of increased iron intake (via supplementation or fortification) in malaria-prone areas have yielded conflicting evidence on this question. We review findings from specific studies below, but whether increased iron intake increases malaria risk is a topic of ongoing research, and researchers call for greater study of the mechanisms underlying the negative effects of iron reported in some trials <sup>[[95]](#ftnt95)</sup> .
 
@@ -424,7 +424,7 @@ We have also asked PHC about this issue and they have reported that they are awa
 
 In sum, we think that, placing more weight on expert opinion and the most systematic review that we could find, iron fortification is very likely to be beneficial as overall mortality and morbidity is reduced, even though there is some probability that it might increase malaria incidence or severity, however, this is effect is probably small.
 
-### <a></a>Vitamin A
+### <a name="h.6yqevunsqx8i"></a>Vitamin A
 
 Vitamin A deficiency is the leading cause of preventable blindness in children and increases the risk of disease and death from severe infections <sup>[[108]](#ftnt108)</sup> . In the recent Lancet series on maternal and child undernutrition, deficiencies of vitamin A were estimated to be responsible for 600,000 deaths per year, and together with zinc deficiency, a combined 9.8% of global childhood Disability-Adjusted Life Years (DALYs) (most deaths were due to diarrhea and measles: see **Figure 16** ) <sup>[[109]](#ftnt109)</sup> , <sup>[[110]](#ftnt110)</sup> . Given that PHC’s work in Burundi has led to the start of vegetable oil fortification with vitamin A <sup>[[111]](#ftnt111)</sup> , below we review the evidence for the cost-effectiveness of vitamin A fortification programmes.
 
@@ -436,7 +436,7 @@ Givewell has extensively reviewed Vitamin supplementation interventions <sup>[[1
 
 **Figure 16: Overall “Disability Adjusted Life Years (DALYs)” lost in developing countries. Vitamin A deficiency direct impact is marked in black and make up 0.038% of the total DALYs. Risk factor attributions of Vitamin A deficiency for other diseases are in red. For instance, Vitamin A deficiency accounts for 10% of the risk factor of DALYs lost to do Diarrhea and 15% of DALYs lost due to Measles. Figure adapted with ‘Global Burden of Disease Compare tool’- see** **[http://ihmeuw.org/3ba4](http://ihmeuw.org/3ba4)**  **© 2013** **[University of Washington](http://washington.edu/)** ** -** **[Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) ****(Global burden of Disease data 2010, released 3/2013)**
 
-### <a></a>Vitamin A deficiency - disease interactions and risk factors
+### <a name="h.xi3vsskqcnu8"></a>Vitamin A deficiency - disease interactions and risk factors
 
 Vitamin A deficiency interacts with other conditions, increasing the risk of contracting other diseases. For instance, DNA damage from micronutrient deficiencies is likely to be a major cause of cancer <sup>[[122]](#ftnt122)</sup>  and a recent meta analysis clearly demonstrated that low doses of vitamins can significantly reduce the risk of gastric cancer, especially vitamin A among other vitamins <sup>[[123]](#ftnt123)</sup> .
 
@@ -446,7 +446,7 @@ Research also suggests that vitamin A supplementation is beneficial for thyroid 
 
 Studies have also linked vitamin A deficiency to infection with certain types of worm infections (i.e., soil-transmitted helminth _Ascaris lumbricoides_ ), with robust evidence for a relationship between high-intensity _ascaris_  infection and lower levels of vitamin A <sup>[[126]](#ftnt126)</sup> .
 
-### <a></a>Zinc
+### <a name="h.ijmuqp23z658"></a>Zinc
 
 Zinc deficiency is a significant public health problem in developing countries <sup>[[127]](#ftnt127)</sup> . In the recent Lancet series on maternal and child undernutrition, deficiencies of vitamin A and zinc were estimated to be responsible for 500,000 deaths per year, respectively, and together with zinc deficiency, a combined 9.8% of global childhood Disability-Adjusted Life Years (DALYs) <sup>[[128]](#ftnt128)</sup> .
 
@@ -454,7 +454,7 @@ Zinc supplementation to children is cost-effective with one recent study estimat
 
 A recent trial from China <sup>[[130]](#ftnt130)</sup>  showed that zinc-fortified flour increases zinc levels in rural Chinese women. A Cochrane Review summarizing the evidence on fortification of staple foods with zinc for improving zinc status and other health outcomes in the general population is currently underway <sup>[[131]](#ftnt131)</sup> . Finally, a recent trial showed that zinc supplementation might lead to a significant reduction in respiratory morbidity among children with acute lower respiratory infections in zinc-poor population <sup>[[132]](#ftnt132)</sup> .
 
-### <a></a>Folic Acid
+### <a name="h.adybws55wjyy"></a>Folic Acid
 
 Neural tube defects affect an estimated 320 000 newborns worldwide annually <sup>[[133]](#ftnt133)</sup>  
 
@@ -468,7 +468,7 @@ Neural tube defects place a significant economic burden on the healthcare system
 
 A recent meta-analysis and systematic review found no evidence that folic acid increase causes increase in bowel cancer <sup>[[144]](#ftnt144)</sup>  and another study found no increase in breast cancer or other cancers <sup>[[145]](#ftnt145)</sup> .
 
-## <a></a>Is biofortification more effective than industrial fortification?
+## <a name="h.7q1bdmgti6ok"></a>Is biofortification more effective than industrial fortification?
 
 Biofortification refers to the process of selectively breeding or genetically engineering crops to have higher micronutrient content. Even though this approach has not been practised so far, it has been suggested that it could potentially be more cost-effective and might reach a wider population than traditional industrial fortification of staple foods as conducted by PHC <sup>[[146]](#ftnt146)</sup> , <sup>[[147]](#ftnt147)</sup> . However, according to a recent paper by the Copenhagen Consensus Center <sup>[[148]](#ftnt148)</sup> , in order to establish the cost-effectiveness of large scale biofortification, nutritional effectiveness must first be verified. In addition, acceptance of new plant varieties among farmers and consumers must be secured in order for biofortification to be a viable health intervention.
 
@@ -478,9 +478,9 @@ Biofortification refers to the process of selectively breeding or genetically en
 
 * * *
 
-# <a></a>Updates on Room for additional funding
+# <a name="h.nyiv0ft9zcdd"></a>Updates on Room for additional funding
 
-## <a></a>Long-term view on room for more funding
+## <a name="h.j4oiwql64doi"></a>Long-term view on room for more funding
 
 The data in **Figure 17**  suggest that, despite the potential for huge benefits, nutrition is grossly underfunded through aid <sup>[[149]](#ftnt149)</sup> .
 
@@ -514,7 +514,7 @@ Of course, not all of this money could be spent by PHC. However, we believe that
 
 A conversation in late 2012 between Givewell and a senior micronutrient adviser at UNICEF <sup>[[158]](#ftnt158)</sup> , suggests that UNICEF does not have sufficient funding to meet every country’s need for Vitamin A supplementation. For instance, Uganda has solicited UNICEF and other donors for funding several times, indicating a strong need in Uganda for additional micronutrient funding, at least as of 2012\. Other countries noted by the advisor as potentially having strong need for Vitamin A supplementation funding are Burundi, Comoros, Malawi and Rwanda. Project Healthy Children is currently active in all of these countries except for Comoros.
 
-### <a></a>Other organisations involved in micronutrient fortification
+### <a name="h.a1248uk5lrm"></a>Other organisations involved in micronutrient fortification
 
 We do not believe other organisations that are similar to PHC currently have as much room for additional funding as PHC. For instance, the Iodine Global Network (IGN) will receive approximately US $500,000 in funding from USAID in 2015 <sup>[[159]](#ftnt159)</sup>  and Global Alliance for Improved Nutrition (GAIN) has funding from the Bill and Melinda Gates Foundation through mid-2015, which may also be renewed <sup>[[160]](#ftnt160)</sup> . Moreover, PHC is only active in small African countries with small populations (>17 million), whereas GAIN is not currently active in these countries <sup>[[161]](#ftnt161)</sup> .
 
@@ -522,7 +522,7 @@ We do not believe other organisations that are similar to PHC currently have as 
 
 The Gates Foundation recently announced a $776 million investment in nutrition, which will also unlock matching funds from the United Kingdom. At least some of this money will fund food fortification <sup>[[162]](#ftnt162)</sup> . However, the focus will be on India, Ethiopia, Nigeria, Bangladesh, and Burkina Faso <sup>[[163]](#ftnt163)</sup> , and so it does not include any of the priority countries in which PHC currently works. This increases our confidence that the marginal dollar donated to PHC will not go to an already crowded funding landscape. At the same time, the fact that the Gates Foundation (which is very much concerned about cost-effectiveness and has vast research capacity and expertise) is investing in food fortification increases our confidence that food fortification should be a priority intervention.
 
-## <a></a>Short-term view on room for more funding
+## <a name="h.he61tesrvcev"></a>Short-term view on room for more funding
 
 PHC currently holds about $200,000 in reserves <sup>[[164]](#ftnt164)</sup> , which translates to about 3-4 months of operational costs, which we think is not excessive. Thus, in the short-term there is room for more funding. PHC has told us that with additional funding they would intensify their monitoring efforts, which is one of the most critical components to any national fortification program.
 
@@ -530,15 +530,15 @@ PHC currently holds about $200,000 in reserves <sup>[[164]](#ftnt164)</sup> , wh
 
 * * *
 
-# <a></a>Updates on Fundraising activities
+# <a name="h.109t36r6hdei"></a>Updates on Fundraising activities
 
 PHC has told us that their current fundraising activities involve ‘news blasts’ and quarterly letters to current and previous donors. Yet it would seem that PHC has received less funding from private foundations and private donors than one might expect given the organization’s effectiveness, reputation, and room for additional funding. Therefore it may be a good idea for PHC to use additional resources to attract more funding (additional resources directed to non-program activities would not necessarily make Giving What We Can less likely to recommend donating to PHC; we assess charities based on overall effectiveness rather tha exclusively on overhead costs). PHC is also now in the process of being evaluated by Givewell, which is a very good opportunity for them to receive increased exposure and funding.
 
 * * *
 
-# <a></a>Updates on PHC’s Operations
+# <a name="h.ucya4c5hf86s"></a>Updates on PHC’s Operations
 
-## <a></a>Fortification programs
+## <a name="h.opsrxds5g7ww"></a>Fortification programs
 
 Our colleagues at Givewell provide a great general overview of PHC’s operations in form of a [conversation note](http://files.givewell.org/files/conversations/Laura_Rowe_2-19-2015_(public).pdf)  with PHC’s Chief operating officer, Laura Rowe.
 

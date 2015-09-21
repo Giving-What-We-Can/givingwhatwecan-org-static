@@ -19,7 +19,7 @@ Oneof our pledgers has recently given a great TEDx talk on this topic:
 
 Wehave collected some more figures of how much it would cost to fight some of the worst diseases and how many lives that would save below.
 
-## <a></a>Malaria: US$ 7.83billion annually
+## <a name="h.1t0c92ilb6q1"></a>Malaria: US$ 7.83billion annually
 
 Preliminaryestimations from a forthcoming WHO report<sup class="c3" style="font-family: 'Source Sans Pro';">[[1]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt1)</sup> onMalaria suggest that, on average, $7.83 billion would have to be spentannually to reduce deaths and illness due to malaria by at least 90percent. The figure below shows how many malaria cases would be avertedand how many lives would be saved by this plan. Moreover, this planmight avert about 270 billion dollar 2030 in lost economic potential.
 
@@ -31,7 +31,7 @@ Figureadapted from<sup class="c10 c3" style="font-size: 10pt; font-family: 'Sour
 
 In2005, the proportion of the population sleeping under a bednet wasgenerally low, with only six countries achieving coverage levelsgreater than 20% (see Figure 3.2)<sup class="c3" style="font-family: 'Source Sans Pro';">[[3]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt3)</sup>. Now many morepeople sleep under bednets, but not everyone who needs a net is able tosleep under one.
 
-## <a></a>Malnutrition: US$ 10billion annually
+## <a name="h.k8rj6w36qgox"></a>Malnutrition: US$ 10billion annually
 
 Arecent review<sup class="c3" style="font-family: 'Source Sans Pro';">[[4]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt4)</sup> suggeststhe total annual costs of achieving 90% coverage with nutritioninterventions in the the 34 countries that are mostly affected bynutritional deficiencies would cost around $9.6 billion.
 
@@ -39,7 +39,7 @@ Arecent review<sup class="c3" style="font-family: 'Source Sans Pro';">[[4]](http
 
 Theseestimates are similar to those of recent World Bank study<sup class="c3" style="font-family: 'Source Sans Pro';">[[5]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt5)</sup>,which estimated the nutrition scale up cost gap at $10.3 billion perannum globally. These investments would provide preventive nutritionservices to about 356 million children, save at least 1.1 million livesand 30 million DALYs, and reducethe number of stunted children by about 30 million worldwide (globally161 million under-five year olds were estimated to be stunted in 2013<sup class="c3" style="font-family: 'Source Sans Pro';">[[6]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt6)</sup>).
 
-## <a></a>NeglectedTropical diseases: US$ 2.3 billionannually
+## <a name="h.4nlujnw5z36l"></a>NeglectedTropical diseases: US$ 2.3 billionannually
 
 For universalcoverage (atleast 80% of the population) against neglected tropical diseases, whichinclude Dengue fever, Guinea-worm disease, Foodborne trematodiases,Lymphatic filariasis, Schistosomiasis, Soil-transmitted helminths (e.g.hookworm), and Blinding trachoma, the total investment targeted for theperiod 2015–2030 is US$ 34 billion excluding medicines (most of whichhas been pledged as in-kind donations by pharma companies)<sup class="c3" style="font-family: 'Source Sans Pro';">[[7]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt7)</sup>.![](https://lh3.googleusercontent.com/o3eaikxBbZew7pYDvWEaJ7kEnKvB_Q5cpG-mc-4kA3druAsvo7c5k5Kle0DIMP-ecAY6-KXS3H7WrjeO8RkBz5CDTY7oonQmQ9eF_1gPvnZ2T1dqQhNf16rnXLg2HFC6C_Plfrw)
 
@@ -47,13 +47,13 @@ Developingcountries will also fund a significant amount of this themselves.![](h
 
 Investmenttargets to overcome the global burden of NTDs are more than doublecurrent levels of foreign aid  (10 times as much whenincludinginvestments in vector control. It is unlikely that an increase in aidof this magnitude can be achieved<sup class="c3" style="font-family: 'Source Sans Pro';">[[8]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt8)</sup>.
 
-## <a></a>HIV/AIDS:US$ 16 billion annually
+## <a name="h.7706n1qgbqd"></a>HIV/AIDS:US$ 16 billion annually
 
 ![](https://lh3.googleusercontent.com/Y8TU868-SXKAqv6xIXEUj0_SeCeQpLw4cyvauI70FK-JByO0EYDa-_hn5Ah7gpMpTWWe3XmOXHXNrzq2rxrhZcwo5Aq0NvK8PDac_ym1EJX3wBmEZP_gPPY1JbPwrHzPXZmTbVA)
 
 Tohave 90% percent of people living with HIV diagnosed, on treatment, andvirally suppressed by 2020 requires about US$ 16 billion annually forHIV treatment, including drug costs, service delivery, communitymobilization to ensure access to testing and retention in treatment,and pre-ART costs (see figure above)<sup class="c3" style="font-family: 'Source Sans Pro';">[[9]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt9)</sup>.Achievement of this target by 2020, it is projected that nearly 350 000people will die of AIDS-related causes in 2030, compared to 2.1 milliondeaths with continuation of current ‘constant coverage’ (see figurebelow)<sup class="c3" style="font-family: 'Source Sans Pro';">[[10]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt10)</sup>.![](https://lh3.googleusercontent.com/6aqbOpeRGcqyPwkNZlAE4_Uj4OwT9BGmvQo-4b52l9sH_P7TGib6QHlEoVFoAz_W-3vjQNvqr6k3n2SG0VQaBfzG9ZtKUP3K7r3LjYUuA_Ut0XbxnyGkVEk0q7YTByMbg0T-HlE)
 
-## <a></a>EssentialSurgeries: US$24 billion annually
+## <a name="h.euaxr2ssx2h5"></a>EssentialSurgeries: US$24 billion annually
 
 ![](https://lh6.googleusercontent.com/lb8TbogdoGRSXQgS4uriJntLKP9f0ZhBf0zGnqbEK9YGfhQtWWR1FoF3yYiRmwVSZkgzWSc3WxQ12ASEbAFyj6UMpncrHWr-1RVdUga2sFtkiL1yKxTMLk9So4FiQuCbFFIHoJU)
 
@@ -61,11 +61,11 @@ Figure: Thecost and time needed to scale up the surgical workforce in low-incom
 
 Arecent study suggested that the total cost of scaling up essentialsurgical services over 2012–30 would be 298-552 billion dollars, whichtranslates to annual average costs of about $16 billion to $31 billionper year<sup class="c3" style="font-family: 'Source Sans Pro';">[[12]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt12)</sup>.Not only does this compares very favourably with estimates of the costsof scaling up services to tackle infectious, maternal, and child deathsabove, but providing essential surgeries can be surprisinglycost-effective and cost as little as $33 per surgical DALY averted insub-Saharan Africa<sup class="c3" style="font-family: 'Source Sans Pro';">[[13]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt13)</sup>.
 
-## <a></a>Annual Globalhealth spending:US$ 31 billion annually
+## <a name="h.s1fby5r3yt93"></a>Annual Globalhealth spending:US$ 31 billion annually
 
 DevelopmentAssistance for Health is only $31.3billion a year (see figure below<sup class="c3" style="font-family: 'Source Sans Pro';">[[14]](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#ftnt14)</sup>).![](https://lh5.googleusercontent.com/NNpxQ74DRjn_optZutnTZSZYRnp7l_3rnyLnwXB_A57FCha0CuPzCsWvxPkH3E7Lbg1gUFznVBGOMZVkg1OPAIunJTzE2lw4J8qnraiwFx9dHCr3DONpgB84P3vjwhnnhzrFbiU)
 
-## <a></a>Overall costs andGiving What We Can members required to fund this
+## <a name="h.pgj2b9kyqk3s"></a>Overall costs andGiving What We Can members required to fund this
 
 [](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#)[](https://docs.google.com/document/d/1gBKf1esCTp5llqkNB_EPvl_bvvI0JtfEb6o-Rf9TcBk/pub#)
 

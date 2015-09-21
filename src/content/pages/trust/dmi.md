@@ -36,18 +36,18 @@ If you have any questions regarding the trust, please email [trust@givingwhatwec
 
 [What will my data be used for?](#7)
 
-#### <a></a>When will my donations go to DMI?
+#### <a name="4"></a>When will my donations go to DMI?
 
 By default, we pay out every quarter. However, if you have a preference for donations to be sooner or later, let us know by emailing us at [trust@givingwhatwecan.org](mailto:trust@givingwhatwecan.org?subject=Giving%20What%20We%20Can%20Trust), and we will take reasonable steps to accommodate this.
 
-#### <a></a>Is the trust a part of Giving What We Can?
+#### <a name="5"></a>Is the trust a part of Giving What We Can?
 
 No, the Trust is an entirely separate legal entity from Giving What We Can and the Centre for Effective Altruism. To avoid any doubt, money from the Trust will never be paid to either organisation or their affiliates.
 
-#### <a></a>Who runs the trust?
+#### <a name="6"></a>Who runs the trust?
 
 The trustees are Michelle Hutchinson (Executive Director of Giving What We Can), Andreas Mogensen (Assistant Executive Director of Giving What We Can) and Alison Woodman (Trust Treasurer).
 
-#### <a></a>What will my data be used for?
+#### <a name="7"></a>What will my data be used for?
 
 We will use your data to link it with donations to the Trust, so we can claim Gift Aid on it. DMI will be notified of your details if you provide your consent. Giving What We Can will use your data for donor statistics and for no other purpose.

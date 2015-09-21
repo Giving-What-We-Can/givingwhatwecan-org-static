@@ -1,6 +1,6 @@
 ---
 title: 'Become a member'
-menuTitle: 'Join Us'
+menuTitle: 'Joining Giving What We Can'
 menuOrder: -50
 navigation:
     - main
@@ -82,7 +82,7 @@ This review is optional, although the information it provides us with is very us
 
 If for any reason you would prefer not to provide this information, please let us know, with a confirmation of whether you have kept to your pledge.
 
-[](#1)<a></a>
+[](#1)<a name="1"></a>
 
 ## Not ready yet? Try Giving
 

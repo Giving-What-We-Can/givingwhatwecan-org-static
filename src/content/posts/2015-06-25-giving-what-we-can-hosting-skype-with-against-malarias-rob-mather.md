@@ -1,7 +1,7 @@
 ---
 title: 'Giving What We Can hosting Skype with Against Malaria''s Rob Mather'
 meta:
-    ogImage: /images/uploads/amf_skype_chat_gwwc.jpg
+    'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/amf_skype_chat_gwwc.jpg'
 redirects:
     - blog/2015-06-25/giving-what-we-can-hosting-skype-against-malarias-rob-mather
 author: sam-deere
@@ -11,7 +11,7 @@ time: '06:45pm'
 updatedDate: '2015-06-25'
 updatedTime: '06:45pm'
 ---
-![](/images/uploads/amf_skype_chat_gwwc.jpg)
+![](https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/amf_skype_chat_gwwc.jpg)
 
 Rob Mather from the [Against Malaria Foundation (one of](http://againstmalaria.org) [Giving What We Can](https://www.givingwhatwecan.org/top-charities/against-malaria-foundation)/[GiveWell](http://www.givewell.org/charities/top-charities)'s top charities) has kindly offered to take some time to chat to supporters over Skype. The format will be a Skype conversation of around 1-2 hours, where participants will have the opportunity to ask Rob questions and discuss ideas relating to AMF's work and related topics (e.g. the process of starting an effective charity, challenges AMF has faced, next steps etc).
 

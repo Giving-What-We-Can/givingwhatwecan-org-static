@@ -69,6 +69,9 @@ var bowerFiles = require('bower-files')({
         },
         'modernizr': {
             main: '../bower_componenents/modernizr/modernizr.js'
+        },
+        'waypoints': {
+            main: 'lib/jquery.waypoints.js'
         }
     }
 });
@@ -163,6 +166,7 @@ colophonemes
         'styles/partials'
     ]))
     // Set up some metadata
+    .use(logMessage('Preparing global metadata'))
     .use(metadata({
         "siteInfo": "settings/site-info.json"
     }))
@@ -233,18 +237,20 @@ colophonemes
             metadata: {
                 singular: 'post',
             }
+        },
+        contentBlocks: {
+            pattern: 'content/content-blocks/**/*.md',
+            sortBy: 'menuOrder',
+            reverse: false,
+            metadata: {
+                singular: 'content-block',
+            }
         }
     }))
-    .use(filemetadata([
-        {
-            pattern:'content/pages/*.md',
-            metadata: { 'topLevelPage' : true }
-        },
-        {
-            pattern:'content/pages/*/*.md',
-            metadata: { 'topLevelPage' : false }
-        }
-    ]))
+    // .use(function (files, metalsmith, done) {
+    //     console.log(Object.keys(files));
+    //     console.log(Object.keys(metalsmith._metadata.collections));
+    // })
     .use(logMessage('Adding navigation metadata'))
     .use(function (files, metalsmith, done) {
         var debug = require('debug')('addSlugs');
@@ -461,7 +467,7 @@ colophonemes
         )
     )
     .use(
-        branch('{**/**/*.html}')
+        branch('**/**/*.html}')
         .use(
             permalinks({
                 relative: false,
@@ -469,7 +475,7 @@ colophonemes
         )
     )
     .use(excerpts())
-    .use(logMessage('Building redirects...'))
+    .use(logMessage('Building redirects'))
     .use(function (files, metalsmith, done) {
         // inject a list of redirects into the global metadata
         var metadata =metalsmith.metadata();
@@ -525,6 +531,15 @@ colophonemes
         directory: 'templates'
     }))
     .use(typogr())
+    .use(function (files, metalsmith, done) {
+        // we've incorporated content blocks into other pages, but we don't need them as standalone pages in our final build.
+        Object.keys(files).forEach(function(file){
+            if(minimatch(file,'content/content-blocks/**')){
+                delete files[file];
+            }
+        });
+        done();
+    })
     ;
     // build responsive images at this point if we're in production
     if(ENVIRONMENT==='production'){
@@ -625,7 +640,7 @@ colophonemes
     }
 
     // Run build
-    colophonemes.use(logMessage('Finalising build...')).build(function(err,files){
+    colophonemes.use(logMessage('Finalising build')).build(function(err,files){
         if(err){
             console.log('Errors:');
             console.trace(err);

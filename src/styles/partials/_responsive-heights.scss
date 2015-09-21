@@ -1,0 +1,36 @@
+.fullheight, .fullheight-xs {
+	height:100vh;
+}
+.halfheight, .halfheight-xs {
+	height:50vh;
+}
+.fullheight-sm {
+	@media(min-width:$screen-sm){
+		height:100vh;
+	}
+}
+.halfheight-sm {
+	@media(min-width:$screen-sm){
+		height:50vh;
+	}
+}
+.fullheight-md {
+	@media(min-width:$screen-md){
+		height:100vh;
+	}
+}
+.halfheight-md {
+	@media(min-width:$screen-md){
+		height:50vh;
+	}
+}
+.fullheight-lg {
+	@media(min-width:$screen-lg){
+		height:100vh;
+	}
+}
+.halfheight-lg {
+	@media(min-width:$screen-lg){
+		height:50vh;
+	}
+}

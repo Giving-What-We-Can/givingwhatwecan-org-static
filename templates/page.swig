@@ -1,5 +1,8 @@
 {% extends './layout.swig' %}
 
+{% block banner %}
+	{% include "./partials/banner.swig" %}
+{% endblock %}
 
 
 {% block content %}

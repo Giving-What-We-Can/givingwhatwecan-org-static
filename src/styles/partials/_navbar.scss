@@ -51,8 +51,17 @@
 }
 
 .dropdown-menu{
-	&>li>a:hover, &>li>a:focus {
-		background-color: $site-primary;
-		color: #FFF;
+	&>li>a {
+
+		&:hover, &:focus {
+			background-color: $site-primary;
+			color: #FFF;
+		}
+		@media(max-width:$screen-md-min){
+			color: #FFF;
+			&:hover, &:focus {
+				background-color: $site-lolight;
+			}
+		}
 	}
 }

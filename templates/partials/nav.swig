@@ -9,12 +9,12 @@
 				<img src="/images/logos/gwwc-logo-nav.png">
 			</a>
 		</div>
-		<div class="collapse.navbar-collapse" id="main-nav-collapse">
+		<div class="collapse navbar-collapse" id="main-nav-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				{% set menu = menu || 'main' %}
 				{% for parent in navMenus.menus[menu] %}
 					{% set page = navMenus.childPages[parent] %}
-					<li class="nav dropdown">
+					<li class="nav dropdown{% if path.indexOf(parent) === 0 %} active{% endif %}">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							{% if !page %}
 								{{ parent }}
@@ -35,8 +35,8 @@
 						</ul>
 					</li>
 				{% endfor %}
-				<li class="nav{% if page.path.indexOf('blog/') === 0 %} active{% endif %}"><a href="{{ relative('blog') }}">Blog</a></li>
-				<!-- index: {{page.path.indexOf('blog/')}} page.path: {{page.path}} -->
+				<li class="nav{% if path.indexOf('blog') === 0 %} active{% endif %}"><a href="{{ relative('blog') }}">Blog</a></li>
+				<!-- index: {{path.indexOf('blog/')}} path: {{path}} -->
 			</ul>
 		</div>
 	</div>

@@ -55,7 +55,7 @@ updatedTime: '04:29pm'
 
 # Questions about us
 
-<a></a>
+<a name="1"></a>
 
 ### What do you do, and hope to achieve?
 
@@ -67,7 +67,7 @@ When we say “most effective”, we mean the charities which do as much good as
 
 We provide support and a sense of community for those who are serious about giving, we challenge each other to give more, and we challenge governments by showing that people really do want more action on this serious issue.
 
-<a></a>
+<a name="2"></a>
 
 ### Are you asking for us to donate money to Giving What We Can?
 
@@ -75,7 +75,7 @@ No, we aren’t. We are asking you to commit to giving to other charities which 
 
 We do of course have our running costs, and accept [donations](/donate) but we are focussed on getting people to donate to our [top charities](/top-charities).
 
-<a></a>
+<a name="rel"></a>
 
 ### Do you have a religious affiliation?
 
@@ -83,7 +83,7 @@ No. Giving What We Can is an alliance of people both religious and non-religious
 
 # Questions about giving
 
-<a></a>
+<a name="3"></a>
 
 ### But giving doesn’t really work, does it?
 
@@ -96,7 +96,7 @@ Actually, giving to the right charities can do an incredible amount of good. Hav
 *   Does aid make the problems worse by encouraging dependence and overpopulation?
 *   Should we be focussed on political action instead?
 
-<a></a>
+<a name="4"></a>
 
 ### What about climate change and the environment? Aren't they important too?
 
@@ -106,7 +106,7 @@ Fighting climate change is therefore one way of preventing suffering. However re
 
 For more information, our conclusions are set out in depth on this page: [Climate change](/research/charities-area/climate-change)
 
-<a></a>
+<a name="5"></a>
 
 ### But don't we have to do more than just throw money at the problem?
 
@@ -116,7 +116,7 @@ Intervention needs to be sustainable, and care needs to be taken to ensure that 
 
 We are not saying that donating is all that can be done. Political change could have an incredible effect, but it will take a long time to shift attitudes, meaning that change will take a while to come. In the meantime, there are lives that can be saved and diseases that can be cured.
 
-<a></a>
+<a name="6"></a>
 
 ### Why give now, rather than later in life or in my will?
 
@@ -127,7 +127,7 @@ There are a number of reasons to give while you earn, rather than leaving it unt
 *   The money you give has long term benefits to the communities which receive it. Curing someone of disease today means that they will be able to contribute much more to their society and its economy from now on, increasing the effectiveness of your donation. In effect, donating earlier does more good more quickly than donating later.
 *   If you give as you earn and join Giving What We Can, you can contribute to a larger movement towards the elimination of poverty. This will help foster a culture of giving, and send a message to our governments that we care about poverty in the developing world.
 
-<a></a>
+<a name="7"></a>
 
 ### What if everyone did this? Would there be some kind of economic collapse?
 
@@ -135,7 +135,7 @@ We sometimes get asked whether decreased consumption due to charitable giving mi
 
 The fact is that this just isn’t going to happen. We give 10% (or more) because so many in the developed world give nothing or very little. If everyone in the developed world were to start giving, we would each only need to give about 1% of our income in order to eliminate extreme poverty! If ever we get close to that situation, we will happily revise the proportion required by the Pledge.
 
-<a></a>
+<a name="AW"></a>
 
 ### What is the Giving What We Can Trust?
 
@@ -143,7 +143,7 @@ The Giving What We Can Trust is a fund primarily set up to make it easier and mo
 
 # Questions about membership
 
-<a></a>
+<a name="8"></a>
 
 ### What would I gain from becoming a member?
 
@@ -151,13 +151,13 @@ As a charitable movement, Giving What We Can is focussed on helping those in the
 
 However, taking the pledge can help to make giving easier and more rewarding: Many members find that setting the size of their year's donations in advance makes it easier to give, and feel encouraged by the knowledge that their donations are going to the most effective charities in the world. And by joining us, you can be part of the movement for change in the world.
 
-<a></a>
+<a name="9"></a>
 
 ### How do I become a member?
 
 In order to do this you need to take the Pledge. For more information, please go to our [joining page](/get-involved/join-us).
 
-<a></a>
+<a name="10"></a>
 
 ### Why are the members' names public?
 
@@ -165,7 +165,7 @@ Giving What We Can is unusual among charities in maintaining a public [list of m
 
 Being open about our giving also helps us to stick to our commitments and to forge a sense of community. We are certainly not interested in boasting about giving, but we believe that the benefits of modesty are outweighed by the benefits of making a public stand.
 
-<a></a>
+<a name="11"></a>
 
 ### Could I become a member and not have my name published?
 
@@ -173,13 +173,13 @@ We feel that it is important that membership be public for the reasons set out a
 
 However if this really is a barrier preventing you from joining us, please [contact us](mailto:information@givingwhatwecan.org) and we should be able to accommodate you in keeping your details private.
 
-<a></a>
+<a name="12"></a>
 
 ### How can I find out more?
 
 Most of the information should be available on this website. For more about the Pledge, see [our joining page](/get-involved/join-us). For more information about our recommended charities, see [How We Assess Charities](/about-us/how-we-assess-charities) and [Top Charities](/top-charities). Also please check out our [blog](/blog) for news of our ongoing work. If you have any questions, please feel free to [contact us](/about-us/contact-us).
 
-<a></a>
+<a name="13"></a>
 
 ### I'm not sure about becoming a member yet, but would like to help. What can I do?
 
@@ -187,7 +187,7 @@ If you’re not prepared to commit to giving 10%, why not sign up with us to [Tr
 
 Otherwise, we would encourage you to visit our [top charities page](/top-charities) and give what you feel you can to them. Also please sign up to our [blog’s](/blog) RSS feed for up to date information about our work.
 
-<a></a>
+<a name="GR"></a>
 
 ### How do you keep track of whether I follow through on my commitment?
 
@@ -202,7 +202,7 @@ If for any reason you would prefer not to provide this information, please let u
 
 # Questions about the pledge
 
-<a></a>
+<a name="14"></a>
 
 ### What is the Pledge?
 
@@ -210,7 +210,7 @@ The Pledge is a public commitment to give 10% of your income the most effective 
 
 For more information: [Join Us](/get-involved/join-us).
 
-<a></a>
+<a name="15"></a>
 
 ### How does it work? Is it legally binding?
 
@@ -218,7 +218,7 @@ The Pledge is not a contract and is not legally binding. It is, however, a publi
 
 If someone decides that they can no longer keep the Pledge (for instance due to serious unforeseen circumstances), then they can simply cease to be a member. They can of course rejoin later if they renew their commitment. Obviously taking the Pledge is something to be considered seriously, but we understand if a member can no longer keep it.
 
-<a></a>
+<a name="16"></a>
 
 ### Why 10%?
 
@@ -228,13 +228,13 @@ There is also a strong historical connection to the idea of tithing, a tradition
 
 The pledge is of course just a minimum. Some members decide to go further than this and pledge to give a higher percentage, such as 20% or even 50%.
 
-<a></a>
+<a name="17"></a>
 
 ### What do you mean by income?
 
 By income, we mean your gross salary or wages, prior to income tax being deducted. So if you earn $30,000 a year before tax, you would be required to give at least $3,000\. Depending on your country and choice of charity, your donation may be [tax deductible](/get-involved/advice-giving/tax-deductibility), making the real cost of giving 10% less than it first appears.
 
-<a></a>
+<a name="18"></a>
 
 ### What about students / the unemployed / the retired?
 
@@ -246,7 +246,7 @@ We define spending money as money received for the purpose of spending on items 
 
 People who have retired or partially retired (which we roughly define as having started to draw a pension) can join Giving What We Can and remain members for as long as they continue to donate at least 10% of their spending money (as defined above).
 
-<a></a>
+<a name="19"></a>
 
 ### Which organisations are the most effective?
 
@@ -256,13 +256,13 @@ You are free to support charities operating at any level, so long as you sincere
 
 We have specific recommendations about the charities we believe to be the most effective: [Top Charities](/top-charities).
 
-<a></a>
+<a name="20"></a>
 
 ### Can I donate to charities working in areas other than poverty relief?
 
 Although Giving What We Can’s research is focussed on poverty relief in the developing world, the Pledge does not restrict you to give to charities working in this area: The only requirement is that you give to the charities which you believe to be the most effective. See [our page on effectiveness in other areas](/effectiveness-outside-poverty-relief) for more information, and for links to organisations which focus on the effectiveness of other types of intervention.
 
-<a></a>
+<a name="21"></a>
 
 ### What is the Further Pledge?
 

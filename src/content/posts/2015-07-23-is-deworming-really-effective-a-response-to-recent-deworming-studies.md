@@ -11,7 +11,7 @@ time: '06:28pm'
 updatedDate: '2015-07-26'
 updatedTime: '06:28pm'
 ---
-# <a></a>Are mass deworming programs valuable? Giving What We Can’s position on the recent Cochrane Review.
+# <a name="h.gbh5ivy9xjlu"></a>Are mass deworming programs valuable? Giving What We Can’s position on the recent Cochrane Review.
 
 Updated 26/07/2015: We made some changes to this blog post based on feedback
 
@@ -21,7 +21,7 @@ A recent Cochrane review paper by Taylor-Robinson and colleagues <sup>[[1]](#ftn
 
 This has implications for Giving What We Can, because two of our charities focus on delivering mass deworming programmes. We wanted to update our members on the current state of play.
 
-### <a></a>Health benefits of treating populations with schistosomiasis are not questioned by the review
+### <a name="h.7sl4hla1n56b"></a>Health benefits of treating populations with schistosomiasis are not questioned by the review
 
 An important takeaway from this is that the conclusions of the review specifically focuses on soil-transmitted helminths (STH) — these include whipworm (Trichuris), roundworm (Ascaris), and hookworm. The conclusions of the review on health outcomes do not relate to schistosomiasis.
 
@@ -31,7 +31,7 @@ Schistosomiasis is associated with more severe ill-health than STH <sup>[[2]](#f
 
 To this end, this review does not substantially affect [our overall conclusion on the health benefits of population deworming for schistosomiasis as done by the Schistosomiasis Control Initiative](https://www.givingwhatwecan.org/top-charities/schistosomiasis-control-initiative), even though SCI also treats both Schistosomiasis and STH (‘combination deworming’).
 
-### <a></a>Deworm the World
+### <a name="h.siqlznjef53g"></a>Deworm the World
 
 The results may have more implications [our recommendation of the Deworm the World Initiative](https://www.givingwhatwecan.org/top-charities/deworm-world-initiative), but at this stage we have not significantly changed our position on them.
 
@@ -59,7 +59,7 @@ This suggests that there is still value in treating STH infections in areas of h
 
 Finally, DtWI is using their donations to conduct research into deworming and its effectiveness — something that in the light of the recent papers seems to be very much needed.
 
-### <a></a>Deworming and School Attendance
+### <a name="h.hiwy23qk7ppy"></a>Deworming and School Attendance
 
 One of the most controversial components of the Cochrane Review are two papers that revisit a well-publicised study that links deworming to improved school attendance.
 
@@ -85,13 +85,13 @@ Obviously the re-analysis suggests that deworming may provide less of an overall
 
 However, from Giving What We Can’s perspective, these results are only a small fraction of the whole picture. [Our recommendation of Deworm the World](https://www.givingwhatwecan.org/blog/2015-05-28/update-effectiveness-deworm-world-initiative-dtwi) is not substantially based on the school attendance results of the Miguel and Kremer paper, and so we do not feel that the re-analysis — even if it does prove to be the correct interpretation of the data — significantly updates our position.
 
-### <a></a>Next steps
+### <a name="h.11hggz1a426l"></a>Next steps
 
 Part of Giving What We Can's purpose is to use the best available evidence to inform our charity recommendations. We will be taking some time to incorporate these findings into our recommendation of Deworm the World, and attempt to get in touch with relevant parties to clarify a number of our concerns. However, it’s important to note that the evidence that we based our [previous recommendation](https://www.givingwhatwecan.org/blog/2015-05-28/update-effectiveness-deworm-world-initiative-dtwi) on has not changed significantly since we made it. At this stage we will continue to list the Deworm the World Initiative as one of our ‘Promising Charities’, while investigating the implications of this Review further.
 
 * * *
 
-### <a></a>Further reading:
+### <a name="h.j2yi49u7hctg"></a>Further reading:
 
 Cochrane Review Papers
 

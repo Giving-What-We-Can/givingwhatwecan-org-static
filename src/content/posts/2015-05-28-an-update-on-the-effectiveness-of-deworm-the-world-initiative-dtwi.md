@@ -38,13 +38,13 @@ The Deworm the World Initiative (DtWI) has been one of our highly recommended ch
 
 [Updates on DtWI’s Operations](#h.mdatgsj85f34)
 
-## <a></a>Recent Scientific findings that relate to DtWI’s effectiveness
+## <a name="h.ycdavwoas8gy"></a>Recent Scientific findings that relate to DtWI’s effectiveness
 
-### <a></a>New findings on whether deworming improves health and cognition
+### <a name="h.d97oovqthdkh"></a>New findings on whether deworming improves health and cognition
 
 DtWI has traditionally focused on deworming programs in India, where soil-transmitted intestinal worms (soil-transmitted intestinal helminths (STH)) are very common and there is almost no schistosomiasis, which is generally considered to be more harmful. The main STH parasitic worms that infect people are the roundworm (Ascaris lumbricoides), the whipworm (Trichuris trichiura) and hookworms (Necator americanus and Ancylostoma duodenale). [[1]](#ftnt1)  However, recently DtWI has expanded their deworming program into Africa, namely Kenya and Ethiopia, where schistosomiasis is common and where they help with combination deworming programs against STH and schistosomiasis ([we have previously reported on how location matters for deworming](https://www.givingwhatwecan.org/blog/2014-12-08/some-questions-cognitive-benefits-deworming)). Moreover, DtWI is currently thinking about expanding into other African countries such as Nigeria, Namibia or South Africa. [[2]](#ftnt2)  Hence we will focus our review mainly on new research findings on the effects of only treating STH and refer to [our previous update on the Schistosomiasis Control Initiative for new findings relating to combination deworming programs treating STH and schistosomiasis](https://www.givingwhatwecan.org/blog/2015-03-31/charity-update-ii-schistosomiasis-control-initiative-sci).
 
-#### <a></a>Effects of deworming for treating soil-transmitted intestinal worms on health
+#### <a name="h.m8o9i194b019"></a>Effects of deworming for treating soil-transmitted intestinal worms on health
 
 A recent Cochrane review summarized studies looking at the effects of deworming drugs for treating soil‐transmitted intestinal worms on nutrition and school performance [[3]](#ftnt3) . They suggest that deworming may increase the weight of children by over half a kilo and increase haemoglobin levels. It is possible that cognition is improved, but this is based on a few low-quality trials, and Givewell argues that they should have included another trial. Crucially, all of the evidence comes from small trials studying children known to be infected with worms (by screening). In contrast, without prior screening they conclude that it is unclear whether mass deworming of STH is has an effect on weight, height, school attendance, or school performance; and that it may have little or no effect on haemoglobin or cognition. This study has been criticized by Poverty Action [[4]](#ftnt4), [[5]](#ftnt5)  and a rebuttal of that criticism has also been published [[6]](#ftnt6) . We generally believe with this rebuttal and that the inferences drawn in the Cochrane review are generally valid.
 
@@ -58,13 +58,13 @@ However, generally, there is agreement, even among the authors of the Cochrane 
 
 Crucially, screening followed by treatment of those children testing positive for worms is far less practical and more costly than mass treatment of infected and uninfected children without diagnostic testing [[12]](#ftnt12) . In the light of this cost-benefit analysis for screening versus mass treatment, the case for mass deworming is still strong, but one might suggest that it is better to focus more on more heavily infected populations and improve trials. Because DtWI provides technical assistance and evaluation of whether an area should be dewormed based among other whether the local worm burden is sufficiently high, they have probably improved the effectiveness of mass deworming programmes in the more recent past.
 
-#### <a></a>Effects of deworming for treating soil-transmitted intestinal worms on cognition
+#### <a name="h.lx6eyi54kp4"></a>Effects of deworming for treating soil-transmitted intestinal worms on cognition
 
 A recent reanalysis of data from a cluster randomised trial compared the literary and numeracy test scores of children 7-8 years after mass deworming for STH to the scores of a control population which had not undergone mass deworming during this time period [[13]](#ftnt13) . The author found improved test scores in those treated with deworming, and concluded that this strengthens the evidence for cognitive benefits for mass deworming in areas of high worm prevalence. Even though this analysis is not perfect ( [we have reported about this previously](http://scholar.harvard.edu/files/kcroke/files/ug_lr_deworming_071714.pdf) ), we do believe that the analysis is valid and we support its conclusion.
 
 Another recent paper [[14]](#ftnt14)  looked at deworming spillovers during early childhood and suggests that there are improvements in cognitive performance equivalent to between 0.5 and 0.8 years of schooling. However, this paper looked at combination deworming. Givewell conducted a reanalysis of this data looking at the effects of STH by excluding all the schools that received praziquantel against schistosomiasis. They find that not all but many of the results still hold [[15]](#ftnt15), which means that DtWI’s case of only deworming for STHs in India is still strong with regards to improvement of school performance.
 
-#### <a></a>Does deworming against STH increase malaria intensity or prevalence?
+#### <a name="h.4eoi56jg1hr"></a>Does deworming against STH increase malaria intensity or prevalence?
 
 We have previously written [about how mass drug administration against Schistosomiasis might help reduce Malaria](https://www.givingwhatwecan.org/blog/2015-03-14/most-cost-effective-health-intervention-killing-parasitic-worms-malaria-mosquitos) . However, with STHs the case is very different. Researchers have long been aware of the fact that worms significantly impact malaria [[16]](#ftnt16) . Increasingly, STH - Malaria co-infections have been the focus of investigation and some scientists have become worried that certain STHs actually protect against malaria.  There are several reasons to believe that certain intensities of some STHs actually protect people from malaria and thus there is a worry that deworming might make people more susceptible to malaria. There are several reasons for why one could assume this. The default condition of the mammalian ancestral immune system was to be parasitized by gastrointestinal worms (schistosomiasis is not a gastrointestinal worm) [[17]](#ftnt17) . Malaria is one the strongest known selective force on the human genome [[18]](#ftnt18) . Based on our knowledge about the human immune system, it is plausible to assume that malaria and helminths interact [[19]](#ftnt19) . There are at least 20 studies that examine interactions between malaria and worms in humans (for a recent review, see [[20]](#ftnt20) ).
 
@@ -86,7 +86,7 @@ Independent of whether deworming does indeed increases malaria, the topic of thi
 
 * * *
 
-#### <a></a>Is Givewell’s concern that they are deworming twice annually justified?
+#### <a name="h.gfs34hstwlrk"></a>Is Givewell’s concern that they are deworming twice annually justified?
 
 In their most recent report Givewell has been concerned that some of the deworming DtWI has initiated is redundant, because India runs an existing program to treat lymphatic filariasis (LF) where the same drug used to treat STH is sometimes used to treat LF,  [[34]](#ftnt34), [[35]](#ftnt35) . In at least one case, both ran a deworming round within two months. Of course, deworming programmes would ideally be coordinated so as to optimally spread it over the year. However, increasing the number of deworming rounds is probably beneficial and in the following section we  present several studies that show that more frequent deworming may be beneficial.
 
@@ -112,7 +112,7 @@ Finally, there is the question of whether multiple treatments per year are not o
 
 * * *
 
-## <a></a>Updates on Room for additional funding
+## <a name="h.d37wnuf8s6jw"></a>Updates on Room for additional funding
 
 DtWI estimates that total cost per child dewormed is about $0.30-$0.40 depending on the country, which is very cost-effective. However, DtWI does not currently execute deworming campaigns directly, but advocates mass deworming and assists local governments to undertake deworming interventions.
 
@@ -166,7 +166,7 @@ Figure 6
 
 ![](/images/uploads/image04.png)
 
-#### <a></a>The case for funding scientific evaluation
+#### <a name="h.k6iqtwjzj7cp"></a>The case for funding scientific evaluation
 
 DtWI plans to spend $230,000 on staff to support evaluation of DtWI’s work in Kenya. Givewell reports [[47]](#ftnt47)  that this work is primarily funded by CIFF. However, Givewell sees room for more funding:
 
@@ -182,7 +182,7 @@ Figure 7: Relationship between burden of disease in log10-transformed Disability
 
 * * *
 
-## <a></a>Updates on Fundraising activities
+## <a name="h.jefvztv8elz2"></a>Updates on Fundraising activities
 
 DtWI has been very successful at receiving funding from governmental and [non-governmental organisations](http://www.evidenceaction.org/who-we-are/#our-financials) . In 2014, CIFF, a major foundation that had supported DtWI's programs in Kenya, agreed to a 6-year, $17.7 million grant to support DtWI's expansion to additional states in India and technical assistance to the Government of India for a national deworming program [[52]](#ftnt52) .
 
@@ -190,19 +190,19 @@ DtWI’s Executive Director has reported that they are currently in conversation
 
 * * *
 
-## <a></a>Updates on Expertise
+## <a name="h.yp070irw1yq2"></a>Updates on Expertise
 
 Recently, DtWI plans to hire more staff for their operations. In their budget they plan to spend $50,000 to hire a senior epidemiologist [[54]](#ftnt54) . We believe that it reflects well on DtWI that they continue to expand their team with the needed expertise.
 
 * * *
 
-## <a></a>Updates on DtWI’s Operations
+## <a name="h.mdatgsj85f34"></a>Updates on DtWI’s Operations
 
 DtWI is part of Evidence Action. Evidence action includes not only DtWI, but also a program called Dispensers for Safe Water (DSW). One issue in terms of donation with this is that even though one can currently donate to DtWI directly on Evidence Actions website, Givewell believes [[55]](#ftnt55)  that donations might indirectly support the DSW project as well and that realistically one cannot currently donate only to DtWI. There are two problems with this. First, in order to estimate DtWI  would require two separate cost-effectiveness analyses that would have to be averaged, which is hard. Secondly, and perhaps more importantly, the evidence does not currently suggest that interventions to reduce diarrhea by improving water quality through chlorination in developing world are effective, as diarrhea is endemic and hygiene is poor [[56]](#ftnt56) . However, since Evidence Action projects to spend a $10.1m of its total budget of $17.2 million on DtWI [[57]](#ftnt57), the lower bound for its effectiveness, assuming that its other projects are entirely ineffective, is just its DtWI’s effectiveness multiplied by .6 (=10.1/17.2), and a reduction of DtWI’s effectiveness by 40% would still mean it is very effective as compared to other health interventions. This relies on the assumption that marginal donations to DtWI would be shared equally between DtWI and Dispensers for Safe Water (50-50 split).
 
 In the past DtWI has been criticised by Givewell over their monitoring and evaluation processes. In late 2014, they developed a comprehensive strategy to improve on this issue. Their proposal [[58]](#ftnt58)  states that DtWI has now started a competitive request for proposals (RfP) process to identify a professional survey organization to provide independent monitors. Their RfP has a good set of requirements to ensure that the data quality is good. We believe that this is a very good way of addressing Givewell’s criticism. Moreover, they have outlined a strategy for quality assurance of their training programs of their health workers, which Givewell had previously believed to be poor. Now, DtWI will assess training quality through a variety of means. For instance: there will be a pre and post test checkup, with questionnaires administered by DtWI staff checking key messages about deworming, at both the district level and the block level. They have also improved on their strategy to increase the quality of government reported data, by improving forms, greater integration with existing school health reporting structures and  forms, and cross validation of data to check the veracity of  reported numbers in the whole  school.
 
-<a></a>DtWI’s recent conversation with Givewell
+<a name="h.tvgyu1lq3ok4"></a>DtWI’s recent conversation with Givewell
 
 DtWI had a recent conversation with Givewell [[59]](#ftnt59) . In this conversation they gave a detailed update on their operation and we will highlight only a select few points that are relevant to their effectiveness.
 
