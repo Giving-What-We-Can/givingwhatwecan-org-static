@@ -8,10 +8,21 @@
 	<title>
 Giving What We Can
 </title>
-	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles/app.min.css">
 	
+	<link rel="canonical" href="http://beta.givingwhatwecan.org/" />
+	
+	
+	
+	<meta name="description" content="We ask members to pledge to give, review charities to find the best ones, and help people keep their pledge.">
+	<link rel="stylesheet" type="text/css" href="styles/app.min.css">
+	<meta property="og:title" content="Homepage" />
+<meta property="og:type" content="website" />
+
+
+
+<meta property="og:url" content="http://beta.givingwhatwecan.org/" />
+<meta property="og:image" content="http://beta.givingwhatwecan.org/images/layout/og-image-default.jpg" />
 	<link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
@@ -725,8 +736,8 @@ Giving What We Can
 			});
 			function resizeChart(el){
 				el = $(el);
-				el.height($(window).height()/2)
-				el.width(el.parent().width())
+				el.height(2 * Math.floor($(window).height()/4)); // round down to nearest even number or webkit font smoothing freaks out
+				el.width(el.parent().width());
 			}
 		})(jQuery);
 	</script>

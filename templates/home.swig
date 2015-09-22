@@ -80,8 +80,8 @@
 			});
 			function resizeChart(el){
 				el = $(el);
-				el.height($(window).height()/2)
-				el.width(el.parent().width())
+				el.height(2 * Math.floor($(window).height()/4)); // round down to nearest even number or webkit font smoothing freaks out
+				el.width(el.parent().width());
 			}
 		})(jQuery);
 	</script>

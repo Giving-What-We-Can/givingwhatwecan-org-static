@@ -6,10 +6,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{% block title %}{{ title }}{% endblock head %}</title>
-	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' + path %}
+	<link rel="canonical" href="{{canonicalURL}}" />
+	{% if !description %}
+	{% set description = siteInfo.description %}
+	{% endif %}
+	<meta name="description" content="{{description}}">
 	<link rel="stylesheet" type="text/css" href="{{ relative('/styles/app.min.css') }}">
-	
+	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
 
 	<script src="{{ relative('/scripts/header.min.js') }}"></script>
