@@ -1,9 +1,5 @@
 {% extends './layout.swig' %}
 
-{% block title %}
-{{siteInfo.title}}
-{% endblock %}
-
 {% block banner %}
 	
 {% endblock %}
