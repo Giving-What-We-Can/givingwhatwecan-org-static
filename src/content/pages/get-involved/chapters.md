@@ -1,6 +1,5 @@
 ---
 title: Chapters
-meta:
 redirects:
     - get-involved/chapters
     - getting-involved/local-chapters

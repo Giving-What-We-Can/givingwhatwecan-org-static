@@ -1,7 +1,5 @@
 ---
 title: 'How Rich Am I?'
-meta:
-    ogImage: /images/uploads/How-Rich-Am-I---OpenGraph.jpg
 menuOrder: 0
 navigation:
     - main
@@ -12,12 +10,13 @@ redirects:
     - resources/how-rich-you-are.php
     - why-give/how-rich-you-are
     - calculator
+ogImage: /images/uploads/How-Rich-Am-I---OpenGraph.jpg
 parent: get-involved
 menuTitle: 'How Rich Am I'
 slug: get-involved/how-rich-am-i
 date: '2012-03-10'
 time: '04:29pm'
-updatedDate: '2015-09-15'
+updatedDate: '2015-09-23'
 updatedTime: '04:29pm'
 ---
 <label for="calc-howrich-country">Location</label> 

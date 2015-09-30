@@ -1,6 +1,5 @@
 ---
 title: 'The cost of fighting Malaria, Malnutrition, Neglected Tropical Diseases, and HIV/AIDS, and providing Essential Surgeries, compared to spending on Global Health'
-meta:
 redirects:
     - blog/2015-06-09/cost-fighting-malaria-malnutrition-neglected-tropical-diseases-and-hivaids-and
     - blog/2015-06-09/cost-fighting-malaria-malnutrition-and-neglected-tropical-diseases

@@ -6,7 +6,7 @@ author: mark-barnes
 slug: blog/2015-09-14/smart-legacy-giving
 date: '2015-09-14'
 time: '08:31pm'
-updatedDate: '2015-09-14'
+updatedDate: '2015-09-23'
 updatedTime: '08:31pm'
 ---
 I have recently taken the Giving What We Can [pledge](https://www.givingwhatwecan.org/pledge) and in doing so I have been looking into efficient ways of donating money to charity. Giving What We Can have a very helpful page on their website detailing the [tax deductibility](https://www.givingwhatwecan.org/get-involved/tax-deductibility) of charitable giving. However, I recently had cause to change my Will and in doing so I found a very tax-efficient way to give. The effect is that **some UK taxpayers can quadruple their donation to charitable causes, through Will giving, at no cost to themselves.**

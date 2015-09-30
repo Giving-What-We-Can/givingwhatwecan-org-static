@@ -8,11 +8,28 @@ redirects:
 slug: about-us
 date: '2015-05-14'
 time: '04:04pm'
-updatedDate: '2015-05-14'
+updatedDate: '2015-09-23'
 updatedTime: '04:04pm'
 ---
-"Throughout my career, I have given to causes that address the pressing issue of global poverty. Giving has enriched my life. I’ve worked to create groups that encourage generosity and help to make giving something both normal and rewarding, and I am very impressed with the work of Giving What We Can. They have my full support."
--Dr Frederick Mulder CBE, founder of The Funding Network.
+> _"In my work both as a Parliamentarian, and within a number of international organisations fighting global poverty, I regularly look for ways to help those in need as effectively and transparently as possible. Giving What We Can represents a fantastic opportunity for donors to make a truly significant contribution to making the world a better place."_
+> 
+> ![](/images/uploads/jack-mcconnell.png)
+> 
+> **— Lord Jack McConnell,**
+> <small>Peer, UK House of Lords and Vice-Chair, UNICEF UK.</small>
+
+* * *
+
+> _"Throughout my career, I have given to causes that address the pressing issue of global poverty. Giving has enriched my life. I’ve worked to create groups that encourage generosity and help to make giving something both normal and rewarding, and I am very impressed with the work of Giving What We Can. They have my full support."_
+> 
+> ![](/images/uploads/fm.jpg)
+> 
+> **— Dr Frederick Mulder CBE,**
+> <small>founder of The Funding Network.</small>
+
+* * *
+
+<style>h3 {color: #6C0000;font-size: 2em;}</style>
 
 ### Our Vision
 

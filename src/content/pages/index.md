@@ -5,9 +5,8 @@ redirects:
 slug: ./
 date: '2013-02-05'
 time: '09:17pm'
-updatedDate: '2015-09-17'
+updatedDate: '2015-09-23'
 updatedTime: '09:17pm'
-template: home.swig
 ---
 Join us in the
 fight against

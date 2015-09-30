@@ -1,10 +1,9 @@
 ---
 title: 'Is deworming really effective? A response to recent deworming studies'
-meta:
-    ogImage: /images/uploads/deworming-cochrane-og.jpg
 redirects:
     - blog/2015-07-23/deworming-really-effective-response-recent-deworming-studies
 author: giving-what-we-can
+ogImage: /images/uploads/deworming-cochrane-og.jpg
 slug: blog/2015-07-23/deworming-really-effective-response-recent-deworming-studies
 date: '2015-07-23'
 time: '06:28pm'

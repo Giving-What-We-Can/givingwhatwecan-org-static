@@ -1,6 +1,5 @@
 ---
 title: Impact
-meta:
 menuOrder: -45
 navigation:
     - main

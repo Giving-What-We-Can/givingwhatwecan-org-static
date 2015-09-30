@@ -1,6 +1,5 @@
 ---
 title: 'Charity Evaluations'
-meta:
 menuOrder: 0
 navigation:
     - main

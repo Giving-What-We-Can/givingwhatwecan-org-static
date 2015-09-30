@@ -1,11 +1,10 @@
 ---
 title: 'My Giving: An Introduction'
-meta:
-    'og:url': 'https://www.givingwhatwecan.org/my-giving-introduction'
-    ogImage: /images/uploads/where.jpg
 navigation: false
 redirects:
     - my-giving-introduction
+'og:url': 'https://www.givingwhatwecan.org/my-giving-introduction'
+ogImage: /images/uploads/where.jpg
 menuTitle: 'My Giving Introduction'
 slug: my-giving-introduction
 date: '2014-04-23'

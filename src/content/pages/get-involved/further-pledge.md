@@ -1,6 +1,5 @@
 ---
 title: 'The Further Pledge'
-meta:
 navigation: false
 redirects:
     - get-involved/further-pledge

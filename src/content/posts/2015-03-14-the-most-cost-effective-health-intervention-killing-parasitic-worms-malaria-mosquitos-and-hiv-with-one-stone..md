@@ -1,6 +1,5 @@
 ---
 title: 'The most cost-effective health intervention? Killing parasitic worms, malaria mosquitos and HIV with one stone. '
-meta:
 redirects:
     - blog/2015-03-14/most-cost-effective-health-intervention-killing-parasitic-worms-malaria-mosquitos
 author: hauke-hillebrandt

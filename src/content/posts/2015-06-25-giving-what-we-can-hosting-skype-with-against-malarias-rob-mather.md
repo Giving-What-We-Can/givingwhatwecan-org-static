@@ -1,10 +1,9 @@
 ---
 title: 'Giving What We Can hosting Skype with Against Malaria''s Rob Mather'
-meta:
-    'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/amf_skype_chat_gwwc.jpg'
 redirects:
     - blog/2015-06-25/giving-what-we-can-hosting-skype-against-malarias-rob-mather
 author: sam-deere
+'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/amf_skype_chat_gwwc.jpg'
 slug: blog/2015-06-25/giving-what-we-can-hosting-skype-against-malarias-rob-mather
 date: '2015-06-25'
 time: '06:45pm'

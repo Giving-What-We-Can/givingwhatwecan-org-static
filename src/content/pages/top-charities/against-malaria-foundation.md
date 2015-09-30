@@ -1,6 +1,5 @@
 ---
 title: 'Against Malaria Foundation'
-meta:
 menuOrder: -50
 navigation:
     - main

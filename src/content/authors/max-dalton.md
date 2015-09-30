@@ -2,4 +2,4 @@
 name: 'Max Dalton'
 image: /images/uploads/3ede259.jpg
 ---
-Max is studying PPE at Balliol College, Oxford. He is also co-president of the Giving What We Can Oxford chapter.
+Max studied PPE at Balliol College, Oxford. He is now studying for an Economics Msc at York.

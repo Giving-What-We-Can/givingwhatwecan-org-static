@@ -1,6 +1,5 @@
 ---
 title: 'Call for registration – GOOD DONE RIGHT: a conference on effective altruism'
-meta:
 redirects:
     - blog/2014-04-07/call-registration-good-done-right-conference-effective-altruism
 author: andreas-mogensen

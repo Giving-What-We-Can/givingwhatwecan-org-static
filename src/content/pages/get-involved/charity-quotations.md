@@ -1,8 +1,5 @@
 ---
 title: 'Charity Quotations'
-meta:
-    'og:url': 'https://www.givingwhatwecan.org/get-involved/charity-quotations'
-    ogImage: /images/uploads/giving.jpg
 menuOrder: 0
 navigation:
     - main
@@ -11,6 +8,8 @@ redirects:
     - why-give/charity-quotations
     - get-involved/why-get-involved/charity-quotations
     - resources/charity-quotations.php
+'og:url': 'https://www.givingwhatwecan.org/get-involved/charity-quotations'
+ogImage: /images/uploads/giving.jpg
 parent: get-involved
 slug: get-involved/charity-quotations
 date: '2012-03-10'

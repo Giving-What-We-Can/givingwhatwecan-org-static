@@ -1,6 +1,5 @@
 ---
 title: 'Neglected Tropical Diseases (NTDs)'
-meta:
 menuOrder: 0
 navigation:
     - main

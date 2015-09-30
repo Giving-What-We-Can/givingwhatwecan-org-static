@@ -1,6 +1,5 @@
 ---
 title: 'Schistosomiasis Control Initiative'
-meta:
 menuOrder: -48
 navigation:
     - main

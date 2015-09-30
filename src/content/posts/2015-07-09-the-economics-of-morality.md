@@ -1,10 +1,9 @@
 ---
 title: 'The Economics of Morality'
-meta:
-    ogImage: /images/uploads/economics-morality-og.png
 redirects:
     - blog/2015-07-09/economics-morality
 author: dillon-bowen
+ogImage: /images/uploads/economics-morality-og.png
 slug: blog/2015-07-09/economics-morality
 date: '2015-07-09'
 time: '11:07am'

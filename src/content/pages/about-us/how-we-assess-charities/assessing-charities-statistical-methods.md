@@ -1,6 +1,5 @@
 ---
 title: 'Key Concepts for Assessing Charities'
-meta:
 menuTitle: 'Assessing Charities- Statistical methods'
 menuOrder: 0
 navigation:

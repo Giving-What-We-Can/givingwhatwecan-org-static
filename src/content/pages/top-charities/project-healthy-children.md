@@ -1,6 +1,5 @@
 ---
 title: 'Project Healthy Children'
-meta:
 menuOrder: 0
 navigation:
     - main

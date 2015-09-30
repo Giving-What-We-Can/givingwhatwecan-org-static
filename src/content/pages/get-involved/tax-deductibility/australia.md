@@ -1,7 +1,5 @@
 ---
 title: Australia
-meta:
-    ogImage: /images/uploads/aus_top_charities_tax_og.png
 menuOrder: 0
 navigation:
     - main
@@ -9,6 +7,7 @@ redirects:
     - get-involved/tax-deductibility/australia
     - how-to-give/tax-deductibility/australia
     - get-involved/advice-giving/tax-deductibility/australia
+ogImage: /images/uploads/aus_top_charities_tax_og.png
 parent: get-involved/tax-deductibility
 slug: get-involved/tax-deductibility/australia
 date: '2013-07-22'

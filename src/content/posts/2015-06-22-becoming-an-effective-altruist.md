@@ -1,10 +1,9 @@
 ---
 title: 'Becoming an Effective Altruist'
-meta:
-    'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/coralie_becoming_an_ea_og_image.png'
 redirects:
     - blog/2015-06-22/becoming-effective-altruist
 author: coralie-oddy
+'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/coralie_becoming_an_ea_og_image.png'
 slug: blog/2015-06-22/becoming-effective-altruist
 date: '2015-06-22'
 time: '12:23pm'

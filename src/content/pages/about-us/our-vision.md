@@ -1,6 +1,5 @@
 ---
 title: 'Our Vision'
-meta:
 navigation: false
 redirects:
     - about-us/our-vision

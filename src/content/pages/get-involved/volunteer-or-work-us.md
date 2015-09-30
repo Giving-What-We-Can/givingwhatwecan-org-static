@@ -13,12 +13,13 @@ redirects:
     - getting-involved/work-with-us
     - sites/givingwhatwecan.org/files/attachments/cea_graduate_volunteers_and_interns.pdf
     - getting-involved/job-opportunities.php
+    - jobs
 parent: get-involved
 menuTitle: 'Volunteer Or Work Us'
 slug: get-involved/volunteer-or-work-us
 date: '2012-11-15'
 time: '11:53am'
-updatedDate: '2015-05-13'
+updatedDate: '2015-09-23'
 updatedTime: '11:53am'
 ---
 ![](/images/uploads/michelleben.jpg)
@@ -29,15 +30,16 @@ We're now looking to step up our efforts. We're looking to build a dynamic, insp
 
 Based in offices shared with the Future of Humanity Institute at Oxford University, you'll be part of a team that dedicates itself to understanding how we can do the most good - and actually delivering on those ideas.
 
-Follow the links below to apply, or email [recruitment@centreforeffectivealtruism.org](mailto:recruitment@centreforeffectivealtruism.org) if you have any questions.
+## Current Opportunities <small>(September 2015</small>
 
-## September Internship 2015
+We are currently seeking candidates for the following roles.
 
-The Application to 2015's September Internship is now closed. Thanks to all those who applied
+*   [Giving What We Can: Director of Growth](https://www.centreforeffectivealtruism.org/careers/giving-what-we-can-director-of-growth)
+*   [Giving What We Can: Research Analyst](https://www.centreforeffectivealtruism.org/careers/giving-what-we-can-research-analyst)
 
-## Jobs
+Please follow the links above to the position descriptions on the [careers section of the Centre for Effective Altruism website](https://www.centreforeffectivealtruism.org/careers).
 
-We are currently not seeking any positions. Please stay posted for further updates.
+_Please note: Applications close October 18th at 11:59pm, Oxford Time_
 
 ## Graduate volunteer positions
 

@@ -1,13 +1,12 @@
 ---
 title: 'Announcing the Giving What We Can Global Poverty Essay Competition ($2000 in prize money): ‘Where should we donate to do the most good?’'
-meta:
-    'og:type': article
-    'og:title': 'Giving What We Can Global Poverty Essay Competition'
-    ogImage: /images/uploads/150528-Essay-Competition-OG-Image.jpg
 redirects:
     - blog/2015-05-27/announcing-giving-what-we-can-global-poverty-essay-competition-2000-in-prize-money
     - essay-competition
 author: hauke-hillebrandt
+'og:type': article
+'og:title': 'Giving What We Can Global Poverty Essay Competition'
+ogImage: /images/uploads/150528-Essay-Competition-OG-Image.jpg
 slug: blog/2015-05-27/announcing-giving-what-we-can-global-poverty-essay-competition-2000-in-prize-money
 date: '2015-05-27'
 time: '07:00pm'

@@ -10,14 +10,16 @@ parent: get-involved
 slug: get-involved/bequests
 date: '2015-09-04'
 time: '01:55pm'
-updatedDate: '2015-09-04'
+updatedDate: '2015-09-23'
 updatedTime: '01:55pm'
 ---
 ![](https://lh4.googleusercontent.com/2B88ADug0phNLbDsIItnjAOFhky3MFvD4HcRbK6szZdciYthyfqNFb9vDwp0DP_jb9LYpmpPIl9ZTI-tjC4Fo1MbflCt1Re-ap3GUY1_kOlWBgpxBzLgA0VCps5kb5TPl-E9Bm09)
 
 [Image Credit: Flickr Creative Commons / Bob Jenkin](https://www.flickr.com/photos/bobjenkin/17011898249)
 
-We are regularly contacted by people who would like to leave money to effective charities after they die. Leaving money in your estate is a wonderful way to maintain giving as part of your legacy. Depending on your circumstances, it may also provide you with beneficial inheritance tax treatment.
+We are regularly contacted by people who would like to leave money to effective charities after they die. Leaving money in your estate is a wonderful way to maintain giving as part of your legacy.
+
+Depending on your circumstances, a bequest may also provide you with beneficial inheritance tax treatment. Please have a read of [this post on the potential to quadruple your charitable donations at almost no cost to your beneficiaries](https://www.givingwhatwecan.org/blog/2015-09-14/smart-legacy-giving) for further information.
 
 Giving What We Can can help fulfil your wishes to give, either as the direct beneficiary of a bequest, or by disbursing money amongst our top charities [through our Trust](https://www.givingwhatwecan.org/giving-what-we-can-trust-faqs) .
 
@@ -33,7 +35,7 @@ If you would like to leave money to any of the charities to which we currently d
 *   restrict your donation to our recommended charities, whatever they are at the time of the bequest, (be sure to set out whether your donation should be split between them equally or at Giving What We Can’s discretion); or
 *   allow Giving What We Can to disburse the money to whichever charity or charities it deems would be most effective at the time of the bequest.
 
-* Although we have no plans for this to happen, it may be that in the future the Trust can no longer disburse money to all of its current charities. Therefore, if you specify particular charities to receive your donation, we recommend that you also set out alternative arrangements in case this ceases to be possible.
+<small>_* Although we have no plans for this to happen, it may be that in the future the Trust can no longer disburse money to all of its current charities. Therefore, if you specify particular charities to receive your donation, we recommend that you also set out alternative arrangements in case this ceases to be possible._</small>
 
 ## <a name="h.8lmznbpvnr6d"></a>General advice regarding bequests
 

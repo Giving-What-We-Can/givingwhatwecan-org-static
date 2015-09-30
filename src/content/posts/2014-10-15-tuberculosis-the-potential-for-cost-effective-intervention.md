@@ -1,6 +1,5 @@
 ---
 title: 'Tuberculosis: The Potential for Cost-Effective Intervention'
-meta:
 redirects:
     - blog/2014-10-14/tuberculosis-potential-cost-effective-intervention
 author: false

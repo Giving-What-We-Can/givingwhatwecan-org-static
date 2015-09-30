@@ -1,6 +1,5 @@
 ---
 title: 'Myths About Aid'
-meta:
 menuOrder: 0
 navigation:
     - main

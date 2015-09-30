@@ -1,10 +1,9 @@
 ---
 title: 'Giving What We Can needs your support — only 5 days left to close our funding gap'
-meta:
-    'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/gwwc_fundraising_five_days.jpg'
 redirects:
     - blog/2015-06-25/giving-what-we-can-needs-your-support-only-5-days-left-close-our-funding-gap
 author: michelle-hutchinson
+'og:image': 'https://givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/gwwc_fundraising_five_days.jpg'
 slug: blog/2015-06-25/giving-what-we-can-needs-your-support-only-5-days-left-close-our-funding-gap
 date: '2015-06-25'
 time: '05:52pm'

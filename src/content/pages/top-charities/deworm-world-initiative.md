@@ -1,6 +1,5 @@
 ---
 title: 'Deworm the World Initiative'
-meta:
 menuOrder: -46
 navigation:
     - main

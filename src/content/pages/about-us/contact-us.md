@@ -13,12 +13,10 @@ parent: about-us
 slug: about-us/contact-us
 date: '2012-03-10'
 time: '04:29pm'
-updatedDate: '2015-09-04'
+updatedDate: '2015-09-24'
 updatedTime: '04:29pm'
 ---
 If you would like any more information regarding _Giving What We Can_, then please contact us and we will do our best to help.
-
-![](/images/uploads/haydnniel.jpg)
 
 General Enquiries and volunteering: [information@givingwhatwecan.org](mailto:information@givingwhatwecan.org)
 

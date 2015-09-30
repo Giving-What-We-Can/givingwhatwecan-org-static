@@ -1,6 +1,5 @@
 ---
 title: 'Why a Pledge?'
-meta:
 menuOrder: 0
 navigation:
     - main

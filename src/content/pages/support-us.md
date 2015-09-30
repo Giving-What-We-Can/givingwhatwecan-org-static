@@ -1,6 +1,5 @@
 ---
 title: 'Support Giving What We Can'
-meta:
 redirects:
     - support-us
     - getting-involved/donate
@@ -12,7 +11,7 @@ menuTitle: 'Support Us'
 slug: support-us
 date: '2012-10-31'
 time: '02:03pm'
-updatedDate: '2015-08-21'
+updatedDate: '2015-09-23'
 updatedTime: '02:03pm'
 ---
 ![heart](/images/uploads/heart.jpg)
@@ -69,9 +68,17 @@ Most of our current expenditure is on staff, as Giving What We can is beyond the
 
 We do allow donations to Giving What We Can to be part of the 10% pledge, although members are in no way expected to donate to us, and we encourage those who do so to give to other charities as well.
 
-# Top donors
+# Top Supporters
 
-Giving What We Can is extremely grateful for the generous donations provided by the following:
+All donations make a huge difference, but some donors have gone above and beyond in their generous support for Giving What We Can. We'd like to acknowledge the following donors for their contribution:
+
+Luke Ding
+
+Denise Melchin and Alexander Gordon-Brown
+
+Rossa O'Keeffe-O'Donovan
+
+* * *
 
 ![](/images/uploads/andrew-sutton.jpg)
 
