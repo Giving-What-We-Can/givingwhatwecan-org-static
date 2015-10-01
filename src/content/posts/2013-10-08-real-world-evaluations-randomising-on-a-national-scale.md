@@ -3,7 +3,7 @@ title: '‘Real World Evaluations’ – randomising on a national scale'
 redirects:
     - blog/2013-10-08/‘real-world-evaluations’-–-randomising-on-a-national-scale
     - blog/2014-03-01/real-world-evaluations-randomising-national-scale
-author: false
+author: clara-marquardt
 slug: blog/2013-10-08/‘real-world-evaluations’-–-randomising-on-a-national-scale
 date: '2013-10-08'
 time: '08:37pm'

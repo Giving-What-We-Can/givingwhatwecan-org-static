@@ -3,15 +3,13 @@ title: 'Problems with “Overhead Costs” as a metric'
 redirects:
     - blog/2012-10-01/problems-with-“overhead-costs”-as-a-metric
     - blog/2012-10-01/problems-overhead-costs-metric
-author: false
+author: ben-hoskin
 slug: blog/2012-10-01/problems-with-“overhead-costs”-as-a-metric
 date: '2012-10-01'
 time: '05:31pm'
-updatedDate: '2014-03-24'
+updatedDate: '2015-10-01'
 updatedTime: '05:31pm'
 ---
-![](/images/uploads/249882_10150284557855645_2678751_n.jpg)
-
 This blog aims (among other things) to explain the methods we employ in our research at Giving What We Can. In that spirit, we’d like to start by explaining an important way in which we differ from many charity evaluators.
 
 In the same way that there are [many persistent myths about aid](/resources/myths-about-aid.php), there are also persistent myths about how to evaluate charities. One of the most prevalent, and most damaging, of these is that we should just look at the amount the charity spends on advertising, or salaries, or broader administration in order to decide which charities to donate to – supporting those which spend most of their revenue directly on the programs they operate.

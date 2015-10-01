@@ -3,7 +3,7 @@ title: 'Call for Applications: ASAP Global Board of Directors'
 redirects:
     - blog/2014-03-05/call-for-applications-asap-global-board-of-directors
     - blog/2014-03-05/call-applications-asap-global-board-directors
-author: false
+author: thomas-pogge
 slug: blog/2014-03-05/call-for-applications-asap-global-board-of-directors
 date: '2014-03-05'
 time: '03:35pm'

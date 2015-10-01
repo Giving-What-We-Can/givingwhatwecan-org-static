@@ -3,7 +3,7 @@ title: 'Opportunity to intern with Giving What We Can '
 redirects:
     - blog/2013-04-26/opportunity-to-intern-with-giving-what-we-can
     - blog/2014-03-01/opportunity-intern-giving-what-we-can
-author: false
+author: tom-ash
 slug: blog/2013-04-26/opportunity-to-intern-with-giving-what-we-can
 date: '2013-04-26'
 time: '12:48pm'

@@ -3,11 +3,11 @@ title: 'Happy Birthday Giving What We Can!'
 redirects:
     - blog/2012-11-14/happy-birthday-giving-what-we-can
     - blog/2014-02-28/happy-birthday-giving-what-we-can
-author: false
+author: michelle-hutchinson
 slug: blog/2012-11-14/happy-birthday-giving-what-we-can
 date: '2012-11-14'
 time: '05:43pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '05:43pm'
 ---
 ![](/images/uploads/birthday_cake2.png)

@@ -2,14 +2,14 @@
 title: 'Giving What We Can in the new year'
 redirects:
     - blog/2013-01-08/giving-what-we-can-in-the-new-year
-author: false
+author: michelle-hutchinson
 slug: blog/2013-01-08/giving-what-we-can-in-the-new-year
 date: '2013-01-08'
 time: '07:13pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '07:13pm'
 ---
-![](/images/uploads/image06.jpg)The end of 2012 was a busy time for Giving What We Can - we ran our first sixth-monthly review process. This involved presenting a progress report and a plan for the future to our advisory committee (composed of GWWC members from a variety of backgrounds) and to the trustees. Following on from that, I'd like to share with you a bit about our plans for the upcoming months, and the advisory committee's feedback. We've already [described our research plans](http://www.givingwhatwecan.org/blog/2012-12-27/our-research-goals-for-the-next-few-months), so I'll be concentrating on other areas. If you'd like to see more detailed versions of our plans, retrospective review, and advisors' assessment, please [get in touch](mailto:executive.director@givingwhatwecan.org).
+The end of 2012 was a busy time for Giving What We Can - we ran our first sixth-monthly review process. This involved presenting a progress report and a plan for the future to our advisory committee (composed of GWWC members from a variety of backgrounds) and to the trustees. Following on from that, I'd like to share with you a bit about our plans for the upcoming months, and the advisory committee's feedback. We've already [described our research plans](http://www.givingwhatwecan.org/blog/2012-12-27/our-research-goals-for-the-next-few-months), so I'll be concentrating on other areas. If you'd like to see more detailed versions of our plans, retrospective review, and advisors' assessment, please [get in touch](mailto:executive.director@givingwhatwecan.org).
 
 GWWC is a community of people who care deeply about helping those in the developing world as much as possible. Therefore, GWWC's ultimate aim is to make sure that as much money as possible is given to the most cost-effective charities we can find. Our plan for the coming year has attempted to specify the ways in which we intend to do this in broad outline, as well as describe more precise plans for the next few months.
 

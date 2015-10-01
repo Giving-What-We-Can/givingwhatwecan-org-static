@@ -3,14 +3,14 @@ title: 'Why I Give: Lee Bishop'
 redirects:
     - blog/2013-04-18/why-i-give-lee-bishop
     - blog/2014-03-01/why-i-give-lee-bishop
-author: false
+author: lee-bishop
 slug: blog/2013-04-18/why-i-give-lee-bishop
 date: '2013-04-18'
 time: '06:29pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '06:29pm'
 ---
-![](/images/uploads/leebishop.jpg)I’ve always wanted to help others and donating to charity is probably the easiest way to do that.The general consensus seems to be that it just isn’t feasible to donate a large proportion of your income to charity, especially in the difficult economic climate at the moment.
+I’ve always wanted to help others and donating to charity is probably the easiest way to do that.The general consensus seems to be that it just isn’t feasible to donate a large proportion of your income to charity, especially in the difficult economic climate at the moment.
 
 I disagree with that.
 

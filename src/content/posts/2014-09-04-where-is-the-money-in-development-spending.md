@@ -2,11 +2,11 @@
 title: 'Where is the money in development spending?'
 redirects:
     - blog/2014-09-04/where-money-in-development-spending
-author: false
+author: peter-hurford
 slug: blog/2014-09-04/where-money-in-development-spending
 date: '2014-09-04'
 time: '08:20am'
-updatedDate: '2014-09-04'
+updatedDate: '2015-10-01'
 updatedTime: '08:20am'
 ---
 Relatively wealthier countries certainly spend a lot of money on developing world [1] aid. But how much money is being moved? And by whom? If we’re interested in understanding and influencing aid spending, it’s important to know how it’s distributed and where it comes from.

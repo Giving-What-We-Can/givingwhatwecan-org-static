@@ -3,15 +3,13 @@ title: 'GWWC: Birmingham Launch'
 redirects:
     - blog/2012-10-30/gwwc-birmingham-launch
     - blog/2014-02-28/gwwc-birmingham-launch
-author: false
+author: simon-jenkins
 slug: blog/2012-10-30/gwwc-birmingham-launch
 date: '2012-10-30'
 time: '09:28pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '09:28pm'
 ---
-![](/images/uploads/simon_2012.jpg)
-
 This blog post is going to be a kind of summary of the recent and very exciting launch event for Giving What We Can: Birmingham. Summaries are rarely exciting, and I would have said “review” but I can’t really review an event that I had a hand in organising without being accused of bias. So, rather than trying to be guarded against bias by carefully selecting a spread of positive and negative things to say about the event, I’m just going to wholeheartedly embrace my bias and go on and on about how great the launch was. As well as being an opportunity to blow my own trumpet, this blog post might provide some useful tips for anyone else looking to launch a Giving What We Can chapter or similar event (though saying that might just be blowing my own trumpet too).
 
 The launch was quite a long time in the making. The first step and the thing that really got the ball rolling was contacting potential speakers to give lectures at the event. I had prepared a sizeable list of potential speakers, and my plan was to start from the top and work my way down. As it turned out I didn’t have to move down the list very much at all and I was pleasantly surprised by how willing and able everybody was to help. The first thing that speakers usually want to know is “when is this going to be?” and so contacting the speakers provided the impetus needed to fix a date for the launch. This, then, was a point to work towards. A _deadline_. And it got things working a lot faster.

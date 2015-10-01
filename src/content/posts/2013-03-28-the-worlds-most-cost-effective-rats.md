@@ -3,11 +3,11 @@ title: 'The world''s most cost-effective rats?'
 redirects:
     - blog/2013-03-28/the-worlds-most-cost-effective-rats
     - blog/2013-03-28/cost-effective-rat
-author: false
+author: jonathan-courtney
 slug: blog/2013-03-28/the-worlds-most-cost-effective-rats
 date: '2013-03-28'
 time: '07:27pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '07:27pm'
 ---
 ![](http://donate.apopo.org/images/rats/rat_20.jpg)

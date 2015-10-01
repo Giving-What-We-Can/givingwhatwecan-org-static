@@ -3,7 +3,7 @@ title: 'The Copenhagen Challenge Paper for Education - What does it mean for fig
 redirects:
     - blog/2012-11-22/the-copenhagen-challenge-paper-for-education-what-does-it-mean-for-fighting-poverty
     - blog/2014-02-28/copenhagen-challenge-paper-education-what-does-it-mean-fighting-poverty
-author: false
+author: damian-c.-clarke
 slug: blog/2012-11-22/the-copenhagen-challenge-paper-for-education-what-does-it-mean-for-fighting-poverty
 date: '2012-11-22'
 time: '06:55pm'

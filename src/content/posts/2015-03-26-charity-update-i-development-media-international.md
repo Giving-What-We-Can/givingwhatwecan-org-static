@@ -2,7 +2,7 @@
 title: 'Charity Update I: Development Media International'
 redirects:
     - blog/2015-03-26/charity-update-i-development-media-international
-author: false
+author: michael-peyton-jones
 slug: blog/2015-03-26/charity-update-i-development-media-international
 date: '2015-03-26'
 time: '11:05am'

@@ -3,7 +3,7 @@ title: 'The Centre for Effective Altruism is looking for a Director of Developme
 redirects:
     - blog/2014-02-06/the-centre-for-effective-altruism-is-looking-for-a-director-of-development
     - blog/2014-03-01/centre-effective-altruism-looking-director-development
-author: false
+author: tom-ash
 slug: blog/2014-02-06/the-centre-for-effective-altruism-is-looking-for-a-director-of-development
 date: '2014-02-06'
 time: '06:18pm'

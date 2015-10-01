@@ -3,7 +3,7 @@ title: 'You give ten thousand pounds, and we''ll give ten thousand pounds.'
 redirects:
     - blog/2013-11-17/you-give-ten-thousand-pounds-and-well-give-ten-thousand-pounds
     - blog/2014-03-01/you-give-ten-thousand-pounds-and-well-give-ten-thousand-pounds
-author: false
+author: giving-what-we-can-oxford
 slug: blog/2013-11-17/you-give-ten-thousand-pounds-and-well-give-ten-thousand-pounds
 date: '2013-11-17'
 time: '10:45pm'

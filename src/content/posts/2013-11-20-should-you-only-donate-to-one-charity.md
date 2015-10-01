@@ -3,11 +3,11 @@ title: 'Should you only donate to one charity?'
 redirects:
     - blog/2013-11-20/should-you-only-donate-to-one-charity
     - blog/2014-03-01/should-you-only-donate-one-charity
-author: false
+author: ben-hoskin
 slug: blog/2013-11-20/should-you-only-donate-to-one-charity
 date: '2013-11-20'
 time: '11:07am'
-updatedDate: '2014-04-08'
+updatedDate: '2015-10-01'
 updatedTime: '11:07am'
 ---
 When donating, we have the option of giving all our donation to a single charity, or smaller amounts to multiple charities. We sometimes have an intuition that we should divide up our donations. If [AMF](http://www.againstmalaria.com/), [Deworm the World](http://evidenceaction.org/deworming/), and [SCI](http://www3.imperial.ac.uk/schisto) are all good charities, don't they all deserve my support? But there is a strong argument that, if you're interested in doing the most good, you should donate it all to one charity with plenty of room for more funding.

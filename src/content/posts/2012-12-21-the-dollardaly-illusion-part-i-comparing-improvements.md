@@ -4,7 +4,7 @@ redirects:
     - blog/2012-12-21/the-daly-illusion-part-i-comparing-improvements
     - blog/2014-02-28/daly-illusion-part-i-comparing-improvements
     - blog/2012-12-22/the-daly-illusion-part-i-comparing-improvements
-author: false
+author: bastian-stern
 slug: blog/2012-12-21/the-daly-illusion-part-i-comparing-improvements
 date: '2012-12-21'
 time: '10:26pm'

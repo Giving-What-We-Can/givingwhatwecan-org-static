@@ -2,11 +2,11 @@
 title: 'What We''ve Been Reading'
 redirects:
     - blog/2014-03-01/what-weve-been-reading
-author: false
+author: giving-what-we-can
 slug: blog/2014-03-01/what-weve-been-reading
 date: '2013-04-21'
 time: '10:53am'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '10:53am'
 ---
 ![](http://1.bp.blogspot.com/-vN4Ba1o5sjM/UN8W5l4jcyI/AAAAAAAADko/zhzd7y2jDcM/s1600/Books-1.jpg)
@@ -29,7 +29,7 @@ This "is IHME’s fourth annual report on global health expenditure and includes
 ## [David Cameron gives green light for aid cash to go on military](http://www.guardian.co.uk/politics/2013/feb/21/david-cameron-aid-military)
 
 "Hundreds of millions of pounds from Britain's aid budget are expected to be diverted to peacekeeping defence operations as the government moves to build up support on the Tory benches for overseas development.
-Amid deep unease among Conservative MPs at the size of the £10bn aid budget, which has increased while defence spending has been cut, David Cameron said on Wednesday that he was "very open" to the idea of pooling more resources."n. So let's start out by joining forces with an established organization who's already working on what you care about. Seriously, unless you're already ridiculously rich + brilliant or ludicrously influential, going solo or further fragmenting the philanthropic world by creating US-Charity#1,238,202 is almost certainly a mistake. Now that we're all working together here, let's keep in mind that only a few charitable organizations are truly great investments -- and the vast majority just aren't. So maximize your leverage by investing your time and money into supporting the best non-profits with the largest expected pay-offs."
+Amid deep unease among Conservative MPs at the size of the £10bn aid budget, which has increased while defence spending has been cut, David Cameron said on Wednesday that he was "very open" to the idea of pooling more resources."tart out by joining forces with an established organization who's already working on what you care about. Seriously, unless you're already ridiculously rich + brilliant or ludicrously influential, going solo or further fragmenting the philanthropic world by creating US-Charity#1,238,202 is almost certainly a mistake. Now that we're all working together here, let's keep in mind that only a few charitable organizations are truly great investments -- and the vast majority just aren't. So maximize your leverage by investing your time and money into supporting the best non-profits with the largest expected pay-offs."
 
 ### [Cost-effectiveness of nets vs. deworming vs. cash transfers - GiveWell Blog](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/)
 

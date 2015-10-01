@@ -4,15 +4,13 @@ redirects:
     - blog/2012-10-27/estimating-the-effectiveness-of-dcp2
     - blog/2014-02-28/estimating-effectiveness-dcp2
     - blog/2012-10-27/estimating-the-effectiveness-of-dcp
-author: false
+author: michael-peyton-jones
 slug: blog/2012-10-27/estimating-the-effectiveness-of-dcp2
 date: '2012-10-27'
 time: '10:53pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '10:53pm'
 ---
-![](/images/uploads/michaelpeytonjones.jpg)
-
 When searching for high-effectiveness charities, there are a few resources that are incredibly useful. One of those is the output of the [Disease Control Priorities Project](http://www.dcp2.org/main/Home.html) (DCP), which provides an analysis of the cost-effectiveness of a great number of health interventions. Given the value of this data for us as donors, we might wonder just how valuable this information is, and whether it might be worth donating to DCP to produce more of it.
 
 In this post I will present a statistical model (designed by myself and Nic Dunkley) for estimating the effectiveness of donating to DCP. Although this will inevitably over-simplify the situation, it will be a first step that we can build from. Although the model may be useful for looking at other similar organizations, the estimates that I will derive rely on data about DCP itself.

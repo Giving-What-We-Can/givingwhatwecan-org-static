@@ -3,7 +3,7 @@ title: 'Should we be blind to the (economic) burden of onchocerciasis?'
 redirects:
     - blog/2013-12-24/should-we-be-blind-to-the-economic-burden-of-onchocerciasis
     - blog/2014-03-01/should-we-be-blind-economic-burden-onchocerciasis
-author: false
+author: julia-heckenast
 slug: blog/2013-12-24/should-we-be-blind-to-the-economic-burden-of-onchocerciasis
 date: '2013-12-24'
 time: '10:10am'

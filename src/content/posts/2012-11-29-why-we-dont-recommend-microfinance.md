@@ -3,11 +3,11 @@ title: 'Why We Don’t Recommend Microfinance'
 redirects:
     - blog/2012-11-29/why-we-don’t-recommend-microfinance
     - blog/2014-02-28/why-we-dont-recommend-microfinance
-author: false
+author: giving-what-we-can
 slug: blog/2012-11-29/why-we-don’t-recommend-microfinance
 date: '2012-11-29'
 time: '01:02pm'
-updatedDate: '2014-03-24'
+updatedDate: '2015-10-01'
 updatedTime: '01:02pm'
 ---
 ![](/images/uploads/microfinance_558605.jpg)

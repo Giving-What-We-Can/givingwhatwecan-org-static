@@ -3,11 +3,11 @@ title: 'Interview with the World Health Organisation'
 redirects:
     - blog/2013-11-06/interview-with-the-world-health-organisation
     - blog/2014-03-01/interview-world-health-organisation
-author: false
+author: robert-wiblin
 slug: blog/2013-11-06/interview-with-the-world-health-organisation
 date: '2013-11-06'
 time: '12:44am'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '12:44am'
 ---
 ![](/images/uploads/who.jpg)Jeremy Lauer is a researcher at [WHO-CHOICE](http://www.who.int/choice/en/), a project of the World Health Organization to encourage cost-effectiveness via both research and communication with policy-makers. Rob Wiblin and I sat down to interview Jeremy and learn about WHO-CHOICE. Jeremy's main points were:

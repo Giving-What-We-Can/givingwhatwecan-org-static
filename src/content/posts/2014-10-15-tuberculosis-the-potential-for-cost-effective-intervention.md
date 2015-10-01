@@ -2,11 +2,11 @@
 title: 'Tuberculosis: The Potential for Cost-Effective Intervention'
 redirects:
     - blog/2014-10-14/tuberculosis-potential-cost-effective-intervention
-author: false
+author: olivia-goldin
 slug: blog/2014-10-14/tuberculosis-potential-cost-effective-intervention
 date: '2014-10-15'
 time: '12:05am'
-updatedDate: '2014-12-19'
+updatedDate: '2015-10-01'
 updatedTime: '12:05am'
 ---
 In 2012, an estimated 9 million people were newly diagnosed with active TB [1], and 1.5 million people died of TB [2]. Despite this, the vast majority of TB is fully curable [3].

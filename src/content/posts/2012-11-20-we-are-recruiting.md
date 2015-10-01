@@ -3,11 +3,11 @@ title: 'We are Recruiting!'
 redirects:
     - blog/2012-11-20/we-are-recruiting
     - blog/2014-02-28/we-are-recruiting
-author: false
+author: giving-what-we-can
 slug: blog/2012-11-20/we-are-recruiting
 date: '2012-11-20'
 time: '04:49pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '04:49pm'
 ---
 ![](/images/uploads/join_us.jpg)

@@ -2,15 +2,13 @@
 title: 'Neglected Tropical Diseases - Are they cost-effective to treat?'
 redirects:
     - blog/2012-10-11/neglected-tropical-diseases-are-they-cost-effective-to-treat
-author: false
+author: conrad-cotton-barratt
 slug: blog/2012-10-11/neglected-tropical-diseases-are-they-cost-effective-to-treat
 date: '2012-10-11'
 time: '07:58pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '07:58pm'
 ---
-![](/images/uploads/cotton-barratt.conrad.jpg)
-
 This blog post is going to be a quick summary of the major things we have discovered about the NTDs and the interventions targetting them, and what we now believe the cost per disability adjusted life year (DALY) achieved by treating NTDs to be. 
 
 When we launched in 2009, we estimated the cost-effectiveness of deworming treatments to be around $5 per DALY, which made it the most cost-effective charitable intervention that we could find. However, some of the sources used to arrive at this figure were subsequently shown to contain significant errors. As a result we are now much less confident about this figure. GiveWell has produced an independent cost-effectiveness estimate for deworming of around $170 per DALY, which we believe to be reliable as far as it goes. On the other hand, we think that this fails to fully take into account some factors - including the work the charities do to hand the programs over to governments - which will significantly raise the cost-effectiveness of deworming projects. Taking this into account, we expect deworming charities to be as cost-effective as preventing malaria by providing insecticide-treated nets, and possibly more cost-effective. Nonetheless we are quite uncertain about this, and recognise that more work needs to be done to more accurately estimate the full impact.

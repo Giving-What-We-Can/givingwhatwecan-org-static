@@ -2,15 +2,13 @@
 title: 'Giving to Charity – A Pain in the Eye?'
 redirects:
     - blog/2012-10-04/giving-to-charity-–-a-pain-in-the-eye
-author: false
+author: simon-jenkins
 slug: blog/2012-10-04/giving-to-charity-–-a-pain-in-the-eye
 date: '2012-10-04'
 time: '04:17pm'
-updatedDate: '2014-03-24'
+updatedDate: '2015-10-01'
 updatedTime: '04:17pm'
 ---
-![](/images/uploads/simon_2012.jpg)
-
 Giving What We Can put me in hospital. I was only a few steps from the postbox after posting my signed pledge back to GWWC. I’d been toying with the idea of becoming a member for something like a year, during which time I’d been agonising over a Masters dissertation on the very topic of how far our obligations to those in the developing world stretch. So after all this time, I was pleased with myself for having finally mustered up the courage to sign the pledge. I had felt a certain gravity and importance in the action of signing it and closing the envelope. I had gone to the letterbox, presumably with some kind of spring in my step, and I wouldn’t be surprised if I’d let out a resounding “ahhh” as I posted the letter into the slot.
 
 But I can’t quite remember now, because a few seconds later I was stumbling around in pain. I was marching down the hill from the letterbox when some debris flew from a nearby building site and caught me in the eye. I’ve made this sound more serious than it is – whatever it was was tiny and there was no permanent damage. At any rate, I found myself in A&E that evening.

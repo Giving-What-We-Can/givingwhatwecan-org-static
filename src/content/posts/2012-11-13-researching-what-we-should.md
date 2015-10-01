@@ -3,16 +3,16 @@ title: 'Researching What We Should'
 redirects:
     - blog/2012-11-13/researching-what-we-should
     - blog/2014-02-28/researching-what-we-should
-author: false
+author: william-macaskill
 slug: blog/2012-11-13/researching-what-we-should
 date: '2012-11-13'
 time: '06:13pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '06:13pm'
 ---
 ## Our methodology
 
-![Will](/images/uploads/will-crouch.jpg)As you may have noticed, change is afoot in GWWC. In the past, we feel that our research has been lacking in a few ways, including: a) We haven't made it clear, publicly, what our methodology has been for assessing charities; b) We haven't made it clear, publicly, what role GWWC has, relative to other charity evaluators; c) The website has not been updated regularly, so there's been a disconnect between our research - what we've known - and what's been broadcast publicly; d) We have spent fewer man-hours on research than was desirable. To a large extent, this has been because, until very recently, GWWC was run on an entirely voluntary basis. Now that we have full-time staff, we hope to be able to rectify these issues over time.
+As you may have noticed, change is afoot in GWWC. In the past, we feel that our research has been lacking in a few ways, including: a) We haven't made it clear, publicly, what our methodology has been for assessing charities; b) We haven't made it clear, publicly, what role GWWC has, relative to other charity evaluators; c) The website has not been updated regularly, so there's been a disconnect between our research - what we've known - and what's been broadcast publicly; d) We have spent fewer man-hours on research than was desirable. To a large extent, this has been because, until very recently, GWWC was run on an entirely voluntary basis. Now that we have full-time staff, we hope to be able to rectify these issues over time.
 
 As a first step, this blog post and the next will explain our methodology in a little more detail.
 

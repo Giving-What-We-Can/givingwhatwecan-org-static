@@ -4,11 +4,11 @@ redirects:
     - blog/2013-02-19/announcement-–-the-september-internship-programme
     - blog/2014-03-01/announcement-–-september-internship-programme
     - blog/2013-02-19/announcement-–-the-september-internship-programm
-author: false
+author: giving-what-we-can
 slug: blog/2013-02-19/announcement-–-the-september-internship-programme
 date: '2013-02-19'
 time: '01:38pm'
-updatedDate: '2014-04-08'
+updatedDate: '2015-10-01'
 updatedTime: '01:38pm'
 ---
 ![](/images/uploads/join_us.jpg)Giving What We Can is offering a 2-week internship programme this September in Oxford, and it promises to be a productive and exciting time for all involved! Including us, the organisers. We are looking forward to this get-together with you smart, motivated people out there!

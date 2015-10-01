@@ -3,7 +3,7 @@ title: 'Does Oxfam Help?'
 redirects:
     - blog/2012-12-11/does-oxfam-help
     - blog/2014-02-28/does-oxfam-help
-author: false
+author: adam-casey
 slug: blog/2012-12-11/does-oxfam-help
 date: '2012-12-11'
 time: '11:09pm'

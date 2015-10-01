@@ -2,11 +2,11 @@
 title: 'An Update on Project Healthy Children'
 redirects:
     - blog/2015-09-02/update-project-healthy-children
-author: false
+author: hauke-hillebrandt
 slug: blog/2015-09-02/update-project-healthy-children
 date: '2015-09-02'
 time: '09:50pm'
-updatedDate: '2015-09-02'
+updatedDate: '2015-10-01'
 updatedTime: '09:50pm'
 ---
 <a name="h.eok61unv7r9p"></a>![](https://lh3.googleusercontent.com/OyOjR1yBUWvCk1lRbvyOO7O-qNJIi6s5gWBqta7eQcampDMG3_1FuQxSH5igzf22Vl5h7T_Re6aLE5gNYHp4YVRJGRW07grVZxX5-NBsj9vhgysvv94peuydMvJRZk-nHyExIzA)An update on the effectiveness of the micronutrient fortification programmes by Project Healthy Children (PHC) (Working Paper)

@@ -3,14 +3,14 @@ title: 'Making practical estimates in cases of large uncertainty'
 redirects:
     - blog/2013-01-10/making-practical-estimates-in-cases-of-large-uncertainty
     - blog/2014-02-28/making-practical-estimates-cases-large-uncertainty
-author: false
+author: owen-cotton-barratt
 slug: blog/2013-01-10/making-practical-estimates-in-cases-of-large-uncertainty
 date: '2013-01-10'
 time: '09:04pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '09:04pm'
 ---
-![](/images/uploads/owencottonbarratt.jpg)A major part of our research is about producing quantitative estimates in order to help inform our decisions and recommendations. That could include which charities to recommend, what to research in more depth, or which career to choose. This post explains some methodological issues around making these estimates, and how we are addressing them.
+A major part of our research is about producing quantitative estimates in order to help inform our decisions and recommendations. That could include which charities to recommend, what to research in more depth, or which career to choose. This post explains some methodological issues around making these estimates, and how we are addressing them.
 
 We want to justify our estimates, and to make them as accurate as we can. However just about everything has some uncertainty attached to it, and it would be hopelessly counterproductive to ignore all estimates we are not completely confident about. But nor should we forget about our uncertainty, as it impacts how we use those estimates. So we'd really like to keep track of the uncertainty, along with the other parts of the estimate.
 

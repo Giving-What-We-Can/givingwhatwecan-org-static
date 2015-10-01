@@ -2,11 +2,11 @@
 title: 'Struggle for survival'
 redirects:
     - blog/2014-05-29/struggle-survival
-author: false
+author: stephanie-crampin
 slug: blog/2014-05-29/struggle-survival
 date: '2014-05-29'
 time: '02:04pm'
-updatedDate: '2014-05-30'
+updatedDate: '2015-10-01'
 updatedTime: '02:04pm'
 ---
 ![](/images/uploads/struggle_for_survival.jpg)

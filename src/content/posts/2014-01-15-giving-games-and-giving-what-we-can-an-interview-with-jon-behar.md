@@ -3,11 +3,11 @@ title: '''Giving Games'' and Giving What We Can: an Interview with Jon Behar'
 redirects:
     - blog/2014-01-15/giving-games-an-interview-with-jon-behar
     - blog/2014-03-01/giving-games-and-giving-what-we-can-interview-jon-behar
-author: false
+author: peter-hurford
 slug: blog/2014-01-15/giving-games-an-interview-with-jon-behar
 date: '2014-01-15'
 time: '04:50pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '04:50pm'
 ---
 Jon Behar left a lucrative job at an investment management firm to pursue dreams of running philanthropic projects. Behar runs a startup called ["A Path That's Clear"](http://www.apaththatsclear.com/) which uses a model called "Giving Games". These games are run at colleges and other areas around the world and engage people in discussions about effective giving.

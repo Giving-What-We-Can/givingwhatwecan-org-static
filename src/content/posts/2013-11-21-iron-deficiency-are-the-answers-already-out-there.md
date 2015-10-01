@@ -3,11 +3,11 @@ title: 'Iron Deficiency: Are the Answers Already out There?'
 redirects:
     - blog/2013-11-21/iron-deficiency-are-the-answers-already-out-there
     - blog/2014-03-01/iron-deficiency-are-answers-already-out-there
-author: false
+author: robert-wiblin
 slug: blog/2013-11-21/iron-deficiency-are-the-answers-already-out-there
 date: '2013-11-21'
 time: '10:06pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '10:06pm'
 ---
 Iron deficiency, or getting insufficient iron, is a large problem, affecting approximately two billion people worldwide. Iron deficiency commonly causes anaemia, higher levels of maternal mortality, and perinatal mortality. It even can increase the likelihood of contracting a disease[1]. Iron deficiency contributes substantially to global death and disability, particularly in developing countries. Pregnant women, perinatal women and young children are the most affected by iron deficiency, largely because of the high iron demands associated with pregnancy and growth.[1]

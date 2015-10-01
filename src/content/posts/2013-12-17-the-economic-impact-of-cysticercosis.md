@@ -3,7 +3,7 @@ title: 'The Economic Impact of Cysticercosis'
 redirects:
     - blog/2013-12-17/the-economic-impact-of-cysticercosis
     - blog/2014-03-01/economic-impact-cysticercosis
-author: false
+author: costello-medical
 slug: blog/2013-12-17/the-economic-impact-of-cysticercosis
 date: '2013-12-17'
 time: '05:40pm'

@@ -3,11 +3,11 @@ title: 'Internship opportunities at Giving What We Can'
 redirects:
     - blog/2014-02-10/internship-opportunities-at-giving-what-we-can
     - blog/2014-03-01/internship-opportunities-giving-what-we-can
-author: false
+author: giving-what-we-can
 slug: blog/2014-02-10/internship-opportunities-at-giving-what-we-can
 date: '2014-02-10'
 time: '03:15pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '03:15pm'
 ---
 We are currently looking for interns to join our Graduate Volunteer Scheme. This involves a period of several months' work in our Oxford-based office. Work will be varied, and prioritised by the most pressing needs in the six month plan. We are also taking applications for our two-week student development programme in September. All candidates would ideally be intelligent and hardworking, and motivated by the idea of contributing to our mission of inspiring donations to the most effective charities fighting extreme poverty.

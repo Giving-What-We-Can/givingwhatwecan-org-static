@@ -3,7 +3,7 @@ title: 'Migration as a possible way of helping the poor'
 redirects:
     - blog/2012-12-07/migration-as-a-possible-way-of-helping-the-poor
     - blog/2014-02-28/migration-possible-way-helping-poor
-author: false
+author: shaun-raviv
 slug: blog/2012-12-07/migration-as-a-possible-way-of-helping-the-poor
 date: '2012-12-07'
 time: '06:03pm'

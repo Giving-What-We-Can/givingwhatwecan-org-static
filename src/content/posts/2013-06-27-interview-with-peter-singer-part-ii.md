@@ -3,7 +3,7 @@ title: 'Interview with Peter Singer-Part II'
 redirects:
     - blog/2013-06-27/interview-with-peter-singer-part-ii
     - blog/2014-03-01/interview-peter-singer-part-ii
-author: false
+author: giving-what-we-can-cambridge
 slug: blog/2013-06-27/interview-with-peter-singer-part-ii
 date: '2013-06-27'
 time: '07:51am'

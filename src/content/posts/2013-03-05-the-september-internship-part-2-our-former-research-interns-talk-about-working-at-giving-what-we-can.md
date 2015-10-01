@@ -3,11 +3,11 @@ title: 'The September Internship, Part 2: Our former research interns talk about
 redirects:
     - blog/2013-03-05/the-september-internship-part-2-our-former-research-interns-talk-about-working-at
     - blog/2014-03-01/september-internship-part-2-our-former-research-interns-talk-about-working-giving
-author: false
+author: giving-what-we-can
 slug: blog/2013-03-05/the-september-internship-part-2-our-former-research-interns-talk-about-working-at
 date: '2013-03-05'
 time: '04:29pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '04:29pm'
 ---
 _For information about the application process this year, please see our [recruitment page](http://www.givingwhatwecan.org/getting-involved/work-with-us/september-internship)._

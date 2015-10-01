@@ -2,14 +2,14 @@
 title: 'Living on $1.25 a day - what does that mean? '
 redirects:
     - blog/2013-05-19/living-on-125-a-day-what-does-that-mean
-author: false
+author: william-macaskill
 slug: blog/2013-05-19/living-on-125-a-day-what-does-that-mean
 date: '2013-05-19'
 time: '07:55pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '07:55pm'
 ---
-![](/images/uploads/will-crouch-1.jpg)1.4 billion people live on less than $1.25 per day. What does that mean?
+1.4 billion people live on less than $1.25 per day. What does that mean?
 
 What it doesn't mean is that these people are living on what $1.25 could buy in, say, Kenya. If you thought that, then you might think that $1.25 isn't so bad, because money goes much further in developing countries.
 

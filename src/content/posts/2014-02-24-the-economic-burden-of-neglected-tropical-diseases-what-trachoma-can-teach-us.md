@@ -3,11 +3,11 @@ title: 'The Economic Burden of Neglected Tropical Diseases: What Trachoma Can Te
 redirects:
     - blog/2014-02-24/the-economic-burden-of-neglected-tropical-diseases-what-trachoma-can-teach-us
     - blog/2014-03-01/economic-burden-neglected-tropical-diseases-what-trachoma-can-teach-us
-author: false
+author: katie-hamilton
 slug: blog/2014-02-24/the-economic-burden-of-neglected-tropical-diseases-what-trachoma-can-teach-us
 date: '2014-02-24'
 time: '01:20pm'
-updatedDate: '2014-02-24'
+updatedDate: '2015-10-01'
 updatedTime: '01:20pm'
 ---
 This blog, the final in a 3-part series written by Costello Medical Consulting, focuses on the estimated economic burden of trachoma. This neglected tropical disease (NTD), caused by repeated bacterial infection of the eye, is estimated to leave one person blind every 15 minutes. International work highlighting the importance of tackling this infectious disease has led to adoption of a simple yet effective control strategy, which reduces the prevalence of trachoma by treating those affected and reducing transmission by improving sanitation. Here, we discuss the potential of this intervention tactic to not only decrease the prevalence of trachoma, but to also provide benefits that help reduce the global burden of other NTDs.

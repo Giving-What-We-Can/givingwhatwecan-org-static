@@ -3,15 +3,13 @@ title: 'The contagiousness modifier'
 redirects:
     - blog/2013-02-26/the-contagiousness-modifier
     - blog/2013-02-26/contagiousness-modifier
-author: false
+author: matt-griffiths
 slug: blog/2013-02-26/the-contagiousness-modifier
 date: '2013-02-26'
 time: '02:21pm'
-updatedDate: '2014-02-11'
+updatedDate: '2015-10-01'
 updatedTime: '02:21pm'
 ---
-![none](http://biop.ox.ac.uk/www/lj2001/lea/lea-4.jpg)
-
 _By Matt Griffiths**,** working Pro Bono for Costello Medical Consulting, and Robert Wiblin_
 
 In order to understand the impact of any charitable intervention against a disease, it is imperative to have a full appreciation of the scope of the disease burden, both epidemiologically and economically. By 'scope of the disease burden', I am not only referring to a standard static measurement of the prevalence, treatment costs and morbidity; we also need to factor in the dynamic nature of the disease itself. For instance, imagine a choice between two treatments: programme A, which provides direct treatment to 100,000 sufferers of a poorly transmissible disease, or programme B, which cures just 10,000 patients suffering from a similarly painful disease that is renowned for its high transmissibility. The immediate impact of programme A will be higher, but ultimately programme B may represent the more cost-effective option, especially if further cases are hard to treat.

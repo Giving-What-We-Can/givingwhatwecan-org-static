@@ -3,11 +3,11 @@ title: 'We''re hiring!'
 redirects:
     - blog/2013-07-22/were-hiring
     - blog/2014-03-01/were-hiring
-author: false
+author: giving-what-we-can
 slug: blog/2013-07-22/were-hiring
 date: '2013-07-22'
 time: '10:11am'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '10:11am'
 ---
 ![](/images/uploads/cea_weekend_away_small.jpg "Attendees of CEA's weekend away")

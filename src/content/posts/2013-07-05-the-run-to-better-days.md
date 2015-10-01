@@ -3,11 +3,11 @@ title: 'The Run to Better Days'
 redirects:
     - blog/2013-07-05/the-run-to-better-days
     - blog/2014-03-01/run-better-days
-author: false
+author: brenton-mayer
 slug: blog/2013-07-05/the-run-to-better-days
 date: '2013-07-05'
 time: '10:32am'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '10:32am'
 ---
 ![Run to Better Days](http://runtobetterdays.files.wordpress.com/2012/05/website2.jpg?w=620&h=380)The Run to Better Days is a fun example of how members of Giving What We Can in Australia - and their friends - are trying to spread the word about effective altruism. Here, organiser Brenton Mayer explains how the run works and asks how effective it's likely to be.
@@ -26,7 +26,7 @@ updatedTime: '10:32am'
 
 **Is the Run to Better Days effective altruism?**
 
-![The Route](http://runtobetterdays.files.wordpress.com/2012/05/locations.png?w=640)"The run has been designed to maximise how many people we can get to think seriously about Singer's arguments on poverty. Our presentation starts off by introducing Singer's drowning child thought experiment, covers the basics of what extreme poverty is, compares extreme poverty with our own growing wealth, and then looks how much our society and our government are doing towards poverty alleviation at the moment. We then challenge our listeners with the question of, given all the above, what should we be doing? To help them answer that, we present some of the wonderfully straightforward calculations that show how much people living in developed countries can do for others, examples of which you can find [here](http://www.givingwhatwecan.org/why-give/what-you-can-achieve).
+The run has been designed to maximise how many people we can get to think seriously about Singer's arguments on poverty. Our presentation starts off by introducing Singer's drowning child thought experiment, covers the basics of what extreme poverty is, compares extreme poverty with our own growing wealth, and then looks how much our society and our government are doing towards poverty alleviation at the moment. We then challenge our listeners with the question of, given all the above, what should we be doing? To help them answer that, we present some of the wonderfully straightforward calculations that show how much people living in developed countries can do for others, examples of which you can find [here](http://www.givingwhatwecan.org/why-give/what-you-can-achieve).
 
 "After the talk we suggest that 'if anything we've said has struck a chord or seemed interesting, then the best thing to do is to read this book; The Life You Can Save.' We offer a free copy of the book, as well as a letter, to all who are interested and want to engage more with the ideas, spreading the message about how and why they can improve the world in the best way.
 

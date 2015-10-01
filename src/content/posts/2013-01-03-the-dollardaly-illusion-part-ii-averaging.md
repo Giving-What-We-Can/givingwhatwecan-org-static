@@ -3,7 +3,7 @@ title: 'The $/DALY Illusion: Part II - Averaging'
 redirects:
     - blog/2013-01-03/the-daly-illusion-part-ii-averaging
     - blog/2014-02-28/daly-illusion-part-ii-averaging
-author: false
+author: bastian-stern
 slug: blog/2013-01-03/the-daly-illusion-part-ii-averaging
 date: '2013-01-03'
 time: '06:51pm'

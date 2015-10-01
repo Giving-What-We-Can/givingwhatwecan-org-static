@@ -1,12 +1,13 @@
 ---
 title: 'Global Priorities Project is looking for a summer intern'
 redirects:
+    - blog/2015-04-16/global-priorities-project-looking-summer-intern
     - blog/2015-04-16/global-priorities-project-looking-summer-intern-0
-author: false
-slug: blog/2015-04-16/global-priorities-project-looking-summer-intern-0
+author: giving-what-we-can
+slug: blog/2015-04-16/global-priorities-project-looking-summer-intern
 date: '2015-04-16'
 time: '04:53pm'
-updatedDate: '2015-05-06'
+updatedDate: '2015-10-01'
 updatedTime: '04:53pm'
 ---
 _The [Global Priorities Project](http://globalprioritiesproject.org/) is an Oxford-based think tank that brings the best research to bear on policy areas which are selected for their importance, tractability, and neglectedness. You can find details of their impact and team [here](http://globalprioritiesproject.org/about-us/). They aim to grow quickly over the next year, making it a particularly exciting time to work with them. The work done now will have a big effect on shaping the direction of their future efforts._

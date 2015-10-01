@@ -3,11 +3,11 @@ title: 'The nightmare is real'
 redirects:
     - blog/2013-12-03/the-nightmare-is-real
     - blog/2014-03-01/nightmare-real
-author: false
+author: giving-what-we-can
 slug: blog/2013-12-03/the-nightmare-is-real
 date: '2013-12-03'
 time: '05:42pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '05:42pm'
 ---
 Today marks [the launch](http://greatergood.tv/projects/nightmare-malaria/) of a high quality mobile video game, marking the event of production company Psyop joining the fight against malaria, in conjunction with the Against Malaria Foundation.

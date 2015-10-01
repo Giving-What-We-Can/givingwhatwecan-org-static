@@ -2,7 +2,7 @@
 title: 'Death by Info-graphic?'
 redirects:
     - blog/2013-02-07/death-by-info-graphic
-author: false
+author: alex-catlin
 slug: blog/2013-02-07/death-by-info-graphic
 date: '2013-02-07'
 time: '02:31pm'

@@ -2,7 +2,7 @@
 title: 'Decision Making under Uncertainty'
 redirects:
     - blog/2013-01-17/decision-making-under-uncertainty
-author: false
+author: ben-hoskin
 slug: blog/2013-01-17/decision-making-under-uncertainty
 date: '2013-01-17'
 time: '10:01pm'

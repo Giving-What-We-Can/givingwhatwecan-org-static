@@ -3,7 +3,7 @@ title: 'Our Charities Update Is Coming!'
 redirects:
     - blog/2015-03-19/our-charities-update-coming
     - blog/2015-03-19/charities-updates-are-coming
-author: false
+author: michael-peyton-jones
 slug: blog/2015-03-19/our-charities-update-coming
 date: '2015-03-19'
 time: '10:31pm'

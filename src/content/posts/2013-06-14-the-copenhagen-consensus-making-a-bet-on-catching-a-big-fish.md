@@ -2,11 +2,11 @@
 title: 'The Copenhagen Consensus: making a bet on catching a big fish'
 redirects:
     - blog/2013-06-14/the-copenhagen-consensus-making-a-bet-on-catching-a-big-fish
-author: false
+author: robert-wiblin
 slug: blog/2013-06-14/the-copenhagen-consensus-making-a-bet-on-catching-a-big-fish
 date: '2013-06-14'
 time: '02:22pm'
-updatedDate: '2014-02-10'
+updatedDate: '2015-10-01'
 updatedTime: '02:22pm'
 ---
 ![](http://www.eoi.es/blogs/lauranavas/files/2012/01/no_excuses2.jpg)
