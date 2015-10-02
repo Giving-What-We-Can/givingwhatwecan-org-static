@@ -1,3 +1,5 @@
+// load environment variables
+require('dotenv').load();
 // Start the build!
 console.log('\nGenerating the Giving What We Can site!\n');
 console.log('Initialising new build...');
@@ -7,6 +9,7 @@ var Metalsmith = require('metalsmith');
 // templating
 console.log('Loading templating...');
 var metadata = require('metalsmith-metadata');
+var contentful = require('contentful-metalsmith');
 var slug = require('slug'); slug.defaults.mode = 'rfc3986';
 var filemetadata = require('metalsmith-filemetadata');
 var copy = require('metalsmith-copy');
@@ -40,6 +43,8 @@ var uncss = require('metalsmith-uncss');
 var cleanCSS = require('metalsmith-clean-css');
 // utility
 console.log('Loading utilities...');
+var each = require('async').each;
+var merge = require('merge');
 // var debug = require('debug')('build');
 
 // BOWER MANAGEMENT
@@ -149,41 +154,125 @@ process.argv.forEach(function (arg) {
 // ENVIRONMENT VARS - default to development
 var ENVIRONMENT = process.env.ENV ? process.env.ENV : 'development';
 var BEAUTIFY = args['--beautify'] || args['--b'] ? true : false;
+var CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
+var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
 
 // START THE BUILD!
 console.log('Building...')
 var colophonemes = new Metalsmith(__dirname);
-
 colophonemes
     .use(logMessage('ENVIRONMENT: ' + ENVIRONMENT))
     .use(logMessage('NODE VERSION: ' + process.version))
+    .use(logMessage('BUILD TIME: ' + moment().format('YYYY-MM-DD @ H:m')))
     .source('./src')
     .destination('./dest')
     .use(ignore([
         'drafts/*',
         '**/.DS_Store',
-        'styles/partials'
+        'styles/partials/**'
     ]))
     // Set up some metadata
     .use(logMessage('Preparing global metadata'))
     .use(metadata({
-        "siteInfo": "settings/site-info.json"
+        "siteInfo": "settings/site-info.json",
     }))
     .use(function (files,metalsmith,done){
-        // The CMS can only save the menuOrder field as a string, which won't sort properly. This function converts it back to an integer
-        Object.keys(files).forEach(function (file) {
-            if(files[file].menuOrder){
-                files[file].menuOrder = parseInt(files[file].menuOrder);
+        // add defaults to all our contentful source files
+        var options = {
+            space_id: CONTENTFUL_SPACE,
+            limit: 2000,
+            permalink_style: true
+        }
+        each(Object.keys(files), apply , done)
+
+        function apply (file, cb) {
+            var meta = files[file];
+            if(!meta.contentful) {cb(); return;}
+            meta.contentful = merge(true,options,meta.contentful)
+            cb();
+        }
+    })
+    .use(logMessage('Downloading content from Contentful'))
+    .use(contentful({ "accessToken" : CONTENTFUL_ACCESS_TOKEN } ))
+    .use(function (files,metalsmith,done){
+        // get rid of the contentful source files from the build
+        each(Object.keys(files), function(file,cb){
+            if(minimatch(file,'contentful/**')){
+                delete files[file];
             }
-        });
+            cb();
+        } , done)
+    })
+    .use(function (files,metalsmith,done){
+        // fix weird situation where contentful adds a double slash to the index page if the slug is set as '/'
+        if(files['page//index.html']){
+            files['page/index.html'] = files['page//index.html'];
+            delete files['page//index.html'];
+        }
         done();
+    })
+    .use(function (files,metalsmith,done){
+        // move the contentful 'fields' metadata to the file's global meta
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), function(file,cb){
+            var meta = files[file]
+            if(!meta.data || !meta.data.fields){ cb(); return; }
+            each(Object.keys(meta.data.fields), function(key,cb){
+                if(key!=='body'){
+                    meta[key] = meta.data.fields[key]
+                } else {
+                    meta['contents'] = new Buffer(meta.data.fields.body);
+                }
+                cb();
+            }, cb)
+        }, done)
+    })
+    .use(function (files,metalsmith,done){
+        // add any menus to the global metadata, and get rid of the source files
+        var menus = {};
+        each(Object.keys(files).filter(minimatch.filter('@(menu)/**/*.html')),apply, function(){
+            var metadata = metalsmith.metadata();
+            metadata.menus = menus;
+            done();            
+        })
+
+        function apply (file,cb){
+            var meta = files[file]
+            if(meta.topLevelMenu){
+                var menu = traverse(meta.data,[])[0]._children;
+                menus[meta.id] = menu
+            }
+            delete files[file];
+            cb();
+        }
+        function traverse(menu,a){
+            if(menu.fields.children){
+                var c = [];
+                menu.fields.children.forEach(function(child){
+                    var page = getFile(child)
+                    if (page) c.push({_page:page})
+                    traverse(child,c)
+                })
+                a.push({_menu:menu,_children:c})
+            }
+            return a
+        }
+        function getFile(menu){
+            var found = false;
+            Object.keys(files).forEach(function(file){
+                if(files[file].id === menu.sys.id){
+                    found = file;
+                }
+            })
+            return found ? files[found] : false;
+        }
+
     })
     .use(logMessage('Preparing blog posts'))
     .use(collections({
         // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
         posts: {
-            pattern: 'content/posts/**/*.md',
+            pattern: 'post/**/*.html',
             sortBy: 'date',
             reverse: true,
             metadata: {
@@ -195,8 +284,8 @@ colophonemes
         'collections.posts': {
             perPage: 10,
             template: 'blog.swig',
-            first: 'blog.html',
-            path: 'blog/page/:num.html',
+            first: 'blog/index.html',
+            path: 'blog/page/:num/index.html',
             pageMetadata: {
               title: 'Blog',
 
@@ -205,33 +294,41 @@ colophonemes
     }))
     .use(function (files, metalsmith, done) {
         // get rid of the 'post' collections in the global metadata so that we can create clean collections when we index the rest of the content
-        var metadata =metalsmith.metadata();
+        var metadata = metalsmith.metadata();
         delete metadata.collections;
         delete metadata.posts;
-        Object.keys(files).forEach(function (file) {
+        each(Object.keys(files), apply , done)
+        function apply (file, cb) {
             delete files[file].collection;
-        })
-        done();
+            cb();
+        }
     })
     .use(logMessage('Adding files to collections'))
     .use(collections({
         // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
         pages: {
-            pattern: '{content/pages/**/*.md,blog/**/*.html}',
+            pattern: 'page/**/*.html',
             sortBy: 'menuOrder',
             metadata: {
                 singular: 'page',
             }
         },
+        blogs: {
+            pattern: 'blog/**/*.html',
+            sortBy: 'menuOrder',
+            metadata: {
+                singular: 'blog',
+            }
+        },
         authors: {
-            pattern: 'content/authors/**/*.md',
+            pattern: 'author/**/*.html',
             sortBy: 'name',
             metadata: {
                 singular: 'author',
             }
         },
         posts: {
-            pattern: 'content/posts/**/*.md',
+            pattern: 'post/**/*.html',
             sortBy: 'date',
             reverse: true,
             metadata: {
@@ -239,7 +336,7 @@ colophonemes
             }
         },
         contentBlocks: {
-            pattern: 'content/content-blocks/**/*.md',
+            pattern: 'content-block/**/*.html',
             sortBy: 'menuOrder',
             reverse: false,
             metadata: {
@@ -247,153 +344,162 @@ colophonemes
             }
         }
     }))
-    // .use(function (files, metalsmith, done) {
-    //     console.log(Object.keys(files));
-    //     console.log(Object.keys(metalsmith._metadata.collections));
-    // })
     .use(logMessage('Adding navigation metadata'))
     .use(function (files, metalsmith, done) {
-        var debug = require('debug')('addSlugs');
-        debug('Adding slugs to files');
-        // add a slug to html files
-        Object.keys(files).forEach(function (file) {
-            if(minimatch(file,'**/*.md')){
-                debug('Adding slug to %s',file);
-                if(minimatch(file,'content/pages/index.md')){
-                    files[file].slug = '/'
+        // check all of our HTML files have slugs
+        each(Object.keys(files).filter(minimatch.filter('@(page)/**/*.html')), apply, done )
+
+        function apply (file, cb) {
+            meta = files[file];
+            // add a slug
+            if(!meta.slug) {
+                if (meta.title) {
+                    meta.slug = slug(meta.title)
                 }
-                else if(files[file].title){
-                    files[file].slug = slug( files[file].menuTitle ? files[file].menuTitle : files[file].title );
-                } else if (files[file].name) {
-                    files[file].slug = slug( files[file].name );
+                else if (meta.name) {
+                    meta.slug = slug(meta.name)
                 } else {
-                    console.error ('Cannot generate slug, file has no `title` or `name` attribute');
-                    console.log(file)
-                    console.log(files[file].contents.toString().substr(0,500));
-                    console.log('File object has the following keys',Object.keys(files[file]));
-                    delete files[file];
+                    throw new Error ('Could not set slug for file ' + file)
                 }
-                debug('File slug is %s',files[file].slug);
             }
-        });
-        done();
+            cb();
+        }
+    })
+
+    .use(function (files, metalsmith, done) {
+        // add parents to pages if needed 
+        each(Object.keys(files).filter(minimatch.filter('@(page)/**/*.html')), apply, done )
+        // recursively find parent links
+        function apply(file, cb){
+            files[file].breadcrumbs = files[file].parent ? getParent(files[file].parent,[files[file].slug]) : [files[file].slug];
+            files[file].path = files[file].slug !== '/' ? files[file].breadcrumbs.join('/') : '.';
+            cb();
+        }
+        function getParent(parent, path){
+            path = path || [];
+            if(!parent.fields.slug) throw new Error('Parent has no slug!' + parent.sys.id)
+            path.unshift(parent.fields.slug)
+            if(parent.fields.parent){
+                return getParent(parent.fields.parent,path)
+            } else {
+                return path;
+            }
+        }
     })
     .use(function (files,metalsmith,done){
-        var debug = require('debug')('setAuthorParents');
-        debug('Setting default parents for authors');
-        // set a default parent for all author pages
-        Object.keys(files).forEach(function(file){
-            if(minimatch(file,"content/authors/**/*.md")){
-                debug('%s — added parent "authors"',file);
-                files[file].parent = 'authors';
-            }           
-        });
-        done();
+        // add paths to authors 
+        each(Object.keys(files).filter(minimatch.filter('@(author)/**/*.html')), apply, done )
+        // recursively find parent links
+        function apply(file, cb){
+            var authorPath = 'author'
+            files[file].breadcrumbs = [authorPath, files[file].slug]
+            files[file].path = files[file].breadcrumbs.join('/')
+            cb();
+        }
     })
     .use(function (files,metalsmith,done){
-        var debug = require('debug')('setBlogPathInfo');
-        debug('Setting path info');
         // set a nice path for blog posts
-        Object.keys(files).forEach(function(file){
-            if(minimatch(file,"content/posts/**/*.md")){
-                debug('%s — setting path info"',file);
-                var date = moment(files[file].date,'YYYY-MM-DD').format('YYYY/MM');
-                var filepath = 'posts/'+date+'/'+files[file].slug
-                // add the path to the files metadata
-                files[file].path = filepath;
-                // move the post to the right location, and get rid of the original
-                files[filepath+'.md'] = files[file];
-                delete files[file];
-                debug('%s — moved file"',file);
-            }           
-        });
-        done();
+        each(Object.keys(files).filter(minimatch.filter('@(post)/**/*.html')), apply, done )
+        function apply(file, cb){
+            var date = moment(files[file].date,moment.ISO_8601).format('YYYY/MM');
+            var filepath = 'post/'+date+'/'+files[file].slug
+            // add the path to the files metadata
+            files[file].path = filepath;
+            cb();
+        }
     })
+    
     .use(logMessage('Building navigation'))
     .use(function (files,metalsmith,done){
-        var debug = require('debug')('createMenu');
-        debug('Creating menu');
         // create a menu hierarchy
         var nav = {};
-        var match = "content/@(authors|pages)/**/*.md";
         // go through files
-        Object.keys(files).forEach(function(file){
-            // match files
-            if(minimatch(file,match)){ 
-                // set variables for convenience
-                var parent = files[file].parent;
-                var slug = files[file].slug;
-                var navigation = files[file].navigation;
-                // if the file has a parent, add it to the appropriate place in the navigation
-                if(parent){
-                    debug('%s -- has a parent file',file);
-                    // split the parent path up into folders
-                    var breadcrumb = parent.split('/');
-                    // function to recursively add elements to the nav structure
-                    breadcrumb.reduce(function(parent, child, index) { 
-                        parent.children = parent.children || {};
-                        parent.children[child] = parent.children[child] || {}
-                        // if this is the last element of the breadcrumb, add our child page here
-                        if(index === breadcrumb.length-1){ 
-                            parent.children[child].childPages = parent.children[child].childPages || {}
-                            parent.children[child].childPages[slug] = files[file];
-                            // if we're only one level down, check whether there should be a heading for this page's parent in the menu
-                            if(breadcrumb.length===1 && files[file].navigation){
-                                // step through each menu that this file should appear in
-                                navigation.forEach(function(menu){
-                                    nav.menus = nav.menus || {};
-                                    // ensure that the parent menu item that this file is a child of appears in this particular menu
-                                    if(nav.menus.hasOwnProperty(menu) && nav.menus[menu].indexOf(child)===-1){
-                                        nav.menus[menu].push(child);
-                                    } else if (!nav.menus[menu]) {
-                                        nav.menus[menu] = [child];
-                                    }
-                                });
-                            }
-                        } 
-                        return parent.children[child];
-                    }, nav);
-                    // make sure that the file's path is correct
-                    files[file].path = parent + '/' + slug;
+        each(Object.keys(files).filter(minimatch.filter('@(page)/**/*.html')), getNavPosition , function(){
+            var metadata = metalsmith.metadata()
+            sortNavItems(nav)
+            nav._sorted = Object.keys(nav);
+            nav._sorted.sort()
+            nav._sorted.sort(function(a,b){
+                // sort by menuOrder
+                var x = nav[a]._data.menuOrder
+                var y = nav[b]._data.menuOrder
+                x = typeof x === 'number' ? x : 100;
+                y = typeof y === 'number' ? y : 100;
 
-
-                // otherwise, if there's no parent, add it as a child of the top level of the menu    
-                } else {  
-                    debug('%s -- has no parent file',file);      
-                    if(!files[file].slug) throw new Error(files[file].title + 'has no slug')
-                    nav.childPages = nav.childPages || {};
-                    nav.childPages[slug] = files[file];
-                    // make sure that the file's path is correct
-                    files[file].path = slug;
+                if (y < x){
+                    return 1
+                } else if (y > x){
+                    return -1
                 }
-                // make sure the file builds at the proper path, ensuring that the index remains the index
-                filepath = files[file].path !== '/' ? files[file].path+'.md' : 'index.md';
-                if(filepath !== file){
-                    files[filepath] = files[file];
+                return 0;
+            })
+            metadata['nav'] = nav;
+            done();
+        })
+        function getNavPosition(file, cb){
+            var meta = files[file];
+            createNestedObject(nav,files[file].breadcrumbs);
+            cb();
+            function createNestedObject ( base, names ) {
+                var i = names[0]
+                base[i] = base[i] || {};
+                if(names.length>1){
+                    base[i]._children = base[i]._children || {}
+                    createNestedObject(base[i]._children,names.slice(1))
+                } else {
+                    base[i]._data = meta
+                }
+            };
+        }
+        function sortNavItems(base){
+            // add a '_sorted' field to each node of the nav, so that we can get things in order if needed
+            Object.keys(base).forEach(function(key){
+                var c = base[key]
+                if(c._children){
+                    c._sorted = Object.keys(c._children);
+                    c._sorted.sort(); // sort alphabetically
+                    c._sorted.sort(function(a,b){
+                        // sort by menuOrder
+                        var x = c._children[a]._data.menuOrder
+                        var y = c._children[b]._data.menuOrder
+                        x = typeof x === 'number' ? x : 100;
+                        y = typeof y === 'number' ? y : 100;
+
+                        if (y < x){
+                            return 1
+                        } else if (y > x){
+                            return -1
+                        }
+                        return 0;
+                    })
+                    sortNavItems(c._children);
+                }
+            })
+        }     
+    })
+    .use(function (files,metalsmith,done){
+        // move files so that their location matches their path
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done )
+        function apply(file, cb){
+            var filepath = files[file].path
+            if(filepath){
+                if(typeof filepath !== 'string'){
+                    throw new Error ('File path should be a string ' + file)
+                }
+                // normalize paths by getting rid of index.html
+                var index = /\/index\.html$/
+                if(index.test(filepath)){
+                    filepath = filepath.replace(index,'')
+                    files[file].path = filepath;
+                }
+                if(filepath + '/index.html' !== file){
+                    files[path.join(filepath!=='.'?filepath:'','index.html')] = files[file];
                     delete files[file];
                 }
-
             }
-        });
-        var metadata = metalsmith.metadata()
-        metadata['navMenus'] = nav;
-        done();
-    })
-    .use(logMessage('Adding templating metadata'))    
-    .use(addTemplate({
-        pages: {
-            collection: 'pages',
-            template: 'page.swig'
-        },
-        authors: {
-            collection: 'authors',
-            template: 'author.swig'
-        },
-        posts: {
-            collection: 'posts',
-            template: 'post.swig'
+            cb();
         }
-    }))
+    })
     // Build HTML files
     .use(logMessage('Converting Markdown to HTML'))
     .use(function (files, metalsmith, done) {
@@ -401,9 +507,10 @@ colophonemes
         // Use the Remarkable parser to parse our Markdown files into HTML
         Remarkable = require('remarkable');
         cheerio = require('cheerio');
-        Object.keys(files).forEach(function (file) {
-            // look for markdown files
-            if(file.substring(file.length-3,file.length)!=='.md') return false;
+
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), parse, done )
+
+        function parse (file, cb) {
             // use remarkable to render MD
             debug('%s — Building HTML from Markdown',file);
             md = new Remarkable({
@@ -442,38 +549,35 @@ colophonemes
             debug('Rendered HTML from cheerio');
             // save back to the main metalsmith array
             files[file].contents = html;
-            var newFile = file.replace('.md','.html');
-            files[newFile] = files[file];
-            delete files[file];
-            debug('%s – Saved file',newFile);
-        }); 
-        done();
+            debug('%s – Saved file',file);
+            cb();
+        } 
     })
-    .use(
-        branch('index.html')
-        .use(
-            permalinks({
-                pattern: './',
-                relative: false             
-            })
-        )
-    )
-    .use(
-        branch('!(index).html')
-        .use(
-            permalinks({
-                relative: false,
-            })
-        )
-    )
-    .use(
-        branch('**/**/*.html}')
-        .use(
-            permalinks({
-                relative: false,
-            })
-        )
-    )
+    // .use(
+    //     branch('index.html')
+    //     .use(
+    //         permalinks({
+    //             pattern: './',
+    //             relative: false             
+    //         })
+    //     )
+    // )
+    // .use(
+    //     branch('!(index).html')
+    //     .use(
+    //         permalinks({
+    //             relative: false,
+    //         })
+    //     )
+    // )
+    // .use(
+    //     branch('**/**/*.html}')
+    //     .use(
+    //         permalinks({
+    //             relative: false,
+    //         })
+    //     )
+    // )
     .use(excerpts())
     .use(logMessage('Building redirects'))
     .use(function (files, metalsmith, done) {
@@ -495,32 +599,33 @@ colophonemes
         var metadata =metalsmith.metadata();
         // get our list of redirects
         var redirects = Object.keys(metadata.redirects);
-        // console.log(redirects);
-        Object.keys(files).forEach(function (file) {
-            // look in each HTML file
-            if(minimatch(file,'**/*.html')){
-                // load the HTML
-                var $ = cheerio.load(files[file].contents);
-                // look at every link
-                $('a').each(function(){
-                    var a = $(this);
-                    var href = a.attr('href');
-                    if(href && href.length > 0){
-                        // remove trailing slashes if they exist
-                        if(href.substr(0,1)==='/') href = href.substr(1);
-                        // if we have a match for this link in our redirects list, and it's different to the existing link, update it
-                        if(redirects.indexOf(href) > -1 && metadata.redirects[href].path !== href){
-                            a.attr('href','/'+metadata.redirects[href].path);
-                        }
+        // console.log(metadata.redirects)
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done)
+        function apply(file,cb){
+            // load the HTML
+            var $ = cheerio.load(files[file].contents);
+            // look at every link
+            $('a').each(function(){
+                var a = $(this);
+                var href = a.attr('href');
+                if(href && href.length > 0){
+                    // remove giving what we can domain
+                    var gwwc = /^(http|https):\/\/givingwhatwecan.org(\/.+)/
+                    if(gwwc.test(href)) href = href.match(gwwc)[2]
+                    // if we have a match for this link in our redirects list, and it's different to the existing link, update it
+                    if(redirects.indexOf(href) > -1 && '/'+metadata.redirects[href].path !== href){
+                        a.attr('href','/'+metadata.redirects[href].path);
                     }
-                });    
-                // save the modified HTML back to the file
-                files[file].contents = $.html();
-                
-            }
-        })
-        done();
+                }
+            });    
+            // save the modified HTML back to the file
+            files[file].contents = $.html();
+            cb();
+        }                
+ 
+        // done();
     })
+    
     .use(logMessage('Building HTML files from templates'))
     .use(relative())
     .use(templates({
@@ -531,6 +636,17 @@ colophonemes
         directory: 'templates'
     }))
     .use(typogr())
+    // .use(function (files,metalsmith,done){
+    //     each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply )
+    //     function apply(file, cb){
+    //         if(files[file].navigation){
+    //             console.log('File >>',file);
+    //             console.log(files[file].navigation);
+    //             console.log('-')
+    //         }
+    //         cb();
+    //     }
+    // })
     .use(function (files, metalsmith, done) {
         // we've incorporated content blocks into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){

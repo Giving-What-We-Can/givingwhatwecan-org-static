@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block content %}
+	<h1>Test</h1>
 	{% for contentblock in contentBlocks %}
-		{% set contentblock.page = 'home' %}
-		{% if contentblock.pages.indexOf(contentblock.page) > -1 %}
-			{% include './partials/contentblock.swig' %}
-		{% endif %}
+	<p>Something</p>
+		<h3>{{contentBlock}} !!</h3>
+		{# {% set contentblock.page = 'home' %} #}
+		{# {% if contentblock.pages.indexOf(contentblock.page) > -1 %} #}
+			{% include './partials/content-block.swig' %}
+		{# {% endif %} #}
 	{% endfor %}
 {% endblock %}
 

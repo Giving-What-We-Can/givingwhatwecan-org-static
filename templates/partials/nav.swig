@@ -12,7 +12,31 @@
 		<div class="collapse navbar-collapse" id="main-nav-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				{% set menu = menu || 'main' %}
-				{% for parent in navMenus.menus[menu] %}
+				{% for parent in menus[menu] %}
+					{% if parent._menu %}
+					<li class="nav dropdown">
+						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							{{ parent._menu.fields.title }}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							{% for child in parent._children %}
+								{% if child._page %}
+									<li class="{{ path === child._page.path ? 'active':'' }}">
+										{% set childTitle = child._page.shortTitle || child._page.title %}
+										<a href="{{ relative(child._page.path) }}">{{ childTitle }}</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul> 
+					</li>
+					{% elif parent._page %}
+					<li class="nav">
+						<a href="{{ relative(parent._page.path) }}">{{parent._page.title}}</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+				{# {% for parent in navMenus.menus[menu] %}
 					{% set page = navMenus.childPages[parent] %}
 					<li class="nav dropdown{% if path.indexOf(parent) === 0 %} active{% endif %}">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +58,7 @@
 							{% endfor %}
 						</ul>
 					</li>
-				{% endfor %}
+				{% endfor %} #}
 				<li class="nav{% if path.indexOf('blog') === 0 %} active{% endif %}"><a href="{{ relative('blog') }}">Blog</a></li>
 				<!-- index: {{path.indexOf('blog/')}} path: {{path}} -->
 			</ul>

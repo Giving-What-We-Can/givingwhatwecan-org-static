@@ -3,7 +3,7 @@
 
 
 {% block content %}
-
+{# 
 	<div class="container">
 		{% for post in pagination.files %}
 			<div class="row">
@@ -12,7 +12,7 @@
 						<a href="{{ relative(post.path) }}">
 							<h3 class="post-title title">{{ post.title }}</h3>
 						</a>
-						<p class="post-author">by {{ post.author.fields.name }}</p>
+						<p class="post-author">by {{ post.author }}</p>
 					</header>
 					<section class="post-excerpt">
 						{% autoescape false %}{{ post.excerpt }}{% endautoescape %}
@@ -29,6 +29,6 @@
 				{% include './partials/pagination.swig' %}
 			</nav>
 		</div>
-	</div>
+	</div> #}
 
 {% endblock %}
