@@ -1,11 +1,9 @@
 // Get our variables
 @import "partials/variables";
 // load fonts first
-@import "partials/fonts";
+// @import "partials/fonts";
 // Import Bootstrap / Bootswatch
 @import "partials/bootstrap";
-// Import Font Awesome
-@import "../../bower_components/components-font-awesome/scss/font-awesome.scss";
 /*!
 Site partials
 */
@@ -28,3 +26,5 @@ Site partials
 	@import "partials/team";
 	@import "partials/donate";
 	@import "partials/blog";
+	// vendor libraries
+	@import "partials/chartist"

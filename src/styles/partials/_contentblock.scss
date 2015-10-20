@@ -1,124 +1,184 @@
 $min-height: 400px;
 
+
+
+
 .content-block-wrapper {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	position: relative;
-	color: #FFF;
+	display: table;
+	min-height: $min-height;
 	text-align: center;
-	h1, h2, h3, h4, h5, h6, p {
+	color: #FFF;
+	h1,h2,h3,h4,h5,h6{
 		color: #FFF;
-		a {
-			text-shadow: none;
+	}
+	width: 100%;
+	position:relative;
+	overflow: hidden;
+	.scroll-down {
+		font-size: 2em;
+		position: absolute;
+		bottom:0;
+		left:45%;
+		width:10%;
+		margin:auto;
+		color:#FFF;
+		text-shadow: 0 0 16px #333;
+		@media(min-width:$screen-md){
+			font-size: 3em;
 		}
 	}
 }
 .content-block {
-	.halfheight &,.fullheight &,
-	.halfheight-xs &,.fullheight-xs &,
-	.halfheight-sm &,.fullheight-sm &,
-	.halfheight-md &,.fullheight-md &,
-	.halfheight-lg &,.fullheight-lg & {
-		// ensures no blurry text from half-pixel rendering
-		transform-style: preserve-3d;
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		bottom:0;
-		.container, .container-fluid {
-			position: absolute;
-		  	top: 50%;
-		  	transform: translateY(-50%);
-		}
-		.container-fluid {
-			width: 100%;
-		}
-		.container {
-			left: 0;
-			right: 0;
-		}
-	}
-	.fluidheight & {
-		padding: 40px 0;
-		@media(min-width:$screen-sm){
-			padding: 40px 0;
-		}
-	}
+	display: table-cell;
+	vertical-align: middle;
+	height: $min-height;
+	height: 50vh;
+
+
+
+	// .halfheight &,.fullheight &,
+	// .halfheight-xs &,.fullheight-xs &,
+	// .halfheight-sm &,.fullheight-sm &,
+	// .halfheight-md &,.fullheight-md &,
+	// .halfheight-lg &,.fullheight-lg & {
+	// 	// ensures no blurry text from half-pixel rendering
+	// 	transform-style: preserve-3d;
+	// 	position: absolute;
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	top: 0;
+	// 	bottom:0;
+	// 	.container, .container-fluid {
+	// 		position: absolute;
+	// 	  	top: 50%;
+	// 	  	transform: translateY(-50%);
+	// 	}
+	// 	.container-fluid {
+	// 		width: 100%;
+	// 	}
+	// 	.container {
+	// 		left: 0;
+	// 		right: 0;
+	// 	}
+	// }
+	// .fluidheight & {
+	// 	padding: 40px 0;
+	// 	@media(min-width:$screen-sm){
+	// 		padding: 40px 0;
+	// 	}
+	// }
 }
+
+// .content-block-wrapper {
+// 	background-size: cover;
+// 	background-position: center center;
+// 	background-repeat: no-repeat;
+// 	position: relative;
+// 	color: #FFF;
+// 	text-align: center;
+// 	h1, h2, h3, h4, h5, h6, p {
+// 		color: #FFF;
+// 		a {
+// 			text-shadow: none;
+// 		}
+// 	}
+// 	min-height: $min-height;
+// }
+// .content-block {
+// 	.halfheight &,.fullheight &,
+// 	.halfheight-xs &,.fullheight-xs &,
+// 	.halfheight-sm &,.fullheight-sm &,
+// 	.halfheight-md &,.fullheight-md &,
+// 	.halfheight-lg &,.fullheight-lg & {
+// 		// ensures no blurry text from half-pixel rendering
+// 		transform-style: preserve-3d;
+// 		position: absolute;
+// 		height: 100%;
+// 		width: 100%;
+// 		top: 0;
+// 		bottom:0;
+// 		.container, .container-fluid {
+// 			position: absolute;
+// 		  	top: 50%;
+// 		  	transform: translateY(-50%);
+// 		}
+// 		.container-fluid {
+// 			width: 100%;
+// 		}
+// 		.container {
+// 			left: 0;
+// 			right: 0;
+// 		}
+// 	}
+// 	.fluidheight & {
+// 		padding: 40px 0;
+// 		@media(min-width:$screen-sm){
+// 			padding: 40px 0;
+// 		}
+// 	}
+// }
 
 
 
 // specific content blocks
 .content-block-wrapper {
-	&.join-us {
-		background-position: center bottom;
-		background-size: auto 113%;
-		@media(min-width:$screen-xs-max){
-			background-position: 60% center;
-			background-size: cover;
+	// background-attachment: fixed;
+	&#hero-image {
+		background-position: top center;
+		.text-wrapper {
+			position:absolute;
+			left:35%;
+			width: 30%;
+			bottom: 10%;
 		}
-		@media(min-width:$screen-lg){
-			background-position: center center;
-		}
-		color: white;
-		font-size: 20px;
-		p {
-			text-shadow: none;
-			line-height: 1em;
+		h2 {
+			text-transform: uppercase;
 			font-weight: 700;
-		}
-		.btn {
-			font-size: 0.5em;
-			text-shadow: none;
-		}
-		.content-block {
-			.container, .container-fluid {
-				@media(max-width:$screen-xs-max){
-					text-align: center;
-					top: auto;
-					bottom: 0;
-					transform: none;
-					padding-top: 20px;
-					.btn {
-						font-size: 0.8em;	
-					}
-				}
-				@media(min-width:$screen-sm){
-					font-size: 40px;
-					text-align: left;
-				}
-				@media(min-width:$screen-lg){
-					font-size: 60px;
-				}
+			text-shadow: 0 0 16px #333;
+			font-size: 30px;
+			@media(min-width:$screen-md){
+				font-size: 4em;
+				margin-top: auto;
 			}
 		}
 	}
-	&.we-are-giving-what-we-can {
+	&#we-are-giving-what-we-can {
 		background-position: center center;
-		@media(min-width:$screen-sm){
-			background-position: center -40px;
-		}
 		.content-block {
-			background-color: transparentize($site-primary,0.3);
-			padding-bottom: 40px;
-			text-shadow: none;
+			background-color: transparentize($site-primary,0.4);
+			.weare {
+				font-size: 30px;
+				margin-top: 90px;
+				text-transform: lowercase;
+				@media(min-width:$screen-md){
+					// margin-top: auto;
+				}
+			}
 			.givingwhatwecan-logo {
 				font-size: 80px;
-				margin: 60px auto;
+				margin: 40px auto;
 				@media(min-width:$screen-sm){
 					font-size: 100px;
 					margin: 80px auto;
+
 				}
 
 			}
 			.aim {
-				.fa {
+				.icons {
+					line-height: 1em;
+				}
+				.fa, .icon {
 					font-size: 4em;
 				}
-				.fa.fa-arrow-down {
+				.fa.fa-arrow-down, .icon.icon-arrow-down {
 					font-size: 2em;
+				}
+				h4 {
+					height: 2em;
 				}
 			}
 			// a.btn.btn-default {
@@ -127,24 +187,84 @@ $min-height: 400px;
 			// }
 		}
 	}
-	&.amazing-difference {
-		h2, p {
-			color: #333;
+	&#we-focus-on-impact {
+		color: #333;
+		h1,h2,h3,h4,h5,h6{
+			color:#333;
 		}
 		h2 {
-			margin: 0 0 60px;
-			@media(max-width:$screen-xs-max){
-				font-size: 1em;
-				margin: 20px auto;
-			}
+			text-transform: uppercase;
+			font-weight: bold;
 		}
-		.content-block {
-			background-color: #FFF;
+		.ct-bar {
+			stroke-width: 20%;
+		}
+		.ct-label {
+			font-weight: bold;
+		}
+		.comparison-text {
+    		
+	    	@media(min-width:$screen-md){
+    			text-align: left;
+	    	}
+
+			p {
+	    		font-weight: 400;
+    			text-align: left;
+				margin-top: $grid-gutter-width;
+	    		@media(min-width:$screen-md){
+					margin-top: -15px;
+		    		font-size: 26px;
+		    	}
+		    }
+		    
+		    
 		}
 	}
-	&.how-rich-am-i {
-		.content-block {
-			background-color: transparentize(#999,0.3);
+	&#our-top-charities-are-some-of-the-best {
+		background-color: $site-primary;
+		h2 {
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-top: 80px;
+		}
+		.charity {
+			border-radius: 10px;
+			padding: 30px;
+			margin-bottom: 30px;
+			color: #333;
+			h1,h2,h3,h4,h5,h6{
+				color:#333;
+			}
+			.logo {
+				height: 100px;
+				text-align: center;
+				img {
+					height: 100px;
+					display: inline-block;
+				}
+			}
+			h4 {
+			    text-transform: uppercase;
+			    font-weight: 700;
+			    margin: 30px 0 0;
+			}
+			p {
+				margin: 0 auto 30px;
+				font-weight: 400;
+				@media(min-width:$screen-md){
+					height: 2em;
+				}
+			}
+			background-color: rgba(255,255,255,0.8);
+
+			&.phc .logo img {
+				height: 60px;
+    			margin-top: 30px;
+			}
+		}
+		a.learn-more {
+			margin-bottom: 30px;
 		}
 	}
 }

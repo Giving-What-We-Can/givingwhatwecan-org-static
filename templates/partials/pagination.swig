@@ -3,20 +3,20 @@
 
 	{% if pagination.num > 1 %}
 		<li class="first">
-			<span aria-hidden="true">
-				<a href="{{ relative(pagination.pages[0].path) }}">
+			<a href="{{ relative(pagination.pages[0].path) }}" aria-label="First">
+				<span aria-hidden="true">
 					<i class="fa fa-angle-double-left"></i>
-				</a>
-			</span>
+				</span>
+			</a>
 		</li>
 	{% endif %}
 	{% if pagination.previous %}
 		<li class="previous">
-			<span aria-hidden="true">
-				<a href="{{ relative(pagination.previous.path) }}">
+			<a href="{{ relative(pagination.previous.path) }}" aria-label="Previous">
+				<span aria-hidden="true">
 					<i class="fa fa-angle-left"></i>
-				</a>
-			</span>
+				</span>
+			</a>
 		</li>
 	{% endif %}
 	{% if pagination.pages %}
@@ -36,31 +36,31 @@
 			{% set start = end - paginationLength %}
 		{% endif %}
 		{% for page in pagination.pages.slice(start,end) %}
-			<li class="page-number{% if page.pagination.num === pagination.num %} active{% endif %}">
-				<span aria-hidden="true">
-					<a href="{{ relative(page.path) }}">
+			<li class="page-number{% if page.pagination.num === pagination.num %} active{% endif %}" aria-label="Page {{ page.pagination.num }}">
+				<a href="{{ relative(page.path) }}">
+					<span aria-hidden="true">
 						{{ page.pagination.num }}
-					</a>
-				</span>
+					</span>
+				</a>
 			</li>
 		{% endfor %}
 	{% endif %}
 	{% if pagination.next %}
 		<li class="next">
-			<span aria-hidden="true">
-				<a href="{{ relative(pagination.next.path) }}">
+			<a href="{{ relative(pagination.next.path) }}" aria-label="Next">
+				<span aria-hidden="true">
 					<i class="fa fa-angle-right"></i>
-				</a>
-			</span>
+				</span>
+			</a>
 		</li>
 	{% endif %}
 	{% if pagination.num < pagination.pages.length %}
 		<li class="last">
-			<span aria-hidden="true">
-				<a href="{{ relative(pagination.pages[pagination.pages.length-1].path) }}">
+			<a href="{{ relative(pagination.pages[pagination.pages.length-1].path) }}" aria-label="Last">
+				<span aria-hidden="true">
 					<i class="fa fa-angle-double-right"></i>
-				</a>
-			</span>
+				</span>
+			</a>
 		</li>
 	{% endif %}
 </ul>

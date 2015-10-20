@@ -1,6 +1,17 @@
-.title {
-	text-transform: uppercase;
-}
+// fix to make the footer stay at the bottom of the page
+// #wrapper {
+// 	min-height: 100%;
+// 	position: relative;
+// 	.content {
+// 		padding-bottom: 330px;
+// 	}
+// 	footer.footer {
+// 		width: 100%;
+//   		bottom: 0;
+// 		left: 0;
+// 		position: absolute;
+// 	}
+// }
 
 
 
@@ -60,6 +71,13 @@ img[data-sizes="auto"] {
 
 .embed-responsive {
 	width: 100%;
+}
+
+.noscript {
+	display:none;
+	.no-js & {
+		display:block;
+	}
 }
 
 

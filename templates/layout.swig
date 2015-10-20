@@ -16,8 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ relative('/styles/app.min.css') }}">
 	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
-
-	<script src="{{ relative('/scripts/header.min.js') }}"></script>
+	<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 	{% block head %}
 	{% endblock %}
 
@@ -32,33 +31,47 @@
 	{% block banner %}
 	{% endblock %}
 	
-	
-	<div class="content">
-		<!--[if lt IE 10]><p class="browsehappy"></p>You are using an <strong>outdated</strong> browser.
-		Please <a href="http://browsehappy.com/">upgrade your browser</a>
-		to improve your experience.
-		<![endif]-->
-		<noscript>
-			<div class="container">
+	<div id="wrapper">
+		<div class="content">
+			<!--[if lt IE 10]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Some elements of this website may display incorrectly or not work as intended.<br>
+			Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+			<![endif]-->
+			<div class="container noscript">
 				<div class="alert alert-warning">
 					<p> <i class="fa fa-warning"></i> You do not have Javascript enabled. Some elements
 						of this website may not work&nbsp;correctly.</p>
 				</div>
 			</div>
-		</noscript>
-		{% block content %}
-		{% endblock %}
+			{% block content %}
+			{% endblock %}
+		</div>
+		<footer class="footer">
+			{% block footer %}
+				{% include './partials/footer.swig' %}
+			{% endblock %}
+		</footer>
 	</div>
-
-	<footer class="footer">
-		{% block footer %}
-			{% include './partials/footer.swig' %}
-		{% endblock %}
-	</footer>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+		WebFont.load({
+		    google: {
+		      families: ['Source+Sans+Pro:400,300,700:latin']
+		    },
+		    active: function() {
+		    	$(function(){
+			    	$(document).trigger('WebFont','active')
+			    });
+		    }
+  		});
+	</script>
+	<!--<script src="{{ relative('/scripts/init.min.js') }}"></script>-->
+	<!--[if lt IE 9]>
+    <script src="{{ relative('/scripts/ltie9.min.js') }}"></script>
+	<![endif]-->
 	<script src="{{ relative('/scripts/app.min.js') }}"></script>
-	{% block scripts %}
-	{% endblock %}
+	{% block scripts %}{% endblock %}
 </body>
 
 </html>

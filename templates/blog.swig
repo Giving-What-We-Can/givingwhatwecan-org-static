@@ -12,7 +12,11 @@
 						<a href="{{ relative(post.path) }}">
 							<h3 class="post-title title">{{ post.title }}</h3>
 						</a>
-						<p class="post-author">by {{ post.author.fields.name }}</p>
+						<p class="post-author">by 
+						{% for author in post.author %}
+							<strong>{{ author.fields.name }}</strong>
+						{% endfor %}
+						</p>
 					</header>
 					<section class="post-excerpt">
 						{% autoescape false %}{{ post.excerpt }}{% endautoescape %}
@@ -30,5 +34,10 @@
 			</nav>
 		</div>
 	</div>
+
+{% endblock %}
+
+{% block scripts %}
+
 
 {% endblock %}

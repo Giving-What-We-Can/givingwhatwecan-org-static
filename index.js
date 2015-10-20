@@ -1,145 +1,8 @@
+// start a timer
+var buildTime = process.hrtime();
+var buildTimeDiff = buildTime;
 // load environment variables
 require('dotenv').load();
-// Start the build!
-console.log('\nGenerating the Giving What We Can site!\n');
-console.log('Initialising new build...');
-console.log('Loading Metalsmith...');
-// Metalsmith
-var Metalsmith = require('metalsmith');
-// templating
-console.log('Loading templating...');
-var metadata = require('metalsmith-metadata');
-var contentful = require('contentful-metalsmith');
-var slug = require('slug'); slug.defaults.mode = 'rfc3986';
-var filemetadata = require('metalsmith-filemetadata');
-var copy = require('metalsmith-copy');
-var replace = require('metalsmith-replace');
-var metallic = require('metalsmith-metallic');
-var beautify  = require('metalsmith-beautify');
-var moment = require('moment');
-var strip = require('strip');
-var truncate = require('truncate');
-var templates  = require('metalsmith-templates');
-var typogr = require('metalsmith-typogr');
-var sizeOf = require('image-size');
-var lazysizes = require('metalsmith-lazysizes');
-// metadata and structure
-console.log('Loading metadata...');
-var ignore      = require('metalsmith-ignore');
-var branch  = require('metalsmith-branch');
-var collections  = require('metalsmith-collections');
-var permalinks  = require('metalsmith-permalinks');
-var relative = require('metalsmith-relative');
-var navigation = require('metalsmith-navigation');
-var excerpts = require('metalsmith-excerpts');
-var pagination = require('metalsmith-pagination');
-// static file compilation
-console.log('Loading static file compilation...');
-var sass  = require('metalsmith-sass');
-var concat = require('metalsmith-concat');
-var uglify = require('metalsmith-uglify');
-var autoprefixer = require('metalsmith-autoprefixer');
-var uncss = require('metalsmith-uncss');
-var cleanCSS = require('metalsmith-clean-css');
-// utility
-console.log('Loading utilities...');
-var each = require('async').each;
-var merge = require('merge');
-// var debug = require('debug')('build');
-
-// BOWER MANAGEMENT
-var fs = require('fs');
-var path = require('path');
-var bowerFiles = require('bower-files')({
-    overrides: {
-        'bootstrap-sass-official': {
-            "main": [
-                "assets/javascripts/bootstrap/collapse.js",
-                "assets/javascripts/bootstrap/dropdown.js",
-                "assets/javascripts/bootstrap/transition.js",
-            ],
-        },
-        'bootswatch-sass': {
-            main: './styles/bootstrap.scss',
-        },
-        'components-font-awesome': {
-            "main": [
-                // "scss/font-awesome.scss",
-                "fonts/fontawesome-webfont.eot",
-                "fonts/fontawesome-webfont.woff2",
-                "fonts/fontawesome-webfont.woff",
-                "fonts/fontawesome-webfont.ttf",
-                "fonts/fontawesome-webfont.svg"
-            ]
-        },
-        'modernizr': {
-            main: '../bower_componenents/modernizr/modernizr.js'
-        },
-        'waypoints': {
-            main: 'lib/jquery.waypoints.js'
-        }
-    }
-});
-var bower = function(files, metalsmith, done) {
-  var include;
-  include = function(root, included) {
-    var contents, file, i, len, results;
-    results = [];
-    for (i = 0, len = included.length; i < len; i++) {
-      file = included[i];
-      contents = fs.readFileSync(file);
-      results.push(files[root + "/" + (path.basename(file))] = {
-        contents: contents
-      });
-    }
-    return results;
-  };
-  include('styles', bowerFiles.ext('css').files);
-  include('styles', bowerFiles.ext('scss').files);
-  include('scripts', bowerFiles.ext('js').files);
-  include('fonts', bowerFiles.ext(['eot', 'otf', 'ttf', 'woff','woff2']).files);
-  return done();
-};
-
-// TEMPLATING HELPER
-var addTemplate = function(config) {
-    var debug = require('debug')('addTemplate');
-    return function(files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
-        Object.keys(metadata.collections).forEach(function(collection){
-            if (Object.keys(config).indexOf(collection)!==-1) {
-                Object.keys(metadata.collections[collection]).forEach(function(i){
-                    var file = metadata.collections[collection][i];
-                    debug('Trying to add ' + config[collection].template + ' to ' + collection + ' file ' + (file.title || file.name) );
-                    if (!file.template) {
-                        file.template = config[collection].template;
-                        debug('        Added ' + config[collection].template + ' to ' + collection + ' file ' + (file.title || file.name) );
-                    }                    
-                })
-            }
-            debug('Done '+collection);
-        });
-        debug('Done adding templates');
-        done();
-    };
-};
-
-// LOG FILES
-var logFilesMap = function(files, metalsmith, done) {
-    Object.keys(files).forEach(function (file) {
-        if(file.search('css'))
-        console.log(">> ", file);
-    });
-    done();
-};
-// SEND CONSOLE MESSAGES
-var logMessage = function(message){
-    return function(files, metalsmith, done){
-        console.log('-',message+'...');
-        done();
-    }
-}
-
 // command-line args
 var args = {};
 process.argv.forEach(function (arg) {
@@ -150,30 +13,111 @@ process.argv.forEach(function (arg) {
         args[arg] = true;
     }
 });
-
 // ENVIRONMENT VARS - default to development
 var ENVIRONMENT = process.env.ENV ? process.env.ENV : 'development';
 var BEAUTIFY = args['--beautify'] || args['--b'] ? true : false;
+var MINIFY = args['--minify'] || args['--m'] ? true : false;
 var CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
+// time requires
+// require("time-require");
+// cache require paths for faster builds
+if(ENVIRONMENT==='development'){
+    require('cache-require-paths');
+}
 
-// START THE BUILD!
-console.log('Building...')
-var colophonemes = new Metalsmith(__dirname);
-colophonemes
-    .use(logMessage('ENVIRONMENT: ' + ENVIRONMENT))
-    .use(logMessage('NODE VERSION: ' + process.version))
-    .use(logMessage('BUILD TIME: ' + moment().format('YYYY-MM-DD @ H:m')))
+
+// Start the build!
+var chalk = require('chalk');
+message('Generating the Giving What We Can site!',chalk.green,true);
+message('Initialising new build...',chalk.dim,true);
+// Metalsmith
+var Metalsmith = require('metalsmith');
+message('Loaded Metalsmith');
+// templating
+var metadata = require('metalsmith-metadata');
+var contentful = require('contentful-metalsmith');
+var slug = require('slug'); slug.defaults.mode = 'rfc3986';
+var filemetadata = require('metalsmith-filemetadata');
+var copy = require('metalsmith-copy');
+var replace = require('metalsmith-replace');
+var beautify  = require('metalsmith-beautify');
+var moment = require('moment');
+var strip = require('strip');
+var truncate = require('truncate');
+var templates  = require('metalsmith-templates');
+var typogr = require('metalsmith-typogr');
+var sizeOf = require('image-size');
+message('Loaded templating');
+// var lazysizes = require('metalsmith-lazysizes');
+// metadata and structure
+var ignore      = require('metalsmith-ignore');
+var branch  = require('metalsmith-branch');
+var collections  = require('metalsmith-collections');
+var permalinks  = require('metalsmith-permalinks');
+var relative = require('metalsmith-relative');
+var navigation = require('metalsmith-navigation');
+var excerpts = require('metalsmith-excerpts');
+var pagination = require('metalsmith-pagination');
+message('Loaded metadata');
+// static file compilation
+var swig = require('swig');
+require('./lib/swig-filters')(swig);
+var marked = require('marked')
+var cheerio = require('cheerio');
+var sass  = require('metalsmith-sass');
+var concat = require('metalsmith-concat');
+var autoprefixer = require('metalsmith-autoprefixer');
+var browserify = require('browserify')
+var icons = require('metalsmith-icons');
+var htmlMinifier = require("metalsmith-html-minifier");
+// only require in production
+if(ENVIRONMENT==='production'){
+    // var uglify = require('metalsmith-uglify');
+    var cleanCSS = require('metalsmith-clean-css');
+    var uncss = require('metalsmith-uncss');
+    // var subset = require('metalsmith-subsetfonts')
+}
+message('Loaded static file compilation');
+// utility
+var fs = require('fs');
+var path = require('path');
+var each = require('async').each;
+var merge = require('merge');
+var NotificationCenter = require('node-notifier').NotificationCenter;
+var notifier = new NotificationCenter;
+var prompt = require('prompt')
+message('Loaded utilities...');
+// var debug = require('debug')('build');
+message('All dependencies loaded!',chalk.cyan);
+
+// call the master build function
+build(1);
+
+
+//
+function build(buildCount){
+    buildCount = buildCount || 1;
+    if(buildCount>1){
+        buildTime = process.hrtime();
+        buildTimeDiff = buildTime;
+        return;
+    }
+    // START THE BUILD!
+    var colophonemes = new Metalsmith(__dirname);
+    colophonemes
+    .use(logMessage('ENVIRONMENT: ' + ENVIRONMENT,chalk.dim,true))
+    .use(logMessage('NODE VERSION: ' + process.version,chalk.dim,true))
+    .use(logMessage('BUILD TIME: ' + moment().format('YYYY-MM-DD @ H:m'),chalk.dim,true))
     .source('./src')
     .destination('./dest')
     .use(ignore([
-        'drafts/*',
+        'scripts/**/*',
         '**/.DS_Store',
         'styles/partials/**'
     ]))
     // Set up some metadata
-    .use(logMessage('Preparing global metadata'))
     .use(metadata({
         "siteInfo": "settings/site-info.json",
     }))
@@ -193,7 +137,7 @@ colophonemes
             cb();
         }
     })
-    .use(logMessage('Downloading content from Contentful'))
+    .use(logMessage('Prepared global metadata'))
     .use(contentful({ "accessToken" : CONTENTFUL_ACCESS_TOKEN } ))
     .use(function (files,metalsmith,done){
         // get rid of the contentful source files from the build
@@ -204,6 +148,7 @@ colophonemes
             cb();
         } , done)
     })
+    .use(logMessage('Downloaded content from Contentful'))
     .use(function (files,metalsmith,done){
         // fix weird situation where contentful adds a double slash to the index page if the slug is set as '/'
         if(files['page//index.html']){
@@ -228,6 +173,14 @@ colophonemes
         }, done)
     })
     .use(function (files,metalsmith,done){
+        // remove templates from content blocks
+        each(Object.keys(files).filter(minimatch.filter('@(content-block)/**/*.html')), function(file,cb){
+            var meta = files[file]
+            if (meta.template) delete meta.template;
+            cb();
+        },done)
+    })
+    .use(function (files,metalsmith,done){
         // add any menus to the global metadata, and get rid of the source files
         var menus = {};
         each(Object.keys(files).filter(minimatch.filter('@(menu)/**/*.html')),apply, function(){
@@ -246,11 +199,19 @@ colophonemes
             cb();
         }
         function traverse(menu,a){
+            if(!menu.fields){
+                return;
+            }
             if(menu.fields.children){
                 var c = [];
                 menu.fields.children.forEach(function(child){
                     var page = getFile(child)
-                    if (page) c.push({_page:page})
+                    if (page) {
+                        c.push({_page:page})
+                    }
+                    else if (child.fields && child.fields.linkURL) {
+                        c.push({_link:child.fields})
+                    }
                     traverse(child,c)
                 })
                 a.push({_menu:menu,_children:c})
@@ -268,7 +229,7 @@ colophonemes
         }
 
     })
-    .use(logMessage('Preparing blog posts'))
+    .use(logMessage('Processed Contentful metadata'))
     .use(collections({
         // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
         posts: {
@@ -303,7 +264,7 @@ colophonemes
             cb();
         }
     })
-    .use(logMessage('Adding files to collections'))
+    .use(logMessage('Prepared blog posts'))
     .use(collections({
         // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
         pages: {
@@ -344,7 +305,7 @@ colophonemes
             }
         }
     }))
-    .use(logMessage('Adding navigation metadata'))
+    .use(logMessage('Added files to collections'))
     .use(function (files, metalsmith, done) {
         // check all of our HTML files have slugs
         each(Object.keys(files).filter(minimatch.filter('@(page)/**/*.html')), apply, done )
@@ -408,13 +369,13 @@ colophonemes
             cb();
         }
     })
+    .use(logMessage('Added navigation metadata'))
     
-    .use(logMessage('Building navigation'))
-    .use(function (files,metalsmith,done){
+    /*.use(function (files,metalsmith,done){
         // create a menu hierarchy
         var nav = {};
         // go through files
-        each(Object.keys(files).filter(minimatch.filter('@(page)/**/*.html')), getNavPosition , function(){
+        each(Object.keys(files).filter(minimatch.filter('@(page)/** /*.html')), getNavPosition , function(){
             var metadata = metalsmith.metadata()
             sortNavItems(nav)
             nav._sorted = Object.keys(nav);
@@ -477,6 +438,7 @@ colophonemes
             })
         }     
     })
+    .use(logMessage('Built navigation'))*/
     .use(function (files,metalsmith,done){
         // move files so that their location matches their path
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done )
@@ -500,26 +462,46 @@ colophonemes
             cb();
         }
     })
+    // .use(function (files,metalsmith,done){
+    //     // move the contentful 'fields' metadata to the file's global meta
+    //     each(Object.keys(files).filter(minimatch.filter('@(content-block)/**/*.html')), function(file,cb){
+    //         var meta = files[file]
+    //         console.log(meta)
+    //         cb();
+    //     },done)
+    // })
+    .use(logMessage('Moved files into place'))
+    .use(function (files, metalsmith, done) {
+        // inject a list of redirects into the global metadata
+        var metadata =metalsmith.metadata();
+        var redirects = {};
+        Object.keys(files).forEach(function (file) {
+            if(files[file].hasOwnProperty('redirects')){
+                files[file].redirects.forEach(function(redirect){
+                    redirects[redirect] = files[file];
+                })
+            }
+        })
+        metadata.redirects = redirects;
+        done();
+    })
+     .use(logMessage('Calculated redirects'))   
     // Build HTML files
-    .use(logMessage('Converting Markdown to HTML'))
     .use(function (files, metalsmith, done) {
         var debug = require('debug')('parseMarkdown');
-        // Use the Remarkable parser to parse our Markdown files into HTML
-        Remarkable = require('remarkable');
-        cheerio = require('cheerio');
 
+
+        // get our list of redirects for use later
+        var metadata =metalsmith.metadata();
+        var redirects = Object.keys(metadata.redirects);
+
+        // call the parse function asynchronously
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), parse, done )
 
+        // function for parsing markdown into HTML, which also applies some additional transforms
         function parse (file, cb) {
-            // use remarkable to render MD
             debug('%s — Building HTML from Markdown',file);
-            md = new Remarkable({
-                html: true,
-                breaks: true,
-                typographer: true,
-                quotes: '“”‘’'
-            });
-            var html = md.render( files[file].contents.toString() );
+            var html = marked( files[file].contents.toString() );
             debug('%s — Rendered markdown',file);
             // use Cheerio to modify HTML
             debug('%s — Using Cheerio to modify file contents',file);
@@ -545,6 +527,22 @@ colophonemes
                 // add img-responsive tags to images
                 img.addClass('img-responsive');
             })
+            // use our global list of redirects to resolve any outdated internal links in the body (only bother in production)
+            if(ENVIRONMENT === 'production'){
+                $('a').each(function(){
+                    var a = $(this);
+                    var href = a.attr('href');
+                    if(href && href.length > 0){
+                        // remove giving what we can domain
+                        var gwwc = /^(http|https):\/\/givingwhatwecan.org(\/.+)/
+                        if(gwwc.test(href)) href = href.match(gwwc)[2]
+                        // if we have a match for this link in our redirects list, and it's different to the existing link, update it
+                        if(redirects.indexOf(href) > -1 && '/'+metadata.redirects[href].path !== href){
+                            a.attr('href','/'+metadata.redirects[href].path);
+                        }
+                    }
+                });
+            }
             html = $.html();
             debug('Rendered HTML from cheerio');
             // save back to the main metalsmith array
@@ -553,100 +551,26 @@ colophonemes
             cb();
         } 
     })
-    // .use(
-    //     branch('index.html')
-    //     .use(
-    //         permalinks({
-    //             pattern: './',
-    //             relative: false             
-    //         })
-    //     )
-    // )
-    // .use(
-    //     branch('!(index).html')
-    //     .use(
-    //         permalinks({
-    //             relative: false,
-    //         })
-    //     )
-    // )
-    // .use(
-    //     branch('**/**/*.html}')
-    //     .use(
-    //         permalinks({
-    //             relative: false,
-    //         })
-    //     )
-    // )
+    .use(logMessage('Converted Markdown to HTML'))
+    .use(typogr())
+    .use(logMessage('Added typography'))
     .use(excerpts())
-    .use(logMessage('Building redirects'))
-    .use(function (files, metalsmith, done) {
-        // inject a list of redirects into the global metadata
-        var metadata =metalsmith.metadata();
-        var redirects = {};
-        Object.keys(files).forEach(function (file) {
-            if(files[file].hasOwnProperty('redirects')){
-                files[file].redirects.forEach(function(redirect){
-                    redirects[redirect] = files[file];
-                })
-            }
-        })
-        metadata.redirects = redirects;
-        done();
-    })
-    .use(function (files, metalsmith, done) {
-        // use our list of redirects to amend any broken internal links
-        var metadata =metalsmith.metadata();
-        // get our list of redirects
-        var redirects = Object.keys(metadata.redirects);
-        // console.log(metadata.redirects)
-        each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done)
-        function apply(file,cb){
-            // load the HTML
-            var $ = cheerio.load(files[file].contents);
-            // look at every link
-            $('a').each(function(){
-                var a = $(this);
-                var href = a.attr('href');
-                if(href && href.length > 0){
-                    // remove giving what we can domain
-                    var gwwc = /^(http|https):\/\/givingwhatwecan.org(\/.+)/
-                    if(gwwc.test(href)) href = href.match(gwwc)[2]
-                    // if we have a match for this link in our redirects list, and it's different to the existing link, update it
-                    if(redirects.indexOf(href) > -1 && '/'+metadata.redirects[href].path !== href){
-                        a.attr('href','/'+metadata.redirects[href].path);
-                    }
-                }
-            });    
-            // save the modified HTML back to the file
-            files[file].contents = $.html();
-            cb();
-        }                
- 
-        // done();
-    })
-    
-    .use(logMessage('Building HTML files from templates'))
     .use(relative())
     .use(templates({
         engine:'swig',
+        requires: {swig:swig},
         moment: moment,
         strip: strip,
         truncate: truncate,
         directory: 'templates'
     }))
-    .use(typogr())
-    // .use(function (files,metalsmith,done){
-    //     each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply )
-    //     function apply(file, cb){
-    //         if(files[file].navigation){
-    //             console.log('File >>',file);
-    //             console.log(files[file].navigation);
-    //             console.log('-')
-    //         }
-    //         cb();
-    //     }
-    // })
+    .use(logMessage('Built HTML files from templates'))
+    .use(icons({
+        sets:       {   fa:'fontawesome'},
+        fontello:   {   name: 'icons'   },
+        fontDir:    'fonts',
+    }))
+    .use(logMessage('Added icon fonts'))
     .use(function (files, metalsmith, done) {
         // we've incorporated content blocks into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){
@@ -659,7 +583,7 @@ colophonemes
     ;
     // build responsive images at this point if we're in production
     if(ENVIRONMENT==='production'){
-        colophonemes
+       /* colophonemes
         .use(lazysizes({
             pattern: [
                 'images/*.@(jpg|jpeg|png|gif)',
@@ -667,50 +591,90 @@ colophonemes
             ],
             sizes: [100,480,768,992,1200],
             backgrounds: ['#banner']
-        }))
+        }))*/
     }
     // Build Javascript
     colophonemes
-    .use(logMessage('Building Javascript files'))
-    .use(concat({
-        files: 'scripts/!(lazysizes)/*.js',
-        output: 'scripts/user.js'
-    }))
-    .use(bower)
-    .use(concat({
-        files: 'scripts/**/!(user|lazysizes).js',
-        output: 'scripts/bower.js'
-    }))
-    .use(concat({
-        files: ['scripts/lazysizes.js'],
-        output: 'scripts/header.js'
-    }))
-    .use(concat({
-        files: ['scripts/bower.js','scripts/user.js'],
-        output: 'scripts/app.js'
-    }))
+    .use(function (files,metalsmith,done){
+        // Bundle our javascript files using browserify
+        
+        // the filename of our entry script, relative to the Metalsmith source directory
+        var filePath = 'scripts/entry.js';
+        // the output filename of our bundle
+        var outFilePath = 'scripts/app.js';
+        // the output filename of our sourcemap
+        var mapFilePath = 'scripts/app.map.json';
+        // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
+        var entryFile  = path.join(metalsmith.source(),filePath);
+        // turn minification on or off
+        var minify = ENVIRONMENT ==='production' ? true : false;
+        // start browserify
+        var b = new browserify({debug:true});
+        // add the entry file to the queue
+        b.add(entryFile)
+        // add minifier / sourcemap generator
+        b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
+        // call the main bundle function
+        b.bundle(function(err, src, map){
+            if(err) throw err;
+             if(minify){
+                files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
+                files[mapFilePath] = {contents: map, mode: 0664 }
+             } else {
+                files[outFilePath] = {contents: src, mode: 0664 }
+             }
+             done();
+        })
+    })
+    .use(logMessage('Bundled Javascript files'))
     // Build CSS
-    .use(logMessage('Building CSS files'))
-    .use(sass())
+    ;
+    if(ENVIRONMENT === 'development'){
+        colophonemes
+        .use(sass({
+            outputStyle: 'nested'
+        }))
+    } else {
+        colophonemes
+        .use(sass())
+    }
+    colophonemes
+    .use(concat({
+        files: ['styles/styles.css','styles/icons.css'],
+        output: 'styles/app.css'
+    }))
     .use(autoprefixer())
+    .use(logMessage('Built CSS files'))
     ;
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
         .use(logMessage('Cleaning CSS files'))
-        .use(beautify({
-            html: true,
-            js: false,
-            css: true,
-            wrap_line_length: 50
-        })) 
+        .use(htmlMinifier())
+        // .use(beautify({
+        //     html: false,
+        //     js: false,
+        //     css: true,
+        //     wrap_line_length: 50
+        // })) 
         .use(uncss({
             basepath: 'styles',
             css: ['app.css'],
             output: 'app.min.css',
             removeOriginal: true,
             uncss: {
-                ignore: ['.collapse.in','.collapsing','.open','.open>.dropdown-menu'],
+                ignore: [
+                    /collaps/,
+                    /nav/,
+                    /dropdown/,
+                    /modal/,
+                    /.fade/,
+                    /.in/,
+                    /.open/,
+                    '.loader',
+                    '.transparent',
+                    /lazyload/,
+                ],
                 media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
             }
         }))
@@ -720,9 +684,9 @@ colophonemes
                 keepSpecialComments: false,
             }
         }))
-        .use(uglify({
-            removeOriginal: true
-        }))
+        // .use(uglify({
+        //     removeOriginal: true
+        // }))
         ;
     }
     // stuff to only do in development
@@ -740,6 +704,14 @@ colophonemes
             move: true
         }))
         ;
+        
+        if(MINIFY){
+            colophonemes
+            .use(logMessage('Minifying files'))
+            // make the source code look bad
+            .use(htmlMinifier())
+            ;
+        }
         if(BEAUTIFY){
             colophonemes
             .use(logMessage('Beautifying files'))
@@ -752,17 +724,121 @@ colophonemes
             }))
             ;
         }
-
     }
-
     // Run build
     colophonemes.use(logMessage('Finalising build')).build(function(err,files){
+        var t = formatBuildTime(buildTime);
         if(err){
+            console.log('Build Failed!','(Build time: ' + t + ')');
             console.log('Errors:');
             console.trace(err);
+            if(ENVIRONMENT==='development'){
+                notifier.notify({
+                    title: 'Build failed!',
+                    message: err,
+                    appIcon: '',
+                    contentImage: path.join(__dirname, 'src', 'images','favicons', 'favicon-96x96.png'), // absolute path (not balloons) 
+                    sound: 'Funk',
+                    activate: 'com.apple.Terminal'
+                })
+            }
         }
         if(files){
-            console.log('Build OK!');
+            
+            console.log('Build OK!','(Build time: ' + t + ')');
+            if(ENVIRONMENT==='development'){
+                notifier.notify({
+                    title: 'Website built!',
+                    message:'Build time: '+t+'\nClick to switch to Chrome',
+                    appIcon: '',
+                    contentImage: path.join(__dirname, 'src', 'images','favicons', 'favicon-96x96.png'), // absolute path (not balloons) 
+                    sound: 'Glass',
+                    activate: 'com.google.Chrome'
+                })
+                // keep the process running so we don't have to recompile dependencies on subsequent builds...
+                /*prompt.start()
+                prompt.message = "Build again?"
+                try {
+                    prompt.get(['response'],function(err,results){
+                        if(err) throw new Error (err);
+                        if(results.response.toLowerCase()==='n' || results.response.toLowerCase()==='n'){
+                            if(err) throw new Error (err);
+                        }
+                        build(buildCount+1);
+                    });
+                } catch(e){
+                    console.log('Exiting...')
+                }*/
+            }
         }
     } )
     ;
+}
+
+
+
+
+// UTILITIES //
+
+// LOG FILES
+function logFilesMap (files, metalsmith, done) {
+    Object.keys(files).forEach(function (file) {
+        if(file.search('css'))
+        console.log(">> ", file);
+    });
+    done();
+};
+// SEND CONSOLE MESSAGES
+function message(m,c,t){
+    c = c||chalk.yellow.bold
+    t = t||false;
+    var output = c(m);
+    if(!t) {
+        output += '................................................'.substr(m.length)
+        output += chalk.dim('(+'+formatBuildTimeDiff()+' / '+formatBuildTime()+')')
+    }
+    console.log('-',output);
+}
+function logMessage (m,c,t){
+    c = c ||chalk.bold.blue
+    return function(files, metalsmith, done){
+        message(m,c,t)
+        done();
+    }
+}
+// FORMAT BUILD TIMER INTO Mins : secs . milliseconds
+function formatBuildTime(hrTimeObj){
+    hrTimeObj = hrTimeObj || buildTime
+    var t = process.hrtime(hrTimeObj)
+    return (t[0] + (t[1]/10e+9)).toFixed(3)+'s';
+}
+function formatBuildTimeDiff(){
+    var t = buildTimeDiff;
+    buildTimeDiff = process.hrtime();
+    return formatBuildTime(t);
+}
+
+
+
+// TEMPLATING HELPER
+function addTemplate (config) {
+    var debug = require('debug')('addTemplate');
+    return function(files, metalsmith, done) {
+        var metadata = metalsmith.metadata();
+        Object.keys(metadata.collections).forEach(function(collection){
+            if (Object.keys(config).indexOf(collection)!==-1) {
+                Object.keys(metadata.collections[collection]).forEach(function(i){
+                    var file = metadata.collections[collection][i];
+                    debug('Trying to add ' + config[collection].template + ' to ' + collection + ' file ' + (file.title || file.name) );
+                    if (!file.template) {
+                        file.template = config[collection].template;
+                        debug('        Added ' + config[collection].template + ' to ' + collection + ' file ' + (file.title || file.name) );
+                    }                    
+                })
+            }
+            debug('Done '+collection);
+        });
+        debug('Done adding templates');
+        done();
+    };
+};

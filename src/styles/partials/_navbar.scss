@@ -8,8 +8,14 @@
 // 		padding-top: 12px;
 // 	}
 // }
+#menu-main {
+	&:hover {
+		background-color: $site-primary !important;
+	}
+}
 .navbar {
 	transition: opacity .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
 	background-color: $site-primary;
 	box-shadow: 0px 0px 15px #333;
 	font-weight: 200;
@@ -28,6 +34,12 @@
 		color: #FFF;
 	}
 
+}
+.navbar-toggle {
+	margin-top:0;
+	margin-bottom:0;
+	font-size: 30px;
+	padding: 5px 10px;
 }
 .navbar-primary {
 	border: none;

@@ -1,87 +1,166 @@
 {% extends './layout.swig' %}
+{% set contentBlockSet = 'home' %}
 
 {% block banner %}
 	
 {% endblock %}
 
 {% block content %}
-	<h1>Test</h1>
-	{% for contentblock in contentBlocks %}
-	<p>Something</p>
-		<h3>{{contentBlock}} !!</h3>
-		{# {% set contentblock.page = 'home' %} #}
-		{# {% if contentblock.pages.indexOf(contentblock.page) > -1 %} #}
-			{% include './partials/content-block.swig' %}
-		{# {% endif %} #}
-	{% endfor %}
+	{% include './partials/content-block-set.swig' %}
+	<a class="scroll-down" href="#"><i class="fa fa-chevron-down"></i></a>
 {% endblock %}
 
 {% block scripts %}
+	{# {% include './partials/content-block-scripts.swig' %} #}
+
 	<script>
-		(function($){
-
-			// animate our 'we are giving what we can' statements
-			$('.aim').attr('style','transition: opacity 1s ease-in-out;opacity:0;');
-			var delay = 0;
-			function doEffect(el){
-				var el = $(el)
-				setTimeout(function(){el.css({'opacity':1})},delay); 
-				if($(window).width()>=992){
-					delay+=300;
-				}
-			}
-			$('.aim').each(function(){
-				var el = $(this);
-				el.waypoint(function(direction) {
-					 doEffect($(this.element));
-					this.destroy()
-				}, {
-				  offset: 'bottom-in-view'
-				})
+		
+		$(function(){
+			$(".content-block-wrapper").not(':last').append($('.scroll-down'))
+			$('.scroll-down').click(function(e){
+				e.preventDefault();
+				var position = $(this).parent('.content-block-wrapper').position();
+				TweenLite.to(window, 1, {scrollTo:{y:position.top+$(this).parent('.content-block-wrapper').outerHeight()}, ease:Power2.easeOut});
 			})
-			// create our effectiveness chart
-			var effectivenessChart = $("#effectivenessChart");
-			resizeChart(effectivenessChart);
+		});
 
-			var effectivenessChartData = {
-			    labels: ["Average Charities","Good Charities", "The Best Charities"],
-			    datasets: [
-			        {
-			            label: "Charities",
-			            fillColor: "#6C0000",
-			            data: [0,0,0]
-			        }
-			    ]
-			};
-			var effectivenessChartOptions = {
-				scaleBeginAtZero : false,
-				scaleShowGridLines : false,
-				barDatasetSpacing : 2,
-			    showTooltips: false,
-			    scaleFontFamily: '"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif',
-			    scaleOverride: true,
-			    scaleSteps: 10,
-			    scaleStepWidth: 100,
-			    scaleStartValue: 0,
+		// Trigger SlabText after webfonts are loaded
+		$(document).on('WebFont', function(event,status){
+			if(status==='active'){
+				$('.content-block widont').replaceWith(' ')
+				$('#hero-image h2').slabText({viewportBreakpoint:380});
+				$('#we-focus-on-impact h2').slabText({viewportBreakpoint:380});
+				$('#our-top-charities-are-some-of-the-best h2').slabText({viewportBreakpoint:380});
 			}
-			var ctx = effectivenessChart.get(0).getContext("2d");
-			var effectivenessChartRender = new Chart(ctx).Bar(effectivenessChartData, effectivenessChartOptions);
-			// use Waypoint to check whether the chart is in view
-			effectivenessChart.waypoint(function(direction) {
-				resizeChart(effectivenessChart);
-				effectivenessChartRender.datasets[0].bars[0].value = 1;
-				effectivenessChartRender.datasets[0].bars[1].value = 100;
-				effectivenessChartRender.datasets[0].bars[2].value = 1000;
-				effectivenessChartRender.update();
-				this.destroy();
-			}, {
-			  offset: 'bottom-in-view'
-			});
-			function resizeChart(el){
-				el = $(el);
-				el.height(2 * Math.floor($(window).height()/4)); // round down to nearest even number or webkit font smoothing freaks out
-				el.width(el.parent().width());
-			}
-		})(jQuery);
+		})
+
+
+		/*
+		
+		SCROLLMAGIC!!!
+
+		*/
+
+		// init controller
+		var controller = new ScrollMagic.Controller({globalSceneOptions: {}});
+
+		/*
+		
+		Scene - fade and shrink nav at top of page
+
+		*/
+
+		// build scene
+			var menuTimeline = new TimelineLite();
+			menuTimeline.fromTo('#menu-main', 1, {backgroundColor:"rgba(108,0,0,0)",boxShadow:'none'}, {backgroundColor:"rgba(108,0,0,1)",boxShadow:'0px 0px 15px #333',ease:Quart.easeOut});
+			var scene = new ScrollMagic.Scene({triggerElement: "#hero-image", duration: 400, triggerHook:0})
+			// animate color and top border in relation to scroll position
+			.setTween(menuTimeline)
+			.addTo(controller);
+
+
+		/*
+		
+		Scene - highlight aims in 'we are giving what we can'
+
+		*/
+
+		// build tween
+		var aimTimeline = new TimelineLite();
+		aimTimeline.staggerFromTo('.aim', 0.6, {opacity:0,scale:0.7}, {opacity:1,scale:1,ease:Quart.easeOut}, 0.2);
+		// build scene
+		var aimScene = new ScrollMagic.Scene({triggerElement: "#we-are-giving-what-we-can", triggerHook:0.1})
+		aimScene
+		.setTween(aimTimeline)
+		.addTo(controller)
+		.on('enter leave',function(e){
+			// console.log(e);
+		})
+
+		/*
+		
+		Scene - highlight impact chart
+
+		*/
+
+		// build tween
+		var ChartTimeline = new TimelineLite();
+		ChartTimeline.from('.comparison-chart', 0.6, {left:-1000,ease:Quart.easeOut});
+		ChartTimeline.from('.comparison-text', 0.6, {left:1000,ease:Quart.easeOut},0);
+		// build scene
+		var chartScene = new ScrollMagic.Scene({triggerElement: "#we-focus-on-impact", triggerHook:0.1})
+		chartScene
+		.setTween(ChartTimeline)
+		.addTo(controller)
+		.on('enter leave',function(e){
+			// console.log(e);
+		})
+
+
+		/*
+		
+		Scene - highlight top charities
+
+		*/
+
+		// build tween
+		var TopCharitiesTimeline = new TimelineLite();
+		TopCharitiesTimeline.staggerFrom('#our-top-charities-are-some-of-the-best .col-sm-6', 0.6, {opacity:0,top:100,ease:Quart.easeOut},0.2);
+		// build scene
+		var chartScene = new ScrollMagic.Scene({triggerElement: "#our-top-charities-are-some-of-the-best", triggerHook:0.1})
+		chartScene
+		.setTween(TopCharitiesTimeline)
+		.addTo(controller)
+		.on('enter leave',function(e){
+			// console.log(e);
+		})
+
+
+		/*
+		
+		CHARTIST!
+
+		*/
+
+		var data = {
+		  labels: ['Average Charities', 'Good Charities', 'The Best Charities'],
+		  series: [
+		    [10,100,1500]
+		  ]
+		};
+		var options = {
+			chartPadding: {
+				top: 0,
+				right: 0,
+				bottom: 30,
+				left: 30
+			},
+			plugins: [
+                Chartist.plugins.ctAxisTitle({
+                    axisX: {
+                        axisTitle: 'Charity Type',
+                        axisClass: 'ct-axis-title',
+                        offset: {
+                            x: 0,
+                            y: 50
+                        },
+                        textAnchor: 'middle'
+                    },
+                    axisY: {
+                        axisTitle: 'Impact',
+                        axisClass: 'ct-axis-title',
+                        offset: {
+                            x: 0,
+                            y: -1
+                        },
+                        flipTitle: false
+                    }
+                })
+            ]
+		}
+
+		new Chartist.Bar('#impact-chart', data, options);
+
+		
 	</script>
 {% endblock %}
