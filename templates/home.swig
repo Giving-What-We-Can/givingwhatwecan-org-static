@@ -12,9 +12,9 @@
 
 {% block scripts %}
 	{# {% include './partials/content-block-scripts.swig' %} #}
-
+	{% parent %}
 	<script>
-		
+		// Add down chevrons to all content blocks
 		$(function(){
 			$(".content-block-wrapper").not(':last').append($('.scroll-down'))
 			$('.scroll-down').click(function(e){
@@ -24,6 +24,8 @@
 			})
 		});
 
+		$.gwwcCalculator.controls();
+
 		// Trigger SlabText after webfonts are loaded
 		$(document).on('WebFont', function(event,status){
 			if(status==='active'){
@@ -31,6 +33,7 @@
 				$('#hero-image h2').slabText({viewportBreakpoint:380});
 				$('#we-focus-on-impact h2').slabText({viewportBreakpoint:380});
 				$('#our-top-charities-are-some-of-the-best h2').slabText({viewportBreakpoint:380});
+				$('#how-rich-am-i h2').slabText({viewportBreakpoint:380});
 			}
 		})
 
@@ -69,8 +72,7 @@
 		var aimTimeline = new TimelineLite();
 		aimTimeline.staggerFromTo('.aim', 0.6, {opacity:0,scale:0.7}, {opacity:1,scale:1,ease:Quart.easeOut}, 0.2);
 		// build scene
-		var aimScene = new ScrollMagic.Scene({triggerElement: "#we-are-giving-what-we-can", triggerHook:0.1})
-		aimScene
+		new ScrollMagic.Scene({triggerElement: "#we-are-giving-what-we-can", triggerHook:0.1})
 		.setTween(aimTimeline)
 		.addTo(controller)
 		.on('enter leave',function(e){
@@ -88,8 +90,7 @@
 		ChartTimeline.from('.comparison-chart', 0.6, {left:-1000,ease:Quart.easeOut});
 		ChartTimeline.from('.comparison-text', 0.6, {left:1000,ease:Quart.easeOut},0);
 		// build scene
-		var chartScene = new ScrollMagic.Scene({triggerElement: "#we-focus-on-impact", triggerHook:0.1})
-		chartScene
+		new ScrollMagic.Scene({triggerElement: "#we-focus-on-impact", triggerHook:0.1})
 		.setTween(ChartTimeline)
 		.addTo(controller)
 		.on('enter leave',function(e){
@@ -107,14 +108,60 @@
 		var TopCharitiesTimeline = new TimelineLite();
 		TopCharitiesTimeline.staggerFrom('#our-top-charities-are-some-of-the-best .col-sm-6', 0.6, {opacity:0,top:100,ease:Quart.easeOut},0.2);
 		// build scene
-		var chartScene = new ScrollMagic.Scene({triggerElement: "#our-top-charities-are-some-of-the-best", triggerHook:0.1})
-		chartScene
+		new ScrollMagic.Scene({triggerElement: "#our-top-charities-are-some-of-the-best", triggerHook:0.1})
 		.setTween(TopCharitiesTimeline)
 		.addTo(controller)
 		.on('enter leave',function(e){
 			// console.log(e);
-		})
+		})		
 
+		/*
+		
+		Scene - count up member stats
+
+		*/
+
+		//
+		// build properties
+		var AmazingThingsNumbers = [];
+		var numberEls = $("#our-members-have-done-some-amazing-things .number")
+		numberEls.each(function(index){
+			var el = $(this);
+			el.attr('id','amazing-thing-number-'+index)
+			var number = {
+				id:el.attr('id'),
+				total:parseInt(el.attr('data-number')),
+				number:parseInt(el.attr('data-number')),
+				prefix:el.attr('data-prefix')
+			}
+			AmazingThingsNumbers.push(number)
+			el.text((number.prefix?number.prefix:'')+'...')
+		})
+		// build tween
+		var AmazingThingsTimeline = new TimelineLite();
+		AmazingThingsTimeline.staggerFrom(AmazingThingsNumbers, 1, {
+			number:0,
+			onUpdate:AmazingThingsUpdateHandler,
+			ease:Quart.easeOut
+		},0.3)
+		// build scene
+		new ScrollMagic.Scene({triggerElement: "#our-members-have-done-some-amazing-things", triggerHook:0.7})
+		.setTween(AmazingThingsTimeline)
+		.addTo(controller)
+
+		function AmazingThingsUpdateHandler(){
+			$.each(AmazingThingsNumbers,function(index,number){
+				el = $('#'+number.id)
+				if(number.number<10) {
+					el.text((number.prefix?number.prefix:'')+'...')
+				} else {
+					el.text((number.prefix?number.prefix:'')+separateThousands(number.number))
+				}
+			})
+		}
+		function separateThousands(number){
+			return Math.round(number).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+		}
 
 		/*
 		

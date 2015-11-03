@@ -32,7 +32,15 @@
 					</li>
 					{% elif parent._page %}
 					<li class="nav">
-						<a href="{{ relative(parent._page.path) }}">{{parent._page.title}}</a>
+						{% set pageTitle = parent._page.shortTitle || parent._page.title %}
+						<a href="{{ relative(parent._page.path) }}">{{pageTitle}}</a>
+					</li>
+					{% elif parent._link %}
+					<li class="nav">
+						{% set linkTitle = parent._link.shortTitle || parent._link.title %}
+						<a href="{{ parent._link.linkURL }}"{% if parent._link.shortTitle ==='Donate' %}style="font-weight:400;"{% endif %}>
+							{{linkTitle}}
+						</a>
 					</li>
 					{% endif %}
 				{% endfor %}

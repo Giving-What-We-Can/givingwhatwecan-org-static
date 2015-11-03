@@ -37,6 +37,8 @@ var Metalsmith = require('metalsmith');
 message('Loaded Metalsmith');
 // templating
 var metadata = require('metalsmith-metadata');
+var getStats = require('./lib/get-stats')
+var getSpecials = require('./lib/get-specials')
 var contentful = require('contentful-metalsmith');
 var slug = require('slug'); slug.defaults.mode = 'rfc3986';
 var filemetadata = require('metalsmith-filemetadata');
@@ -46,6 +48,7 @@ var beautify  = require('metalsmith-beautify');
 var moment = require('moment');
 var strip = require('strip');
 var truncate = require('truncate');
+var inPlace  = require('metalsmith-in-place');
 var templates  = require('metalsmith-templates');
 var typogr = require('metalsmith-typogr');
 var sizeOf = require('image-size');
@@ -64,13 +67,18 @@ message('Loaded metadata');
 // static file compilation
 var swig = require('swig');
 require('./lib/swig-filters')(swig);
-var marked = require('marked')
+// var marked = require('marked')
+var MarkdownIt = require('markdown-it')
+var MarkdownItFootnote = require('markdown-it-footnote');
+// var MarkdownItSub = require('markdown-it-sub');
+// var MarkdownItSup = require('markdown-it-sup');
 var cheerio = require('cheerio');
 var sass  = require('metalsmith-sass');
 var concat = require('metalsmith-concat');
 var autoprefixer = require('metalsmith-autoprefixer');
 var browserify = require('browserify')
 var icons = require('metalsmith-icons');
+var feed = require('metalsmith-feed');
 var htmlMinifier = require("metalsmith-html-minifier");
 // only require in production
 if(ENVIRONMENT==='production'){
@@ -88,6 +96,7 @@ var merge = require('merge');
 var NotificationCenter = require('node-notifier').NotificationCenter;
 var notifier = new NotificationCenter;
 var prompt = require('prompt')
+var YAML = require('yamljs')
 message('Loaded utilities...');
 // var debug = require('debug')('build');
 message('All dependencies loaded!',chalk.cyan);
@@ -119,8 +128,18 @@ function build(buildCount){
     ]))
     // Set up some metadata
     .use(metadata({
-        "siteInfo": "settings/site-info.json",
+        "siteInfo": "settings/site-info.json"
     }))
+    .use(getStats())
+    .use(getSpecials())
+    .use(function (files,metalsmith,done){
+        // hack to make metalsmith-feed plugin work by adding site.url to the metadata
+        var meta = metalsmith.metadata();
+        meta.site = {
+            'url': meta.siteInfo.protocol + meta.siteInfo.domain
+        }
+        done();
+    })
     .use(function (files,metalsmith,done){
         // add defaults to all our contentful source files
         var options = {
@@ -163,10 +182,10 @@ function build(buildCount){
             var meta = files[file]
             if(!meta.data || !meta.data.fields){ cb(); return; }
             each(Object.keys(meta.data.fields), function(key,cb){
-                if(key!=='body'){
+                if(['body','bio'].indexOf(key)===-1){
                     meta[key] = meta.data.fields[key]
                 } else {
-                    meta['contents'] = new Buffer(meta.data.fields.body);
+                    meta['contents'] = meta.data.fields[key]
                 }
                 cb();
             }, cb)
@@ -472,20 +491,46 @@ function build(buildCount){
     // })
     .use(logMessage('Moved files into place'))
     .use(function (files, metalsmith, done) {
-        // inject a list of redirects into the global metadata
+        var dynamicSiteRedirects = files['settings/_redirects'].contents.toString().split('\n').sort()
+
+        // build a list of redirects from file meta
         var metadata =metalsmith.metadata();
         var redirects = {};
+        var redirectsFile = [];
         Object.keys(files).forEach(function (file) {
             if(files[file].hasOwnProperty('redirects')){
                 files[file].redirects.forEach(function(redirect){
-                    redirects[redirect] = files[file];
+                    if(redirect !== '/'+files[file].path){
+                        redirects[redirect] = files[file];
+                        redirectsFile.push(redirect + ' /' + files[file].path + ' 302')
+                    }
                 })
             }
         })
+
+        // inject the list of redirects into the global metadata
         metadata.redirects = redirects;
+
+        // create a _redirects file for Netlify
+        redirectsFile.sort();
+        dynamicSiteRedirects.sort();
+        redirectsFile = redirectsFile.concat(dynamicSiteRedirects);
+        files['_redirects'] = {contents:redirectsFile.join('\n')};
+
+        // create a list of rewrite rules for Drupal
+        var htaccess = [];  
+        Object.keys(files).forEach(function(file){
+            var p = files[file].path;
+            if(p) {
+                p = p === '.' ? '/' : '/'+p; 
+                htaccess.push('  RewriteRule ^'+p+'$ http://www1.givingwhatwecan.org'+p+' [R=302,L,NC]')
+            }
+        });
+        htaccess.sort();
+        files['htaccess'] = {contents:htaccess.join('\n')};
         done();
     })
-     .use(logMessage('Calculated redirects'))   
+    .use(logMessage('Calculated redirects'))   
     // Build HTML files
     .use(function (files, metalsmith, done) {
         var debug = require('debug')('parseMarkdown');
@@ -501,7 +546,13 @@ function build(buildCount){
         // function for parsing markdown into HTML, which also applies some additional transforms
         function parse (file, cb) {
             debug('%s — Building HTML from Markdown',file);
-            var html = marked( files[file].contents.toString() );
+            
+            var md = new MarkdownIt({
+                html:true
+            })
+            .use(MarkdownItFootnote);
+
+            var html = md.render( files[file].contents.toString() );
             debug('%s — Rendered markdown',file);
             // use Cheerio to modify HTML
             debug('%s — Using Cheerio to modify file contents',file);
@@ -512,7 +563,7 @@ function build(buildCount){
                 var parent = img.parent();
                 if(parent[0] && parent[0].name === 'p'){
                     parent.replaceWith(function(){
-                        return $("<div />").addClass('row').append($("<figure />").append($(this).contents()));
+                        return $('<div class="row" />').append($('<figure class="col-xs-12" />').append($(this).contents()));
                     })
                     // check the size of our images, if they're not big enough, make them half-size 
                     var imgFile = files[img.attr('src').substr(1)];
@@ -552,10 +603,24 @@ function build(buildCount){
         } 
     })
     .use(logMessage('Converted Markdown to HTML'))
-    .use(typogr())
+    // .use(typogr())
     .use(logMessage('Added typography'))
     .use(excerpts())
     .use(relative())
+    .use(feed({
+        collection: 'posts',
+        destination: 'blog.xml'
+    }))
+    .use(logMessage('Generated RSS feed'))
+    .use(templates({
+        engine:'swig',
+        requires: {swig:swig},
+        moment: moment,
+        strip: strip,
+        truncate: truncate,
+        pattern: "**/*.html",
+        inPlace: true
+    }))
     .use(templates({
         engine:'swig',
         requires: {swig:swig},
@@ -574,7 +639,7 @@ function build(buildCount){
     .use(function (files, metalsmith, done) {
         // we've incorporated content blocks into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){
-            if(minimatch(file,'content/content-blocks/**')){
+            if(minimatch(file,'content-block/**')){
                 delete files[file];
             }
         });

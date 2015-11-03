@@ -1,0 +1,12 @@
+body.page {
+	&.home {
+		padding-top: 0;
+	}
+	// pages to make full width
+	&.how-rich-am-i {
+		div.page {
+			margin: 0;
+			width: 100%;
+		}
+	}
+}

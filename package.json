@@ -26,8 +26,13 @@
     "contentful-metalsmith": "https://github.com/centre-for-effective-altruism/contentful-metalsmith.git",
     "debug": "^2.2.0",
     "dotenv": "^1.2.0",
+    "html-entities": "^1.2.0",
     "image-size": "^0.3.5",
     "jquery": "^2.1.4",
+    "markdown-it": "^5.0.0",
+    "markdown-it-footnote": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
     "marked": "^0.3.5",
     "merge": "^1.2.0",
     "metalsmith": "^2.0.1",
@@ -41,9 +46,11 @@
     "metalsmith-debug": "0.0.2",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "https://github.com/colophonemes/metalsmith-excerpts/tarball/master",
+    "metalsmith-feed": "^0.2.0",
     "metalsmith-filemetadata": "0.0.4",
     "metalsmith-html-minifier": "^1.1.0",
     "metalsmith-ignore": "^0.1.2",
+    "metalsmith-in-place": "^1.3.2",
     "metalsmith-metadata": "0.0.1",
     "metalsmith-navigation": "^0.2.4",
     "metalsmith-pagination": "^1.1.1",
@@ -61,14 +68,15 @@
     "moment": "^2.9.0",
     "node-notifier": "^4.3.1",
     "prompt": "^0.2.14",
-    "remarkable": "^1.6.0",
+    "request": "^2.65.0",
     "scrollmagic": "^2.0.5",
     "slug": "^0.9.1",
     "strip": "0.0.7",
     "swig": "^1.4.2",
     "time-require": "^0.1.2",
     "truncate": "^2.0.0",
-    "typogr": "^0.6.5"
+    "typogr": "^0.6.5",
+    "yamljs": "^0.2.4"
   },
   "devDependencies": {},
   "browser": {
@@ -83,7 +91,8 @@
     "scrollmagicAnimationGSAP": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
     "slabText": "./src/scripts/vendor/jquery.slabtext.js",
     "chartist": "./node_modules/chartist/dist/chartist.js",
-    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js"
+    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js",
+    "gwwcCalculator": "./src/scripts/gwwc/calculator.js"
   },
   "browserify": {
     "transform": [
@@ -96,6 +105,7 @@
     "bootstrapTransition": "bootstrapTransition",
     "scrollmagicJQuery": "scrollmagicJQuery",
     "scrollmagicAnimationGSAP": "scrollmagicAnimationGSAP",
-    "slabText": "slabText"
+    "slabText": "slabText",
+    "gwwcCalculator": "gwwcCalculator"
   }
 }

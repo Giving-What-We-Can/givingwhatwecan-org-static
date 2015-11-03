@@ -9,7 +9,11 @@
 			<article class="post">
 				<header class="post-header">
 					<h2 class="post-title title">{{ title }}</h2>
-					<p class="post-author">by {{ author }}</p>
+					<p class="post-author">by
+					{% for a in author %}
+						<strong>{{ a.fields.name }}</strong>
+					{% endfor %}
+					</p>
 				</header>
 				<section class="post-content">
 					{% autoescape false %}{{ contents }}{% endautoescape %}

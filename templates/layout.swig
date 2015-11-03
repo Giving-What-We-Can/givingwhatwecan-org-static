@@ -24,7 +24,6 @@
 
 <body class="collection-{{ collection }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
 
-
 {% include "./partials/nav.swig" %}
 
 
@@ -72,6 +71,12 @@
 	<![endif]-->
 	<script src="{{ relative('/scripts/app.min.js') }}"></script>
 	{% block scripts %}{% endblock %}
+	{% if includeScripts %}
+		{% for includeScript in includeScripts %}
+			{{ includeScript }}
+		{% endfor %}
+	{% endif %}
+
 </body>
 
 </html>

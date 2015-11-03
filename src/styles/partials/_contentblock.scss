@@ -10,6 +10,7 @@ $min-height: 400px;
 	display: table;
 	min-height: $min-height;
 	text-align: center;
+	background-color: #444;
 	color: #FFF;
 	h1,h2,h3,h4,h5,h6{
 		color: #FFF;
@@ -17,6 +18,10 @@ $min-height: 400px;
 	width: 100%;
 	position:relative;
 	overflow: hidden;
+	padding-bottom: $grid-gutter-width;
+	&.fullheight {
+		padding-bottom:0;
+	}
 	.scroll-down {
 		font-size: 2em;
 		position: absolute;
@@ -188,6 +193,7 @@ $min-height: 400px;
 		}
 	}
 	&#we-focus-on-impact {
+		background-color: #FFF;
 		color: #333;
 		h1,h2,h3,h4,h5,h6{
 			color:#333;
@@ -266,5 +272,31 @@ $min-height: 400px;
 		a.learn-more {
 			margin-bottom: 30px;
 		}
+	}
+	&#our-members-have-done-some-amazing-things {
+		background-color: #FFF;
+		color: #444;
+		@media(min-width:$screen-md){
+			font-size: 1.5em;
+		}
+		@media(min-width:$screen-lg){
+			font-size: 2em;
+		}
+		.number {
+			font-size: 2em;
+			display: block;
+			font-weight: 700;
+		}
+		.and {
+			@media(min-width:$screen-md){
+				margin-top: 2.75em;
+			}
+			display: inline-block;
+		    font-style: italic;
+		    font-weight: 200;
+		}
+	}
+	&#how-rich-am-i {
+		
 	}
 }

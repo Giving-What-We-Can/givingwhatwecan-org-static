@@ -1,6 +1,8 @@
 {% extends './layout.swig' %}
 
-
+{% block head %}
+<link rel="alternate" type="application/rss+xml" title="feed one" href="/blog.xml"/>
+{% endblock %}
 
 {% block content %}
 

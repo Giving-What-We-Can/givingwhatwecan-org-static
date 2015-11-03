@@ -4,3 +4,5 @@ node_modules
 bower_components
 .env
 .cache-require-paths.json
+.cache
+.icon_cache

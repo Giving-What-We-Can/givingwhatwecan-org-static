@@ -1,0 +1,39 @@
+// Controls
+form#calculator-controls {
+	text-align: left;
+	.submit-container {
+		text-align: center;
+		@media(min-width:$screen-lg){
+			padding-top:38px;
+		}
+		.btn {
+			width: 100%;
+		}
+	}
+	.help-text {
+		color: #444;
+		text-align: left;
+		font-size: 14px;
+	}
+	.household-input-container{
+		input {
+			text-align: center;
+			font-weight: 700;
+		}
+		&.children {
+			margin-top:$grid-gutter-width;
+			@media(min-width:$screen-sm){
+				margin-top: 0;
+			}
+			.fa-user, .icon-user {
+				font-size: 0.7em;
+			}
+		}
+	}
+	.household-container {
+		.help-text {
+			margin-top: 0;
+		}
+	}
+}
+// 

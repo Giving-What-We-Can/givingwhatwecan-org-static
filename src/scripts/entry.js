@@ -41,3 +41,6 @@ require('slabText');
 // chartist
 global.Chartist = require('chartist')
 require('chartistAxisTitle')
+
+// user scripts
+require('gwwcCalculator')

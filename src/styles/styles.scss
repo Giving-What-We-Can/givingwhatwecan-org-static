@@ -22,9 +22,10 @@ Site partials
 	@import "partials/responsive-heights";
 	@import "partials/logo";
 	// individual pages
-	@import "partials/home";
-	@import "partials/team";
-	@import "partials/donate";
+	@import "partials/pages";
 	@import "partials/blog";
+	// app elements
+	@import "partials/calculator";
 	// vendor libraries
-	@import "partials/chartist"
+	@import "partials/slabtext";
+	@import "partials/chartist";
