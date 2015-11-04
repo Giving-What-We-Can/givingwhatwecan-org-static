@@ -16,7 +16,14 @@
 	<link rel="stylesheet" type="text/css" href="{{ relative('/styles/app.min.css') }}">
 	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
-	<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+	<script>
+		// fast pre-rendering check for javascript capability without requiring Modernizr in the head
+		document.documentElement.className = document.documentElement.className.replace('no-js','js');
+		// defer execution of jquery-dependent scripts defined before jQuery loads
+		window.q=[];window.$=function(f){q.push(f)}
+		// enqueue scripts at the end of the page from before the closing body tag
+		window.loadScripts=[];window.loadScript=function(path){loadScripts.push(path)}
+	</script>
 	{% block head %}
 	{% endblock %}
 
@@ -51,6 +58,8 @@
 			{% endblock %}
 		</footer>
 	</div>
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
 	<script>
@@ -71,11 +80,36 @@
 	<![endif]-->
 	<script src="{{ relative('/scripts/app.min.js') }}"></script>
 	{% block scripts %}{% endblock %}
-	{% if includeScripts %}
-		{% for includeScript in includeScripts %}
-			{{ includeScript }}
-		{% endfor %}
-	{% endif %}
+	<script>
+		// load scripts requested earlier in the document
+		
+		(function(){
+			if(loadScripts.length>0){
+				loadScripts = uniq(loadScripts);
+				for (var i = loadScripts.length - 1; i >= 0; i--) {
+					var script = document.createElement('script');
+					var src = loadScripts[i];
+	    			if(src.substr(src.length-2) !== 'js'){
+	    				src = '/scripts/includes/'+src+'.min.js'
+	    			}
+	    			script.src = src;
+	    			document.write(script.outerHTML);
+				};
+			}
+			function uniq(a) {
+			    var seen = {};
+			    return a.filter(function(item) {
+			        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+			    });
+			}
+		})();
+		// deferred execution for jquery-dependent scripts defined earlier in the body
+		$(function() {
+			$.each(q, function(index, f) {
+				f(jQuery);
+			});
+		});
+	</script>
 
 </body>
 

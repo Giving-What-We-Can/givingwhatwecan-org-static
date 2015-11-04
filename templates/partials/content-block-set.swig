@@ -4,3 +4,6 @@
         {% include './content-block.swig' %}
     {% endif %}
 {% endfor %}
+<script>
+	loadScript('content-blocks')
+</script>

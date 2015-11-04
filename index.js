@@ -50,7 +50,7 @@ var strip = require('strip');
 var truncate = require('truncate');
 var inPlace  = require('metalsmith-in-place');
 var templates  = require('metalsmith-templates');
-var typogr = require('metalsmith-typogr');
+var typogr = require('typogr');
 var sizeOf = require('image-size');
 message('Loaded templating');
 // var lazysizes = require('metalsmith-lazysizes');
@@ -82,7 +82,7 @@ var feed = require('metalsmith-feed');
 var htmlMinifier = require("metalsmith-html-minifier");
 // only require in production
 if(ENVIRONMENT==='production'){
-    // var uglify = require('metalsmith-uglify');
+    var uglify = require('metalsmith-uglify');
     var cleanCSS = require('metalsmith-clean-css');
     var uncss = require('metalsmith-uncss');
     // var subset = require('metalsmith-subsetfonts')
@@ -122,7 +122,7 @@ function build(buildCount){
     .source('./src')
     .destination('./dest')
     .use(ignore([
-        'scripts/**/*',
+        'scripts/!(includes)/*',
         '**/.DS_Store',
         'styles/partials/**'
     ]))
@@ -130,7 +130,9 @@ function build(buildCount){
     .use(metadata({
         "siteInfo": "settings/site-info.json"
     }))
-    .use(getStats())
+    .use(getStats({
+        forceCache: ENVIRONMENT === 'development' ? true : false
+    }))
     .use(getSpecials())
     .use(function (files,metalsmith,done){
         // hack to make metalsmith-feed plugin work by adding site.url to the metadata
@@ -578,6 +580,10 @@ function build(buildCount){
                 // add img-responsive tags to images
                 img.addClass('img-responsive');
             })
+            /*$('p, h1, h2, h3, h4, h5, h6').each(function(){
+                var el = $(this);
+                el.html(typogr.typogrify(el.html()));
+            })*/
             // use our global list of redirects to resolve any outdated internal links in the body (only bother in production)
             if(ENVIRONMENT === 'production'){
                 $('a').each(function(){
@@ -603,8 +609,6 @@ function build(buildCount){
         } 
     })
     .use(logMessage('Converted Markdown to HTML'))
-    // .use(typogr())
-    .use(logMessage('Added typography'))
     .use(excerpts())
     .use(relative())
     .use(feed({
@@ -714,7 +718,6 @@ function build(buildCount){
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
-        .use(logMessage('Cleaning CSS files'))
         .use(htmlMinifier())
         // .use(beautify({
         //     html: false,
@@ -749,9 +752,12 @@ function build(buildCount){
                 keepSpecialComments: false,
             }
         }))
-        // .use(uglify({
-        //     removeOriginal: true
-        // }))
+        .use(logMessage('Cleaned CSS files'))
+        .use(uglify({
+            removeOriginal: true,
+            filter: "scripts/includes/**/*"
+        }))
+        .use(logMessage('Minified Javascript'))
         ;
     }
     // stuff to only do in development

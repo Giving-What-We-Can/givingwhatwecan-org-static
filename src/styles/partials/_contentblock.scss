@@ -297,6 +297,16 @@ $min-height: 400px;
 		}
 	}
 	&#how-rich-am-i {
-		
+		.heading {
+			text-shadow: 0 0 16px #333;
+			h2 {
+				text-transform: uppercase;
+	   			font-weight: 700;
+			}
+			p {
+				font-size: 2em;
+    			color: #DDD;
+			}
+		}
 	}
 }

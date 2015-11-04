@@ -37,3 +37,46 @@ form#calculator-controls {
 	}
 }
 // 
+
+#calculator-body {
+	&.uncalculated {
+		.show-calculated, .show-calculating {
+			display: none;
+		}
+	}
+	&.calculating {
+		.show-calculating {
+			display: inherit;
+		}
+		.show-calculated {
+			display: none;
+		}
+	}
+	&.calculated {
+		.show-calculating {
+			display: none;
+		}
+		.show-calculated {
+			display: inherit;
+		}
+	}
+
+	.ct-bar {
+		stroke-width:35%;
+	}
+	.calculator-comparison {
+		p {
+		    line-height: 1em;
+		    font-size: 2em;
+		    font-weight: 400;
+		    color: #6C0000;
+		    text-align: center;
+		    .number {
+			    line-height: 1em;
+		    	font-size: 2em;
+		    	font-weight: 700;
+		    	display: block;
+		    }
+		}
+	}
+}

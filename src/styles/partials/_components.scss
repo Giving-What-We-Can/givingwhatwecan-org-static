@@ -79,7 +79,12 @@ img[data-sizes="auto"] {
 		display:block;
 	}
 }
-
+.onlyscript {
+	display:inherit;
+	.no-js & {
+		display:none;
+	}
+}
 
 
 span {

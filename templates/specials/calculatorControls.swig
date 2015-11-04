@@ -252,3 +252,7 @@
         </div>
     </div>
 </form>
+
+<script>
+    loadScript('calculator')
+</script>

@@ -85,14 +85,15 @@
     "bootstrapTransition": "./node_modules/bootstrap/js/transition.js",
     "gsap-tweenlite": "./node_modules/gsap/src/uncompressed/TweenLite.js",
     "gsap-timelinelite": "./node_modules/gsap/src/uncompressed/TimelineLite.js",
+    "GSAPEasing": "./node_modules/gsap/src/uncompressed/easing/EasePack.js",
     "GSAPCSSPlugin": "./node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js",
+    "GSAPAttrPlugin": "./node_modules/gsap/src/uncompressed/plugins/AttrPlugin.js",
     "GSAPScrollToPlugin": "./node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js",
     "scrollmagicJQuery": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js",
     "scrollmagicAnimationGSAP": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
     "slabText": "./src/scripts/vendor/jquery.slabtext.js",
     "chartist": "./node_modules/chartist/dist/chartist.js",
-    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js",
-    "gwwcCalculator": "./src/scripts/gwwc/calculator.js"
+    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js"
   },
   "browserify": {
     "transform": [
@@ -105,7 +106,6 @@
     "bootstrapTransition": "bootstrapTransition",
     "scrollmagicJQuery": "scrollmagicJQuery",
     "scrollmagicAnimationGSAP": "scrollmagicAnimationGSAP",
-    "slabText": "slabText",
-    "gwwcCalculator": "gwwcCalculator"
+    "slabText": "slabText"
   }
 }
