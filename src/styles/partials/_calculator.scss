@@ -64,7 +64,7 @@ form#calculator-controls {
 	.ct-bar {
 		stroke-width:35%;
 	}
-	.calculator-comparison {
+	.calculator-comparison, .explanatory-interstitial, .calculator-outcome {
 		p {
 		    line-height: 1em;
 		    font-size: 2em;
@@ -78,5 +78,48 @@ form#calculator-controls {
 		    	display: block;
 		    }
 		}
+	}
+	#donation-amount {
+		.slider {
+			width:100%;
+		}
+	}
+	.explanatory-interstitial {
+		margin: $grid-gutter-width*2 auto;
+		text-align: center;
+	}
+	.calculator-outcome {
+		p{
+			.number {
+				line-height: 1.4em;
+				font-size: 2.2em;
+			}
+		}
+	}
+	#call-to-action {
+		p {
+			line-height: 2.5em;
+			&.challenge {
+			    text-transform: uppercase;
+			    font-size: 4em;
+			    font-weight: bold;
+			    text-decoration: underline;
+			}
+			&.action {
+				color: #444;
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.calculator-action {
+		text-align: center;
+		p {
+			font-size: 1.5em;
+		}
+	}
+	#back-to-top {
+		text-align: center;
 	}
 }

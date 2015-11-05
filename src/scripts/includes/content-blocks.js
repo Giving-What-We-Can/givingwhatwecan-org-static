@@ -65,11 +65,11 @@
 	                    textAnchor: 'middle'
 	                },
 	                axisY: {
-	                    axisTitle: 'Impact',
+	                    axisTitle: 'Health',
 	                    axisClass: 'ct-axis-title',
 	                    offset: {
 	                        x: 0,
-	                        y: -1
+	                        y: -3
 	                    },
 	                    flipTitle: false
 	                }

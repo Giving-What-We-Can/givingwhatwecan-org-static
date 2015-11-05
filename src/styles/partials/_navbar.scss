@@ -23,6 +23,7 @@
 .navbar-header {
 	.navbar-brand {
 		padding-top:10px;
+		background-color: $site-primary;
 		@media(max-width:$screen-xs-max){
 			// padding-top:5px;
 		}

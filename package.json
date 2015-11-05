@@ -15,6 +15,7 @@
   "dependencies": {
     "async": "^1.4.2",
     "bootstrap": "^3.3.5",
+    "bootstrap-slider": "^5.2.5",
     "bower-files": "^3.4.4",
     "browserify": "^11.2.0",
     "browserify-shim": "^3.8.10",
@@ -83,6 +84,7 @@
     "bootstrapCollapse": "./node_modules/bootstrap/js/collapse.js",
     "bootstrapDropdown": "./node_modules/bootstrap/js/dropdown.js",
     "bootstrapTransition": "./node_modules/bootstrap/js/transition.js",
+    "bootstrapSlider": "./node_modules/bootstrap-slider/js/bootstrap-slider.js",
     "gsap-tweenlite": "./node_modules/gsap/src/uncompressed/TweenLite.js",
     "gsap-timelinelite": "./node_modules/gsap/src/uncompressed/TimelineLite.js",
     "GSAPEasing": "./node_modules/gsap/src/uncompressed/easing/EasePack.js",
@@ -104,6 +106,7 @@
     "bootstrapCollapse": "bootstrapCollapse",
     "bootstrapDropdown": "bootstrapDropdown",
     "bootstrapTransition": "bootstrapTransition",
+    "bootstrapSlider": "bootstrapSlider",
     "scrollmagicJQuery": "scrollmagicJQuery",
     "scrollmagicAnimationGSAP": "scrollmagicAnimationGSAP",
     "slabText": "slabText"

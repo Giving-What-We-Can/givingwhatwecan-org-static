@@ -27,27 +27,76 @@
                 // set up selectors
                 var richestPercentileDisplay = calculatorBody.find('.richest-percentile');
                 var globalAverageMultipleDisplay = calculatorBody.find('.global-average-multiple');
-                var richestPercentileAfterDonationDisplay = calculatorBody.find('.richest-percentile-after-donation');
-                var globalAverageMultipleAfterDonationDisplay = calculatorBody.find('.global-average-multiple-after-donation');
+
+                var donationAmount = calculatorBody.find('#donation-amount');
+                var donationAmountDisplay = calculatorBody.find('.donation-percentage');
+
+                var richestPercentileAfterDonatingDisplay = calculatorBody.find('.richest-percentile-after-donating');
+                var globalAverageMultipleAfterDonatingDisplay = calculatorBody.find('.global-average-multiple-after-donating');
+                
+
+                var comparisonsBefore = calculatorBody.find('#comparisons-before')
+                var multipleComparison = calculatorBody.find('.calculator-comparison.multiple')
+                var percentileComparison = calculatorBody.find('.calculator-comparison.percentile')
+                
+                var comparisonsAfter = calculatorBody.find('#comparisons-after')
+                var multipleComparisonAfterDonating = calculatorBody.find('.calculator-comparison.multiple-after-donating')
+                var percentileComparisonAfterDonating = calculatorBody.find('.calculator-comparison.percentile-after-donating')
+
+                var eachYear = calculatorBody.find('#each-year')
+
+                var netsDisplay = calculatorBody.find('.nets');
+                var dewormingtreatmentsDisplay = calculatorBody.find('.dewormingtreatments');
+                var livesDisplay = calculatorBody.find('.lives');
+
+                var callToAction = calculatorBody.find('#call-to-action')
+
                 // create charts
                 var chartPercentile = new Chartist.Pie("#chart-percentile")
                 var chartMultiple = new Chartist.Bar("#chart-multiple")
 
-                // init
-                init();
-                // run calculation
-                calculate();
-            }
+                var chartPercentileAfterDonating = new Chartist.Pie("#chart-percentile-after-donating")
+                var chartMultipleAfterDonating = new Chartist.Bar("#chart-multiple-after-donating")
 
-            function init(){
+                var donationAmountControl = $('input[name=donationpercentage]')
+                var donationAmountSlider = donationAmountControl.slider({
+                    formatter: function(value) {
+                        return 'Donate ' + value + '%';
+                    }
+                    
+                });
+                donationAmountSlider
+                .on('slide',function(){
+                    calculate();
+                })
+                .on('slideStop',function(){
+                    animate('changepercentage');
+                })
+
+                var timeline = new TimelineLite()
+
                 // push URL vars to form
                 $.each(urlVars,function(name,value){
                     calculatorControls.find('[name='+name+']').val(value);
                 });
+
+                // slabtext the 
+                $('.explanatory-interstitial p').slabText()
                 
+                // 
+                $('.back-to-calculator').on('click',function(event){
+                    event.preventDefault();
+                    animate('top')
+                })
+
+                // run calculation
+                calculate(function(){
+                    animate();
+                });
             }
 
-            function calculate(){
+
+            function calculate(callback){
                 if(!calculatorBodyPresent) return;
 
                 // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
@@ -56,55 +105,162 @@
                 var country = countrySelector.val();
                 var adults = householdAdults.val()
                 var children = householdChildren.val()
-                var donationpercentage = 10;
+                var donationpercentage = donationAmountControl.val();
 
                 var values = calculator(income,country,adults,children,donationpercentage);
 
+                update(values);
+                if(typeof callback === 'function'){
 
-                update();
-                
-
-                function update(){
-                    console.log(values)
-
-
-
-                    // text display
-                    richestPercentileDisplay.text(Math.round(values.percentage));
-                    globalAverageMultipleDisplay.text(Math.round(values.multiple));
-
-                    richestPercentileAfterDonationDisplay.text(Math.round(values.percentageafterdonating))
-                    globalAverageMultipleAfterDonationDisplay.text(Math.round(values.multipleafterdonating));
-
-                    chartPercentile.update({
-                        series:[{name:"People you're richer than",value:100-Math.round(values.percentage)},{name:'People richer than you',value:Math.round(values.percentage)}]
-                    })
-
-                    chartMultiple.update({
-                        labels:["Average person's income",'Your income'],
-                        series:[
-                            [1,values.multiple]
-                        ]
-                    })
-
-
-                    console.log(chartMultiple)
-                    // scroll the window to the right place
-                    new TimelineLite()
-                    .to(window, 0.6, {
-                        scrollTo:{y:calculatorControls.offset().top + calculatorControls.outerHeight()-($('#menu-main').outerHeight()+30)}, 
-                        ease:Power2.easeOut
-                    })
-                    .from(chartPercentile.container,0.6,{opacity:0})
-                    .from(chartMultiple.container,0.6,{opacity:0})
-                    .to(window, 0.6, {
-                        scrollTo:{y:$('#chart-multiple').offset().top + $('#chart-multiple').outerHeight()}, 
-                        ease:Power2.easeOut
-                    },"+=1")
-                    // calculatorBody.removeClass('calculating uncalculated').addClass('calculated')
-                        
+                    callback();
                 }
+
+
             }
+
+            function update(values){
+                // text display
+                richestPercentileDisplay.text(parseFloat(values.percentage.toFixed(1)) !== parseFloat(values.percentage) ? values.percentage.toFixed(1) : values.percentage);
+                globalAverageMultipleDisplay.text(Math.floor(values.multiple));
+
+                donationAmountDisplay.text(Math.round(values.donationpercentage))
+
+
+                richestPercentileAfterDonatingDisplay.text(parseFloat(values.percentageafterdonating.toFixed(1)) !== parseFloat(values.percentageafterdonating) ? values.percentageafterdonating.toFixed(1) : values.percentageafterdonating);
+                globalAverageMultipleAfterDonatingDisplay.text(Math.floor(values.multipleafterdonating));
+
+                netsDisplay.text(Math.round(values.nets))
+                dewormingtreatmentsDisplay.text(Number(values.dewormingtreatments.toPrecision(4)))
+                livesDisplay.text(Math.round(values.lives))
+
+
+
+                chartPercentile.update({
+                    series:[{name:"People you're richer than",value:100-Math.round(values.percentage)},{name:'People richer than you',value:Math.round(values.percentage)}]
+                })
+
+                chartMultiple.update({
+                    labels:["Average person's income",'Your income'],
+                    series:[
+                        [1,values.multiple]
+                    ]
+                })
+
+
+                chartPercentileAfterDonating.update({
+                    series:[
+                        {name:"People you'd be richer than",value:100-values.percentageafterdonating.toFixed(2)},
+                        {name:"People who'd be richer than you",value:values.percentageafterdonating.toFixed(2)}
+                    ]
+                })
+
+                chartMultipleAfterDonating.update({
+                    labels:["Average person's income",'Your income'],
+                    series:[
+                        [1,values.multiple],
+                        [1,values.multipleafterdonating]
+                    ]
+                })
+                    
+            }
+
+            function animate(section){
+                section = section || "intro";
+                section = section === "intro" ? ['before','donationpercentage','after','outcomes','calltoaction'] : section;
+                section = section === "changepercentage" ? ['after','outcomes','calltoaction'] : section;
+                if(section.constructor !== Array){
+                    section = [section]
+                }
+
+                // calculate element offsets
+
+                var navOffset = $('#menu-main').outerHeight()+30
+                var offsetElems = [
+                    calculatorControls,
+                    comparisonsBefore,
+                    multipleComparison,
+                    percentileComparison,
+                    donationAmount,
+                    comparisonsAfter,
+                    multipleComparisonAfterDonating,
+                    eachYear,
+                    percentileComparisonAfterDonating,
+                    callToAction
+                ]
+                for (var i = offsetElems.length - 1; i >= 0; i--) {
+                    offsetElems[i].data('offset',offsetElems[i].offset().top-navOffset)
+                };
+
+                timeline.progress(1,false)
+
+                // timeline = new TimelineLite()
+
+                // build a timeline
+                
+                var delay = "+=1.5";
+
+                if( section.indexOf("before") >-1 ){
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:comparisonsBefore.data('offset')}, 
+                    })
+                    .from(chartPercentile.container,0.6,{opacity:0,scale:0.7})
+                    .from(chartMultiple.container,0.6,{opacity:0,scale:0.7})
+                }
+
+                if( section.indexOf("donationpercentage") >-1 ){
+                    var donationVal = {number:donationAmountSlider.slider('getValue')};
+                    donationAmountSlider.slider('setValue',0); calculate();
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:donationAmount.data('offset')}, 
+                    },delay)
+                    .from(donationVal,1.3,{number:0,ease:Power0.noease,onUpdate:function(){
+                        donationAmountSlider.slider('setValue',donationVal.number);
+                        calculate();
+                    }})
+                }
+                if( section.indexOf("after") >-1 ){
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:donationAmount.data('offset')}, 
+                    })
+                    .to(window, 0.6, {
+                        scrollTo:{y:comparisonsAfter.data('offset')}, 
+                    })
+                    .from(chartPercentileAfterDonating.container,0.6,{scale:0.7})
+                    .from(chartMultipleAfterDonating.container,0.6,{scale:0.7})
+                }
+
+                if( section.indexOf("outcomes") >-1 ){
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:eachYear.data('offset')}, 
+                    },delay)
+                    .staggerFrom('.calculator-outcome',1,{opacity:0,top:100},0.5)
+
+                }
+
+                if( section.indexOf("calltoaction") >-1 ){
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:callToAction.data('offset')}, 
+                    },delay)
+                    .staggerFrom('.calculator-action',1,{opacity:0,top:100},0.5)
+
+                }
+
+                if( section.indexOf("top") >-1 ){
+                    timeline
+                    .to(window, 0.6, {
+                        scrollTo:{y:calculatorControls.data('offset')}, 
+                    })
+
+                }
+
+            }
+
+
 
 
 
@@ -123,7 +279,9 @@
             calculatorControls.on('submit',function(event){
                 if(calculatorBodyPresent){
                     event.preventDefault();
-                    calculate();
+                    calculate(function(){
+                        animate();
+                    });
                 }
             })
 
@@ -1206,6 +1364,7 @@
 
         //return an object containing the data to be displayed
         function howrichami(income,country,adults,children,donationpercentage){
+            donationpercentage = parseInt(donationpercentage);
             var adjustedincome=income*adjustmentfactor(country,adults,children);
             var adjustedincomeafterdonating=adjustedincome*(1-donationpercentage/100);
             var dollardonation=income*(1/exchangerates[nationalcurrencies[country]])*(donationpercentage/100);
@@ -1216,7 +1375,8 @@
                 "multipleafterdonating":adjustedincomeafterdonating/medianincome,
                 "nets":dollardonation/dollarspernet,
                 "dewormingtreatments":dollardonation/dollarsperdewormingtreatment,
-                "lives":dollardonation/dollarsperlifesaved
+                "lives":dollardonation/dollarsperlifesaved,
+                "donationpercentage": donationpercentage
             };
         }
 

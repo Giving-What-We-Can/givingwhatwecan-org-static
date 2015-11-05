@@ -31,6 +31,8 @@ require('bootstrapDropdown')
 require('bootstrapCollapse')
 require('bootstrapTransition')
 
+require('bootstrapSlider')
+
 
 // GreenSock Animation Plugin
 require('gsap-tweenlite');

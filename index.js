@@ -636,8 +636,8 @@ function build(buildCount){
     .use(logMessage('Built HTML files from templates'))
     .use(icons({
         sets:       {   fa:'fontawesome'},
-        fontello:   {   name: 'icons'   },
         fontDir:    'fonts',
+        customIcons: 'fonts/glyphs.json'
     }))
     .use(logMessage('Added icon fonts'))
     .use(function (files, metalsmith, done) {
