@@ -88,7 +88,7 @@
 					return new TimelineLite()
 					.from('.comparison-chart', 0.6, {left:-1000,ease:Quart.easeOut})
 					.from('.comparison-text', 0.6, {left:1000,ease:Quart.easeOut},0)
-					.staggerFrom('.ct-bar', 0.6, {attr:{y2:baseline}},0.2)
+					.staggerFrom('.ct-bar', 0.6, {attr:{y2:baseline},ease:Power2.easeOut},0.2,0)
 				})
 			}
 		})

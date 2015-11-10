@@ -16,7 +16,7 @@
 						</a>
 						<p class="post-author">by 
 						{% for author in post.author %}
-							<strong>{{ author.fields.name }}</strong>
+							<strong>{{ author.fields.title }}</strong>
 						{% endfor %}
 						</p>
 					</header>

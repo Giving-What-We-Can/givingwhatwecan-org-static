@@ -213,17 +213,18 @@ function build(buildCount){
         function apply (file,cb){
             var meta = files[file]
             if(meta.topLevelMenu){
-                var menu = traverse(meta.data,[])[0]._children;
+                var menu = traverse(meta.data,[],1)[0]._children;
                 menus[meta.id] = menu
             }
             delete files[file];
             cb();
         }
-        function traverse(menu,a){
-            if(!menu.fields){
+        function traverse(menu,a,depth){
+            if(!menu.fields || depth > 3){
                 return;
             }
             if(menu.fields.children){
+                depth++
                 var c = [];
                 menu.fields.children.forEach(function(child){
                     var page = getFile(child)
@@ -233,7 +234,7 @@ function build(buildCount){
                     else if (child.fields && child.fields.linkURL) {
                         c.push({_link:child.fields})
                     }
-                    traverse(child,c)
+                    traverse(child,c,depth)
                 })
                 a.push({_menu:menu,_children:c})
             }

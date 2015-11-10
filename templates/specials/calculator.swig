@@ -20,10 +20,27 @@
 		</div>
 	</div>
 
+	<div class="row show-calculated explanatory-interstitial" id="calculation-details">
+		<div class="col-sm-12">
+			<p>
+				If you live in
+				<span class="number country"></span>
+				with a household income of
+				<span class="number"><span class="income"></span> <span class="currency"></span></span>
+			</p>
+			<p> and your household has
+				<span class="number">
+					<span class="adults"></span> adults 
+					<span class="if-children">and <span class="children"></span> children</span>&nbsp;&hellip;
+				</span>
+			</p>
+		</div>
+	</div>
+
 	<div class="row show-calculated" id="comparisons-before">
 		<div class="col-sm-6">
 			<div class="calculator-comparison percentile">
-				<p>You are in the <span class="number">richest <span class="richest-percentile"></span>%</span> of the world's population</p>
+				<p>&hellip;&nbsp;you are in the <span class="number">richest <span class="richest-percentile"></span>%</span> of the world's population</p>
 			</div>
 			<div id="chart-percentile" class="ct-octave"></div>
 		</div>
@@ -93,15 +110,15 @@
 	<div class="row show-calculated">
 		<div class="col-sm-4 calculator-action">
 			<p>Let's do this!</p>
-			<a href="/become-member" class="btn btn-success">Become a member</a>
+			<a href="/get-involved/become-member" class="btn btn-success">Become a member</a>
 		</div>
 		<div class="col-sm-4 calculator-action">
 			<p>Got more info?</p>
-			<a href="/your-impact" class="btn btn-info">Learn how to make a <em>real</em>&nbsp;difference</a>
+			<a href="/get-involved/what-you-can-achieve" class="btn btn-info">Learn how to make a <em>real</em>&nbsp;difference</a>
 		</div>
 		<div class="col-sm-4 calculator-action">
 			<p>I'm not convinced&hellip;</p>
-			<a href="/10-reasons-to-join" class="btn btn-default">Give me 10 good&nbsp;reasons</a>
+			<a href="/get-involved/10-reasons-to-join" class="btn btn-default">Give me 10 good&nbsp;reasons</a>
 		</div>
 	</div>
 

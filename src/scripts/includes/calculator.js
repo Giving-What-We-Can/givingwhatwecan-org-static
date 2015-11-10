@@ -31,6 +31,15 @@
                 };
                 
                 // set up selectors
+
+                var calculationDetails = calculatorBody.find('#calculation-details');
+
+                var countryDisplay = calculatorBody.find('.country');
+                var incomeDisplay = calculatorBody.find('.income');
+                var currencyDisplayBody = calculatorBody.find('.currency');
+                var adultsDisplay = calculatorBody.find('.adults');
+                var childrenDisplay = calculatorBody.find('.children');
+
                 var richestPercentileDisplay = calculatorBody.find('.richest-percentile');
                 var globalAverageMultipleDisplay = calculatorBody.find('.global-average-multiple');
 
@@ -102,7 +111,7 @@
                 })
 
                 // slabtext some of the text
-                $('.explanatory-interstitial p').slabText({viewportBreakpoint:breakpoints.sm})
+                $('.explanatory-interstitial:not(#calculation-details)').find('p').slabText({viewportBreakpoint:breakpoints.sm})
                 
                 // add listener for back to top button
                 $('.back-to-calculator').on('click',function(event){
@@ -124,7 +133,6 @@
                     if(timeline.isActive()){
                         touchTimer = setInterval(function(){
                             scrollCount++;
-                            console.log(scrollCount);
                             if(scrollCount>2){
                                 killAnimation()
                             }
@@ -209,15 +217,10 @@
 
                 // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
 
-                var income = incomeInput.val();
-                var country = countrySelector.val();
-                var adults = householdAdults.val()
-                var children = householdChildren.val()
-                var donationpercentage = donationAmountControl.val();
+                
 
-                var values = calculator(income,country,adults,children,donationpercentage);
+                update();
 
-                update(values);
                 if(typeof callback === 'function'){
 
                     callback();
@@ -226,9 +229,29 @@
 
             }
 
-            function update(values){
+            function update(){
+                var country = countrySelector.val();
+                var countryName = countrySelector.find('option:selected').text();
+                var income = incomeInput.val();
+                var currency = getCurrency(country)
+                var adults = householdAdults.val()
+                var children = householdChildren.val()
+                var donationpercentage = donationAmountControl.val();
+
+                var values = calculator(income,country,adults,children,donationpercentage);
 
                 // text display
+                countryDisplay  .text(countryName)
+                incomeDisplay   .text(income)
+                currencyDisplayBody .text(currency)
+                adultsDisplay   .text(adults)
+                childrenDisplay .text(children)
+                if(children<1){
+                    $('.if-children').hide()
+                } else {
+                    $('.if-children').show()
+                }
+
                 richestPercentileDisplay.text(parseFloat(values.percentage.toFixed(1)) !== parseFloat(values.percentage) ? values.percentage.toFixed(1) : values.percentage);
                 globalAverageMultipleDisplay.text(Math.floor(values.multiple));
 
@@ -291,7 +314,7 @@
                 
                 
                 section = section || "intro";
-                section = section === "intro" ? ['before','donationpercentage','after','outcomes','calltoaction'] : section;
+                section = section === "intro" ? ['details','before','donationpercentage','after','outcomes','calltoaction'] : section;
                 section = section === "changepercentage" ? ['after','outcomes','calltoaction'] : section;
                 if(section.constructor !== Array){
                     section = [section]
@@ -307,6 +330,7 @@
                 var navOffset = $('#menu-main').outerHeight()+30
                 var offsetElems = [
                     calculatorControls,
+                    calculationDetails,
                     comparisonsBefore,
                     multipleComparison,
                     percentileComparison,
@@ -331,17 +355,27 @@
                 
                 var delay = "+=1.5";
 
+                if( section.indexOf("details") >-1 ){
+                    timeline.to(window, 0.6, {
+                        scrollTo:{y:calculationDetails.data('offset')}, 
+                    })
+                    delay = "+=3"
+                }
+
                 if( section.indexOf("before") >-1 ){
                     timeline.to(window, 0.6, {
                         scrollTo:{y:comparisonsBefore.data('offset')}, 
-                    })
+                    },delay)
+                    timeline.from(percentileComparison,0.6,{opacity:0})
                     timeline.from(chartPercentile.container,0.6,{opacity:0,scale:0.7})
                     if(docWidth<breakpoints.sm){
                         timeline.to(window, 0.6, {
                             scrollTo:{y:multipleComparison.data('offset')}, 
                         },delay)
                     }
+                    timeline.from(multipleComparison,0.6,{opacity:0})
                     timeline.from(chartMultiple.container,0.6,{opacity:0,scale:0.7})
+                    delay = "+=1.5"
                 }
 
                 if( section.indexOf("donationpercentage") >-1 ){
@@ -386,7 +420,6 @@
                         delay = "+=1"
                         $('.calculator-outcome').each(function(){
                             var outcome = $(this)
-                            console.log(outcome.offset().top)
                             timeline
                             .to(window, 0.6, {
                                 scrollTo:{y:outcome.offset().top-navOffset}, 
@@ -401,7 +434,7 @@
                     .to(window, 0.6, {
                         scrollTo:{y:callToAction.data('offset')}, 
                     },delay)
-                    .from(callToAction,0.6,{opacity:0,scale:0.4})
+                    .from(callToAction,0.6,{opacity:0,scale:0.8})
                     if(docWidth<breakpoints.sm){
                         timeline
                         .to(window, 0.6, {
@@ -441,7 +474,8 @@
                     event.preventDefault();
                     var winTop = $(window).height()/2 - 175;
                     var winLeft = $(window).width()/2 - 260;
-                    var url = $(this).attr('href').replace('{url}',encodeURIComponent(window.location.href))
+                    var shareUrl = window.location.href
+                    var url = $(this).attr('href').replace('{url}',shareUrl)
                     window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + 520 + ',height=' + 350);
                 })
                 link
@@ -471,7 +505,7 @@
             calculatorControls.on('submit',function(event){
                 event.preventDefault();
                 var el = $(this)
-                var hashVal = "#"+el.serialize();
+                var hashVal = "?"+el.serialize();
                 if(calculatorBodyPresent){
                     if(history.pushState) {
                         history.pushState(null, null, hashVal);
@@ -483,7 +517,6 @@
                         animate();
                     });
                 } else {
-                    alert(el.attr('action')+hashVal)
                     window.location.href = el.attr('action')+hashVal
                 }
             })
@@ -582,7 +615,7 @@
             }
             function getUrlVars() {
                 var vars = {};
-                window.location.href.replace(/[#&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                window.location.href.replace(/([^=#!?&]+)=([^&]+)/gi, function(m,key,value) {
                     vars[key] = value;
                 });
                 return vars;

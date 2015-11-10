@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="author">
 				<header class="author-header">
-					<h2 class="author-name title">{{ name }}</h3>
+					<h2 class="author-name title">{{ title }}</h3>
 				</header>
 				<section class="author-content">
 					{% autoescape false %}{{ contents }}{% endautoescape %}

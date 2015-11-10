@@ -23,7 +23,7 @@ $min-height: 400px;
 		padding-bottom:0;
 	}
 	.scroll-down {
-		font-size: 2em;
+		font-size: 25px;
 		position: absolute;
 		bottom:0;
 		left:45%;
@@ -32,7 +32,7 @@ $min-height: 400px;
 		color:#FFF;
 		text-shadow: 0 0 16px #333;
 		@media(min-width:$screen-md){
-			font-size: 3em;
+			font-size: 40px;
 		}
 	}
 }
