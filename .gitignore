@@ -2,7 +2,7 @@
 dest
 node_modules
 bower_components
-.cache-require-paths
+.cache-require-paths.json
 .env
 .cache
 .icon-cache
