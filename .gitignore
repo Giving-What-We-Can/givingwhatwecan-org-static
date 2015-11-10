@@ -2,3 +2,5 @@
 dest
 node_modules
 bower_components
+.cache-require-paths
+.env
