@@ -1,0 +1,102 @@
+prose:
+  rooturl: 'src/content'
+  ignore:
+    - "_prose.yml"
+    - ".gitignore"
+    - "README.md"
+    - "bower.json"
+    - "config.json"
+    - "index.js"
+    - "package.json"
+    - "templates"
+    - "src/images"
+    - "src/scripts"
+    - "src/settings"
+    - "src/styles"
+  media: "src/images"
+  metadata:
+    src/content/pages:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Post Title"
+          value: ""
+          placeholder: "My Amazing Post"
+      - name: "menuOrder"
+        field:
+          element: "text"
+          label: "Order"
+          help: "A number which will determine where this page appears relative to others (e.g. in the page navigation). Lower numbers will show the page earlier, higher numbers will show it later."
+          value: "5"
+          placeholder: "5"
+      - name: "showInNav"
+        field:
+          element: "checkbox"
+          label: "Show in Navigation"
+          help: "Should this page appear in the navigation menu?"
+          value: true
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date"
+          value: "CURRENT_DATETIME"
+    src/content/people:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Name"
+          value: ""
+          placeholder: "Firstname Lastname"
+      - name: "featuredImage"
+        field:
+          element: "text"
+          label: "Image"
+          help: "Paste a link to an image of this person. You can use the link to an image you've uploaded in this editor (e.g. /images/image.jpg) or a URL from the web (e.g. http://example.com/image.jpg)"
+          value: ""
+          placeholder: "(e.g. /images/example.jpg)"
+      - name: "position"
+        field:
+          element: "text"
+          label: "Position"
+          value: ""
+          placeholder: "(e.g. Director of Communications)"
+      - name: "organisation"
+        field:
+          element: "select"
+          label: "Organisation"
+          help: "The CEA organisation this person works for"
+          options:
+            - name: 'Centre for Effective Altruism'
+              value: 'cea'
+            - name: 'Giving What We Can'
+              value: 'gwwc'
+            - name: '80,000 Hours'
+              value: 'eightythousandhours'
+            - name: 'Global Priorities Project'
+              value: 'gpp'
+            - name: 'EA Outreach'
+              value: 'eao'
+      - name: "staffType"
+        field:
+          element: "select"
+          label: "Staff Type"
+          help: "What kind of team member is this person? Most people should be 'Regular Staff Member'"
+          options:
+            - name: 'Regular Staff Member'
+              value: 'staff'
+            - name: 'Trustee'
+              value: 'trustee'
+            - name: 'International Contractor'
+              value: 'contractor'
+      - name: "menuOrder"
+        field:
+          element: "text"
+          label: "Order"
+          help: "A number which will determine where this person appears relative to others. Lower numbers will show the person earlier, higher numbers will show them later."
+          value: "5"
+          placeholder: "5"                   
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date"
+          value: "CURRENT_DATETIME"
