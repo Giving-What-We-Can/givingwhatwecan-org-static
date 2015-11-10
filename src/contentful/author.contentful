@@ -1,0 +1,8 @@
+---
+title: Authors
+contentful:
+  content_type: 1cYUKFcNay4OiCoeMgE26E
+  entry_template: author.swig
+  order: fields.name
+  entry_filename_pattern: author/:fields.slug
+---
