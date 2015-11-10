@@ -1,8 +1,0 @@
----
-title: Content Blocks
-contentful:
-  content_type: 5uiuNLIzzqgsEMmIG80y6u
-  entry_template: content-block.swig
-  order: fields.displayOrder
-  entry_filename_pattern: content-block/:fields.slug
----
