@@ -44,13 +44,13 @@
 
 	<div class="row show-calculated" id="comparisons-after">
 		<div class="col-sm-6">
-			<div class="calculator-comparison multiple-after-donating">
+			<div class="calculator-comparison percentile-after-donating">
 				<p>... you would still be in the <span class="number">richest <span class="richest-percentile-after-donating"></span>%</span> of the world's population ...</p>
 			</div>
 			<div id="chart-percentile-after-donating" class="ct-octave"></div>
 		</div>
 		<div class="col-sm-6">
-			<div class="calculator-comparison percentile-after-donating">
+			<div class="calculator-comparison multiple-after-donating">
 				<p>... you'd still have more than <span class="number"><span class="global-average-multiple-after-donating"></span> times</span> the global average income...</p>
 			</div>
 			<div id="chart-multiple-after-donating" class="ct-octave"></div>
@@ -59,24 +59,24 @@
 
 	<div class="row show-calculated explanatory-interstitial" id="each-year">
 		<div class="col-sm-12">
-			<p><span class="slabtext">And each year your donations could fund...</span></p>
+			<p><span class="slabtext">And each year your donations could fund&nbsp;&hellip;</span></p>
 		</div>
 	</div>
 
 	<div class="row show-calculated">
 		<div class="col-sm-4">
 			<div class="calculator-outcome">
-				<p>... the distribution of <span class="number"><i class="icon icon-mosquito-net"></i> <span class="nets"></span></span> insecticide treated bednets ...</p>
+				<p>&hellip;&nbsp;the distribution of <span class="number"><i class="icon icon-mosquito-net"></i> <span class="nets"></span></span> insecticide treated bednets&nbsp;&hellip;</p>
 			</div>
 		</div>
 		<div class="col-sm-4">
 			<div class="calculator-outcome">
-				<p>... or more than <span class="number"><i class="icon icon-pills"></i> <span class="dewormingtreatments"></span></span> deworming treatments ...</p>
+				<p>&hellip;&nbsp;or more than <span class="number"><i class="icon icon-pills"></i> <span class="dewormingtreatments"></span></span> deworming treatments&nbsp;&hellip;</p>
 			</div>
 		</div>
 		<div class="col-sm-4">
 			<div class="calculator-outcome">
-				<p>... equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span> lives</span> Amazing!</p>
+				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span> lives</span> Pretty amazing, right?</p>
 			</div>
 		</div>
 	</div>
@@ -96,12 +96,12 @@
 			<a href="/become-member" class="btn btn-success">Become a member</a>
 		</div>
 		<div class="col-sm-4 calculator-action">
-			<p>I'm excited, tell me more!</p>
-			<a href="/your-impact" class="btn btn-info">Discover the impact you can have</a>
+			<p>Got more info?</p>
+			<a href="/your-impact" class="btn btn-info">Learn how to make a <em>real</em>&nbsp;difference</a>
 		</div>
 		<div class="col-sm-4 calculator-action">
-			<p>I'm not convinced....</p>
-			<a href="/10-reasons-to-join" class="btn btn-default">Give me 10 good reasons</a>
+			<p>I'm not convinced&hellip;</p>
+			<a href="/10-reasons-to-join" class="btn btn-default">Give me 10 good&nbsp;reasons</a>
 		</div>
 	</div>
 
@@ -116,3 +116,55 @@
 	</div>
 
 </div>
+
+
+<!-- MODAL -->
+
+<div class="modal fade" id="sharing-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Before you go, why not share your results?</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class="col-lg-6">
+      			<div class="og-image">
+      				<p>
+	      				<img src="https://www.givingwhatwecan.org/sites/givingwhatwecan.org/files/attachments/How-Rich-Am-I---OpenGraph.jpg" class="img-responsive">
+	      			</p>
+      			</div>
+      		</div>
+      		<div class="col-lg-6">
+		      	<p>
+		      		<a class="btn btn-primary facebook btn-lg" href="https://www.facebook.com/sharer/sharer.php?u={url}">
+		      			<i class="fa fa-facebook"></i> Share on Facebook
+		      		</a>
+		      	</p>
+		      	<p>
+		      		<a class="btn btn-primary twitter btn-lg" href="https://twitter.com/home?status=Status is thing {url}">
+		      			<i class="fa fa-twitter"></i> Share on Twitter
+		      		</a>
+		      	</p>
+		      	<p>
+		      		<a class="btn btn-primary google-plus btn-lg" href="https://plus.google.com/share?url={url}">
+		      			<i class="fa fa-google-plus"></i> Share on Google+
+		      		</a>
+		      	</p>
+	        </div>
+      	</div>
+		<div class="row">
+			<div class="col-lg-12">
+			    <div class="input-group">
+			    	<span class="input-group-addon"><i class="fa fa-link"></i> Link:</span>
+			    	<input class="input-lg form-control get-link" value="">
+			    </div>
+			</div>
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No thanks</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+

@@ -1,4 +1,4 @@
-;(function ($,Chartist,TimelineLite) {
+;(function ($,Chartist,TimelineLite,validate) {
     "use strict";
     $.extend({
         gwwcCalculator: function(){
@@ -23,6 +23,12 @@
             var calculatorBodyPresent = false;
             if($("#calculator-body").length>0){
                 calculatorBodyPresent = true;
+                var breakpoints = window.breakpoints || {
+                    xs:480,
+                    sm:768,
+                    md:992,
+                    lg:1200
+                };
                 
                 // set up selectors
                 var richestPercentileDisplay = calculatorBody.find('.richest-percentile');
@@ -52,12 +58,13 @@
                 var callToAction = calculatorBody.find('#call-to-action')
 
                 // create charts
-                var chartPercentile = new Chartist.Pie("#chart-percentile")
-                var chartMultiple = new Chartist.Bar("#chart-multiple")
+                var chartPercentile
+                var chartMultiple
 
-                var chartPercentileAfterDonating = new Chartist.Pie("#chart-percentile-after-donating")
-                var chartMultipleAfterDonating = new Chartist.Bar("#chart-multiple-after-donating")
+                var chartPercentileAfterDonating
+                var chartMultipleAfterDonating
 
+                // create donation percentage slider
                 var donationAmountControl = $('input[name=donationpercentage]')
                 var donationAmountSlider = donationAmountControl.slider({
                     formatter: function(value) {
@@ -65,14 +72,19 @@
                     }
                     
                 });
+
                 donationAmountSlider
                 .on('slide',function(){
                     calculate();
+                    if(timeline.isActive()){
+                        killAnimation();
+                    }
                 })
                 .on('slideStop',function(){
                     animate('changepercentage');
                 })
 
+                // create the timeline
                 var timeline = new TimelineLite()
 
                 // push URL vars to form
@@ -80,15 +92,58 @@
                     calculatorControls.find('[name='+name+']').val(value);
                 });
 
-                // slabtext the 
-                $('.explanatory-interstitial p').slabText()
+                // listen for link clicks to trigger sharing modal
+                $('a').click(function(event){
+                    var href = $(this).attr('href');
+                    if(href && href !== '' && href.substr(0,1) !== "#" && href.indexOf('{url}') === -1){
+                        event.preventDefault();
+                        sharingModal(href)
+                    }
+                })
+
+                // slabtext some of the text
+                $('.explanatory-interstitial p').slabText({viewportBreakpoint:breakpoints.sm})
                 
-                // 
+                // add listener for back to top button
                 $('.back-to-calculator').on('click',function(event){
                     event.preventDefault();
                     animate('top')
                 })
+                // listen for mousewheel/touch interactions — if user scrolls more than the threshold, kill the animation.
+                var scrollCount = 0;
+                var touchTimer;
+                $(document).on('mousewheel', function(){
+                    if(timeline.isActive()){
+                        scrollCount++;
+                        if(scrollCount>8){
+                            killAnimation()
+                        }
+                    }
+                })
+                .on('touchstart', function(){
+                    if(timeline.isActive()){
+                        touchTimer = setInterval(function(){
+                            scrollCount++;
+                            console.log(scrollCount);
+                            if(scrollCount>2){
+                                killAnimation()
+                            }
+                        }, 100);
+                    }
+                }).on('touchend',function(){
+                    clearInterval(touchTimer)
+                })
+                .on('keyup',function(e){
+                    if (e.keyCode == 27) { // escape key pressed
+                        killAnimation();
+                    }
+                })
+                // kill animation on form focus
+                calculatorControls.focusin(function() {
+                    killAnimation();
+                })
 
+                var firstRun = true;
                 // run calculation
                 calculate(function(){
                     animate();
@@ -97,7 +152,60 @@
 
 
             function calculate(callback){
+
                 if(!calculatorBodyPresent) return;
+                
+
+                var rules = {
+                    country: {
+                        presence: true
+                    },
+                    income : {
+                        presence : true,
+                        numericality: {
+                            onlyInteger: true,
+                            greaterThan: 0,
+                        }
+                    },
+                    adults : {
+                        presence : true,
+                        numericality: {
+                            onlyInteger: true,
+                            greaterThan: 0,
+                        }
+                    }
+                }
+
+                var validationErrors = validate(calculatorControls,rules)
+                
+                if(validationErrors){
+                    if(!firstRun){
+                        for (var error in validationErrors) {
+                            if(validationErrors.hasOwnProperty(error)) {
+                                var el = $('[name='+error+']')
+
+                                el.parent('.input-group')
+                                .addClass('has-error')
+
+                                el.tooltip({title:validationErrors[error][0],trigger:"manual",placement:"auto bottom"})
+                                .tooltip('show')
+                                .on('focus change',function(){
+                                    $(this)
+                                    .tooltip('hide')
+
+                                    $(this).parent('.input-group')
+                                    .removeClass('has-error')
+                                })
+                            }
+                        }
+                    } else {
+                        firstRun = false;
+                    }
+
+                    return;
+                }
+
+
 
                 // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
 
@@ -119,6 +227,7 @@
             }
 
             function update(values){
+
                 // text display
                 richestPercentileDisplay.text(parseFloat(values.percentage.toFixed(1)) !== parseFloat(values.percentage) ? values.percentage.toFixed(1) : values.percentage);
                 globalAverageMultipleDisplay.text(Math.floor(values.multiple));
@@ -133,6 +242,18 @@
                 dewormingtreatmentsDisplay.text(Number(values.dewormingtreatments.toPrecision(4)))
                 livesDisplay.text(Math.round(values.lives))
 
+                if(!(chartPercentile instanceof Chartist.Pie)){
+                    chartPercentile =  new Chartist.Pie("#chart-percentile")
+                }
+                if(!(chartMultiple instanceof Chartist.Bar)){
+                    chartMultiple = new Chartist.Bar("#chart-multiple")
+                }
+                if(!(chartPercentileAfterDonating instanceof Chartist.Pie)){
+                    chartPercentileAfterDonating = new Chartist.Pie("#chart-percentile-after-donating")
+                }
+                if(!(chartMultipleAfterDonating instanceof Chartist.Bar)){
+                    chartMultipleAfterDonating = new Chartist.Bar("#chart-multiple-after-donating")
+                }
 
 
                 chartPercentile.update({
@@ -165,12 +286,21 @@
             }
 
             function animate(section){
+
+                killAnimation()
+                
+                
                 section = section || "intro";
                 section = section === "intro" ? ['before','donationpercentage','after','outcomes','calltoaction'] : section;
                 section = section === "changepercentage" ? ['after','outcomes','calltoaction'] : section;
                 if(section.constructor !== Array){
                     section = [section]
                 }
+
+                // calculate window width to work out if we need keyframes for wrapped elements
+                var docWidth = $(document).width();
+                
+
 
                 // calculate element offsets
 
@@ -191,7 +321,9 @@
                     offsetElems[i].data('offset',offsetElems[i].offset().top-navOffset)
                 };
 
-                timeline.progress(1,false)
+
+                
+                // timeline.clear()
 
                 // timeline = new TimelineLite()
 
@@ -200,12 +332,16 @@
                 var delay = "+=1.5";
 
                 if( section.indexOf("before") >-1 ){
-                    timeline
-                    .to(window, 0.6, {
+                    timeline.to(window, 0.6, {
                         scrollTo:{y:comparisonsBefore.data('offset')}, 
                     })
-                    .from(chartPercentile.container,0.6,{opacity:0,scale:0.7})
-                    .from(chartMultiple.container,0.6,{opacity:0,scale:0.7})
+                    timeline.from(chartPercentile.container,0.6,{opacity:0,scale:0.7})
+                    if(docWidth<breakpoints.sm){
+                        timeline.to(window, 0.6, {
+                            scrollTo:{y:multipleComparison.data('offset')}, 
+                        },delay)
+                    }
+                    timeline.from(chartMultiple.container,0.6,{opacity:0,scale:0.7})
                 }
 
                 if( section.indexOf("donationpercentage") >-1 ){
@@ -215,7 +351,7 @@
                     .to(window, 0.6, {
                         scrollTo:{y:donationAmount.data('offset')}, 
                     },delay)
-                    .from(donationVal,1.3,{number:0,ease:Power0.noease,onUpdate:function(){
+                    .from(donationVal,1.3,{number:0,ease:Power1.easeIn,onUpdate:function(){
                         donationAmountSlider.slider('setValue',donationVal.number);
                         calculate();
                     }})
@@ -229,7 +365,12 @@
                         scrollTo:{y:comparisonsAfter.data('offset')}, 
                     })
                     .from(chartPercentileAfterDonating.container,0.6,{scale:0.7})
-                    .from(chartMultipleAfterDonating.container,0.6,{scale:0.7})
+                    if(docWidth<breakpoints.sm){
+                        timeline.to(window, 0.6, {
+                            scrollTo:{y:multipleComparisonAfterDonating.data('offset')}, 
+                        },delay)
+                    }
+                    timeline.from(chartMultipleAfterDonating.container,0.6,{scale:0.7})
                 }
 
                 if( section.indexOf("outcomes") >-1 ){
@@ -237,8 +378,22 @@
                     .to(window, 0.6, {
                         scrollTo:{y:eachYear.data('offset')}, 
                     },delay)
-                    .staggerFrom('.calculator-outcome',1,{opacity:0,top:100},0.5)
-
+                    if(docWidth>=breakpoints.sm){
+                        timeline
+                        .staggerFrom('.calculator-outcome',1,{opacity:0,top:100},0.5)
+                        delay = "+=3"
+                    } else {
+                        delay = "+=1"
+                        $('.calculator-outcome').each(function(){
+                            var outcome = $(this)
+                            console.log(outcome.offset().top)
+                            timeline
+                            .to(window, 0.6, {
+                                scrollTo:{y:outcome.offset().top-navOffset}, 
+                            },delay)
+                            .from(outcome,0.6,{opacity:0},"-=0.5")
+                        })
+                    }
                 }
 
                 if( section.indexOf("calltoaction") >-1 ){
@@ -246,6 +401,14 @@
                     .to(window, 0.6, {
                         scrollTo:{y:callToAction.data('offset')}, 
                     },delay)
+                    .from(callToAction,0.6,{opacity:0,scale:0.4})
+                    if(docWidth<breakpoints.sm){
+                        timeline
+                        .to(window, 0.6, {
+                            scrollTo:{y:callToAction.data('offset')}, 
+                        },delay)
+                    }
+                    timeline
                     .staggerFrom('.calculator-action',1,{opacity:0,top:100},0.5)
 
                 }
@@ -261,9 +424,38 @@
             }
 
 
+            function killAnimation(){
+                var scrollPos = $(window).scrollTop()
+                timeline.progress(1,false);
+                scrollCount = 0;
+                window.scrollTo(0,scrollPos)
+            }
 
 
 
+            function sharingModal(href){
+                var el = $('#sharing-modal')
+                var link = el.find('.get-link')
+                var modalButtons = el.find('.btn-primary')
+                modalButtons.click(function(event){
+                    event.preventDefault();
+                    var winTop = $(window).height()/2 - 175;
+                    var winLeft = $(window).width()/2 - 260;
+                    var url = $(this).attr('href').replace('{url}',encodeURIComponent(window.location.href))
+                    window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + 520 + ',height=' + 350);
+                })
+                link
+                .val(window.location.href)
+                .on('focus',function(){
+                    $(this).get(0).setSelectionRange(0,9999);
+                })
+                .on('mouseup',function(event){
+                    event.preventDefault();
+                })
+                el.modal('show').on('hide.bs.modal',function(){
+                    if(href) window.location.href = href;
+                })
+            }
 
 
             /*
@@ -277,11 +469,22 @@
             countrySelector.on('change',updateCurrencyDisplay);
 
             calculatorControls.on('submit',function(event){
+                event.preventDefault();
+                var el = $(this)
+                var hashVal = "#"+el.serialize();
                 if(calculatorBodyPresent){
-                    event.preventDefault();
+                    if(history.pushState) {
+                        history.pushState(null, null, hashVal);
+                    }
+                    else {
+                        window.location.hash = hashVal;
+                    }
                     calculate(function(){
                         animate();
                     });
+                } else {
+                    alert(el.attr('action')+hashVal)
+                    window.location.href = el.attr('action')+hashVal
                 }
             })
 
@@ -302,7 +505,7 @@
                 } else {
                     value = value > min ? value -= 1 : min;
                 }
-                sel.val(value);
+                sel.val(value).trigger('change');
             });
 
 
@@ -379,7 +582,7 @@
             }
             function getUrlVars() {
                 var vars = {};
-                window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                window.location.href.replace(/[#&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
                     vars[key] = value;
                 });
                 return vars;
@@ -1472,4 +1675,4 @@
     }
     
     $.gwwcCalculator()
-})(jQuery,Chartist,TimelineLite);
+})(jQuery,Chartist,TimelineLite,validate);

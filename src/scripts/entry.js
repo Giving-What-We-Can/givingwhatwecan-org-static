@@ -30,9 +30,17 @@
 require('bootstrapDropdown')
 require('bootstrapCollapse')
 require('bootstrapTransition')
-
+require('bootstrapModal')
+require('bootstrapTooltip')
+// third party bootstrap plugins
 require('bootstrapSlider')
-
+// inject breakpoints into the global scope so we can use them elsewhere
+global.breakpoints = {
+    xs:480,
+    sm:768,
+    md:992,
+    lg:1200
+}
 
 // GreenSock Animation Plugin
 require('gsap-tweenlite');
@@ -53,3 +61,6 @@ require('slabText');
 // chartist
 global.Chartist = require('chartist')
 require('chartistAxisTitle')
+
+// form/data validation library
+global.validate = require('validate.js')

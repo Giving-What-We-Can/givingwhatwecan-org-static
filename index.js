@@ -696,8 +696,8 @@ function build(buildCount){
         })
     })
     .use(logMessage('Bundled Javascript files'))
-    // Build CSS
     ;
+    // Build CSS
     if(ENVIRONMENT === 'development'){
         colophonemes
         .use(sass({
@@ -739,6 +739,8 @@ function build(buildCount){
                     /.fade/,
                     /.in/,
                     /.open/,
+                    /ct-/,
+                    /slider/,
                     '.loader',
                     '.transparent',
                     /lazyload/,

@@ -85,7 +85,6 @@
 				var baseline = data.y1
 				// add scene to timeline
 				addScene(el, function(){
-					console.log(baseline)
 					return new TimelineLite()
 					.from('.comparison-chart', 0.6, {left:-1000,ease:Quart.easeOut})
 					.from('.comparison-text', 0.6, {left:1000,ease:Quart.easeOut},0)
