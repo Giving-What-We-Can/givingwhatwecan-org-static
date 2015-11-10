@@ -720,12 +720,7 @@ function build(buildCount){
     if(ENVIRONMENT==='production'){
         colophonemes
         .use(htmlMinifier())
-        // .use(beautify({
-        //     html: false,
-        //     js: false,
-        //     css: true,
-        //     wrap_line_length: 50
-        // })) 
+        .use(logMessage('Cleaning CSS files'),chalk.yellow)
         .use(uncss({
             basepath: 'styles',
             css: ['app.css'],
@@ -744,6 +739,7 @@ function build(buildCount){
                     /slider/,
                     '.loader',
                     '.transparent',
+                    /slabtext/,
                     /lazyload/,
                 ],
                 media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
