@@ -17,13 +17,31 @@
 
 
 #banner {
-	margin-bottom: 30px;
+	margin-bottom: $content-padding;
 	text-align:center;
 	background-color: $site-lolight;
-	min-height: 200px;
+	
+	.page-title-wrapper {
+		min-height: 40vh;
+		@media(min-width:$screen-sm){
+		    min-height: 60vh;
+		}
+	}
+	position: relative;
 	.page-title {
-		margin: 100px auto;
+		position:absolute;
+		bottom: 0;
+		width:100%;
+	    margin: 0 -50%;
+	    left:50%;
 		color: #FFF;
+		text-transform: uppercase;
+		background-color: #111;
+		font-size: 2em;
+		padding: $grid-gutter-width;
+		@media(min-width:$screen-sm){
+			font-size: 3em;
+		}
 	}
 	#site-logo {
 		margin: 75px auto 75px;

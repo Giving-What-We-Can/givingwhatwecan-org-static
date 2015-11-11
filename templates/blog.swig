@@ -4,6 +4,7 @@
 <link rel="alternate" type="application/rss+xml" title="feed one" href="/blog.xml"/>
 {% endblock %}
 
+
 {% block content %}
 
 	<div class="container">
@@ -21,7 +22,7 @@
 						</p>
 					</header>
 					<section class="post-excerpt">
-						{% autoescape false %}{{ post.excerpt }}{% endautoescape %}
+						<p class="excerpt">{{ post.excerpt }}</p>
 					</section>
 				</article>
 			</div>

@@ -4,6 +4,7 @@ $link-color-hover: #FFF;
 $heading-font-color: #CCC;
 
 footer.footer {
+	margin-top:$content-padding;
 	background-color: #333;
 	a{
 		&:link,&:visited{

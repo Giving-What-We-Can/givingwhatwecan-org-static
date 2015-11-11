@@ -3,7 +3,7 @@
 	<div class="content-block">
 		<div class="{{ contentBlock.horizontalSize|default('container-fluid') }}">
 			<div class="content-block-content">
-				{% autoescape false %}{{ contentBlock.contents }}{% endautoescape %}
+				{{ contentBlock.contents }}
 			</div>
 		</div>
 	</div>

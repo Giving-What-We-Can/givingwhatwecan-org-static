@@ -38,3 +38,9 @@ article.post, div.page, div.author {
 	@include make-md-column(8);
 	@include make-md-column-offset(2);
 }
+
+.post, .page {
+	.first-paragraph {
+		font-size: 1.6em;
+	}
+}

@@ -16,7 +16,7 @@
 					</p>
 				</header>
 				<section class="post-content">
-					{% autoescape false %}{{ contents }}{% endautoescape %}
+					{{ contents }}
 				</section>
 			</article>
 		</div>

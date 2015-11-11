@@ -10,7 +10,7 @@
 					<h2 class="author-name title">{{ title }}</h3>
 				</header>
 				<section class="author-content">
-					{% autoescape false %}{{ contents }}{% endautoescape %}
+					{{ contents }}
 				</section>
 				<section class="author-posts">
 					<!-- AUTHOR POSTS HERE -->

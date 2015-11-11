@@ -1,9 +1,9 @@
 // Get our variables
 @import "partials/variables";
+@import "partials/bootstrap";
 // load fonts first
 // @import "partials/fonts";
 // Import Bootstrap / Bootswatch
-@import "partials/bootstrap";
 /*!
 Site partials
 */
@@ -25,6 +25,7 @@ Site partials
 	// individual pages
 	@import "partials/pages";
 	@import "partials/blog";
+	@import "partials/quotation";
 	// app elements
 	@import "partials/calculator";
 	// vendor libraries

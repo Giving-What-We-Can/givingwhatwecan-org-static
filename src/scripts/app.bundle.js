@@ -1,6 +1,6 @@
 /*
 
-	## Entry.js ##
+	## app.bundle.js ##
 
 	This is the master file that organises all of the other scripts used by the site. 
 

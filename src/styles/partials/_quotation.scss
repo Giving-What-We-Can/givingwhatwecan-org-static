@@ -1,0 +1,39 @@
+$background-color: #eee;
+blockquote.quotation {
+	quotes: "\201C""\201D""\2018""\2019";
+	border: none;
+	margin: 0;
+	padding: $grid-gutter-width;
+	background-color: $background-color;
+	font-style: italic;
+	&:before,&:after {
+		color: #ccc;
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;
+		font-style: normal;
+		
+	}
+	&:before {
+		margin-right: 0.25em;
+		content: open-quote;
+	}
+	&:after {
+		content: close-quote;
+		margin-left: 0.25em;
+	}
+}
+blockquote p {
+  display: inline;
+}
+.quotation-author{
+	background-color: $background-color;
+	padding: $grid-gutter-width;
+	margin: 0 0 $grid-gutter-width 0;
+	.quotation-author-name {
+		margin-top: 20px;
+	}
+	.quotation-author-short-bio {
+		margin-left: 24px;
+	}
+}

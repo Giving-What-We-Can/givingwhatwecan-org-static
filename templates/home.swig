@@ -8,54 +8,56 @@
 {% block content %}
 	{% include './partials/content-block-set.swig' %}
 	<a class="scroll-down" href="#"><i class="fa fa-chevron-down"></i></a>
+	<script>
+		loadScript(function(){
+			var $ = window.jQuery;
+			// Add down chevrons to all content blocks
+			$(function(){
+				$(".content-block-wrapper").not(':last').append($('.scroll-down'))
+				$('.scroll-down').click(function(e){
+					e.preventDefault();
+					var position = $(this).parent('.content-block-wrapper').position();
+					TweenLite.to(window, 1, {scrollTo:{y:position.top+$(this).parent('.content-block-wrapper').outerHeight()}, ease:Power2.easeOut});
+				})
+			});
+
+			/*
+			
+			SCROLLMAGIC!!!
+
+			*/
+
+			// init controller
+			var controller = new ScrollMagic.Controller();
+
+			/*
+			
+			Scene - fade and shrink nav at top of page
+
+			*/
+
+			// build scene
+			var menuTimeline = new TimelineLite();
+			menuTimeline.fromTo('#menu-main', 1, {
+				backgroundColor:"rgba(108,0,0,0)",
+				boxShadow:'none'
+			}, {
+				backgroundColor:"rgba(108,0,0,1)",
+				boxShadow:'0px 0px 15px #333',
+				ease:Power0.easeNone
+			});
+
+
+			new ScrollMagic.Scene({triggerElement: ".content-block-wrapper:first", duration: 400, triggerHook:0})
+			// animate color and top border in relation to scroll position
+			.setTween(menuTimeline)
+			.addTo(controller);
+	})
+
+		
+	</script>
 {% endblock %}
 
 {% block scripts %}
 	{% parent %}
-	<script>
-		// Add down chevrons to all content blocks
-		$(function(){
-			$(".content-block-wrapper").not(':last').append($('.scroll-down'))
-			$('.scroll-down').click(function(e){
-				e.preventDefault();
-				var position = $(this).parent('.content-block-wrapper').position();
-				TweenLite.to(window, 1, {scrollTo:{y:position.top+$(this).parent('.content-block-wrapper').outerHeight()}, ease:Power2.easeOut});
-			})
-		});
-
-		/*
-		
-		SCROLLMAGIC!!!
-
-		*/
-
-		// init controller
-		var controller = new ScrollMagic.Controller();
-
-		/*
-		
-		Scene - fade and shrink nav at top of page
-
-		*/
-
-		// build scene
-		var menuTimeline = new TimelineLite();
-		menuTimeline.fromTo('#menu-main', 1, {
-			backgroundColor:"rgba(108,0,0,0)",
-			boxShadow:'none'
-		}, {
-			backgroundColor:"rgba(108,0,0,1)",
-			boxShadow:'0px 0px 15px #333',
-			ease:Power0.easeNone
-		});
-
-
-		new ScrollMagic.Scene({triggerElement: ".content-block-wrapper:first", duration: 400, triggerHook:0})
-		// animate color and top border in relation to scroll position
-		.setTween(menuTimeline)
-		.addTo(controller);
-
-
-		
-	</script>
 {% endblock %}

@@ -122,7 +122,6 @@ function build(buildCount){
     .source('./src')
     .destination('./dest')
     .use(ignore([
-        'scripts/!(includes)/*',
         '**/.DS_Store',
         'styles/partials/**'
     ]))
@@ -325,6 +324,14 @@ function build(buildCount){
             metadata: {
                 singular: 'content-block',
             }
+        },
+        quotations: {
+            pattern: 'quotation/**/*.html',
+            sortBy: 'text',
+            reverse: false,
+            metadata: {
+                singular: 'quotation',
+            }
         }
     }))
     .use(logMessage('Added files to collections'))
@@ -370,16 +377,17 @@ function build(buildCount){
         }
     })
     .use(function (files,metalsmith,done){
-        // add paths to authors 
-        each(Object.keys(files).filter(minimatch.filter('@(author)/**/*.html')), apply, done )
+        // add paths to authors and quotatons
+        each(Object.keys(files).filter(minimatch.filter('@(author|quotation)/**/*.html')), apply, done )
         // recursively find parent links
         function apply(file, cb){
-            var authorPath = 'author'
-            files[file].breadcrumbs = [authorPath, files[file].slug]
+            var filePath = file.split('/')[0]
+            files[file].breadcrumbs = [filePath, files[file].slug]
             files[file].path = files[file].breadcrumbs.join('/')
             cb();
         }
     })
+
     .use(function (files,metalsmith,done){
         // set a nice path for blog posts
         each(Object.keys(files).filter(minimatch.filter('@(post)/**/*.html')), apply, done )
@@ -553,13 +561,26 @@ function build(buildCount){
             var md = new MarkdownIt({
                 html:true
             })
-            .use(MarkdownItFootnote);
+            .use(MarkdownItFootnote)
+            ;
 
             var html = md.render( files[file].contents.toString() );
             debug('%s — Rendered markdown',file);
+            // get rid of html entities, as they break in-place templating logic later
             // use Cheerio to modify HTML
             debug('%s — Using Cheerio to modify file contents',file);
             $ = cheerio.load(html);
+            
+            if(files[file].collection.indexOf('quotations')===-1){
+                $('p').first().addClass('first-paragraph')
+            }
+
+            // $('.swig-include').each(function(){
+            //     $(this).replaceWith(function(){
+            //         return $('<div />').append($(this).contents())
+            //     })
+            // })
+
             $('img').each(function(){
                 var img = $(this);
                 // wrap images that are in p tags in figures instead
@@ -568,23 +589,10 @@ function build(buildCount){
                     parent.replaceWith(function(){
                         return $('<div class="row" />').append($('<figure class="col-xs-12" />').append($(this).contents()));
                     })
-                    // check the size of our images, if they're not big enough, make them half-size 
-                    var imgFile = files[img.attr('src').substr(1)];
-                    if(imgFile){
-                        if(sizeOf(imgFile.contents).width<750){
-                            img.parent('figure').addClass('col-md-6 col-md-offset-3');
-                        } else {
-                            img.parent('figure').addClass('col-xs-12');
-                        }
-                    }
                 }
                 // add img-responsive tags to images
                 img.addClass('img-responsive');
             })
-            /*$('p, h1, h2, h3, h4, h5, h6').each(function(){
-                var el = $(this);
-                el.html(typogr.typogrify(el.html()));
-            })*/
             // use our global list of redirects to resolve any outdated internal links in the body (only bother in production)
             if(ENVIRONMENT === 'production'){
                 $('a').each(function(){
@@ -603,6 +611,11 @@ function build(buildCount){
             }
             html = $.html();
             debug('Rendered HTML from cheerio');
+            // remove fancy quotes from inside swig tags
+            html = html.replace(/(?:<p>)*(\{%|\{\{)(.*?)(\}\}|%\})(?:<\/p>)*/g,function(match,open,content,close){
+                return open+content.replace(/&quot;/g,'"').replace(/&apos;/g,"'")+close
+            })
+
             // save back to the main metalsmith array
             files[file].contents = html;
             debug('%s – Saved file',file);
@@ -667,35 +680,101 @@ function build(buildCount){
     colophonemes
     .use(function (files,metalsmith,done){
         // Bundle our javascript files using browserify
-        
-        // the filename of our entry script, relative to the Metalsmith source directory
-        var filePath = 'scripts/entry.js';
-        // the output filename of our bundle
-        var outFilePath = 'scripts/app.js';
-        // the output filename of our sourcemap
-        var mapFilePath = 'scripts/app.map.json';
-        // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
-        var entryFile  = path.join(metalsmith.source(),filePath);
-        // turn minification on or off
-        var minify = ENVIRONMENT ==='production' ? true : false;
-        // start browserify
-        var b = new browserify({debug:true});
-        // add the entry file to the queue
-        b.add(entryFile)
-        // add minifier / sourcemap generator
-        b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
-        // call the main bundle function
-        b.bundle(function(err, src, map){
-            if(err) throw err;
-             if(minify){
-                files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
-                files[mapFilePath] = {contents: map, mode: 0664 }
-             } else {
-                files[outFilePath] = {contents: src, mode: 0664 }
-             }
-             done();
-        })
+        each(Object.keys(files).filter(minimatch.filter('scripts/*.bundle.js')),bundle,done)
+
+        function bundle(file, cb){
+            // the filename of our entry script, relative to the Metalsmith source directory
+            var filePath = file;
+            // the output filename of our bundle
+            var outFilePath = file.replace('.bundle','');
+            // the output filename of our sourcemap
+            var mapFilePath = file.replace('bundle','min');
+            // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
+            var entryFile  = path.join(metalsmith.source(),filePath);
+            // turn minification on or off
+            var minify = ENVIRONMENT ==='production' ? true : false;
+            // start browserify
+            var b = new browserify({debug:true});
+            // add the entry file to the queue
+            b.add(entryFile)
+            // add minifier / sourcemap generator
+            b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
+            // call the main bundle function
+            b.bundle(function(err, src, map){
+                if(err) throw err;
+                 if(minify){
+                    files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
+                    files[mapFilePath] = {contents: map, mode: 0664 }
+                 } else {
+                    files[outFilePath] = {contents: src, mode: 0664 }
+                    delete files[file]
+                 }
+                 cb();
+            })
+        }
     })
+    // .use(function (files,metalsmith,done){
+    //     // Bundle our LT IE9 fallback JS files using browserify
+        
+    //     // the filename of our entry script, relative to the Metalsmith source directory
+    //     var filePath = 'scripts/ltie9.bundle.js';
+    //     // the output filename of our bundle
+    //     var outFilePath = 'scripts/ltie9.js';
+    //     // the output filename of our sourcemap
+    //     var mapFilePath = 'scripts/ltie9.map.json';
+    //     // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
+    //     var entryFile  = path.join(metalsmith.source(),filePath);
+    //     // turn minification on or off
+    //     var minify = ENVIRONMENT ==='production' ? true : false;
+    //     // start browserify
+    //     var b = new browserify({debug:true});
+    //     // add the entry file to the queue
+    //     b.add(entryFile)
+    //     // add minifier / sourcemap generator
+    //     b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
+    //     // call the main bundle function
+    //     b.bundle(function(err, src, map){
+    //         if(err) throw err;
+    //          if(minify){
+    //             files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
+    //             files[mapFilePath] = {contents: map, mode: 0664 }
+    //          } else {
+    //             files[outFilePath] = {contents: src, mode: 0664 }
+    //          }
+    //          done();
+    //     })
+    // })
+    // .use(function (files,metalsmith,done){
+    //     // Bundle our LT IE9 fallback JS files using browserify
+        
+    //     // the filename of our entry script, relative to the Metalsmith source directory
+    //     var filePath = 'scripts/modernizr.bundle.js';
+    //     // the output filename of our bundle
+    //     var outFilePath = 'scripts/modernizr.js';
+    //     // the output filename of our sourcemap
+    //     var mapFilePath = 'scripts/ltie9.map.json';
+    //     // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
+    //     var entryFile  = path.join(metalsmith.source(),filePath);
+    //     // turn minification on or off
+    //     var minify = ENVIRONMENT ==='production' ? true : false;
+    //     // start browserify
+    //     var b = new browserify({debug:true});
+    //     // add the entry file to the queue
+    //     b.add(entryFile)
+    //     // add minifier / sourcemap generator
+    //     b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
+    //     // call the main bundle function
+    //     b.bundle(function(err, src, map){
+    //         if(err) throw err;
+    //          if(minify){
+    //             files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
+    //             files[mapFilePath] = {contents: map, mode: 0664 }
+    //          } else {
+    //             files[outFilePath] = {contents: src, mode: 0664 }
+    //          }
+    //          done();
+    //     })
+    // })
     .use(logMessage('Bundled Javascript files'))
     ;
     // Build CSS
