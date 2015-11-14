@@ -91,7 +91,8 @@
   "devDependencies": {},
   "browser": {
     "lazysizes": "./node_modules/lazysizes/lazysizes.js",
-    "lazysizesBGSet": "./node_modules/lazysizes/plugins/bgset/ls.bgset.js",
+    "lazysizesBGSet": "./node_modules/lazysizes/plugins/respimg/ls.respimg.js",
+    "lazysizesRespImg": "./node_modules/lazysizes/plugins/bgset/ls.bgset.js",
     "bootstrapCollapse": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
     "bootstrapDropdown": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js",
     "bootstrapTransition": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
@@ -117,6 +118,7 @@
     ]
   },
   "browserify-shim": {
+    "lazysizesRespImg": "lazysizesRespImg",
     "lazysizesBGSet": "lazysizesBGSet",
     "bootstrapCollapse": "bootstrapCollapse",
     "bootstrapDropdown": "bootstrapDropdown",

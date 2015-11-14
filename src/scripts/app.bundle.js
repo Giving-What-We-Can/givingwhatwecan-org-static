@@ -27,6 +27,7 @@
 */
 // lazysizes
 require('lazysizes')
+require('lazysizesRespImg')
 require('lazysizesBGSet')
 // bootstrap javascript plugins
 require('bootstrapDropdown')

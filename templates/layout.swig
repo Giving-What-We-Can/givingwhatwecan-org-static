@@ -19,6 +19,7 @@
 	<script>
 		// fast pre-rendering check for javascript capability without requiring Modernizr in the head
 		document.documentElement.className = document.documentElement.className.replace('no-js','js');
+		document.documentElement.className += " wf-loading";
 		// defer execution of jquery-dependent scripts defined before jQuery loads
 		window.q=[];window.$=function(f){q.push(f)}
 		// enqueue scripts at the end of the page from before the closing body tag

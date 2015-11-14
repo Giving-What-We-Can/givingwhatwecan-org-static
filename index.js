@@ -699,7 +699,7 @@ function build(buildCount){
     
     .use(lazysizes({
         widths: [100,480,768,992,1200],
-        backgrounds: ['#banner'],
+        backgrounds: ['#banner','.content-block-wrapper'],
         ignore: "/images/**",
         querystring: {
             w: '%%width%%',
