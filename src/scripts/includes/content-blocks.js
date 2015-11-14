@@ -170,9 +170,9 @@
 	Block #how-rich-am-i
 
 	*/
-	block('#how-rich-am-i', function(el,id){
-		slabTextSelectors.push(id+' h2');
-		slabTextSelectors.push(id+' .sub-heading p');
+	block('#how-rich-am-i',function(el,id){
+		slabTextSelectors.push(id + ' h2');
+		slabTextSelectors.push(id + ' .sub-heading p');
 	})
 
 
@@ -226,7 +226,8 @@
 
 		$(document).on('WebFont', function(event,status){
 			if(status==='active' && $.fn.slabText !== 'undefined'){
-				$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:breakpoints.sm});
+				$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:200});
+				// $("#how-rich-am-i .sub-heading p").slabText({viewportBreakpoint:breakpoints.xs-1});
 			}
 		})
 	

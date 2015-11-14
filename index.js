@@ -47,8 +47,6 @@ var replace = require('metalsmith-replace');
 var beautify  = require('metalsmith-beautify');
 var moment = require('moment');
 var strip = require('strip');
-var truncate = require('truncate');
-var inPlace  = require('metalsmith-in-place');
 var templates  = require('metalsmith-templates');
 var typogr = require('typogr');
 var sizeOf = require('image-size');
@@ -411,75 +409,6 @@ function build(buildCount){
         }
     })
     .use(logMessage('Added navigation metadata'))
-    
-    /*.use(function (files,metalsmith,done){
-        // create a menu hierarchy
-        var nav = {};
-        // go through files
-        each(Object.keys(files).filter(minimatch.filter('@(page)/** /*.html')), getNavPosition , function(){
-            var metadata = metalsmith.metadata()
-            sortNavItems(nav)
-            nav._sorted = Object.keys(nav);
-            nav._sorted.sort()
-            nav._sorted.sort(function(a,b){
-                // sort by menuOrder
-                var x = nav[a]._data.menuOrder
-                var y = nav[b]._data.menuOrder
-                x = typeof x === 'number' ? x : 100;
-                y = typeof y === 'number' ? y : 100;
-
-                if (y < x){
-                    return 1
-                } else if (y > x){
-                    return -1
-                }
-                return 0;
-            })
-            metadata['nav'] = nav;
-            done();
-        })
-        function getNavPosition(file, cb){
-            var meta = files[file];
-            createNestedObject(nav,files[file].breadcrumbs);
-            cb();
-            function createNestedObject ( base, names ) {
-                var i = names[0]
-                base[i] = base[i] || {};
-                if(names.length>1){
-                    base[i]._children = base[i]._children || {}
-                    createNestedObject(base[i]._children,names.slice(1))
-                } else {
-                    base[i]._data = meta
-                }
-            };
-        }
-        function sortNavItems(base){
-            // add a '_sorted' field to each node of the nav, so that we can get things in order if needed
-            Object.keys(base).forEach(function(key){
-                var c = base[key]
-                if(c._children){
-                    c._sorted = Object.keys(c._children);
-                    c._sorted.sort(); // sort alphabetically
-                    c._sorted.sort(function(a,b){
-                        // sort by menuOrder
-                        var x = c._children[a]._data.menuOrder
-                        var y = c._children[b]._data.menuOrder
-                        x = typeof x === 'number' ? x : 100;
-                        y = typeof y === 'number' ? y : 100;
-
-                        if (y < x){
-                            return 1
-                        } else if (y > x){
-                            return -1
-                        }
-                        return 0;
-                    })
-                    sortNavItems(c._children);
-                }
-            })
-        }     
-    })
-    .use(logMessage('Built navigation'))*/
     .use(function (files,metalsmith,done){
         // move files so that their location matches their path
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done )
@@ -503,14 +432,6 @@ function build(buildCount){
             cb();
         }
     })
-    // .use(function (files,metalsmith,done){
-    //     // move the contentful 'fields' metadata to the file's global meta
-    //     each(Object.keys(files).filter(minimatch.filter('@(content-block)/**/*.html')), function(file,cb){
-    //         var meta = files[file]
-    //         console.log(meta)
-    //         cb();
-    //     },done)
-    // })
     .use(logMessage('Moved files into place'))
     .use(function (files, metalsmith, done) {
         var dynamicSiteRedirects = files['settings/_redirects'].contents.toString().split('\n').sort()
@@ -667,8 +588,6 @@ function build(buildCount){
         engine:'swig',
         requires: {swig:swig},
         moment: moment,
-        strip: strip,
-        truncate: truncate,
         pattern: "**/*.html",
         inPlace: true
     }))
@@ -676,8 +595,6 @@ function build(buildCount){
         engine:'swig',
         requires: {swig:swig},
         moment: moment,
-        strip: strip,
-        truncate: truncate,
         directory: 'templates'
     }))
     .use(logMessage('Built HTML files from templates'))
@@ -688,19 +605,19 @@ function build(buildCount){
     }))
     .use(logMessage('Added icon fonts'))
     .use(function (files, metalsmith, done) {
-        // we've incorporated content blocks into other pages, but we don't need them as standalone pages in our final build.
+        // we've incorporated content blocks & charities into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){
-            if(minimatch(file,'content-block/**')){
+            if(minimatch(file,'@(content-block|charity)/**')){
                 delete files[file];
             }
         });
         done();
     })
-    
     .use(lazysizes({
         widths: [100,480,768,992,1200],
         backgrounds: ['#banner','.content-block-wrapper'],
         ignore: "/images/**",
+        ignoreSelectors:'.content-block-content',
         querystring: {
             w: '%%width%%',
             q: '%%quality%%'
@@ -787,6 +704,7 @@ function build(buildCount){
                     /slider/,
                     '.loader',
                     '.transparent',
+                    '.content-block-wrapper .scroll-down-chevron',
                     /slabtext/,
                     /lazyload/,
                     /tooltip/,
