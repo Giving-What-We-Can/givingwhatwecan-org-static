@@ -53,7 +53,7 @@ var templates  = require('metalsmith-templates');
 var typogr = require('typogr');
 var sizeOf = require('image-size');
 message('Loaded templating');
-// var lazysizes = require('metalsmith-lazysizes');
+var lazysizes = require('metalsmith-lazysizes');
 // metadata and structure
 var ignore      = require('metalsmith-ignore');
 var branch  = require('metalsmith-branch');
@@ -79,6 +79,9 @@ var autoprefixer = require('metalsmith-autoprefixer');
 var browserify = require('browserify')
 var icons = require('metalsmith-icons');
 var feed = require('metalsmith-feed');
+var headingsIdentifier = require('metalsmith-headings-identifier');
+var headings = require('metalsmith-headings');
+
 var htmlMinifier = require("metalsmith-html-minifier");
 // only require in production
 if(ENVIRONMENT==='production'){
@@ -194,7 +197,7 @@ function build(buildCount){
     })
     .use(function (files,metalsmith,done){
         // remove templates from content blocks
-        each(Object.keys(files).filter(minimatch.filter('@(content-block)/**/*.html')), function(file,cb){
+        each(Object.keys(files).filter(minimatch.filter('@(content-block|charity)/**/*.html')), function(file,cb){
             var meta = files[file]
             if (meta.template) delete meta.template;
             cb();
@@ -331,6 +334,14 @@ function build(buildCount){
             reverse: false,
             metadata: {
                 singular: 'quotation',
+            }
+        },
+        charities: {
+            pattern: 'charity/**/*.html',
+            sortBy: 'title',
+            reverse: false,
+            metadata: {
+                singular: 'charity',
             }
         }
     }))
@@ -503,13 +514,12 @@ function build(buildCount){
     .use(logMessage('Moved files into place'))
     .use(function (files, metalsmith, done) {
         var dynamicSiteRedirects = files['settings/_redirects'].contents.toString().split('\n').sort()
-
         // build a list of redirects from file meta
         var metadata =metalsmith.metadata();
         var redirects = {};
         var redirectsFile = [];
         Object.keys(files).forEach(function (file) {
-            if(files[file].hasOwnProperty('redirects')){
+            if(files[file].redirects){
                 files[file].redirects.forEach(function(redirect){
                     if(redirect !== '/'+files[file].path){
                         redirects[redirect] = files[file];
@@ -571,7 +581,7 @@ function build(buildCount){
             debug('%s — Using Cheerio to modify file contents',file);
             $ = cheerio.load(html);
             
-            if(files[file].collection.indexOf('quotations')===-1){
+            if(files[file].collection.indexOf('pages')>-1 || files[file].collection.indexOf('posts')>-1){
                 $('p').first().addClass('first-paragraph')
             }
 
@@ -611,10 +621,8 @@ function build(buildCount){
             }
             html = $.html();
             debug('Rendered HTML from cheerio');
-            // remove fancy quotes from inside swig tags
-            html = html.replace(/(?:<p>)*(\{%|\{\{)(.*?)(\}\}|%\})(?:<\/p>)*/g,function(match,open,content,close){
-                return open+content.replace(/&quot;/g,'"').replace(/&apos;/g,"'")+close
-            })
+            // typogr
+            html = typogr.typogrify(html)
 
             // save back to the main metalsmith array
             files[file].contents = html;
@@ -630,6 +638,31 @@ function build(buildCount){
         destination: 'blog.xml'
     }))
     .use(logMessage('Generated RSS feed'))
+    .use(branch(function(filename,props,i){
+
+            return props.collection && (props.collection.indexOf('posts') > -1 || props.collection.indexOf('pages') > -1);
+        })
+        .use(headingsIdentifier({
+            linkTemplate: "<a class='heading-permalink' href='#%s'><span></span></a>"
+        }))
+        .use(headings({
+            selectors: ['h2,h3,h4']
+        }))
+        .use(logMessage('Created TOCs'))
+    )
+    .use(function (files, metalsmith, done) {
+        // sanitise swig tags
+        Object.keys(files).filter(minimatch.filter('**/*.html')).forEach(function(file){
+            var html = files[file].contents.toString();
+            html = html.replace(/(?:<p(?:.*)?>)*(\{%|\{\{)(.*?)(\}\}|%\})(?:<\/p>)*/g,function(match,open,content,close){
+                var a = open+content.replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/(&nbsp;|&#xA0;)/g,' ')+close
+                return a
+            })
+            files[file].contents = html;
+            
+        })
+        done();
+    })
     .use(templates({
         engine:'swig',
         requires: {swig:swig},
@@ -663,19 +696,17 @@ function build(buildCount){
         });
         done();
     })
-    ;
-    // build responsive images at this point if we're in production
-    if(ENVIRONMENT==='production'){
-       /* colophonemes
-        .use(lazysizes({
-            pattern: [
-                'images/*.@(jpg|jpeg|png|gif)',
-                'images/!(favicons|logos)/*.@(jpg|jpeg|png|gif)'
-            ],
-            sizes: [100,480,768,992,1200],
-            backgrounds: ['#banner']
-        }))*/
-    }
+    
+    .use(lazysizes({
+        widths: [100,480,768,992,1200],
+        backgrounds: ['#banner'],
+        ignore: "/images/**",
+        querystring: {
+            w: '%%width%%',
+            q: '%%quality%%'
+        }
+    }))
+    .use(logMessage('Added responsive image markup'))
     // Build Javascript
     colophonemes
     .use(function (files,metalsmith,done){
@@ -688,7 +719,7 @@ function build(buildCount){
             // the output filename of our bundle
             var outFilePath = file.replace('.bundle','');
             // the output filename of our sourcemap
-            var mapFilePath = file.replace('bundle','min');
+            var mapFilePath = file.replace('bundle','map');
             // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
             var entryFile  = path.join(metalsmith.source(),filePath);
             // turn minification on or off
@@ -707,74 +738,12 @@ function build(buildCount){
                     files[mapFilePath] = {contents: map, mode: 0664 }
                  } else {
                     files[outFilePath] = {contents: src, mode: 0664 }
-                    delete files[file]
                  }
+                delete files[file]
                  cb();
             })
         }
     })
-    // .use(function (files,metalsmith,done){
-    //     // Bundle our LT IE9 fallback JS files using browserify
-        
-    //     // the filename of our entry script, relative to the Metalsmith source directory
-    //     var filePath = 'scripts/ltie9.bundle.js';
-    //     // the output filename of our bundle
-    //     var outFilePath = 'scripts/ltie9.js';
-    //     // the output filename of our sourcemap
-    //     var mapFilePath = 'scripts/ltie9.map.json';
-    //     // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
-    //     var entryFile  = path.join(metalsmith.source(),filePath);
-    //     // turn minification on or off
-    //     var minify = ENVIRONMENT ==='production' ? true : false;
-    //     // start browserify
-    //     var b = new browserify({debug:true});
-    //     // add the entry file to the queue
-    //     b.add(entryFile)
-    //     // add minifier / sourcemap generator
-    //     b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
-    //     // call the main bundle function
-    //     b.bundle(function(err, src, map){
-    //         if(err) throw err;
-    //          if(minify){
-    //             files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
-    //             files[mapFilePath] = {contents: map, mode: 0664 }
-    //          } else {
-    //             files[outFilePath] = {contents: src, mode: 0664 }
-    //          }
-    //          done();
-    //     })
-    // })
-    // .use(function (files,metalsmith,done){
-    //     // Bundle our LT IE9 fallback JS files using browserify
-        
-    //     // the filename of our entry script, relative to the Metalsmith source directory
-    //     var filePath = 'scripts/modernizr.bundle.js';
-    //     // the output filename of our bundle
-    //     var outFilePath = 'scripts/modernizr.js';
-    //     // the output filename of our sourcemap
-    //     var mapFilePath = 'scripts/ltie9.map.json';
-    //     // get an absolute path to the file — browserify won't accept a buffer from Metalsmith's virtual file system
-    //     var entryFile  = path.join(metalsmith.source(),filePath);
-    //     // turn minification on or off
-    //     var minify = ENVIRONMENT ==='production' ? true : false;
-    //     // start browserify
-    //     var b = new browserify({debug:true});
-    //     // add the entry file to the queue
-    //     b.add(entryFile)
-    //     // add minifier / sourcemap generator
-    //     b.plugin('minifyify', {map: '/'+mapFilePath, minify:minify}); 
-    //     // call the main bundle function
-    //     b.bundle(function(err, src, map){
-    //         if(err) throw err;
-    //          if(minify){
-    //             files[outFilePath.replace('.js','.min.js')] = {contents: src, mode: 0664 }
-    //             files[mapFilePath] = {contents: map, mode: 0664 }
-    //          } else {
-    //             files[outFilePath] = {contents: src, mode: 0664 }
-    //          }
-    //          done();
-    //     })
-    // })
     .use(logMessage('Bundled Javascript files'))
     ;
     // Build CSS
@@ -798,7 +767,7 @@ function build(buildCount){
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
-        .use(htmlMinifier())
+        // .use(htmlMinifier())
         .use(logMessage('Cleaning CSS files'),chalk.yellow)
         .use(uncss({
             basepath: 'styles',
@@ -820,6 +789,7 @@ function build(buildCount){
                     '.transparent',
                     /slabtext/,
                     /lazyload/,
+                    /tooltip/,
                 ],
                 media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
             }
@@ -833,7 +803,7 @@ function build(buildCount){
         .use(logMessage('Cleaned CSS files'))
         .use(uglify({
             removeOriginal: true,
-            filter: "scripts/includes/**/*"
+            filter: "scripts/includes/**"
         }))
         .use(logMessage('Minified Javascript'))
         ;

@@ -30,6 +30,9 @@ blockquote p {
 	background-color: $background-color;
 	padding: $grid-gutter-width;
 	margin: 0 0 $grid-gutter-width 0;
+	.quotation-author-photo{
+		width: 100px;
+	}
 	.quotation-author-name {
 		margin-top: 20px;
 	}

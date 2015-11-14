@@ -1,0 +1,70 @@
+body.page {
+	&.home {
+		padding-top: 0;
+		footer.footer {
+			margin-top: 0;
+		}
+	}
+	&.how-rich-am-i {
+		div.page {
+			margin: 0;
+			width: 100%;
+		}
+	}
+	&.join{
+		#banner {
+			background-position: center bottom;
+		}
+	}
+	&.deworm-world-initiative{
+		#banner {
+			@media(min-width:$screen-sm){
+				background-position: center bottom;
+			}
+			@media(min-width:$screen-lg){
+				background-position: center 80%;
+			}
+		}
+	}
+	&.against-malaria-foundation{
+		#banner {
+			@media(min-width:$screen-sm){
+				background-position: center 20%;
+			}
+		}
+	}
+	&.try-giving{
+		#banner {
+			background-position: center 30%;
+		}
+	}
+	&.about-us {
+		#banner {
+			background-position: center 20%;
+		}
+	}
+	&.history {
+		#banner {
+			background-position: center 80%;
+		}
+	}
+	&.frequently-asked-questions{
+		h2 {
+			@include centered-heading();
+		}
+		h3 {
+			color: $site-ternary;
+		}
+		#banner {
+			background-position: center 60%;
+		}
+	}
+	&.top-charities{
+		h2 {
+			@include centered-heading();
+		}
+		h4 {
+			color: $site-ternary;
+		}
+	}
+}

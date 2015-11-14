@@ -1,5 +1,5 @@
 $min-height: 400px;
-
+$scroll-down-size: 40px;
 
 
 
@@ -8,7 +8,7 @@ $min-height: 400px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	display: table;
-	min-height: $min-height;
+	// min-height: $min-height;
 	text-align: center;
 	background-color: #444;
 	color: #FFF;
@@ -18,11 +18,10 @@ $min-height: 400px;
 	width: 100%;
 	position:relative;
 	overflow: hidden;
-	padding-bottom: $grid-gutter-width;
 	&.fullheight {
 		padding-bottom:0;
 	}
-	.scroll-down {
+	.scroll-down-chevron {
 		font-size: 25px;
 		position: absolute;
 		bottom:0;
@@ -32,112 +31,28 @@ $min-height: 400px;
 		color:#FFF;
 		text-shadow: 0 0 16px #333;
 		@media(min-width:$screen-md){
-			font-size: 40px;
+			font-size: $scroll-down-size;
 		}
 	}
 }
 .content-block {
 	display: table-cell;
 	vertical-align: middle;
-	height: $min-height;
-	height: 50vh;
-
-
-
-	// .halfheight &,.fullheight &,
-	// .halfheight-xs &,.fullheight-xs &,
-	// .halfheight-sm &,.fullheight-sm &,
-	// .halfheight-md &,.fullheight-md &,
-	// .halfheight-lg &,.fullheight-lg & {
-	// 	// ensures no blurry text from half-pixel rendering
-	// 	transform-style: preserve-3d;
-	// 	position: absolute;
-	// 	height: 100%;
-	// 	width: 100%;
-	// 	top: 0;
-	// 	bottom:0;
-	// 	.container, .container-fluid {
-	// 		position: absolute;
-	// 	  	top: 50%;
-	// 	  	transform: translateY(-50%);
-	// 	}
-	// 	.container-fluid {
-	// 		width: 100%;
-	// 	}
-	// 	.container {
-	// 		left: 0;
-	// 		right: 0;
-	// 	}
-	// }
-	// .fluidheight & {
-	// 	padding: 40px 0;
-	// 	@media(min-width:$screen-sm){
-	// 		padding: 40px 0;
-	// 	}
-	// }
+	// height: $min-height;
+	// height: 50vh;
+	.content-block-content {
+		padding-bottom: $scroll-down-size;
+	}
 }
-
-// .content-block-wrapper {
-// 	background-size: cover;
-// 	background-position: center center;
-// 	background-repeat: no-repeat;
-// 	position: relative;
-// 	color: #FFF;
-// 	text-align: center;
-// 	h1, h2, h3, h4, h5, h6, p {
-// 		color: #FFF;
-// 		a {
-// 			text-shadow: none;
-// 		}
-// 	}
-// 	min-height: $min-height;
-// }
-// .content-block {
-// 	.halfheight &,.fullheight &,
-// 	.halfheight-xs &,.fullheight-xs &,
-// 	.halfheight-sm &,.fullheight-sm &,
-// 	.halfheight-md &,.fullheight-md &,
-// 	.halfheight-lg &,.fullheight-lg & {
-// 		// ensures no blurry text from half-pixel rendering
-// 		transform-style: preserve-3d;
-// 		position: absolute;
-// 		height: 100%;
-// 		width: 100%;
-// 		top: 0;
-// 		bottom:0;
-// 		.container, .container-fluid {
-// 			position: absolute;
-// 		  	top: 50%;
-// 		  	transform: translateY(-50%);
-// 		}
-// 		.container-fluid {
-// 			width: 100%;
-// 		}
-// 		.container {
-// 			left: 0;
-// 			right: 0;
-// 		}
-// 	}
-// 	.fluidheight & {
-// 		padding: 40px 0;
-// 		@media(min-width:$screen-sm){
-// 			padding: 40px 0;
-// 		}
-// 	}
-// }
-
-
 
 // specific content blocks
 .content-block-wrapper {
 	// background-attachment: fixed;
 	&#hero-image {
 		background-position: top center;
-		.text-wrapper {
-			position:absolute;
-			left:35%;
-			width: 30%;
-			bottom: 10%;
+		.content-block {
+			vertical-align: bottom;
+			padding-bottom: 60px;
 		}
 		h2 {
 			text-transform: uppercase;
@@ -152,6 +67,9 @@ $min-height: 400px;
 	}
 	&#we-are-giving-what-we-can {
 		background-position: center center;
+		@media(max-width:$screen-md){
+			background-image: none !important;
+		}
 		.content-block {
 			background-color: transparentize($site-primary,0.4);
 			.weare {
@@ -173,6 +91,7 @@ $min-height: 400px;
 
 			}
 			.aim {
+				margin-bottom: $grid-gutter-width;
 				.icons {
 					line-height: 1em;
 				}
@@ -216,9 +135,9 @@ $min-height: 400px;
 
 			p {
 	    		font-weight: 400;
-    			text-align: left;
 				margin-top: $grid-gutter-width;
 	    		@media(min-width:$screen-md){
+	    			text-align: left;
 					margin-top: -15px;
 		    		font-size: 26px;
 		    	}
@@ -229,24 +148,31 @@ $min-height: 400px;
 	}
 	&#our-top-charities-are-some-of-the-best {
 		background-color: $site-primary;
+		.content-block {
+			background-color: transparent;
+			background-color: transparentize(#333,0.7)
+		}
 		h2 {
 			text-transform: uppercase;
 			font-weight: bold;
 			margin-top: 80px;
 		}
 		.charity {
-			border-radius: 10px;
-			padding: 30px;
+			padding: 15px;
 			margin-bottom: 30px;
 			color: #333;
+		    display: table;
+		    width: 100%;
 			h1,h2,h3,h4,h5,h6{
 				color:#333;
 			}
 			.logo {
 				height: 100px;
+				width: 100%;
 				text-align: center;
+				display: table-cell;
+				vertical-align: middle;
 				img {
-					height: 100px;
 					display: inline-block;
 				}
 			}
@@ -263,14 +189,23 @@ $min-height: 400px;
 				}
 			}
 			background-color: rgba(255,255,255,0.9);
-
-			&.phc .logo img {
-				height: 60px;
-    			margin-top: 30px;
-			}
 		}
-		a.learn-more {
-			margin-bottom: 30px;
+		.explanation-wrapper {
+			@media(max-width:$screen-xs-max){
+				background-color: #FFF;
+			    color: #333;
+			    padding: 30px;
+			    margin-bottom: 30px;
+			}
+			@media(min-width:$screen-sm){
+				text-align: left;
+			}
+			.explanation {
+				p {
+					font-size: 1.4em;
+					font-weight: 400;
+				}
+			}
 		}
 	}
 	&#our-members-have-done-some-amazing-things {
@@ -298,14 +233,36 @@ $min-height: 400px;
 	}
 	&#how-rich-am-i {
 		.heading {
-			text-shadow: 0 0 16px #333;
 			h2 {
+				text-shadow: 0 0 16px #333;
 				text-transform: uppercase;
 	   			font-weight: 700;
+			    margin: 1em 0;
+   			    font-size: 3em;
+   			    @media(min-width:$screen-sm){
+   			    	font-size: 4em;
+   			    }
 			}
+		}
+		.sub-heading {
 			p {
-				font-size: 2em;
+			    margin: 1em 0;
+				font-size: 1.3em;
     			color: #DDD;
+			}
+		}
+		.sub-heading, .calculator-wrapper {
+			background-color: $site-primary;
+			background-color: transparentize($site-primary,0.2);
+		}
+		#calculator-controls {
+			margin-bottom: $grid-gutter-width;
+			.help-text {
+				color: #CCC;
+				a {
+					color: #CCC;
+					text-decoration: underline;
+				}
 			}
 		}
 	}

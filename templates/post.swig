@@ -8,16 +8,18 @@
 		<div class="row">
 			<article class="post">
 				<header class="post-header">
-					<h2 class="post-title title">{{ title }}</h2>
 					<p class="post-author">by
 					{% for a in author %}
-						<strong>{{ a.fields.name }}</strong>
+						<strong>{{ a.fields.title }}</strong>
 					{% endfor %}
 					</p>
 				</header>
 				<section class="post-content">
 					{{ contents }}
 				</section>
+				{% for a in author %}
+					{% include './partials/authorinfo.swig' with a only%}		
+				{% endfor %}
 			</article>
 		</div>
 		<hr>

@@ -1,0 +1,17 @@
+img[data-sizes="auto"] { 
+	display: block; 
+	width: 100%; 
+}
+.lazyload, .lazyloading, .lazyloaded {
+    transition: opacity 300ms;
+}
+.lazyload {
+    opacity: 0;
+}
+.lazyloading {
+    opacity: 1;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}

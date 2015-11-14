@@ -1,3 +1,5 @@
+@import "utilities/responsive-heights";
+
 .text-content{
 	@include text-content();
 }

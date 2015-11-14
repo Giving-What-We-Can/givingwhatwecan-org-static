@@ -1,60 +1,30 @@
-// fix to make the footer stay at the bottom of the page
-// #wrapper {
-// 	min-height: 100%;
-// 	position: relative;
-// 	.content {
-// 		padding-bottom: 330px;
-// 	}
-// 	footer.footer {
-// 		width: 100%;
-//   		bottom: 0;
-// 		left: 0;
-// 		position: absolute;
-// 	}
-// }
+@import 'components/calculator';
+@import 'components/contentblock';
+@import 'components/charity';
+@import 'components/heading-permalink';
+@import 'components/join-matrix';
+@import 'components/logo';
+@import 'components/quotation';
+@import 'components/social';
+@import 'components/toc';
 
+.content{
+	overflow: hidden;
+}
 
-
-
-#banner {
-	margin-bottom: $content-padding;
-	text-align:center;
-	background-color: $site-lolight;
-	
-	.page-title-wrapper {
-		min-height: 40vh;
-		@media(min-width:$screen-sm){
-		    min-height: 60vh;
-		}
-	}
-	position: relative;
-	.page-title {
-		position:absolute;
-		bottom: 0;
-		width:100%;
-	    margin: 0 -50%;
-	    left:50%;
-		color: #FFF;
-		text-transform: uppercase;
-		background-color: #111;
-		font-size: 2em;
-		padding: $grid-gutter-width;
-		@media(min-width:$screen-sm){
-			font-size: 3em;
-		}
-	}
-	#site-logo {
-		margin: 75px auto 75px;
-	}
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	&.banner-background {
-		.text-background {
-			width: 100%;
-		}
+.btn {
+	border-radius: 0 !important;
+	// border-width: 2px;
+	@media(max-width:$screen-xs-max){
+		white-space: inherit;
 	}
 }
+.btn-secondary {
+    color: $site-primary;
+    background-color: $site-secondary;
+    border-color: darken($site-secondary,20%);
+}
+
 
 .contact-form-container {
 	background-color: $gray-lighter;
@@ -64,23 +34,7 @@
 	}
 }
 
-img[data-sizes="auto"] { 
-	display: block; 
-	width: 100%; 
-}
-.lazyload, .lazyloading, .lazyloaded {
-    transition: opacity 300ms;
-}
-.lazyload {
-    opacity: 0;
-}
-.lazyloading {
-    opacity: 0.5;
-}
-.lazyloaded {
-    opacity: 1;
-    transition: opacity 300ms;
-}
+
 
 .centered-heading {
 	@include centered-heading();
@@ -124,3 +78,6 @@ span {
 		color: $gpp !important;
 	}
 }
+
+
+

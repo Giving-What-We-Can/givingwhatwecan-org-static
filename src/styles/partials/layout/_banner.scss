@@ -1,0 +1,61 @@
+#banner {
+	margin-bottom: $content-padding;
+	text-align:center;
+	background-color: $site-lolight;
+	
+	.page-title-wrapper {
+		min-height: 40vh;
+		@media(min-width:$screen-sm){
+		    min-height: 60vh;
+		}
+	}
+	position: relative;
+	.page-title {
+		position:absolute;
+		bottom: 0;
+		width:100%;
+	    margin: 0 -50%;
+	    left:50%;
+		color: #FFF;
+		text-transform: uppercase;
+		background-color: $site-primary;
+		background-color: transparentize($site-primary,0.2);
+		font-size: 2em;
+		padding: $grid-gutter-width;
+		@media(min-width:$screen-sm){
+			font-size: 3em;
+		}
+	}
+	#site-logo {
+		margin: 75px auto 75px;
+	}
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	&.banner-background {
+		.text-background {
+			width: 100%;
+		}
+	}
+	.image-attribution {
+		display: none;
+		@media(min-width:$screen-sm){
+			display: block;
+		}
+		position: absolute;
+		height: 30px;
+		bottom: -30px;
+		width: 100%;
+		text-align: right;
+		padding: 0 30px;
+		font-size: 14px;
+		color: #CCC;
+		@media(min-width:$screen-sm){
+			color: #999;
+		}
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+}

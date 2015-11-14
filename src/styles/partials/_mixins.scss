@@ -9,10 +9,8 @@
 }
 
 @mixin centered-heading(){
-	width: 66%;
-	margin-left: auto;
-	margin-right: auto;
-	border-bottom: 1px solid $gray-light;
+	text-transform: uppercase;
+	background: $site-secondary;
 	text-align: center;
-	padding-bottom: 0.2em;
+	padding: $grid-gutter-width/2;
 }

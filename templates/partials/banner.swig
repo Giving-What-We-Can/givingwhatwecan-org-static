@@ -1,7 +1,7 @@
 <div id="banner"
 	{% if featuredImage && featuredImage.fields || featuredImageURL %}
 		class="banner-background" 
-		style="background-image:url('{{featuredImage.fields.file.url|default(featuredImageURL)}}')"
+		style="background-image:url('{{featuredImage.fields.file.url|default(featuredImageURL)}}?w=1920&amp;q=50')"
 	{% endif %}
 >
 	<div class="header">
@@ -12,4 +12,9 @@
 			</div>
 		</div>
 	</div>
+	{% if featuredImage && featuredImage.fields %}
+	<div class="image-attribution">
+  		<p>{{featuredImage.fields.description|autolinker}}</p>
+  	</div>
+  	{% endif %}
 </div>

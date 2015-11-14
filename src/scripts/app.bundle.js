@@ -25,7 +25,9 @@
 	http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm 
 
 */
-
+// lazysizes
+require('lazysizes')
+require('lazysizesBGSet')
 // bootstrap javascript plugins
 require('bootstrapDropdown')
 require('bootstrapCollapse')
@@ -64,3 +66,8 @@ require('chartistAxisTitle')
 
 // form/data validation library
 global.validate = require('validate.js')
+
+// main app scripts
+require('main')
+
+

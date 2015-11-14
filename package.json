@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^1.4.2",
+    "autolinker": "^0.22.0",
     "bootstrap-sass": "^3.3.5",
     "bootstrap-slider": "^5.2.5",
     "bower-files": "^3.4.4",
@@ -32,6 +33,7 @@
     "html-entities": "^1.2.0",
     "image-size": "^0.3.5",
     "jquery": "^2.1.4",
+    "lazysizes": "^1.3.1",
     "markdown-it": "^5.0.0",
     "markdown-it-footnote": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
@@ -51,6 +53,8 @@
     "metalsmith-excerpts": "https://github.com/colophonemes/metalsmith-excerpts/tarball/master",
     "metalsmith-feed": "^0.2.0",
     "metalsmith-filemetadata": "0.0.4",
+    "metalsmith-headings": "^0.1.0",
+    "metalsmith-headings-identifier": "0.0.10",
     "metalsmith-html-minifier": "^1.1.0",
     "metalsmith-icons": "^0.2.6",
     "metalsmith-ignore": "^0.1.2",
@@ -85,6 +89,8 @@
   },
   "devDependencies": {},
   "browser": {
+    "lazysizes": "./node_modules/lazysizes/lazysizes.js",
+    "lazysizesBGSet": "./node_modules/lazysizes/plugins/bgset/ls.bgset.js",
     "bootstrapCollapse": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
     "bootstrapDropdown": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js",
     "bootstrapTransition": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
@@ -101,7 +107,8 @@
     "scrollmagicAnimationGSAP": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
     "slabText": "./src/scripts/bundle/vendor/jquery.slabtext.js",
     "chartist": "./node_modules/chartist/dist/chartist.js",
-    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js"
+    "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js",
+    "main": "./src/scripts/bundle/main.js"
   },
   "browserify": {
     "transform": [
@@ -109,6 +116,7 @@
     ]
   },
   "browserify-shim": {
+    "lazysizesBGSet": "lazysizesBGSet",
     "bootstrapCollapse": "bootstrapCollapse",
     "bootstrapDropdown": "bootstrapDropdown",
     "bootstrapTransition": "bootstrapTransition",
@@ -117,6 +125,7 @@
     "bootstrapSlider": "bootstrapSlider",
     "scrollmagicJQuery": "scrollmagicJQuery",
     "scrollmagicAnimationGSAP": "scrollmagicAnimationGSAP",
-    "slabText": "slabText"
+    "slabText": "slabText",
+    "main": "main"
   }
 }

@@ -1,4 +1,4 @@
-;(function ($,Chartist,TimelineLite,validate) {
+;(function ($,Chartist,TimelineLite,validateLib) {
     "use strict";
     $.extend({
         gwwcCalculator: function(){
@@ -13,6 +13,7 @@
             var householdButtons = calculatorControls.find('.household-control');
             var householdAdults = calculatorControls.find('input[name=adults]');
             var householdChildren = calculatorControls.find('input[name=children]');
+            var calculateButton = calculatorControls.find('button[type=submit]');
             
 
 
@@ -164,6 +165,27 @@
                 if(!calculatorBodyPresent) return;
                 
 
+                if(validate()){
+                    
+                    update();
+
+                    if(typeof callback === 'function'){
+
+                        callback();
+                    }
+                }
+
+
+
+                // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
+
+                
+
+
+
+            }
+
+            function validate (){
                 var rules = {
                     country: {
                         presence: true
@@ -184,7 +206,7 @@
                     }
                 }
 
-                var validationErrors = validate(calculatorControls,rules)
+                var validationErrors = validateLib(calculatorControls,rules)
                 
                 if(validationErrors){
                     if(!firstRun){
@@ -206,27 +228,12 @@
                                 })
                             }
                         }
+                        return false;
                     } else {
                         firstRun = false;
                     }
-
-                    return;
                 }
-
-
-
-                // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
-
-                
-
-                update();
-
-                if(typeof callback === 'function'){
-
-                    callback();
-                }
-
-
+                return true;
             }
 
             function update(){
@@ -385,6 +392,7 @@
                     .to(window, 0.6, {
                         scrollTo:{y:donationAmount.data('offset')}, 
                     },delay)
+                    .from(donationAmount,0.6,{opacity:0},"+=0")
                     .from(donationVal,1.3,{number:0,ease:Power1.easeIn,onUpdate:function(){
                         donationAmountSlider.slider('setValue',donationVal.number);
                         calculate();
@@ -398,11 +406,13 @@
                     .to(window, 0.6, {
                         scrollTo:{y:comparisonsAfter.data('offset')}, 
                     })
+                    .from(comparisonsAfter,0.6,{opacity:0},"-=0.6")
                     .from(chartPercentileAfterDonating.container,0.6,{scale:0.7})
                     if(docWidth<breakpoints.sm){
                         timeline.to(window, 0.6, {
                             scrollTo:{y:multipleComparisonAfterDonating.data('offset')}, 
                         },delay)
+                        .from(multipleComparisonAfterDonating,0.6,{opacity:0},"-=0.6")
                     }
                     timeline.from(chartMultipleAfterDonating.container,0.6,{scale:0.7})
                 }
@@ -412,6 +422,7 @@
                     .to(window, 0.6, {
                         scrollTo:{y:eachYear.data('offset')}, 
                     },delay)
+                    .from(eachYear,0.6,{opacity:0},"-=0.6")
                     if(docWidth>=breakpoints.sm){
                         timeline
                         .staggerFrom('.calculator-outcome',1,{opacity:0,top:100},0.5)
@@ -504,8 +515,11 @@
 
             calculatorControls.on('submit',function(event){
                 event.preventDefault();
-                var el = $(this)
-                var hashVal = "?"+el.serialize();
+            })
+
+            calculateButton.on('click',function(event){
+                event.preventDefault();
+                var hashVal = "?"+calculatorControls.serialize();
                 if(calculatorBodyPresent){
                     if(history.pushState) {
                         history.pushState(null, null, hashVal);
@@ -517,9 +531,12 @@
                         animate();
                     });
                 } else {
-                    window.location.href = el.attr('action')+hashVal
+                    if (validate()){
+                        window.location.href = calculatorControls.attr('action')+hashVal
+                    }
                 }
             })
+
 
             // update display depending on 
             householdButtons.on('click',function(e){

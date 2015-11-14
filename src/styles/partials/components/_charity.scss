@@ -1,0 +1,60 @@
+.charity {
+	margin-bottom: $grid-gutter-width;
+	.charity-header {
+		background-size: cover;
+	}
+	.charity-name-wrapper {
+		margin-top: 200px;
+		text-align: center;
+		padding: $grid-gutter-width/2;
+		background-color: transparentize($site-primary,0.2);
+		color: #FFF;
+	}
+	.charity-name {
+		color: #FFF;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	.logo-wrapper {
+		display: inline-block;
+		background-color: #FFF;
+		margin: $grid-gutter-width/2;
+		padding: $grid-gutter-width/2;
+		.logo {
+		    width: 100%;
+			.logo-image {
+				width:100px;
+			}
+		}
+	}
+	.short-description-wrapper {
+		background-color: $site-secondary;
+		padding: $grid-gutter-width $grid-gutter-width 0;
+		.short-description {
+			border-bottom: 2px solid darken($site-secondary,20%);
+			padding-bottom: $grid-gutter-width;
+			p {
+				margin: 0;
+			    font-size: 1.4em;
+			}
+		}
+
+	}
+	.fast-facts-wrapper {
+		background-color: $site-secondary;
+		padding: $grid-gutter-width $grid-gutter-width 0;
+		.fast-facts {
+			border-bottom: 2px solid darken($site-secondary,20%);
+			padding-bottom: $grid-gutter-width;
+			margin: 0;
+		}
+	}
+	.actions {
+		background-color: $site-secondary;
+		padding: $grid-gutter-width;
+		.action {
+			text-align: center;
+		}
+
+	}
+}

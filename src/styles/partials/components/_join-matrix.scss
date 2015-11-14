@@ -1,0 +1,31 @@
+.join-matrix {
+	.col {
+		background-color: $site-secondary;
+		text-align: center;
+		padding: $grid-gutter-width/2 0;
+		margin-bottom: $grid-gutter-width;
+		h2,h3 {
+			margin: $grid-gutter-width/2 0;
+		}
+		h3 {
+			color: $site-ternary;
+		}
+		h2 {
+			text-transform: uppercase;
+		}
+		ul {
+			text-align: left;
+		}
+		&.pledge {
+			border-right: 1px solid darken($site-secondary,10%);
+			padding-right: 14px;
+		}
+		&.try-giving {
+
+		}
+		.action {
+			// text-align: center;
+			// padding: $grid-gutter-width;
+		}
+	}
+}

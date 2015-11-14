@@ -7,17 +7,17 @@
 
 {% block content %}
 	{% include './partials/content-block-set.swig' %}
-	<a class="scroll-down" href="#"><i class="fa fa-chevron-down"></i></a>
+	
 	<script>
 		loadScript(function(){
 			var $ = window.jQuery;
-			// Add down chevrons to all content blocks
+			// Add down chevrons to content blocks
 			$(function(){
-				$(".content-block-wrapper").not(':last').append($('.scroll-down'))
+				$(".content-block-wrapper").not(':first').not(':last').append('<a class="scroll-down scroll-down-chevron" href="#"><i class="icon icon-chevron-down"></i></a>');
 				$('.scroll-down').click(function(e){
 					e.preventDefault();
-					var position = $(this).parent('.content-block-wrapper').position();
-					TweenLite.to(window, 1, {scrollTo:{y:position.top+$(this).parent('.content-block-wrapper').outerHeight()}, ease:Power2.easeOut});
+					var parent = $(this).parents('.content-block-wrapper');
+					TweenLite.to(window, 1, {scrollTo:{y:parent.position().top+parent.outerHeight()}, ease:Power2.easeOut});
 				})
 			});
 

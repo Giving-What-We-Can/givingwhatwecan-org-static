@@ -1,0 +1,11 @@
+ul.toc {
+	padding: 30px 0;
+	$border: 1px solid #CCC;
+    border-top: $border;
+    border-bottom: $border;
+	& > li {
+		text-transform: uppercase;
+		list-style-type: none;
+		font-size: 1.4em;
+	}
+}

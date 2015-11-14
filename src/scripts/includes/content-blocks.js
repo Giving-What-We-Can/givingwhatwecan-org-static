@@ -172,7 +172,7 @@
 	*/
 	block('#how-rich-am-i', function(el,id){
 		slabTextSelectors.push(id+' h2');
-		slabTextSelectors.push(id+' .heading p');
+		slabTextSelectors.push(id+' .sub-heading p');
 	})
 
 
@@ -223,12 +223,14 @@
 	}
 
 	// trigger any slabtext-ready elements
-	$(document).on('WebFont', function(event,status){
-		if(status==='active' && $.fn.slabText !== 'undefined'){
-			$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:380});
-		}
-	})
+
+		$(document).on('WebFont', function(event,status){
+			if(status==='active' && $.fn.slabText !== 'undefined'){
+				$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:breakpoints.sm});
+			}
+		})
+	
 	
 
 
-})(ScrollMagic,TweenLite,TimelineLite,jQuery)
+})(ScrollMagic,TweenLite,TimelineLite,jQuery,breakpoints)
