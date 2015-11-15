@@ -47,7 +47,7 @@ $scroll-down-size: 60px;
 .content-block-wrapper {
 	// background-attachment: fixed;
 	&#hero-image {
-		background-position: top center;
+		background-position: 35% center;
 		.content-block {
 			vertical-align: bottom;
 			.content-block-content {
@@ -61,7 +61,9 @@ $scroll-down-size: 60px;
 			font-weight: 700;
 			text-shadow: 0 0 16px #333;
 			font-size: 30px;
-			@media(min-width:$screen-md){
+			margin-bottom: 35vh;
+			@media(min-width:$screen-sm){
+				margin-bottom: 50vh;
 				font-size: 4em;
 				margin-top: auto;
 			}
@@ -97,7 +99,7 @@ $scroll-down-size: 60px;
 			.givingwhatwecan-logo {
 				font-size: 80px;
 				margin: 40px auto;
-				@media(min-width:$screen-sm){
+				@media(min-width:$screen-lg){
 					font-size: 100px;
 					margin: 80px auto;
 
