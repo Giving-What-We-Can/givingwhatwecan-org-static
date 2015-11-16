@@ -47,7 +47,7 @@ swig.setDefaults({ cache: false });
 app.use('/scripts',express.static('dest/scripts'));
 app.use('/styles',express.static('dest/styles'));
 app.use('/images',express.static('dest/images'));
-
+app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function (req, res) {
 
@@ -144,5 +144,6 @@ app.get('/:contentType/:contentID', function (req, res) {
 });
 
 
-app.listen(1337);
-console.log('Application Started on http://localhost:1337/');
+app.listen(app.get('port'), function() {
+  console.log('Staging server is running on port', app.get('port'));
+});
