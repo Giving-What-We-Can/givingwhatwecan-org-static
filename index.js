@@ -48,7 +48,6 @@ var beautify  = require('metalsmith-beautify');
 var moment = require('moment');
 var strip = require('strip');
 var templates  = require('metalsmith-templates');
-var typogr = require('typogr');
 var sizeOf = require('image-size');
 message('Loaded templating');
 var lazysizes = require('metalsmith-lazysizes');
@@ -65,12 +64,7 @@ message('Loaded metadata');
 // static file compilation
 var swig = require('swig');
 require('./lib/swig-filters')(swig);
-// var marked = require('marked')
-var MarkdownIt = require('markdown-it')
-var MarkdownItFootnote = require('markdown-it-footnote');
-// var MarkdownItSub = require('markdown-it-sub');
-// var MarkdownItSup = require('markdown-it-sup');
-var cheerio = require('cheerio');
+var parseHTML = require('./lib/parseHTML')
 var sass  = require('metalsmith-sass');
 var concat = require('metalsmith-concat');
 var autoprefixer = require('metalsmith-autoprefixer');
@@ -475,82 +469,25 @@ function build(buildCount){
     .use(logMessage('Calculated redirects'))   
     // Build HTML files
     .use(function (files, metalsmith, done) {
-        var debug = require('debug')('parseMarkdown');
 
-
-        // get our list of redirects for use later
-        var metadata =metalsmith.metadata();
-        var redirects = Object.keys(metadata.redirects);
+        var redirects = false
+        if(ENVIRONMENT === 'production'){
+            // get our list of redirects for use later
+            var redirects = metalsmith.metadata().redirects;
+        }
 
         // call the parse function asynchronously
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), parse, done )
 
-        // function for parsing markdown into HTML, which also applies some additional transforms
-        function parse (file, cb) {
-            debug('%s — Building HTML from Markdown',file);
-            
-            var md = new MarkdownIt({
-                html:true
-            })
-            .use(MarkdownItFootnote)
-            ;
+        function parse (file,callback){
+            files[file].contents = parseHTML(files[file].contents.toString(),files[file].collection,redirects)
+            callback();
+        }
 
-            var html = md.render( files[file].contents.toString() );
-            debug('%s — Rendered markdown',file);
-            // get rid of html entities, as they break in-place templating logic later
-            // use Cheerio to modify HTML
-            debug('%s — Using Cheerio to modify file contents',file);
-            $ = cheerio.load(html);
-            
-            if(files[file].collection.indexOf('pages')>-1 || files[file].collection.indexOf('posts')>-1){
-                $('p').first().addClass('first-paragraph')
-            }
-
-            // $('.swig-include').each(function(){
-            //     $(this).replaceWith(function(){
-            //         return $('<div />').append($(this).contents())
-            //     })
-            // })
-
-            $('img').each(function(){
-                var img = $(this);
-                // wrap images that are in p tags in figures instead
-                var parent = img.parent();
-                if(parent[0] && parent[0].name === 'p'){
-                    parent.replaceWith(function(){
-                        return $('<div class="row" />').append($('<figure class="col-xs-12" />').append($(this).contents()));
-                    })
-                }
-                // add img-responsive tags to images
-                img.addClass('img-responsive');
-            })
-            // use our global list of redirects to resolve any outdated internal links in the body (only bother in production)
-            if(ENVIRONMENT === 'production'){
-                $('a').each(function(){
-                    var a = $(this);
-                    var href = a.attr('href');
-                    if(href && href.length > 0){
-                        // remove giving what we can domain
-                        var gwwc = /^(http|https):\/\/givingwhatwecan.org(\/.+)/
-                        if(gwwc.test(href)) href = href.match(gwwc)[2]
-                        // if we have a match for this link in our redirects list, and it's different to the existing link, update it
-                        if(redirects.indexOf(href) > -1 && '/'+metadata.redirects[href].path !== href){
-                            a.attr('href','/'+metadata.redirects[href].path);
-                        }
-                    }
-                });
-            }
-            html = $.html();
-            debug('Rendered HTML from cheerio');
-            // typogr
-            html = typogr.typogrify(html)
-
-            // save back to the main metalsmith array
-            files[file].contents = html;
-            debug('%s – Saved file',file);
-            cb();
-        } 
     })
+    // .use(function(){
+
+    // })
     .use(logMessage('Converted Markdown to HTML'))
     .use(excerpts())
     .use(relative())

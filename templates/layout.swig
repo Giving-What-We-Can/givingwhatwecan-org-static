@@ -13,7 +13,7 @@
 	{% set description = siteInfo.description %}
 	{% endif %}
 	<meta name="description" content="{{description|escape}}">
-	<link rel="stylesheet" type="text/css" href="{{ relative('/styles/app.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="/styles/app.min.css">
 	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
 	<script>
@@ -28,7 +28,6 @@
 	</script>
 	{% block head %}
 	{% endblock %}
-	<link rel="app-script" href="/scripts/app.min.js">
 
 </head>
 

@@ -5,7 +5,7 @@
 				<span class="sr-only">Toggle navigation</span>
 				<i class="fa fa-bars"></i>
 			</button>
-			<a href="{{ relative('/') }}" class="navbar-brand">
+			<a href="{{ relative('/')|default('/') }}" class="navbar-brand">
 				<img src="/images/logos/gwwc-logo-transparent-nav.png">
 			</a>
 		</div>
