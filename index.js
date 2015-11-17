@@ -124,16 +124,18 @@ function build(buildCount){
     .use(metadata({
         "siteInfo": "settings/site-info.json"
     }))
-    .use(getStats({
-        forceCache: ENVIRONMENT === 'development' ? true : false
-    }))
+    .use(function (files,metalsmith,done){
+        var meta = metalsmith.metadata();
+        getStats({forceCache: ENVIRONMENT === 'development' ? true : false},function(stats){
+            meta.stats = stats;
+            done();
+        })
+    })
     .use(function (files,metalsmith,done){
         var meta = metalsmith.metadata();
         getSpecials(function(specials){
-            getSpecials(function(specials){
-                meta.specials = specials;
-                done();
-            });
+            meta.specials = specials;
+            done();
         })
     })
     .use(function (files,metalsmith,done){

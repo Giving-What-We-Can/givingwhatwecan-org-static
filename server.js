@@ -10,6 +10,7 @@ var contentful = require('contentful');
 var parseHTML = require('./lib/parseHTML')
 var sanitiseSwigTags = require('./lib/sanitiseSwigTags')
 var getSpecials = require('./lib/get-specials')
+var getStats = require('./lib/get-stats')
 
 var https = require("https");
 
@@ -140,26 +141,31 @@ app.get('/:contentType/:contentID', function (req, res) {
             })
             .then(function(entry){
                 var entryData = entry[0].fields
+                var inPlaceData = {
+                    server: true,
+                    cache: false
+                }
                 entryData.fieldNames = Object.keys(entry[0].fields)
-                getSpecials(function(specials){
-                    engines.swig.render(
-                        sanitiseSwigTags(
-                            parseHTML(entryData.contents,contentTypeSlug)
-                        ),
-                        {
-                            specials:specials,
-                            server: true
-                        }
-                    ).then(function(rendered){
-                        entryData.collection = contentTypeSlug
-                        entryData.collections = {}
-                        entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
-                        var templateName = entryData.template || contentTypeSingular
-                        entryData.contents = rendered
-                        res.render(templateName,entryData);
-                    })
-                    .error(function(err){
-                        console.log(err)
+                getStats({forceCache:true},function(stats){
+                    inPlaceData.stats = stats
+                    getSpecials(function(specials){
+                        inPlaceData.specials = specials
+                        engines.swig.render(
+                            sanitiseSwigTags(
+                                parseHTML(entryData.contents,contentTypeSlug)
+                            ),
+                            inPlaceData
+                        ).then(function(rendered){
+                            entryData.collection = contentTypeSlug
+                            entryData.collections = {}
+                            entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
+                            var templateName = entryData.template || contentTypeSingular
+                            entryData.contents = rendered
+                            res.render(templateName,entryData);
+                        })
+                        .error(function(err){
+                            console.log(err)
+                        })
                     })
                 })
 
