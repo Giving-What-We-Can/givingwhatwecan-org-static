@@ -27,7 +27,6 @@ if(ENVIRONMENT==='development'){
     require('cache-require-paths');
 }
 
-
 // Start the build!
 var chalk = require('chalk');
 message('Generating the Giving What We Can site!',chalk.green,true);
@@ -80,6 +79,7 @@ if(ENVIRONMENT==='production'){
     var uglify = require('metalsmith-uglify');
     var cleanCSS = require('metalsmith-clean-css');
     var uncss = require('metalsmith-uncss');
+    var sitemap = require("metalsmith-sitemap");
     // var subset = require('metalsmith-subsetfonts')
 }
 message('Loaded static file compilation');
@@ -665,6 +665,13 @@ function build(buildCount){
             filter: "scripts/includes/**"
         }))
         .use(logMessage('Minified Javascript'))
+        .use(sitemap({
+            hostname: 'https://www.givingwhatwecan.org',
+            omitIndex: true,
+            modified: 'data.sys.updatedAt',
+            urlProperty: 'slug'
+        }))
+        .use(logMessage('Built sitemap'))
         ;
     }
     // stuff to only do in development
