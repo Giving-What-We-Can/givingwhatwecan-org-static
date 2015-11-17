@@ -19,7 +19,8 @@
 		</ul>
 	{% endif %}
 	</ul>
-{% else %}
-<h3>No headings!</h3>
+{% elif server %}
+	<ul class="toc">
+		<li class="level-2">Table of contents will appear here</li>
+	</ul>
 {% endif %}
-

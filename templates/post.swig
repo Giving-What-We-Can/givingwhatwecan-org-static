@@ -3,6 +3,7 @@
 {% block title %}{{title}} - the {{ siteInfo.title}} Blog{% endblock %}
 
 {% block content %}
+	
 
 	<div class="container">
 		<div class="row">

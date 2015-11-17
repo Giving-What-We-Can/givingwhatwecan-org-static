@@ -8,6 +8,8 @@ var swig = require('swig')
 var engines = require('consolidate')
 var contentful = require('contentful');
 var parseHTML = require('./lib/parseHTML')
+var sanitiseSwigTags = require('./lib/sanitiseSwigTags')
+var getSpecials = require('./lib/get-specials')
 
 var https = require("https");
 
@@ -130,12 +132,37 @@ app.get('/:contentType/:contentID', function (req, res) {
             }
         };
         if(contentTypeName){
-            templateName = contentTypeName.toLowerCase()
-            client.entry(contentID)
+            contentTypeSingular = contentTypeName.toLowerCase()
+            contentTypeSlug = contentTypeSingular + 's'
+            client.entries({
+                'sys.id':contentID,
+                include: 2
+            })
             .then(function(entry){
-                var entryData = entry.fields
-                entryData.contents = parseHTML(entryData.contents,templateName+'s')
-                res.render(templateName,entryData);
+                var entryData = entry[0].fields
+                entryData.fieldNames = Object.keys(entry[0].fields)
+                getSpecials(function(specials){
+                    engines.swig.render(
+                        sanitiseSwigTags(
+                            parseHTML(entryData.contents,contentTypeSlug)
+                        ),
+                        {
+                            specials:specials,
+                            server: true
+                        }
+                    ).then(function(rendered){
+                        entryData.collection = contentTypeSlug
+                        entryData.collections = {}
+                        entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
+                        var templateName = entryData.template || contentTypeSingular
+                        entryData.contents = rendered
+                        res.render(templateName,entryData);
+                    })
+                    .error(function(err){
+                        console.log(err)
+                    })
+                })
+
             })
         } else {
             res.send('No content type matches ' + contentType)

@@ -73,7 +73,7 @@ var icons = require('metalsmith-icons');
 var feed = require('metalsmith-feed');
 var headingsIdentifier = require('metalsmith-headings-identifier');
 var headings = require('metalsmith-headings');
-
+var sanitiseSwigTags = require('./lib/sanitiseSwigTags')
 var htmlMinifier = require("metalsmith-html-minifier");
 // only require in production
 if(ENVIRONMENT==='production'){
@@ -127,7 +127,13 @@ function build(buildCount){
     .use(getStats({
         forceCache: ENVIRONMENT === 'development' ? true : false
     }))
-    .use(getSpecials())
+    .use(function (files,metalsmith,done){
+        var meta = metalsmith.metadata();
+        getSpecials(function(specials){
+            meta.specials = getSpecials();
+            done();
+        })
+    })
     .use(function (files,metalsmith,done){
         // hack to make metalsmith-feed plugin work by adding site.url to the metadata
         var meta = metalsmith.metadata();
@@ -511,13 +517,7 @@ function build(buildCount){
     .use(function (files, metalsmith, done) {
         // sanitise swig tags
         Object.keys(files).filter(minimatch.filter('**/*.html')).forEach(function(file){
-            var html = files[file].contents.toString();
-            html = html.replace(/(?:<p(?:.*)?>)*(\{%|\{\{)(.*?)(\}\}|%\})(?:<\/p>)*/g,function(match,open,content,close){
-                var a = open+content.replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/(&nbsp;|&#xA0;)/g,' ')+close
-                return a
-            })
-            files[file].contents = html;
-            
+            files[file].contents = sanitiseSwigTags(files[file].contents.toString());
         })
         done();
     })
