@@ -1,7 +1,7 @@
 {
 	"title" : "Giving What We Can",
-	"domain" : "beta.givingwhatwecan.org",
-	"protocol" : "http://",
+	"domain" : "www.givingwhatwecan.org",
+	"protocol" : "https://",
 	"description": "We ask members to pledge to give, review charities to find the best ones, and help people keep their pledge.",
 	"keywords": "giving what we can, effective altruism, effective charity, effective giving, efficient giving, evidence-based charity",
 	"shortDescription": "Pledging to give to the most effective charities in the world",
