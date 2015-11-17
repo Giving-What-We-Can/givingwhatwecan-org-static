@@ -130,8 +130,10 @@ function build(buildCount){
     .use(function (files,metalsmith,done){
         var meta = metalsmith.metadata();
         getSpecials(function(specials){
-            meta.specials = getSpecials();
-            done();
+            getSpecials(function(specials){
+                meta.specials = specials;
+                done();
+            });
         })
     })
     .use(function (files,metalsmith,done){
