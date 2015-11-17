@@ -88,17 +88,17 @@
 		</div>
 		<div class="col-sm-4">
 			<div class="calculator-outcome dewormingtreatments-wrapper">
-				<p>&hellip;&nbsp;or more than <span class="number"><i class="icon icon-pills"></i> <span class="dewormingtreatments"></span></span> deworming treatments&nbsp;&hellip;</p>
+				<p>&hellip;&nbsp;or more than <span class="number"><i class="icon icon-pills"></i> <span class="dewormingtreatments"></span></span> schistosomiasis treatments&nbsp;&hellip;</p>
 			</div>
 		</div>
 		<div class="col-sm-4">
 			<div class="calculator-outcome lives-wrapper">
-				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span></span><span class="lives-unit"></span>. Pretty amazing, right?</p>
+				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span></span><span class="lives-unit"></span>/</p>
 			</div>
 			<div class="calculator-outcome dalys-wrapper">
 				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="dalys"></span></span> <span class="dalys-unit"></span> of healthy life.</p>
+				<p>Pretty amazing, right?</p>
 			</div>
-			<p>Pretty amazing, right?</p>
 		</div>
 	</div>
 

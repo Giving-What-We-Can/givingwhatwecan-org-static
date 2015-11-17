@@ -693,7 +693,7 @@
         var dollarspernet=(5.30+7.30)/2;//$5.30-$7.30 per net according to http://www.givewell.org/international/top-charities/AMF#CostperLLINdistributed
         var dollarsperdewormingtreatment=1.23;//$1.23 per treatment according to http://www.givewell.org/international/top-charities/schistosomiasis-control-initiative#Whatdoyougetforyourdollar
         var dollarsperlifesaved=3340;//$3,340 per life saved according to http://www.givewell.org/international/top-charities/AMF#Costperlifesaved
-        var dollarsperdaly=(72+100)/2  // AMF averts 1 DALY for around $100, SCI averts 1 DALY for around $72
+        var dollarsperdaly=(100+100)/2  // AMF averts 1 DALY for around $100, SCI averts 1 DALY for around $100 
 
         //world income distribution in 2008 PPP USD
         //The data from 0-72.736 is from PovcalNet ( http://iresearch.worldbank.org/PovcalNet/index.htm?1 ). These raw centile values have been multiplied by 0.8 to account for the fact that rich countries are excluded from the surveys. The figure of 0.8 was chosen by cross-referencing the data with Branko Milanovic's in order to produce a smooth curve.
