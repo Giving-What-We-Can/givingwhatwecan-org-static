@@ -82,19 +82,23 @@
 
 	<div class="row show-calculated">
 		<div class="col-sm-4">
-			<div class="calculator-outcome">
+			<div class="calculator-outcome nets-wrapper">
 				<p>&hellip;&nbsp;the distribution of <span class="number"><i class="icon icon-mosquito-net"></i> <span class="nets"></span></span> insecticide treated bednets&nbsp;&hellip;</p>
 			</div>
 		</div>
 		<div class="col-sm-4">
-			<div class="calculator-outcome">
+			<div class="calculator-outcome dewormingtreatments-wrapper">
 				<p>&hellip;&nbsp;or more than <span class="number"><i class="icon icon-pills"></i> <span class="dewormingtreatments"></span></span> deworming treatments&nbsp;&hellip;</p>
 			</div>
 		</div>
 		<div class="col-sm-4">
-			<div class="calculator-outcome">
-				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span> lives</span> Pretty amazing, right?</p>
+			<div class="calculator-outcome lives-wrapper">
+				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span></span><span class="lives-unit"></span>. Pretty amazing, right?</p>
 			</div>
+			<div class="calculator-outcome dalys-wrapper">
+				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="dalys"></span></span> <span class="dalys-unit"></span> of healthy life.</p>
+			</div>
+			<p>Pretty amazing, right?</p>
 		</div>
 	</div>
 

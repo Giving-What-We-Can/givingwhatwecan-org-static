@@ -61,9 +61,17 @@
 
                 var eachYear = calculatorBody.find('#each-year')
 
+
+                var netsWrapper = calculatorBody.find('.nets-wrapper');
                 var netsDisplay = calculatorBody.find('.nets');
+                var dewormingtreatmentsWrapper = calculatorBody.find('.dewormingtreatments-wrapper');
                 var dewormingtreatmentsDisplay = calculatorBody.find('.dewormingtreatments');
+                var livesWrapper = calculatorBody.find('.lives-wrapper');
                 var livesDisplay = calculatorBody.find('.lives');
+                var livesUnit = calculatorBody.find('.lives-unit');
+                var dalysWrapper = calculatorBody.find('.dalys-wrapper');
+                var dalysDisplay = calculatorBody.find('.dalys');
+                var dalysUnit = calculatorBody.find('.dalys-unit');
 
                 var callToAction = calculatorBody.find('#call-to-action')
 
@@ -152,7 +160,7 @@
                     killAnimation();
                 })
 
-                var firstRun = true;
+                // var firstRun = true;
                 // run calculation
                 calculate(function(){
                     animate();
@@ -209,29 +217,25 @@
                 var validationErrors = validateLib(calculatorControls,rules)
                 
                 if(validationErrors){
-                    if(!firstRun){
-                        for (var error in validationErrors) {
-                            if(validationErrors.hasOwnProperty(error)) {
-                                var el = $('[name='+error+']')
+                    for (var error in validationErrors) {
+                        if(validationErrors.hasOwnProperty(error)) {
+                            var el = $('[name='+error+']')
 
-                                el.parent('.input-group')
-                                .addClass('has-error')
+                            el.parent('.input-group')
+                            .addClass('has-error')
 
-                                el.tooltip({title:validationErrors[error][0],trigger:"manual",placement:"auto bottom"})
-                                .tooltip('show')
-                                .on('focus change',function(){
-                                    $(this)
-                                    .tooltip('hide')
+                            el.tooltip({title:validationErrors[error][0],trigger:"manual",placement:"auto bottom"})
+                            .tooltip('show')
+                            .on('focus change',function(){
+                                $(this)
+                                .tooltip('hide')
 
-                                    $(this).parent('.input-group')
-                                    .removeClass('has-error')
-                                })
-                            }
+                                $(this).parent('.input-group')
+                                .removeClass('has-error')
+                            })
                         }
-                        return false;
-                    } else {
-                        firstRun = false;
                     }
+                    return false;
                 }
                 return true;
             }
@@ -270,7 +274,19 @@
 
                 netsDisplay.text(Math.round(values.nets))
                 dewormingtreatmentsDisplay.text(Number(values.dewormingtreatments.toPrecision(4)))
-                livesDisplay.text(Math.round(values.lives))
+                var numLives = Math.round(values.lives);
+                var numDalys = Math.round(values.dalys)
+                if(numLives === 0){
+                    livesWrapper.hide()
+                    dalysWrapper.show();
+                    dalysDisplay.text('≈'+numDalys)
+                    dalysUnit.text(numDalys === 1?'year':'years')
+                } else {
+                    livesWrapper.show()
+                    dalysWrapper.hide();
+                    livesDisplay.text(numLives)
+                    livesUnit.text(numLives === 1 ?'life':'lives')
+                }
 
                 if(!(chartPercentile instanceof Chartist.Pie)){
                     chartPercentile =  new Chartist.Pie("#chart-percentile")
@@ -677,6 +693,7 @@
         var dollarspernet=(5.30+7.30)/2;//$5.30-$7.30 per net according to http://www.givewell.org/international/top-charities/AMF#CostperLLINdistributed
         var dollarsperdewormingtreatment=1.23;//$1.23 per treatment according to http://www.givewell.org/international/top-charities/schistosomiasis-control-initiative#Whatdoyougetforyourdollar
         var dollarsperlifesaved=3340;//$3,340 per life saved according to http://www.givewell.org/international/top-charities/AMF#Costperlifesaved
+        var dollarsperdaly=(72+100)/2  // AMF averts 1 DALY for around $100, SCI averts 1 DALY for around $72
 
         //world income distribution in 2008 PPP USD
         //The data from 0-72.736 is from PovcalNet ( http://iresearch.worldbank.org/PovcalNet/index.htm?1 ). These raw centile values have been multiplied by 0.8 to account for the fact that rich countries are excluded from the surveys. The figure of 0.8 was chosen by cross-referencing the data with Branko Milanovic's in order to produce a smooth curve.
@@ -1629,6 +1646,7 @@
                 "nets":dollardonation/dollarspernet,
                 "dewormingtreatments":dollardonation/dollarsperdewormingtreatment,
                 "lives":dollardonation/dollarsperlifesaved,
+                "dalys":dollardonation/dollarsperdaly,
                 "donationpercentage": donationpercentage
             };
         }
