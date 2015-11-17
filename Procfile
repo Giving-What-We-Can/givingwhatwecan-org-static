@@ -1,2 +1,1 @@
-build: node index.js
-web: node server.js
+web: bash run.sh
