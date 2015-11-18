@@ -548,7 +548,7 @@ function build(buildCount){
     .use(function (files, metalsmith, done) {
         // we've incorporated content blocks & charities into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){
-            if(minimatch(file,'@(content-block|charity)/**')){
+            if(minimatch(file,'@(content-block|charity|quotation)/**')){
                 delete files[file];
             }
         });
@@ -669,7 +669,7 @@ function build(buildCount){
             hostname: 'https://www.givingwhatwecan.org',
             omitIndex: true,
             modified: 'data.sys.updatedAt',
-            urlProperty: 'slug'
+            urlProperty: 'path'
         }))
         .use(logMessage('Built sitemap'))
         ;
