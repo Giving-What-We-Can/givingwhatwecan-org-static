@@ -4,5 +4,5 @@ contentful:
   content_type: 26J6GQmztOEEcEYyeKgQ4M
   entry_template: nav.swig
   order: fields.title
-  entry_filename_pattern: menu/:fields.id
+  entry_filename_pattern: menu/:fields.slug
 ---

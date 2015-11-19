@@ -60,7 +60,11 @@ $navbar-height:                    68px !default;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 // $navbar-collapse-max-height:       340px !default;
-
+//** Point at which the navbar becomes uncollapsed.
+$screen-md:                  992px !default;
+$grid-float-breakpoint:     $screen-md;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
 
 
 /*!

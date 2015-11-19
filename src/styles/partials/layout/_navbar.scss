@@ -12,6 +12,14 @@
 	&:hover {
 		background-color: $site-primary !important;
 	}
+	& > .container {
+		@media(min-width: $screen-md ){
+			width: auto;
+		}
+		@media(min-width: $screen-lg ){
+			width: $container-md;
+		}
+	}
 }
 .navbar {
 	transition: opacity .25s ease-in-out;
@@ -34,6 +42,20 @@
 	button {
 		color: #FFF;
 	}
+	.donate-button-collapsed {
+		color: #333;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 30px;
+		position: relative;
+		float: right;
+		margin-right: 15px;
+		padding: 9px 10px;
+		background-color: $site-secondary;
+		@media(min-width: $screen-md ){
+			display: none;
+		}
+	}
 
 }
 .navbar-toggle {
@@ -52,12 +74,22 @@
 				color: #FFF;
 			}
 		}
-		> li.active > a, > li.open > a {
+		> .active > a, > .open > a {
 			background-color: $site-dark;
 			color: #FFF;
 			&:hover, &:focus {
 				background-color: $site-dark;
 				color: #FFF;
+			}
+		}
+		> .nav.donate,.nav.my-giving {
+			font-weight: 700;
+			background-color: $site-secondary;
+			a {
+				color: #333;
+				&:hover, &:focus {
+					color: #FFF;
+				}
 			}
 		}
 	}
@@ -70,7 +102,7 @@
 			background-color: $site-primary;
 			color: #FFF;
 		}
-		@media(max-width:$screen-md-min){
+		@media(max-width:$screen-sm-max){
 			color: #FFF;
 			&:hover, &:focus {
 				background-color: $site-lolight;

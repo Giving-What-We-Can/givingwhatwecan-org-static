@@ -21,7 +21,7 @@ var CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
 // time requires
-// require("time-require");
+require("time-require");
 // cache require paths for faster builds
 if(ENVIRONMENT==='development'){
     require('cache-require-paths');
@@ -218,7 +218,7 @@ function build(buildCount){
             var meta = files[file]
             if(meta.topLevelMenu){
                 var menu = traverse(meta.data,[],1)[0]._children;
-                menus[meta.id] = menu
+                menus[meta.slug] = menu
             }
             delete files[file];
             cb();
@@ -247,7 +247,7 @@ function build(buildCount){
         function getFile(menu){
             var found = false;
             Object.keys(files).forEach(function(file){
-                if(files[file].id === menu.sys.id){
+                if(files[file].id === menu.sys.id && minimatch(file,'page/**')){
                     found = file;
                 }
             })
