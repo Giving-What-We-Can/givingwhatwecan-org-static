@@ -55,6 +55,26 @@
 		.action {
 			text-align: center;
 		}
-
 	}
 }
+.action {
+	.btn.website {
+		display: none;
+	}
+}
+
+.page {
+	&.against-malaria-foundation,
+	&.schistosomiasis-control-initiative,
+	&.deworm-world-initiative,
+	&.project-healthy-children {
+		.action {
+			.btn.website {
+				display: inline-block;
+			}
+			.btn.learn-more {
+				display: none;
+			}
+		}
+	}
+ }

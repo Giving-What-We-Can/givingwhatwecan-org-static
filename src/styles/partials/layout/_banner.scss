@@ -1,42 +1,51 @@
 #banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	min-height: 40vh;
+	@media(min-width:$screen-sm){
+	    min-height: 60vh;
+	}
+}
+.page-title-wrapper {
 	margin-bottom: $content-padding;
 	text-align:center;
-	background-color: $site-lolight;
-	
-	.page-title-wrapper {
-		min-height: 40vh;
-		@media(min-width:$screen-sm){
-		    min-height: 60vh;
-		}
-	}
 	position: relative;
-	.page-title {
+	padding: 0;
+	@media(min-width:$screen-sm){
+	    height: 1px;
+	    margin-top: -1px;
+	}
+}
+.page-title {
+	color: #FFF;
+	text-transform: uppercase;
+	background-color: $site-primary;
+	font-size: 2em;
+	padding: $grid-gutter-width;
+	margin:0;
+	@media(min-width:$screen-sm){
+		font-size: 3em;
+		background-color: transparentize($site-primary,0.2);
 		position:absolute;
 		bottom: 0;
 		width:100%;
 	    margin: 0 -50%;
 	    left:50%;
-		color: #FFF;
-		text-transform: uppercase;
-		background-color: $site-primary;
-		background-color: transparentize($site-primary,0.2);
-		font-size: 2em;
-		padding: $grid-gutter-width;
-		@media(min-width:$screen-sm){
-			font-size: 3em;
-		}
+
 	}
-	#site-logo {
-		margin: 75px auto 75px;
+}
+#site-logo {
+	margin: 75px auto 75px;
+}
+
+&.banner-background {
+	.text-background {
+		width: 100%;
 	}
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	&.banner-background {
-		.text-background {
-			width: 100%;
-		}
-	}
+}
+.header {
+	position: relative;
 	.image-attribution {
 		display: none;
 		@media(min-width:$screen-sm){
@@ -44,7 +53,7 @@
 		}
 		position: absolute;
 		height: 30px;
-		bottom: -30px;
+		bottom: 30px;
 		width: 100%;
 		text-align: right;
 		padding: 0 30px;

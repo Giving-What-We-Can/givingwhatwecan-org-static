@@ -19,7 +19,9 @@
 	<script>
 		// fast pre-rendering check for javascript capability without requiring Modernizr in the head
 		document.documentElement.className = document.documentElement.className.replace('no-js','js');
+		// hide text while webfonts load, but unhide after three seconds if they haven't loaded yet
 		document.documentElement.className += " wf-loading";
+		window.wfl = setTimeout(function(){document.documentElement.className += ' wf-inactive';},3000)
 		// defer execution of jquery-dependent scripts defined before jQuery loads
 		window.q=[];window.$=function(f){q.push(f)}
 		// enqueue scripts at the end of the page from before the closing body tag
@@ -101,6 +103,9 @@
 				WebFont.load({
 					google: {
 						families: ['Source+Sans+Pro:400,300,700:latin']
+					},
+					loading: function(){
+						clearTimeout(window.wfl);
 					},
 					active: function() {
 						$(function(){

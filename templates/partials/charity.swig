@@ -34,11 +34,12 @@
 	<div class="actions">
 		<div class="row">
 			{% if page && page.fields %}
-				<div class="col-md-6 action">
-					<a href="/top-charities/{{page.fields.slug}}" class="btn btn-default">Learn more</a>
+				<div class="col-sm-6 action">
+					<a href="/top-charities/{{page.fields.slug}}" class="btn btn-default learn-more">Learn more</a>
+					<a href="{{contact[0]}}" class="btn btn-default website"><i class="fa fa-globe"></i> Website</a>
 				</div>
 			{% endif %}
-				<div class="col-md-6 action">
+				<div class="col-sm-6 action">
 					<a href="/get-involved/how-to-donate" class="btn btn-primary">Donate Now</a>
 				</div>
 		</div>
