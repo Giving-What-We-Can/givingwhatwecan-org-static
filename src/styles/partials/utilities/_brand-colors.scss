@@ -1,0 +1,101 @@
+// $ordinals: 'first','second','third','fourth','fifth','sixth';
+// $shades: 'light', 
+
+// @each $num in $ordinals {
+// 	.background-#{$num} {
+// 		background-color: $site;
+// 		color: #FFF;
+// 	}
+// }
+
+.background-first {
+	background-color: $site-first;
+	color: #FFF;
+}
+
+.background-second {
+	background-color: $site-second;
+	color: #FFF;
+}
+
+.background-third {
+	background-color: $site-third;
+	color: #FFF;
+}
+
+.background-fourth {
+	background-color: $site-fourth;
+	color: #FFF;
+}
+
+.background-fifth {
+	background-color: $site-fifth;
+	color: #FFF;
+}
+
+.background-sixth {
+	background-color: $site-sixth;
+	color: #FFF;
+}
+
+$lighten: 15%;
+.background-first-lighter {
+	background-color: lighten($site-first,$lighten);
+	color: #FFF;
+}
+
+.background-second-lighter {
+	background-color: lighten($site-second,$lighten);
+	color: #FFF;
+}
+
+.background-third-lighter {
+	background-color: lighten($site-third,$lighten);
+	color: #FFF;
+}
+
+.background-fourth-lighter {
+	background-color: lighten($site-fourth,$lighten);
+	color: #FFF;
+}
+
+.background-fifth-lighter {
+	background-color: lighten($site-fifth,$lighten);
+	color: #FFF;
+}
+
+.background-sixth-lighter {
+	background-color: lighten($site-sixth,$lighten);
+	color: #FFF;
+}
+
+$darken: 15%;
+.background-first-darker {
+	background-color: darken($site-first,$darken);
+	color: #FFF;
+}
+
+.background-second-darker {
+	background-color: darken($site-second,$darken);
+	color: #FFF;
+}
+
+.background-third-darker {
+	background-color: darken($site-third,$darken);
+	color: #FFF;
+}
+
+.background-fourth-darker {
+	background-color: darken($site-fourth,$darken);
+	color: #FFF;
+}
+
+.background-fifth-darker {
+	background-color: darken($site-fifth,$darken);
+	color: #FFF;
+}
+
+.background-sixth-darker {
+	background-color: darken($site-sixth,$darken);
+	color: #FFF;
+}
