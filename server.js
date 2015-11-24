@@ -150,7 +150,9 @@ app.get('/:contentType/:contentID', function (req, res) {
                 getStats({forceCache:true},function(stats){
                     inPlaceData.stats = stats
                     getSpecials(function(specials){
-                        inPlaceData.specials = specials
+                        Object.keys(specials).forEach(function(special){
+                            inPlaceData[special] = specials[special]
+                        })
                         engines.swig.render(
                             sanitiseSwigTags(
                                 parseHTML(entryData.contents,contentTypeSlug)

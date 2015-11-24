@@ -134,7 +134,9 @@ function build(buildCount){
     .use(function (files,metalsmith,done){
         var meta = metalsmith.metadata();
         getSpecials(function(specials){
-            meta.specials = specials;
+            Object.keys(specials).forEach(function(specialType){
+                meta[specialType] = specials[specialType];
+            })
             done();
         })
     })
