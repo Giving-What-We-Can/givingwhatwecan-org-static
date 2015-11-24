@@ -2,13 +2,19 @@ $pad: 15px;
 .team-member {
 	border: $pad solid $site-secondary;
 	.team-member-photo {
-		width: 150px;
 		overflow: hidden;
 		background-color: #edede5;
-		padding-right: $pad;
-		margin-right: $pad;
-		img {
+		display: block;
+		width: 100%;
+		padding-right: 0;
+		@media(min-width:$screen-xs){
+			display: table-cell;
+			padding-right: $pad;
+			margin-right: $pad;
 			width: 150px;
+			img {
+				width: 150px;
+			}
 		}
 
 	}
