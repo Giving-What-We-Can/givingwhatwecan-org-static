@@ -68,6 +68,9 @@ require('chartistAxisTitle')
 // form/data validation library
 global.validate = require('validate.js')
 
+// number formatting
+global.numeral = require('numeral')
+
 // main app scripts
 require('main')
 

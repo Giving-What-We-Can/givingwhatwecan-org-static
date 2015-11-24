@@ -84,6 +84,7 @@
     "minifyify": "^7.1.0",
     "moment": "^2.9.0",
     "node-notifier": "^4.3.1",
+    "numeral": "^1.5.3",
     "prompt": "^0.2.14",
     "request": "^2.65.0",
     "scrollmagic": "^2.0.5",
