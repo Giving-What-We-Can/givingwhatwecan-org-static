@@ -32,12 +32,12 @@
 								{% if child._page %}
 									<li class="{{ {true:'active',false:''}[path === child._page.path] }} {{child._page.slug }}">
 										{% set childTitle = child._page.shortTitle || child._page.title %}
-										<a href="{{ relative(child._page.path) }}">{{ childTitle }}</a>
+										<a href="{{ relative(child._page.linkURL) }}">{{ childTitle }}</a>
 									</li>
 								{% elif child._link %}
-									<li class="{{ {true:'active',false:''}[path === child._page.path] }} {{ {true:child._link.linkURL,false:'external-link'}[child._link.linkURL.charAt(0)==='/'] }}">
+									<li class="{{ {true:'active',false:''}[path === child._page.path] }} {{ {true:child._link.linkURL.substr(0),false:'external-link'}[child._link.linkURL.charAt(0)==='/'] }}">
 										{% set childTitle = child._link.shortTitle || child._link.title %}
-										<a href="{{ relative(child._link.path) }}">{{ childTitle }}</a>
+										<a href="{{ relative(child._link.linkURL) }}">{{ childTitle }}</a>
 									</li>
 								{% endif %}
 							{% endfor %}

@@ -1,19 +1,97 @@
 $ct-series-colors: (
-  $site-primary,
-  #f4c63d,
-  #f05b4f,
-  #d17905,
-  #453d3f,
-  #59922b,
-  #0544d3,
-  #6b0392,
-  #f05b4f,
-  #dda458,
-  #eacf7d,
-  #86797d,
-  #b2c326,
-  #6188e2,
-  #a748ca
-);
+	$site-primary,
+	$site-ternary,
+	$site-quaternary,
+	$site-quinary,
+	$site-senary,
+	darken($site-primary,10%),
+	darken($site-ternary,10%),
+	darken($site-quaternary,10%),
+	darken($site-quinary,10%),
+	darken($site-senary,10%),
+	lighten($site-primary,10%),
+	lighten($site-ternary,10%),
+	lighten($site-quaternary,10%),
+	lighten($site-quinary,10%),
+	lighten($site-senary,10%),
+	darken($site-primary,15%),
+	darken($site-ternary,15%),
+	darken($site-quaternary,15%),
+	darken($site-quinary,15%),
+	darken($site-senary,15%),
+	lighten($site-primary,15%),
+	lighten($site-ternary,15%),
+	lighten($site-quaternary,15%),
+	lighten($site-quinary,15%),
+	lighten($site-senary,15%),
+	darken($site-primary,5%),
+	darken($site-ternary,5%),
+	darken($site-quaternary,5%),
+	darken($site-quinary,5%),
+	darken($site-senary,5%),
+	lighten($site-primary,5%),
+	lighten($site-ternary,5%),
+	lighten($site-quaternary,5%),
+	lighten($site-quinary,5%),
+	lighten($site-senary,5%),
+	darken($site-primary,20%),
+	darken($site-ternary,20%),
+	darken($site-quaternary,20%),
+	darken($site-quinary,20%),
+	darken($site-senary,20%),
+	lighten($site-primary,20%),
+	lighten($site-ternary,20%),
+	lighten($site-quaternary,20%),
+	lighten($site-quinary,20%),
+	lighten($site-senary,20%),
+	);
+
+$ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z);
+
 $ct-text-size: 0.75em;
-@import "../../../../node_modules/chartist/dist/scss/chartist"
+@import "../../../../node_modules/chartist/dist/scss/chartist";
+
+
+// custom legends
+@if $ct-include-colored-series {
+	@for $i from 0 to length($ct-series-names) {
+		.#{$ct-class-series}-#{nth($ct-series-names, $i + 1)} {
+			$color: nth($ct-series-colors, $i + 1);
+			.ct-legend-item-color {
+				background-color: $color;
+			}
+		}
+	}
+}
+
+.ct-legend {
+	padding-left: 1.5em;
+	height: 12em;
+	@media(min-width:$screen-md){
+		height: 20em;
+	}
+	@media(min-width:$screen-lg){
+		height: 25em;
+	}
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: 1px solid #edede5;
+	border-left: none;
+	border-right: none;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin: 1em 0;
+	.ct-legend-item {
+		padding-left: 0;
+		line-height: 1em;
+		margin-bottom: 0.5em;
+	}
+	.ct-legend-item-color {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		margin-left: -1.5em;
+		margin-right: 0.5em;
+	}
+}
+
