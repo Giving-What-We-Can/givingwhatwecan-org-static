@@ -1,0 +1,8 @@
+---
+title: People
+contentful:
+  content_type: 1cYUKFcNay4OiCoeMgE26E
+  entry_template: person.swig
+  order: fields.title
+  entry_filename_pattern: person/:fields.slug
+---

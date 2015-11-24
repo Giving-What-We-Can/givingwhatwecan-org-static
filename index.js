@@ -307,11 +307,11 @@ function build(buildCount){
                 singular: 'blog',
             }
         },
-        authors: {
-            pattern: 'author/**/*.html',
-            sortBy: 'name',
+        people: {
+            pattern: 'person/**/*.html',
+            sortBy: 'menuOrder',
             metadata: {
-                singular: 'author',
+                singular: 'person',
             }
         },
         posts: {
@@ -390,8 +390,8 @@ function build(buildCount){
         }
     })
     .use(function (files,metalsmith,done){
-        // add paths to authors and quotatons
-        each(Object.keys(files).filter(minimatch.filter('@(author|quotation)/**/*.html')), apply, done )
+        // add paths to people and quotatons
+        each(Object.keys(files).filter(minimatch.filter('@(person|quotation)/**/*.html')), apply, done )
         // recursively find parent links
         function apply(file, cb){
             var filePath = file.split('/')[0]
@@ -555,7 +555,8 @@ function build(buildCount){
         done();
     })
     .use(lazysizes({
-        widths: [100,480,768,992,1200],
+        widths: [100,480,768,992,1200,1800],
+        qualities: [ 20, 40, 70, 70, 70, 70],
         backgrounds: ['#banner','.content-block-wrapper'],
         ignore: "/images/**",
         ignoreSelectors:'.content-block-content',

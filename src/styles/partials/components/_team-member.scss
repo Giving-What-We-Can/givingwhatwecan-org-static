@@ -1,0 +1,22 @@
+$pad: 15px;
+.team-member {
+	border: $pad solid $site-secondary;
+	.team-member-photo {
+		width: 150px;
+		overflow: hidden;
+		background-color: #edede5;
+		padding-right: $pad;
+		margin-right: $pad;
+		img {
+			width: 150px;
+		}
+
+	}
+	.team-member-details {
+		padding:$pad;
+	}
+	.team-member-position{
+		font-style: italic;
+		border-bottom: 2px solid $site-secondary
+	}
+}
