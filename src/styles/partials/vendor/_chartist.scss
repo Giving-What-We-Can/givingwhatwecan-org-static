@@ -95,3 +95,19 @@ $ct-text-size: 0.75em;
 	}
 }
 
+.ct-horizontal-labels-45 {
+	.ct-label.ct-horizontal {
+		transform: rotate(45deg);
+		transform-origin: 0 0;
+		@media(max-width: $screen-xs-max){
+			font-size: 0.5em;
+		}
+	}
+}
+
+.ct-chart:before{
+	@media(max-width: $screen-xs-max){
+		padding-bottom: 300px;
+	}
+}
+
