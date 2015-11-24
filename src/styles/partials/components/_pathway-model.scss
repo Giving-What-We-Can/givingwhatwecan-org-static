@@ -1,0 +1,13 @@
+.pathway-model {
+	h4 {
+		@include centered-heading();
+	}
+	overflow: scroll;
+	th {
+		width: 20%;
+		min-width: 200px;
+		text-transform: uppercase;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
