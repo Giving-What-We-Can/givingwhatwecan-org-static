@@ -48,6 +48,7 @@ swig.setDefaults({ cache: false });
 
 
 app.use('/scripts',express.static('dest/scripts'));
+app.use('/fonts',express.static('dest/fonts'));
 app.use('/styles',express.static('dest/styles'));
 app.use('/images',express.static('dest/images'));
 app.set('port', (process.env.PORT || 5000));
