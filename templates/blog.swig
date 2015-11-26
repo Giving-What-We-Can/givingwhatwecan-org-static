@@ -5,25 +5,35 @@
 {% endblock %}
 
 
+{% block banner %}
+	{% set featuredImageURL = "//images.contentful.com/yglmadi73s3x/5Z8p1mEYneseg8GGO4IASA/c1df56b5d3722478d919078ececc83fb/shutterstock_16653427.jpg" %}
+	{% parent %}
+{% endblock %}
+
 {% block content %}
 
 	<div class="container">
 		{% for post in pagination.files %}
 			<div class="row">
 				<article class="post">
-					<header class="post-header">
-						<a href="{{ relative(post.path) }}">
-							<h3 class="post-title title">{{ post.title }}</h3>
-						</a>
-						<p class="post-author">by 
-						{% for author in post.author %}
-							<strong>{{ author.fields.title }}</strong>
-						{% endfor %}
-						</p>
+					<a href="{{ relative(post.path) }}">
+					<header class="post-header{% if post.featuredImage %} featured-image{% endif %}" {% if post.featuredImage %}style="background-image:url({{post.featuredImage.fields.file.url}})"{% endif %}>
+						<h3 class="post-title title">{{ post.title }}</h3>
 					</header>
-					<section class="post-excerpt">
-						<p class="excerpt">{{ post.excerpt }}</p>
-					</section>
+					</a>
+					{% include './partials/postDetails.swig' with post only %}
+					<div class="row">
+						<section class="post-excerpt col-md-9">
+								<p class="excerpt">{{ post.excerpt }}</p>
+						</section>
+						<div class="col-md-3">
+							<section class="post-read-more">
+								<a class="btn btn-default pull-right" href="{{ relative(post.path) }}">
+									Read more <i class="fa fa-arrow-right"></i>
+								</a>
+							</section>
+						</div>
+					</div>
 				</article>
 			</div>
 			<hr>

@@ -482,17 +482,12 @@ function build(buildCount){
     // Build HTML files
     .use(function (files, metalsmith, done) {
 
-        var redirects = false
-        if(ENVIRONMENT === 'production'){
-            // get our list of redirects for use later
-            var redirects = metalsmith.metadata().redirects;
-        }
 
         // call the parse function asynchronously
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), parse, done )
 
         function parse (file,callback){
-            files[file].contents = parseHTML(files[file].contents.toString(),files[file].collection,redirects)
+            files[file].contents = parseHTML(files[file].contents.toString(),files[file].collection,metalsmith.metadata().redirects)
             callback();
         }
 
@@ -558,8 +553,8 @@ function build(buildCount){
     })
     .use(lazysizes({
         widths: [100,480,768,992,1200,1800],
-        qualities: [ 20, 40, 70, 70, 70, 70],
-        backgrounds: ['#banner','.content-block-wrapper'],
+        qualities: [ 40, 40, 70, 70, 70, 70],
+        backgrounds: ['#banner','.content-block-wrapper','.post-header'],
         ignore: "/images/**",
         ignoreSelectors:'.content-block-content',
         querystring: {

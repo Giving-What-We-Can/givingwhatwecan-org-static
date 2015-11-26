@@ -1,5 +1,7 @@
 {% if headings %}
-	<ul class="toc">
+<div class="toc">
+	<h3 class="toc-header">Contents <small>{{title}}</small></h3>
+	<ol class="toc-contents">
 	{% set depth = tocDepth|default(3) %}
 	{% set lastHeading = 2 %}
 	{% set startDepth = lastHeading %}
@@ -18,7 +20,8 @@
 	{% if lastHeading > startDepth %}
 		</ul>
 	{% endif %}
-	</ul>
+	</ol>
+</div>
 {% elif server %}
 	<ul class="toc">
 		<li class="level-2">Table of contents will appear here</li>
