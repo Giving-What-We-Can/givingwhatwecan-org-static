@@ -40,7 +40,7 @@
 				</div>
 			{% endif %}
 				<div class="col-sm-6 action">
-					<a href="/get-involved/how-to-donate" class="btn btn-primary">Donate Now</a>
+					<a href="/donate" class="btn btn-primary">Donate Now</a>
 				</div>
 		</div>
 	</div>
