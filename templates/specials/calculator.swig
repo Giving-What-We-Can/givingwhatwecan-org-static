@@ -93,11 +93,12 @@
 		</div>
 		<div class="col-sm-4">
 			<div class="calculator-outcome lives-wrapper">
-				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span></span><span class="lives-unit"></span>/</p>
+				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="lives"></span></span><span class="lives-unit"></span></p>
+				<p>Amazing, right?</p>
 			</div>
 			<div class="calculator-outcome dalys-wrapper">
 				<p>&hellip;&nbsp;equivalent to saving <span class="number"><i class="fa fa-users"></i> <span class="dalys"></span></span> <span class="dalys-unit"></span> of healthy life.</p>
-				<p>Pretty amazing, right?</p>
+				<p>Amazing, right?</p>
 			</div>
 		</div>
 	</div>
@@ -118,11 +119,13 @@
 		</div>
 		<div class="col-sm-4 calculator-action">
 			<p>Got more info?</p>
-			<a href="/get-involved/what-you-can-achieve" class="btn btn-info">Learn how to make a <em>real</em>&nbsp;difference</a>
+			<a href="/get-involved/what-we-can-achieve" class="btn btn-info">Learn about making a <em>real</em>&nbsp;difference</a>
 		</div>
 		<div class="col-sm-4 calculator-action">
-			<p>I'm not convinced&hellip;</p>
-			<a href="/get-involved/10-reasons-to-join" class="btn btn-default">Give me 10 good&nbsp;reasons</a>
+			<p>Ready to pledge&hellip;</p>
+			<a href="/get-involved/try-giving" class="btn btn-default">Try&nbsp;Giving</a>
+			<!--<p>I'm not convinced&hellip;</p>
+			<a href="/get-involved/10-reasons-to-join" class="btn btn-default">Give me 10 good&nbsp;reasons</a>-->
 		</div>
 	</div>
 
@@ -163,7 +166,7 @@
 		      		</a>
 		      	</p>
 		      	<p>
-		      		<a class="btn btn-primary twitter btn-lg" href="https://twitter.com/home?status=Status is thing {url}">
+		      		<a class="btn btn-primary twitter btn-lg" href="https://twitter.com/intent/tweet?text={text}&amp;url={url}&amp;via=givingwhatwecan">
 		      			<i class="fa fa-twitter"></i> Share on Twitter
 		      		</a>
 		      	</p>

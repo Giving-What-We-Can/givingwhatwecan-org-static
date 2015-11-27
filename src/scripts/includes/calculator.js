@@ -301,10 +301,25 @@
                     chartMultipleAfterDonating = new Chartist.Bar("#chart-multiple-after-donating")
                 }
 
+                // charts
+
+                var pieChartOptions = {
+                    labelPosition: 'outside',
+                    labelOffset: 10,
+                    labelDirection: 'explode',
+                    chartPadding: 20,
+                }
 
                 chartPercentile.update({
-                    series:[{name:"People you're richer than",value:100-Math.round(values.percentage)},{name:'People richer than you',value:Math.round(values.percentage)}]
-                })
+                    series:[
+                        100-Math.round(values.percentage),
+                        Math.round(values.percentage)
+                    ],
+                    labels: [
+                        "People you're richer than",
+                        "People richer than you"
+                    ]
+                },pieChartOptions)
 
                 chartMultiple.update({
                     labels:["Average person's income",'Your income'],
@@ -313,21 +328,29 @@
                     ]
                 })
 
-
                 chartPercentileAfterDonating.update({
                     series:[
-                        {name:"People you'd be richer than",value:100-values.percentageafterdonating.toFixed(2)},
-                        {name:"People who'd be richer than you",value:values.percentageafterdonating.toFixed(2)}
+                        100-values.percentageafterdonating.toFixed(2),
+                        values.percentageafterdonating.toFixed(2)
+                    ],
+                    labels: [
+                        "People you'd be richer than",
+                        "People who'd be richer than you"
                     ]
-                })
+                },pieChartOptions)
 
                 chartMultipleAfterDonating.update({
-                    labels:["Average person's income",'Your income'],
+                    labels:["Average person's income",'Your income after donating'],
                     series:[
-                        [1,values.multiple],
+                        [0,values.multiple],
                         [1,values.multipleafterdonating]
                     ]
                 })
+
+                // sharing modal
+                $('#sharing-modal')
+                .attr('data-percentile',values.percentage.toFixed(1))
+                .attr('data-multiple',Math.floor(values.multiple))
                     
             }
 
@@ -422,13 +445,13 @@
                     .to(window, 0.6, {
                         scrollTo:{y:comparisonsAfter.data('offset')}, 
                     })
-                    .from(comparisonsAfter,0.6,{opacity:0},"-=0.6")
+                    // .from(comparisonsAfter,0.6,{opacity:0},"-=0.6")
                     .from(chartPercentileAfterDonating.container,0.6,{scale:0.7})
                     if(docWidth<breakpoints.sm){
                         timeline.to(window, 0.6, {
                             scrollTo:{y:multipleComparisonAfterDonating.data('offset')}, 
                         },delay)
-                        .from(multipleComparisonAfterDonating,0.6,{opacity:0},"-=0.6")
+                        // .from(multipleComparisonAfterDonating,0.6,{opacity:0},"-=0.6")
                     }
                     timeline.from(chartMultipleAfterDonating.container,0.6,{scale:0.7})
                 }
@@ -497,14 +520,26 @@
                 var el = $('#sharing-modal')
                 var link = el.find('.get-link')
                 var modalButtons = el.find('.btn-primary')
+                var dismissButton = el.find('[data-dismiss=modal]')
+                // share buttons
                 modalButtons.click(function(event){
                     event.preventDefault();
                     var winTop = $(window).height()/2 - 175;
                     var winLeft = $(window).width()/2 - 260;
-                    var shareUrl = window.location.href
-                    var url = $(this).attr('href').replace('{url}',shareUrl)
+                    var shareUrl =  window.location.href;
+                    var shareText = '';
+                    if(el.attr('data-percentile') && el.attr('data-multiple')){
+                        shareText += "I'm in the world's richest "+el.attr('data-percentile')+"% & earn more than "+el.attr('data-multiple')+"X the avg global income. ";
+                    } else {
+                        shareText += "Differences in global income are amazing. "
+                    }
+                    shareText += "How rich are you?"
+                    
+                    var url = $(this).attr('href').replace('{url}',encodeURIComponent(shareUrl)).replace('{text}',encodeURIComponent(shareText));
                     window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + 520 + ',height=' + 350);
+                    dismissButton.text('All done!')
                 })
+                // get URL
                 link
                 .val(window.location.href)
                 .on('focus',function(){
