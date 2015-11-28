@@ -5,4 +5,4 @@ bower_components
 .cache-require-paths.json
 .env
 .cache
-.icon-cache
+.icon_cache
