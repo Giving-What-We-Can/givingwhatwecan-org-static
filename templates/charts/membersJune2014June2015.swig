@@ -33,7 +33,7 @@ loadScript(function(){
 					top: 0,
 					right: 0,
 					bottom: 100,
-					left: 60
+					left: 30
 				},
 				plugins: [
 		            Chartist.plugins.ctAxisTitle({
@@ -51,7 +51,7 @@ loadScript(function(){
 		                    axisClass: 'ct-axis-title',
 		                    offset: {
 		                        x: -120,
-		                        y: 50
+		                        y: 20
 		                    },
 		                    flipTitle: true
 		                }
