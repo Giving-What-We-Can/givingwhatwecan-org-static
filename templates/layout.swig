@@ -9,9 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' + path %}
 	<link rel="canonical" href="{{canonicalURL|escape}}" />
-	{% if !description %}
-	{% set description = siteInfo.description %}
-	{% endif %}
+	{% set description = description|default(siteInfo.description) %}
 	<meta name="description" content="{{description|escape}}">
 	<link rel="stylesheet" type="text/css" href="/styles/app.min.css">
 	{% include './partials/og-images.swig' %}
