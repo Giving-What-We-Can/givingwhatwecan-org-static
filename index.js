@@ -623,7 +623,8 @@ function build(buildCount){
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
-        // .use(htmlMinifier())
+        .use(htmlMinifier())
+        .use(logMessage('Minified HTML'))
         .use(logMessage('Cleaning CSS files'),chalk.yellow)
         .use(uncss({
             basepath: 'styles',
