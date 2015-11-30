@@ -1,6 +1,16 @@
 <meta property="og:title" content="{{ title|escape }}" />
 <meta property="og:type" content="website" />
-
-{% set ogImage = ogImage|default(siteInfo.ogImageDefault) %}
+{% if ogImage &&  ogImage.fields.file.url %}
+	{% set ogImage = ogImage.fields.file.url %}
+{% elif !ogImage && featuredImage && featuredImage.fields.file.url %}
+	{% set ogImage = featuredImage.fields.file.url %}
+{% elif !ogImage && collection|contains('posts') %}
+	{% set ogImage = siteInfo.protocol + siteInfo.domain + '/images/layout/og-image-blog-default.jpg' %}
+{% else %}
+	{% set ogImage = ogImage|default(siteInfo.protocol + siteInfo.domain + siteInfo.ogImageDefault) %}
+{% endif %}
+{% if ogImage && ogImage.substr(0,2) === '//' %}
+	{% set ogImage = 'https:' + ogImage %}
+{% endif %}
 <meta property="og:url" content="{{canonicalURL|escape}}" />
-<meta property="og:image" content="{{siteInfo.protocol + siteInfo.domain + ogImage|escape}}" />
+<meta property="og:image" content="{{ogImage|escape}}" />

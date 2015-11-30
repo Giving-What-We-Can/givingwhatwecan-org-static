@@ -1,3 +1,4 @@
+{% set ogImage = siteInfo.protocol + siteInfo.domain + '/images/layout/og-image-blog-default.jpg' %}
 {% extends './layout.swig' %}
 
 {% block head %}
