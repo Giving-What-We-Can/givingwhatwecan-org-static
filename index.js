@@ -326,7 +326,7 @@ function build(buildCount){
         },
         contentBlocks: {
             pattern: 'content-block/**/*.html',
-            sortBy: 'menuOrder',
+            sortBy: 'displayOrder',
             reverse: false,
             metadata: {
                 singular: 'content-block',
@@ -529,6 +529,7 @@ function build(buildCount){
         pattern: "**/*.html",
         inPlace: true
     }))
+    .use(logMessage('In place templating done'))
     .use(templates({
         engine:'swig',
         requires: {swig:swig},

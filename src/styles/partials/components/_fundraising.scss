@@ -1,0 +1,228 @@
+$gwwc-light: #d0cac7;
+
+@mixin half-width-fancy-title () {
+	background-attachment: fixed;
+	h2 {
+		background-color: transparentize($site-primary,0.3);
+		position: absolute;
+		top: 0;
+	}
+	.content-block-content {
+		margin-top: 50vh;
+		width: 50%;
+		background-color: $site-secondary;
+		padding: $grid-gutter-width;
+		h3 {
+			margin-top: 0;
+			$border: 4px dashed $site-primary;
+			border-top: $border;
+			border-bottom: $border;
+			padding: $grid-gutter-width 0;
+		}
+	}
+}
+
+.page.fundraising {
+	#banner {
+		background-position: center 40%;
+	}
+	.toc {
+		margin-bottom: $grid-gutter-width;
+	}
+	.content-block-wrapper {
+		background-color: #FFF;
+		color: $text-color;
+		text-align: left;
+		border-top: $grid-gutter-width/2 solid $site-primary;
+		padding-top: 105px;
+		h2 {
+			text-transform: uppercase;
+			color: #FFF;
+			background-color: $site-primary;
+			margin: 0 auto $grid-gutter-width*2;
+			padding: $grid-gutter-width;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+		}
+
+		h3,h4 {
+			color: $site-primary;
+		}
+		.content-block-content {
+			position: static !important;
+		}
+
+		&#fundraising-introduction {
+			background-color: $site-primary;
+			color: #FFF;
+			h2 {
+				padding-left: 0;
+			}
+			.content-block-content {
+				@include make-md-column(6);
+				@include make-md-column-offset(3);
+			}
+		}
+
+		&#fundraising-quick-stats {
+			.quick-stat {
+				p {
+					text-align: center;
+					font-size: 24px;
+					margin-bottom: 1.4em;
+					@media(min-width:$screen-md){
+						font-size: 36px; 
+					}
+				}
+				.number {
+					display: block;
+					font-weight: 700;
+					font-size: 54px;
+					line-height: 1em;
+					@media(min-width:$screen-md){
+						font-size: 96px; 
+					}
+				}
+				&.top-charities-recommended .number {
+					color: $site-primary;
+				}
+				&.new-members-2014-2015 .number {
+					color: $site-ternary;
+				}
+				&.members-in-total .number {
+					color: $site-quinary;
+				}
+				&.donations-reported-by-members .number {
+					color: $site-quaternary;
+				}
+				&.pledged-by-members .number {
+					color: $site-senary;
+				}
+
+			}
+		}
+
+		&#fundraising-top-charities {
+			.charity {
+				text-align: center;
+			}
+			.logo {
+				height: 300px;
+				display: table-cell;
+				vertical-align: middle;
+				img {
+					max-height: 100%;
+				}
+			}
+		}
+
+		&#fundraising-our-team {
+			.team-member-photo {
+				@media(max-width:$screen-sm-max){
+					width: 50%;
+				}
+			}
+			.advisory-board-wrapper {
+				.team-member {
+					float: left;
+					margin-bottom: $grid-gutter-width;
+					@media(min-width:$screen-md){
+						width: 50%;
+					}
+				}
+				.team-member-photo, .team-member-bio {
+					display: none;
+				}
+			}
+			.a-plan-for-growth-wrapper {
+				margin-top: $grid-gutter-width;
+				background-color: $gwwc-light;
+				padding: $grid-gutter-width;
+				h3 {
+					margin-top: 0;
+				}
+			}
+		}
+
+
+
+		&.what-we-do-item {
+			@include half-width-fancy-title();
+		}
+
+		&#fundraising-what-we-do-trust {
+			background-position: center top;
+		}
+
+		&#fundraising-what-we-do-chapters {
+			background-position: center top;
+		}
+		&#fundraising-budget {
+
+		}
+		&#fundraising-supporters {
+			@include half-width-fancy-title();
+			background-position: center top;
+			.content-block-content {
+				width: 100%;
+			}
+		}
+
+		&#fundraising-impact-calculations {
+			.about-our-calculations {
+				background-color: $site-secondary;
+				padding: $grid-gutter-width;
+				h3 {
+					margin-top: 0;
+				}
+			}
+			.calculations {
+				img {
+					margin: $grid-gutter-width/2 0;
+				}
+			}
+			.lower-bound {
+				img {
+					width: 52.75%;
+				}
+			}
+			.realistic {
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		&#fundraising-our-team, &#fundraising-budget, &#fundraising-supporters, &#fundraising-donate {
+			.content-block-content {
+				@include make-md-column(8);
+				@include make-md-column-offset(2);
+			}
+		}
+	}
+
+	table {
+		.last-column {
+			width: 25%;
+		}
+		thead {
+			tr {
+				background-color: $site-primary;
+				color: #FFF;
+			}
+		}
+
+		tbody {
+			font-weight: 200;
+			color: $site-primary;
+			tr {
+				background-color: $site-secondary;
+				border-color: $gwwc-light;
+				&.total {
+					background-color: $gwwc-light;
+				}
+			}
+		}
+	}
+}

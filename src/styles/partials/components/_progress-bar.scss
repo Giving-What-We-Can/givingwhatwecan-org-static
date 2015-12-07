@@ -1,0 +1,41 @@
+#progress-bar-wrapper {
+	clear: both;
+	h3 {
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.progress-bar {
+		border: $grid-gutter-width/2 solid #FFF;
+		border-left-color: $site-primary;
+		border-right-color: $site-secondary;
+		background-color: $site-secondary;
+	}
+	.progress-bar-component {
+		float:left;
+		color: #FFF;
+		overflow: hidden;
+			p {
+			text-align: center;
+			font-weight: 700;
+			margin: $grid-gutter-width;
+			font-size: 24px;
+		}
+	}
+	.progress-bar-pledged {
+		background-color: $site-primary;
+	}
+	.progress-bar-donated {
+		background-color: $site-ternary;
+	}
+	.progress-bar-remaining {
+		background-color: $site-secondary;
+		color: $site-primary;
+	}
+	.progress-bar-target {
+		color: $site-primary;
+		margin-top: $grid-gutter-width/2;
+		width: 100%;
+		border: $grid-gutter-width/2 dashed $site-primary;
+		border-top-color: #FFF;
+	}
+}

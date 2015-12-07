@@ -3,7 +3,9 @@
 		{% if person.set && person.set|contains(members) %}
 				<div class="media team-member">
 					<div class="media-left team-member-photo">
+						{% if person.photo %}
 						<img src="{{person.photo.fields.file.url}}">
+						{% endif %}
 					</div>
 					<div class="media-body media-bottom team-member-details">
 						<h4 class="team-member-name media-heading">{{ person.title }}</h4>
