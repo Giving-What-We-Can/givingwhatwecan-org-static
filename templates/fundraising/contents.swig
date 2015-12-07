@@ -6,7 +6,7 @@
 			<li class="level-h2"><a href="#quick-stats">Quick Stats</a></li>
 			<li class="level-h2"><a href="#top-charities">Top Charities</a></li>
 			<li class="level-h2"><a href="#our-team">Our Team</a></li>
-			<li class="level-h2"><a href="#what-we-do">What We Do</a></li>
+			<li class="level-h2"><a href="#what-we-do-overview">What We Do</a></li>
 			<ul class="toc-child">
 				<li class="level-h3"><a href="#what-we-do-overview">Overview: A Community of Givers</a></li>
 				<li class="level-h3"><a href="#what-we-do-community">Growing a Valuable Community</a></li>

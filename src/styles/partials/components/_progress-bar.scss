@@ -5,7 +5,10 @@
 		text-transform: uppercase;
 	}
 	.progress-bar {
-		border: $grid-gutter-width/2 solid #FFF;
+		border: 5px solid #FFF;
+		@media(min-width:$screen-md){
+			border-width: $grid-gutter-width/2;
+		}
 		border-left-color: $site-primary;
 		border-right-color: $site-secondary;
 		background-color: $site-secondary;
@@ -18,7 +21,11 @@
 			text-align: center;
 			font-weight: 700;
 			margin: $grid-gutter-width;
-			font-size: 24px;
+			font-size: 16px;
+			line-height: 1em;
+			@media(min-width:$screen-md){
+				font-size: 24px;
+			}
 		}
 	}
 	.progress-bar-pledged {
@@ -35,7 +42,10 @@
 		color: $site-primary;
 		margin-top: $grid-gutter-width/2;
 		width: 100%;
-		border: $grid-gutter-width/2 dashed $site-primary;
+		border: 5px dashed $site-primary;
+		@media(min-width:$screen-md){
+			border-width: $grid-gutter-width/2;
+		}
 		border-top-color: #FFF;
 	}
 }

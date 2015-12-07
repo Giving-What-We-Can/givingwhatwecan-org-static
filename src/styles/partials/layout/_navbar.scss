@@ -42,7 +42,7 @@
 	button {
 		color: #FFF;
 	}
-	.donate-button-collapsed {
+	.link-collapsed {
 		color: #333;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -82,7 +82,7 @@
 				color: #FFF;
 			}
 		}
-		> .nav.donate,.nav.my-giving {
+		> .nav.donate,.nav.my-giving,.nav.fundraising {
 			font-weight: 700;
 			background-color: $site-secondary;
 			a {

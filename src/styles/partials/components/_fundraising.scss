@@ -1,17 +1,28 @@
 $gwwc-light: #d0cac7;
 
 @mixin half-width-fancy-title () {
-	background-attachment: fixed;
+	background-size: contain;
+	background-position: center top !important;
+	padding-top: 205px;
 	h2 {
 		background-color: transparentize($site-primary,0.3);
-		position: absolute;
-		top: 0;
+	}
+	@media(min-width:$screen-md){
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center center;
+		padding-top: 0;
 	}
 	.content-block-content {
-		margin-top: 50vh;
-		width: 50%;
+		width: inherit;
+	    margin: 0 $grid-gutter-width/2*-1 0 $grid-gutter-width/2*-1;
+		padding: $grid-gutter-width/2;
 		background-color: $site-secondary;
-		padding: $grid-gutter-width;
+		@media(min-width:$screen-md){
+			padding: $grid-gutter-width;
+			margin-top: 50vh;
+			width: 50%;
+		}
 		h3 {
 			margin-top: 0;
 			$border: 4px dashed $site-primary;
@@ -40,10 +51,15 @@ $gwwc-light: #d0cac7;
 			color: #FFF;
 			background-color: $site-primary;
 			margin: 0 auto $grid-gutter-width*2;
-			padding: $grid-gutter-width;
 			display: inline-block;
 			position: absolute;
 			top: 0;
+			font-size: 24px;
+		    padding: $grid-gutter-width/2;
+		    @media(min-width:$screen-md){
+				font-size: 38px;
+				padding: $grid-gutter-width;
+			}
 		}
 
 		h3,h4 {
@@ -118,16 +134,28 @@ $gwwc-light: #d0cac7;
 		}
 
 		&#fundraising-our-team {
+			.team-member {
+				padding: 0;
+				margin: 0 $grid-gutter-width*-1;
+				@media(min-width:$screen-md){
+					margin: 0 $grid-gutter-width/2*-1;
+				}
+			}
 			.team-member-photo {
 				@media(max-width:$screen-sm-max){
-					width: 50%;
+					width: 100%;
+					img {
+						width: 100%;
+						max-width: 100%;
+					}
 				}
 			}
 			.advisory-board-wrapper {
 				.team-member {
 					float: left;
-					margin-bottom: $grid-gutter-width;
+					margin: 0 $grid-gutter-width*-1 $grid-gutter-width $grid-gutter-width*-1;
 					@media(min-width:$screen-md){
+						margin: 0 0 $grid-gutter-width 0;
 						width: 50%;
 					}
 				}
@@ -136,7 +164,10 @@ $gwwc-light: #d0cac7;
 				}
 			}
 			.a-plan-for-growth-wrapper {
-				margin-top: $grid-gutter-width;
+				margin: $grid-gutter-width $grid-gutter-width*-1;
+				@media(min-width:$screen-md){
+					margin: 0 $grid-gutter-width/2*-1;
+				}
 				background-color: $gwwc-light;
 				padding: $grid-gutter-width;
 				h3 {
@@ -164,8 +195,10 @@ $gwwc-light: #d0cac7;
 		&#fundraising-supporters {
 			@include half-width-fancy-title();
 			background-position: center top;
-			.content-block-content {
-				width: 100%;
+			@media(min-width:$screen-md){
+				.content-block-content {
+					width: 100%;
+				}
 			}
 		}
 
@@ -173,13 +206,12 @@ $gwwc-light: #d0cac7;
 			.about-our-calculations {
 				background-color: $site-secondary;
 				padding: $grid-gutter-width;
+				margin: 0 $grid-gutter-width*-1 $grid-gutter-width;
+				@media(min-width:$screen-md){
+					margin: 0 0 $grid-gutter-width;
+				}
 				h3 {
 					margin-top: 0;
-				}
-			}
-			.calculations {
-				img {
-					margin: $grid-gutter-width/2 0;
 				}
 			}
 			.lower-bound {
@@ -204,7 +236,11 @@ $gwwc-light: #d0cac7;
 
 	table {
 		.last-column {
-			width: 25%;
+			width: 45%;
+			@media(min-width:$screen-md){
+				width: 25%;
+			}
+
 		}
 		thead {
 			tr {

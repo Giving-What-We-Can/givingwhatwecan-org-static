@@ -5,8 +5,12 @@
 				<span class="sr-only">Toggle navigation</span>
 				<i class="fa fa-bars"></i>
 			</button>
-			<a href="/donate" class="collapsed donate-button-collapsed">
+			{# <a href="/donate" class="collapsed donate-link-collapsed link-collapsed">
 				<span class="sr-only">Donate</span>
+				<i class="icon-donate"></i>
+			</a> #}
+			<a href="/fundraising" class="collapsed fundraising-link-collapsed link-collapsed">
+				<span class="sr-only">Fundraising</span>
 				<i class="icon-donate"></i>
 			</a>
 			<a href="{{ relative('/')|default('/') }}" class="navbar-brand">
@@ -18,10 +22,6 @@
 				{% set menu = menu || 'main' %}
 				{% for parent in menus[menu] %}
 					{% if parent._menu %}
-					<!--
-					Menu
-					{{Object.keys(parent._menu)|json(4)}}
-					-->
 					<li class="nav dropdown {{ parent._menu.fields.slug }}">
 						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							{{ parent._menu.fields.title }}
@@ -44,19 +44,11 @@
 						</ul> 
 					</li>
 					{% elif parent._page %}
-					<!--
-					Page
-					{{Object.keys(parent._page)|json(4)}}
-					-->
 					<li class="nav {{parent._page.slug}}">
 						{% set pageTitle = parent._page.shortTitle || parent._page.title %}
 						<a href="{{ relative(parent._page.path) }}">{{pageTitle}}</a>
 					</li>
 					{% elif parent._link %}
-					<!--
-					Link
-					{{Object.keys(parent._link)|json(4)}}
-					-->
 					<li class="nav {{ {true:parent._link.linkURL.substr(1),false:'external-link'}[parent._link.linkURL.charAt(0)==='/'] }} {{ {true:'active',false:''}[path === parent._link.linkURL.substr(1)] }}">
 						{% set linkTitle = parent._link.shortTitle || parent._link.title %}
 						<a href="{{ parent._link.linkURL }}">
@@ -65,7 +57,6 @@
 					</li>
 					{% endif %}
 				{% endfor %}
-				<!-- index: {{path.indexOf('blog/')}} path: {{path}} -->
 			</ul>
 		</div>
 	</div>
