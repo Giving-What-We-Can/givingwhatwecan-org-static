@@ -10,7 +10,7 @@
 	{% set ogImage = ogImage|default(siteInfo.protocol + siteInfo.domain + siteInfo.ogImageDefault) %}
 {% endif %}
 {% if ogImage && ogImage.substr(0,2) === '//' %}
-	{% set ogImage = 'https:' + ogImage %}
+	{% set ogImage = 'https:' + ogImage + '?w=1200' %}
 {% endif %}
 <meta property="og:url" content="{{canonicalURL|escape}}" />
 <meta property="og:image" content="{{ogImage|escape}}" />
