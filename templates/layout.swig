@@ -7,7 +7,11 @@
 	{% if slug === '/' %}{% set title = siteInfo.title %}{% endif %}
 	<title>{% block title %}{{ title|default(siteInfo.title)|escape }}{% endblock head %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' + path %}
+	{% if slug === '/' %}
+		{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' %}
+	{% else %}
+		{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' + path + '/'  %}
+	{% endif %}
 	<link rel="canonical" href="{{canonicalURL|escape}}" />
 	{% set description = excerpt|default(siteInfo.description) %}
 	<meta name="description" content="{{description|escape}}">
