@@ -21,6 +21,7 @@
     "bootstrap-sass": "^3.3.5",
     "bootstrap-slider": "^5.2.5",
     "bower-files": "^3.4.4",
+    "browser-cookies": "^1.0.8",
     "browserify": "^11.2.0",
     "browserify-shim": "^3.8.10",
     "browsernizr": "^2.0.1",

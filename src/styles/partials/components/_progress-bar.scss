@@ -1,51 +1,76 @@
-#progress-bar-wrapper {
+.fundraising-progress-wrapper {
 	clear: both;
-	h3 {
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.progress-bar {
-		border: 5px solid #FFF;
-		@media(min-width:$screen-md){
-			border-width: $grid-gutter-width/2;
-		}
-		border-left-color: $site-primary;
-		border-right-color: $site-secondary;
-		background-color: $site-secondary;
-	}
-	.progress-bar-component {
-		float:left;
-		color: #FFF;
-		overflow: hidden;
-			p {
+	background-color: $site-secondary;
+	overflow: hidden;
+}
+.fundraising-progress-content {
+	.fundraising-progress-header {
+		h3 {
 			text-align: center;
-			font-weight: 700;
-			margin: $grid-gutter-width;
-			font-size: 16px;
-			line-height: 1em;
-			@media(min-width:$screen-md){
-				font-size: 24px;
+			text-transform: uppercase;
+			margin: 0 0 $grid-gutter-width;
+			@media(max-width:$screen-xs-max){
+				font-size: 22px;
 			}
 		}
-	}
-	.progress-bar-pledged {
-		background-color: $site-primary;
-	}
-	.progress-bar-donated {
-		background-color: $site-ternary;
-	}
-	.progress-bar-remaining {
-		background-color: $site-secondary;
-		color: $site-primary;
-	}
-	.progress-bar-target {
-		color: $site-primary;
-		margin-top: $grid-gutter-width/2;
-		width: 100%;
-		border: 5px dashed $site-primary;
-		@media(min-width:$screen-md){
-			border-width: $grid-gutter-width/2;
+		.nav-header {
+			display: none;
 		}
-		border-top-color: #FFF;
+	}
+	.fundraising-progress-explanation {
+		display: none;
+		margin-bottom: $grid-gutter-width/2;
+		p {
+			@media(max-width:$screen-xs-max){
+				font-size: 14px;
+			}
+		}
+		a.btn {
+			width: 100%;
+			margin-bottom: $grid-gutter-width/2;
+		}
+		.close-progress-bar {
+			background-color: transparent;
+		}
+	}
+	.fundraising-progress-bar {
+		$border: 3px solid #333;
+		.progress {
+			border-right: $border;
+			margin-bottom: 0;
+			border-radius: 4px 0 0 4px;
+		}
+		.target {
+			font-weight: 700;
+			text-align: right;
+			padding-right: $grid-gutter-width/2;
+			border-right: $border;
+		}
+		.progress-bar {
+			transition: none;
+		}
+	}
+}
+.navbar {
+	.fundraising-progress-wrapper {
+		.fundraising-progress-content {
+			margin: 0 $grid-gutter-width/2*-1;
+			padding: $grid-gutter-width/2;
+			border-bottom: $grid-gutter-width/2 solid darken($site-secondary,5%);
+			@media(min-width:$screen-md){
+				padding: $grid-gutter-width 0;
+			}
+		}
+		.fundraising-progress-header {
+			.nav-header {
+				display: block;
+			}
+			.regular-header {
+				display: none;
+			}
+		}
+		.fundraising-progress-explanation {
+			display: block;
+		}
 	}
 }

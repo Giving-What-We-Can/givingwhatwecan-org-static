@@ -34,6 +34,12 @@ $gwwc-light: #d0cac7;
 }
 
 .page.fundraising {
+	.introduction{
+		@include text-content();
+	}
+	.donate-btn {
+		width: 100%;
+	}
 	#banner {
 		background-position: center 40%;
 	}

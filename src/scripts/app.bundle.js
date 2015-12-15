@@ -25,6 +25,8 @@
 	http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm 
 
 */
+// cookies
+global.cookies = require('browser-cookies');
 // lazysizes
 require('lazysizes')
 require('lazysizesRespImg')

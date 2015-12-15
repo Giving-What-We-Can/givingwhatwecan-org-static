@@ -1,4 +1,12 @@
 <nav class="navbar navbar-primary navbar-fixed-top" id="menu-main">
+	{% if slug !== 'fundraising' %}
+	<div class="fundraising-progress-wrapper">
+		<script>document.querySelector('.fundraising-progress-wrapper').style.display = 'none';</script>
+		<div class="container">
+			{% include "../fundraising/progressBar.swig"%}
+		</div>
+	</div>
+	{% endif %}
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-nav-collapse">

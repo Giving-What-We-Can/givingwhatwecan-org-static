@@ -1,6 +1,12 @@
 @mixin text-content(){
     @include make-lg-column(8);
     @include make-lg-column-offset(2);
+    .container {
+		@media(min-width:$screen-md){
+			margin-left: -25%;
+			padding:0;
+		}
+	}
 }
 
 @mixin cover-background(){
