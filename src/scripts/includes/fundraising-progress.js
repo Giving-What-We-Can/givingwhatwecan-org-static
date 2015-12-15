@@ -2,7 +2,7 @@
 
 	// don't show if we've hidden the bar within a day, or seen the bar more than five times in total
 	if(cookies.get('fundraisingBar') || cookies.get('fundraisingBarCount')>5){
-		// return;
+		return;
 	}
 	var fundraisingBarCount = cookies.get('fundraisingBarCount')
 	fundraisingBarCount = parseInt(cookies.get('fundraisingBarCount'))+1 || 1;
