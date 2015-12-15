@@ -148,6 +148,11 @@ form#calculator-controls {
 	}
 }
 
+#calculator-methodology {
+	@include text-content();
+	color: #999;
+}
+
 #sharing-modal {
 	.modal-title {
 

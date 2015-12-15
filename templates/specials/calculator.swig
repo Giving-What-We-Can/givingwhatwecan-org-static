@@ -140,6 +140,15 @@
 	</div>
 
 </div>
+<hr>
+<div id="calculator-methodology">
+	<h2>Methodology</h2>
+	<p>This calculator lets you know how rich you are globally, adjusting for the cost of living in your country and the size of your household. It also compares your income to the global average, referring to the median.</p>
+	<p>The data on world income distribution is from several sources. The figures for between the richest 1% and the richest 21% are based on micro data from national household surveys carried out in 2008, kindly provided by Branko Milanovic, author of <em>The Haves and the Have-Nots</em>. The figures for the poorest 73% are based on the 2008 data from <a href="http://iresearch.worldbank.org/PovcalNet/index.htm?1">PovcalNet</a>, adjusted based on the approximation that the surveys covered unbiased samples of the poorest 80% of the world's population. The figure of $70,000 for the top 0.1% is from Milanovic's book.</p>
+	<p>Your income is adjusted for the cost of living in your country according to <a href="http://data.worldbank.org/indicator/PA.NUS.PPP">these</a> PPP exchange rates from the World Bank, which are based on the International Comparison Program (ICP) benchmark. It is also adjusted for the Consumer Price Index (CPI) measure of inflation from 2008 to 2014 using <a href="http://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">these</a> country-specific figures, also from the World Bank.</p>
+	<p>Your income is adjusted for the size of your household using the notion of <a href="http://en.wikipedia.org/wiki/Equivalisation">equivalisation</a>. The OECD equivalence scale is used, according to which additional adults (aged 14 and older) are weighted by 0.7 and children (aged under 14) are weighted by 0.5 compared to the first adult.</p>
+	<p>The figures for the cost of a mosquito net and the cost of a neglected tropical disease treatment are from GiveWell's pages on the <a href="http://www.givewell.org/international/top-charities/amf">Against Malaria Foundation</a> and the <a href="http://www.givewell.org/international/top-charities/schistosomiasis-control-initiative">Schistosomiasis Control Initiative</a>. The figure of $3,340 to save a life is from GiveWell's page on the Against Malaria Foundation <a href="http://www.givewell.org/international/top-charities/AMF#Costperlifesaved">here</a>.
+</div>
 
 
 <!-- MODAL -->
