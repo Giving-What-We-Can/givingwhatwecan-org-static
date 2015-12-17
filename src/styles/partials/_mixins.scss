@@ -2,8 +2,10 @@
     @include make-lg-column(8);
     @include make-lg-column-offset(2);
     .container {
-		@media(min-width:$screen-md){
+    	margin:$grid-gutter-width $grid-gutter-width/2*-1;
+		@media(min-width:$screen-lg){
 			margin-left: -25%;
+			margin-right: 0;
 			padding:0;
 		}
 	}
