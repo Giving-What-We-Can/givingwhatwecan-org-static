@@ -139,11 +139,6 @@
 	</script>
 	<script>
 		// deferred execution for jquery-dependent scripts defined earlier in the body
-		$(function() {
-			$.each(q, function(index, f) {
-				f(jQuery);
-			});
-		});
 	</script>
 
 </body>

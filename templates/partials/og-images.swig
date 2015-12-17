@@ -15,3 +15,4 @@
 <meta property="og:url" content="{{canonicalURL|escape}}" />
 <meta property="og:image" content="{{ogImage|escape}}" />
 <meta property="og:description" content="{{excerpt|default(siteInfo.description)|escape}}" />
+<meta property="fb:app_id" content="1087913877916081" />

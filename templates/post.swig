@@ -11,6 +11,7 @@
 				{% include './partials/postDetails.swig' %}
 				<section class="post-content">
 					{{ contents }}
+					{% include './partials/share-button.swig' %}
 				</section>
 				{% for a in author %}
 					{% include './partials/authorinfo.swig' with a only%}		
@@ -20,5 +21,15 @@
 		<hr>
 		<p><!-- POST FOOTER --></p>
 	</div>
+	<script>
+	// push footnotes below article content
+	loadScript(function(){
+		var $ = window.jQuery;
+		$(document).ready(function(){
+			$('.footnotes-sep').appendTo('article.post');
+			$('.footnotes').appendTo('article.post');
+		})
+	})
+	</script>
 
 {% endblock %}
