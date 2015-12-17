@@ -1,0 +1,12 @@
+.post {
+	&.giving-what-we-cans-recommendations-for-giving-season-2015 {
+		#banner {
+			background-position: center 20%;
+		}
+		.charity {
+			.fast-facts-wrapper, .short-description-wrapper {
+				display: none;
+			}
+		}
+	}
+}
