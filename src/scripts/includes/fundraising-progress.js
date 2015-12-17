@@ -6,7 +6,6 @@
 	}
 	var fundraisingBarCount = cookies.get('fundraisingBarCount')
 	fundraisingBarCount = parseInt(cookies.get('fundraisingBarCount'))+1 || 1;
-	console.log(fundraisingBarCount)
 	// count the number of times we've seen the fundraising bar
 	cookies.set('fundraisingBarCount', fundraisingBarCount + "",{expires: 10})
 

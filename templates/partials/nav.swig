@@ -1,5 +1,5 @@
 <nav class="navbar navbar-primary navbar-fixed-top" id="menu-main">
-	{% if slug !== 'fundraising' %}
+	{% if slug !== 'fundraising' && slug !== 'donate' && slug !== 'join' && slug !== 'try-giving' %}
 	<div class="fundraising-progress-wrapper">
 		<script>document.querySelector('.fundraising-progress-wrapper').style.display = 'none';</script>
 		<div class="container">
