@@ -1,26 +1,18 @@
 <nav class="navbar navbar-primary navbar-fixed-top" id="menu-main">
-	{% if slug !== 'fundraising' && slug !== 'donate' && slug !== 'join' && slug !== 'try-giving' %}
-	<div class="fundraising-progress-wrapper">
-		<script>document.querySelector('.fundraising-progress-wrapper').style.display = 'none';</script>
-		<div class="container">
-			{% include "../fundraising/progressBar.swig"%}
-		</div>
-	</div>
-	{% endif %}
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-nav-collapse">
 				<span class="sr-only">Toggle navigation</span>
 				<i class="fa fa-bars"></i>
 			</button>
-			{# <a href="/donate" class="collapsed donate-link-collapsed link-collapsed">
+			<a href="/donate" class="collapsed donate-link-collapsed link-collapsed">
 				<span class="sr-only">Donate</span>
 				<i class="icon-donate"></i>
-			</a> #}
-			<a href="/fundraising" class="collapsed fundraising-link-collapsed link-collapsed">
+			</a>
+			{# <a href="/fundraising" class="collapsed fundraising-link-collapsed link-collapsed">
 				<span class="sr-only">Fundraising</span>
 				<i class="icon-donate"></i>
-			</a>
+			</a> #}
 			<a href="{{ relative('/')|default('/') }}" class="navbar-brand">
 				<img src="/images/logos/gwwc-logo-transparent-nav.png">
 			</a>
