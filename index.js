@@ -126,8 +126,10 @@ function build(buildCount){
     }))
     .use(function (files,metalsmith,done){
         var meta = metalsmith.metadata();
-        getStats({forceCache: ENVIRONMENT === 'development' ? true : false},function(stats){
+        getStats(function(stats){
             meta.stats = stats;
+            console.log('got stats')
+            console.log(Object.keys(stats))
             done();
         })
     })
@@ -624,7 +626,9 @@ function build(buildCount){
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
-        .use(htmlMinifier())
+        .use(htmlMinifier({
+            minifyJS: true
+        }))
         .use(logMessage('Minified HTML'))
         .use(logMessage('Cleaning CSS files'),chalk.yellow)
         .use(uncss({
