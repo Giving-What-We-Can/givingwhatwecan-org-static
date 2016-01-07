@@ -128,8 +128,6 @@ function build(buildCount){
         var meta = metalsmith.metadata();
         getStats(function(stats){
             meta.stats = stats;
-            console.log('got stats')
-            console.log(Object.keys(stats))
             done();
         })
     })
