@@ -2,7 +2,7 @@
 var buildTime = process.hrtime();
 var buildTimeDiff = buildTime;
 // load environment variables
-require('dotenv').load();
+require('dotenv').load({silent: true});
 // command-line args
 var args = {};
 process.argv.forEach(function (arg) {
