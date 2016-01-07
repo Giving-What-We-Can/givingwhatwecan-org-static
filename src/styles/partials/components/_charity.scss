@@ -2,13 +2,18 @@
 	margin-bottom: $grid-gutter-width;
 	.charity-header {
 		background-size: cover;
+		text-align: left;
+		position: relative;
+		height: 440px;
 	}
 	.charity-name-wrapper {
-		margin-top: 200px;
 		text-align: center;
 		padding: $grid-gutter-width/2;
-		background-color: transparentize($site-primary,0.2);
 		color: #FFF;
+		background-color: $site-primary;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
 	}
 	.charity-name {
 		color: #FFF;
@@ -17,9 +22,11 @@
 	}
 	.logo-wrapper {
 		display: inline-block;
-		background-color: #FFF;
+		background-color: transparentize(#FFF,0.2);
 		margin: $grid-gutter-width/2;
 		padding: $grid-gutter-width/2;
+		position: absolute;
+
 		.logo {
 		    width: 100%;
 			.logo-image {
@@ -51,29 +58,73 @@
 	}
 	.actions {
 		background-color: $site-secondary;
-		padding: $grid-gutter-width;
+		padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width/2;
 		.action {
 			text-align: center;
+			.btn {
+				width: 100%;
+				margin-bottom: $grid-gutter-width/2;
+			}
+		}
+	}
+	.action {
+		.btn.website {
+			display: none;
+		}
+	}
+	&.background-image {
+		.charity-name-wrapper {
+			background-color: transparentize($site-primary,0.2);
+		}
+	}
+	&.donate-page {
+		@media(min-width:$screen-sm){
+			.charity-header {
+				height: 360px;
+			}
+		}
+		.short-description-wrapper {
+			.short-description {
+				@media(min-width:$screen-sm){
+					height: 160px;
+				}
+				p {
+				    font-size: 1em;
+				}
+			}
+		}
+		.actions {
+			.action {
+				width: 100%;
+			}
+		}
+		@media(min-width:$screen-sm){
+			&.schistosomiasis-control-initiative {
+				.charity-header{
+					background-position: 70% top;
+				}
+			}
 		}
 	}
 }
-.action {
-	.btn.website {
-		display: none;
-	}
-}
+
+
+
 
 .page {
 	&.against-malaria-foundation,
 	&.schistosomiasis-control-initiative,
 	&.deworm-world-initiative,
-	&.project-healthy-children {
-		.action {
-			.btn.website {
-				display: inline-block;
-			}
-			.btn.learn-more {
-				display: none;
+	&.project-healthy-children,
+	{
+		.charity {
+			.action {
+				.btn.website {
+					display: inline-block;
+				}
+				.btn.learn-more {
+					display: none;
+				}
 			}
 		}
 	}
