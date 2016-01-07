@@ -147,7 +147,7 @@ app.get('/:contentType/:contentID', function (req, res) {
                     cache: false
                 }
                 entryData.fieldNames = Object.keys(entry[0].fields)
-                getStats({forceCache:true},function(stats){
+                getStats(function(stats){
                     inPlaceData.stats = stats
                     getSpecials(function(specials){
                         Object.keys(specials).forEach(function(special){
