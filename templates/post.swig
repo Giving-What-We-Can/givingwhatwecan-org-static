@@ -16,7 +16,11 @@
 				{% for a in author %}
 					{% include './partials/authorinfo.swig' with a only%}		
 				{% endfor %}
+				<section class="comments">
+				{% include './partials/disqus.swig' %}
+				</section>
 			</article>
+
 		</div>
 		<hr>
 		<p><!-- POST FOOTER --></p>
