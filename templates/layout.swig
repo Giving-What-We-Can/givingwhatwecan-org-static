@@ -130,7 +130,7 @@
 				if(typeof d[i] === 'function'){
 					$LAB.queueWait(d[i])
 				} else {
-					s = d[i].substr(d[i].length-4) === '.js' ? d[i] : '/scripts/includes/'+d[i]+'.min.js';
+					s = d[i].substr(d[i].length-4) === '.js' || d[i].substr(0,4) === "http" ? d[i] : '/scripts/includes/'+d[i]+'.min.js';
 					$LAB.queueScript(s)
 				}
 			};
