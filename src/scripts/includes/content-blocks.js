@@ -228,7 +228,8 @@
 		if($.fn.slabText !== 'undefined')
 		$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:200});
 	}
-	if($(document).hasClass('wf-active')){
+
+	if($(document.documentElement).hasClass('wf-active')){
 		triggerSlabtext()
 	} else {
 		$(document).on('WebFont', function(event,status){
