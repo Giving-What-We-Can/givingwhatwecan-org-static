@@ -147,7 +147,8 @@ function build(buildCount){
         // hack to make metalsmith-feed plugin work by adding site.url to the metadata
         var meta = metalsmith.metadata();
         meta.site = {
-            'url': meta.siteInfo.protocol + meta.siteInfo.domain
+            'url': meta.siteInfo.protocol + meta.siteInfo.domain,
+            'description': meta.siteInfo.description
         }
         done();
     })
@@ -502,8 +503,28 @@ function build(buildCount){
     .use(excerpts())
     .use(relative())
     .use(feed({
+        title: 'The Giving What We Can Blog',
         collection: 'posts',
-        destination: 'blog.xml'
+        destination: 'blog.xml',
+        feed_url: 'https://www.givingwhatwecan.org/blog.xml',
+        image_url: 'https://www.givingwhatwecan.org/images/favicons/apple-touch-icon-144x144.png',
+        postDescription: function(file){
+            var text = file.excerpt || file.contents;
+            var authors = ""
+            if(file.author){
+                for (var i = 0; i < file.author.length; i++) {
+                    authors += file.author[i].fields.title;
+                    if(file.author.length>2 && i < file.author.length-1){
+                        authors+=", "
+                    }
+                    if(file.author.length>1 && i === file.author.length-1){
+                        authors+=" and "
+                    }
+                }
+                authors+=" — "
+            }
+            return authors + text;
+        }
     }))
     .use(logMessage('Generated RSS feed'))
     .use(branch(function(filename,props,i){
