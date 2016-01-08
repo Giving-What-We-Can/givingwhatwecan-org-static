@@ -7,10 +7,10 @@ var swig = require('swig')
     require('./lib/swig-filters')(swig)
 var engines = require('consolidate')
 var contentful = require('contentful');
-var parseHTML = require('./lib/parseHTML')
-var sanitiseSwigTags = require('./lib/sanitiseSwigTags')
-var getSpecials = require('./lib/get-specials')
-var getStats = require('./lib/get-stats')
+var parseHTML = require('./lib/parseHTML').parse
+var sanitiseSwigTags = require('./lib/sanitiseSwigTags').sanitise
+var getSpecials = require('./lib/get-specials').get
+var getStats = require('./lib/get-stats').get
 
 var https = require("https");
 

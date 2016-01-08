@@ -22,7 +22,7 @@ var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
 if(ENVIRONMENT==='development'){
     // time requires
-    // require("time-require");
+    require("time-require");
     // cache require paths for faster builds
     require('cache-require-paths');
 }
@@ -38,8 +38,8 @@ message('Loaded Metalsmith');
 var metadata = require('metalsmith-metadata');
 var moment = require('moment');
 var ignore      = require('metalsmith-ignore');
-var getStats = require('./lib/get-stats')
-var getSpecials = require('./lib/get-specials')
+var getStats = require('./lib/get-stats').get;
+var getSpecials = require('./lib/get-specials').get
 var contentful = require('contentful-metalsmith');
 var slug = require('slug'); slug.defaults.mode = 'rfc3986';
 var filemetadata = require('metalsmith-filemetadata');
@@ -48,7 +48,6 @@ var replace = require('metalsmith-replace');
 var beautify  = require('metalsmith-beautify');
 var strip = require('strip');
 var templates  = require('metalsmith-templates');
-var sizeOf = require('image-size');
 message('Loaded templating');
 var lazysizes = require('metalsmith-lazysizes');
 // metadata and structure
@@ -63,7 +62,7 @@ message('Loaded metadata');
 // static file compilation
 var swig = require('swig');
 require('./lib/swig-filters')(swig);
-var parseHTML = require('./lib/parseHTML')
+var parseHTML = require('./lib/parseHTML').parse;
 var sass  = require('metalsmith-sass');
 var concat = require('metalsmith-concat');
 var autoprefixer = require('metalsmith-autoprefixer');
@@ -72,7 +71,7 @@ var icons = require('metalsmith-icons');
 var feed = require('metalsmith-feed');
 var headingsIdentifier = require('metalsmith-headings-identifier');
 var headings = require('metalsmith-headings');
-var sanitiseSwigTags = require('./lib/sanitiseSwigTags')
+var sanitiseSwigTags = require('./lib/sanitiseSwigTags').sanitise
 var htmlMinifier = require("metalsmith-html-minifier");
 // only require in production
 if(ENVIRONMENT==='production'){
@@ -90,7 +89,7 @@ var each = require('async').each;
 var merge = require('merge');
 var NotificationCenter = require('node-notifier').NotificationCenter;
 var notifier = new NotificationCenter;
-var prompt = require('prompt')
+// var prompt = require('prompt')
 var YAML = require('yamljs')
 message('Loaded utilities...');
 // var debug = require('debug')('build');
@@ -106,9 +105,6 @@ function build(buildCount){
     if(buildCount>1){
         buildTime = process.hrtime();
         buildTimeDiff = buildTime;
-    }
-    function postBuild(){
-        console.log('postBuild',buildCount);
     }
     // START THE BUILD!
     var colophonemes = new Metalsmith(__dirname);
@@ -769,7 +765,7 @@ function build(buildCount){
                     activate: 'com.google.Chrome'
                 })
                 // keep the process running so we don't have to recompile dependencies on subsequent builds...
-                
+                /*
                 prompt.start()
                 prompt.message = "Build again?"
                 prompt.get(['response'],function(err,results){
@@ -786,7 +782,7 @@ function build(buildCount){
                         return;
                     }
                     build(buildCount+1);
-                });
+                });*/
             }
         }
     } )
