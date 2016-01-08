@@ -224,12 +224,19 @@
 
 	// trigger any slabtext-ready elements
 
+	function triggerSlabtext(){
+		if($.fn.slabText !== 'undefined')
+		$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:200});
+	}
+	if($(document).hasClass('wf-active')){
+		triggerSlabtext()
+	} else {
 		$(document).on('WebFont', function(event,status){
-			if(status==='active' && $.fn.slabText !== 'undefined'){
-				$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:200});
-				// $("#how-rich-am-i .sub-heading p").slabText({viewportBreakpoint:breakpoints.xs-1});
+			if(status==='active' || status === 'inactive'){
+				triggerSlabtext();
 			}
 		})
+	}
 	
 	
 
