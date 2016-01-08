@@ -20,10 +20,10 @@ var MINIFY = args['--minify'] || args['--m'] ? true : false;
 var CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
-// time requires
-require("time-require");
-// cache require paths for faster builds
 if(ENVIRONMENT==='development'){
+    // time requires
+    // require("time-require");
+    // cache require paths for faster builds
     require('cache-require-paths');
 }
 
@@ -36,6 +36,8 @@ var Metalsmith = require('metalsmith');
 message('Loaded Metalsmith');
 // templating
 var metadata = require('metalsmith-metadata');
+var moment = require('moment');
+var ignore      = require('metalsmith-ignore');
 var getStats = require('./lib/get-stats')
 var getSpecials = require('./lib/get-specials')
 var contentful = require('contentful-metalsmith');
@@ -44,14 +46,12 @@ var filemetadata = require('metalsmith-filemetadata');
 var copy = require('metalsmith-copy');
 var replace = require('metalsmith-replace');
 var beautify  = require('metalsmith-beautify');
-var moment = require('moment');
 var strip = require('strip');
 var templates  = require('metalsmith-templates');
 var sizeOf = require('image-size');
 message('Loaded templating');
 var lazysizes = require('metalsmith-lazysizes');
 // metadata and structure
-var ignore      = require('metalsmith-ignore');
 var branch  = require('metalsmith-branch');
 var collections  = require('metalsmith-collections');
 var permalinks  = require('metalsmith-permalinks');
@@ -106,7 +106,9 @@ function build(buildCount){
     if(buildCount>1){
         buildTime = process.hrtime();
         buildTimeDiff = buildTime;
-        return;
+    }
+    function postBuild(){
+        console.log('postBuild',buildCount);
     }
     // START THE BUILD!
     var colophonemes = new Metalsmith(__dirname);
@@ -120,6 +122,7 @@ function build(buildCount){
         '**/.DS_Store',
         'styles/partials/**'
     ]))
+ 
     // Set up some metadata
     .use(metadata({
         "siteInfo": "settings/site-info.json"
@@ -713,6 +716,7 @@ function build(buildCount){
             ;
         }
     }
+
     // Run build
     colophonemes.use(logMessage('Finalising build')).build(function(err,files){
         var t = formatBuildTime(buildTime);
@@ -744,19 +748,24 @@ function build(buildCount){
                     activate: 'com.google.Chrome'
                 })
                 // keep the process running so we don't have to recompile dependencies on subsequent builds...
-                /*prompt.start()
+                
+                prompt.start()
                 prompt.message = "Build again?"
-                try {
-                    prompt.get(['response'],function(err,results){
-                        if(err) throw new Error (err);
-                        if(results.response.toLowerCase()==='n' || results.response.toLowerCase()==='n'){
-                            if(err) throw new Error (err);
+                prompt.get(['response'],function(err,results){
+                    if(err) {
+                        if(err.message === 'canceled'){
+                            console.log('Cancelled')
+                            return;
+                        } else {
+                            throw new Error (err);
                         }
-                        build(buildCount+1);
-                    });
-                } catch(e){
-                    console.log('Exiting...')
-                }*/
+                    }
+                    if(results.response.toLowerCase()==='n' || results.response.toLowerCase()==='n'){
+                        console.log('Cancelled')
+                        return;
+                    }
+                    build(buildCount+1);
+                });
             }
         }
     } )
