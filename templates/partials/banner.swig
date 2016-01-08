@@ -12,9 +12,9 @@
 				<h1 class="page-title">{{ title }}</h1></div>
 		</div>
 	</div>
-	{% if featuredImage && featuredImage.fields %}
+	{% if featuredImage && featuredImage.fields || featuredImageDescription %}
 	<div class="image-attribution">
-		<p>{{featuredImage.fields.description|autolinker}}</p>
+		<p>{{featuredImage|default(featuredImageDescription)|autolinker}}</p>
 	</div>
 	{% endif %}
 </div>

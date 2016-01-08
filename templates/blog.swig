@@ -7,7 +7,8 @@
 
 
 {% block banner %}
-	{% set featuredImageURL = "//images.contentful.com/yglmadi73s3x/5Z8p1mEYneseg8GGO4IASA/c1df56b5d3722478d919078ececc83fb/shutterstock_16653427.jpg" %}
+	{% set featuredImageURL = "https://images.contentful.com/yglmadi73s3x/3pZKzY335mUg8wAaSmUUsC/9cd1a2df1f89a9c5beca0629d0ca1e8f/AMF_Net_Distribution.JPG" %}
+	{% set featuredImageDescription = "Workers distributing mosquito nets on behalf of the Against Malaria Foundation in Malawi (Against Malaria Foundation / againstmalaria.org)" %}
 	{% parent %}
 {% endblock %}
 
