@@ -2,9 +2,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	background-color: $site-senary;
 	min-height: 40vh;
 	@media(min-width:$screen-sm){
-	    min-height: 60vh;
+	    min-height: 80vh;
+	    background-attachment: fixed;
 	}
 }
 .page-title-wrapper {
@@ -21,9 +23,10 @@
 	color: #FFF;
 	text-transform: uppercase;
 	background-color: $site-primary;
-	font-size: 2em;
-	padding: $grid-gutter-width;
+	font-size: 1.8em;
+	padding: $grid-gutter-width/2;
 	margin:0;
+	text-align: left;
 	@media(min-width:$screen-sm){
 		font-size: 3em;
 		background-color: transparentize($site-primary,0.2);
@@ -31,6 +34,8 @@
 		bottom: 0;
 		width:100%;
 	    margin: 0 -50%;
+		padding: $grid-gutter-width;
+		text-align: center;
 	    left:50%;
 
 	}
