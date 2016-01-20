@@ -1,1 +1,1 @@
-web: bash run.sh
+web: npm run server
