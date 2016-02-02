@@ -4,7 +4,7 @@
 	{% set ogImage = ogImage.fields.file.url %}
 {% elif !ogImage && featuredImage && featuredImage.fields.file.url %}
 	{% set ogImage = featuredImage.fields.file.url %}
-{% elif !ogImage && collection|contains('posts') %}
+{% elif !ogImage && collection|contains('_posts') %}
 	{% set ogImage = siteInfo.protocol + siteInfo.domain + '/images/layout/og-image-blog-default.jpg' %}
 {% else %}
 	{% set ogImage = ogImage|default(siteInfo.protocol + siteInfo.domain + siteInfo.ogImageDefault) %}

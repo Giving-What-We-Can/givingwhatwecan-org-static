@@ -1,0 +1,20 @@
+.post-details {
+	background-color: $site-secondary;
+	border: 2px solid $site-secondary-dark;
+    padding: 5px $grid-gutter-width/2;
+    margin: 0 0 $grid-gutter-width/2;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin-right: $grid-gutter-width/2;
+		display: inline-block;
+		@media(min-width:$screen-sm){
+			display: inline-block;
+		}
+		&.updated {
+			color: $gray-light;
+		}
+	}
+}

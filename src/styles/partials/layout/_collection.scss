@@ -1,0 +1,115 @@
+.collection-items {
+	.collection-item {
+		height: 240px;
+    	background-position:center;
+		@media(min-width:$screen-md){
+			height: 300px;
+	    	background-position:center 65%;
+		}
+    	position: relative;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	margin-bottom: $grid-gutter-width;
+    	background-color: $site-secondary;
+    	&:hover {
+    		opacity: 0.95;
+    	}
+    	.title {
+    		background-color: transparentize($site-primary,0.2);
+		    color: #FFF;
+		    padding: $grid-gutter-width/2;
+		    bottom: 0;
+		    position: absolute;
+		    margin: 0;
+		    width: 100%;
+		    font-size: 18px;
+    	}
+    	.logo {
+    		width: 30%;
+		    position: absolute;
+		    bottom: 0;
+		    right: 0;
+		    background-color: $site-secondary;
+		    padding: 15px;
+		    border: 2px solid $site-secondary-dark;
+    	}
+    	.post-details {
+    		border-left: none;
+    		border-right: none;
+    		border-top: none;
+		    margin: $grid-gutter-width/-2;
+		    margin-bottom: $grid-gutter-width/2;
+    	}
+    	.read-more-link {
+    		display: inline-block;
+    		position: absolute;
+    		bottom: 0;
+    		margin: $grid-gutter-width/-2;
+    		margin-bottom: 0;
+    		padding: 5px $grid-gutter-width/2;
+    		text-align: right;
+    		background-color: $site-secondary-dark;
+    		width: 100%;
+    	}
+	}
+	.charity {
+		.title {
+			padding-right: 30%;
+		}
+	}
+	.report,.post {
+		&:hover {
+			opacity: 1;
+		}
+		padding: $grid-gutter-width/2;
+		background-color: $site-secondary;
+		border: 2px solid $site-secondary-dark;
+		height: auto;
+		.title {
+			position: static;
+			bottom: auto;
+			width: auto;
+			background-color: $site-primary;
+			margin: ($grid-gutter-width/-2)-2;
+			margin-bottom: $grid-gutter-width/2;
+			padding: ($grid-gutter-width/2)+2;
+			a {
+				color: #FFF;
+				&:hover {
+					text-decoration: none;
+					color: $site-secondary;
+				}
+			}
+		}
+		.excerpt {
+			margin-bottom: 58px;
+		    overflow: hidden;
+		}
+	}
+	.post {
+		.post-header {
+
+			background-color: $site-secondary;
+	    	h3 {
+	    		margin:0;
+	    	}
+	    	&.featured-image {
+	    		padding:0 0 56%;
+	    		margin: $grid-gutter-width/-2;
+	    		margin-bottom: $grid-gutter-width/2;
+	    		position: relative;
+	    		background-color: $site-secondary;
+	    		background-repeat: no-repeat;
+	    		background-size: cover;
+	    		h3 {
+	    			position: absolute;
+	    			bottom: 0;
+	    			background-color: transparentize($site-primary,0.2);
+	    			color: #FFF;
+	    			padding: $grid-gutter-width/2;
+	    			width: 100%;
+	    		}
+	    	}
+		}
+	}
+}

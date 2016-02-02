@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="collection-{{ collection }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
+<body class="collection-{{ collection.replace('_','') }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
 
 {% include "./partials/nav.swig" %}
 
@@ -104,7 +104,7 @@
 			.queueWait(function(){
 				WebFont.load({
 					google: {
-						families: ['Source+Sans+Pro:400,300,700:latin']
+						families: ['Source+Sans+Pro:200,200italic,400,400italic,700,700italic:latin']
 					},
 					loading: function(){
 						clearTimeout(window.wfl);

@@ -1,0 +1,83 @@
+div.page, div.author {
+	@include text-content();
+}
+
+.post, .page, .report {
+	.first-paragraph {
+		font-size: 1.3em;
+		@media(min-width:$screen-sm){
+			font-size: 1.6em;
+		}
+	}
+}
+
+.charity, .cause {
+	.fast-facts {
+		.fast-facts-heading {
+			margin: ($grid-gutter-width*-1)-2;
+			margin-bottom: $grid-gutter-width/2;
+			font-size: 26px;
+			color: #FFF;
+			background-color: $site-primary;
+			padding: ($grid-gutter-width/2)+2 $grid-gutter-width;
+		}
+	}
+}
+
+.report {
+	h2,h3,h4,h5,h6 {
+		.index {
+			display: inline;
+		}
+	}
+}
+
+.charity {
+	.basic-info {
+		.basic-info-item {
+			h4 {
+				margin: 0 0 $grid-gutter-width/2;
+			}
+			margin-bottom: $grid-gutter-width;
+		}
+		.impact-summary {
+			padding: $grid-gutter-width/2;
+			border: 2px solid $site-secondary-dark;
+			background: $site-secondary;
+			position: relative;
+			ul {
+				padding: 0;
+				list-style-type: none;
+				text-align: justify;
+				margin-right: $grid-gutter-width/-2;
+			}
+			li {
+				display: inline-block;
+				text-align: left;
+				margin-right: $grid-gutter-width/2;
+				font-weight: 700;
+			}
+			.learn-more {
+				position:absolute;
+				top:0;
+				right: 5px;
+				color: $site-secondary-dark;
+			}
+		}
+		.info {
+			h4 {
+				margin-top: 17px;
+			}
+			.btn {
+				display: block;
+				margin-bottom: 15px;
+			}
+			.tax-deductibility-info {
+				font-style: italic;
+			    font-size: 14px;
+			    margin: 0;
+			}
+		}
+	}
+}
+

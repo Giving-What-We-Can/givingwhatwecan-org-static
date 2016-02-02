@@ -47,15 +47,6 @@
 		}
 
 	}
-	.fast-facts-wrapper {
-		background-color: $site-secondary;
-		padding: $grid-gutter-width $grid-gutter-width 0;
-		.fast-facts {
-			border-bottom: 2px solid darken($site-secondary,20%);
-			padding-bottom: $grid-gutter-width;
-			margin: 0;
-		}
-	}
 	.actions {
 		background-color: $site-secondary;
 		padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width/2;

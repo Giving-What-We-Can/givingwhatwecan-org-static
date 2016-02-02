@@ -1,5 +1,5 @@
 {% set contentBlockSet = contentBlockSet|default(null) %}
-{% for contentBlock in contentBlocks %}
+{% for contentBlock in _contentBlocks %}
     {% if contentBlockSet && contentBlock.set|contains(contentBlockSet) %}
         {% include './content-block.swig' %}
     {% endif %}

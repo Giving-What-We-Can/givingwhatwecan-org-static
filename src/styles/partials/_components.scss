@@ -7,8 +7,10 @@
 @import 'components/join-matrix';
 @import 'components/logo';
 @import 'components/pathway-model';
+@import 'components/post-details';
 @import 'components/progress-bar';
 @import 'components/quotation';
+@import 'components/research';
 @import 'components/social';
 @import 'components/team-member';
 @import 'components/toc';
@@ -103,32 +105,11 @@ span {
 }
 
 
-// nested ordered lists
-ol {
-  list-style-type: none;
-  counter-reset: item;
-  margin: 0;
-  padding: 0;
-}
-
-ol > li {
-  display: table;
-  counter-increment: item;
-  margin-bottom: 0.6em;
-
-  &:before {
-    content: counters(item, ".") ". ";
-    display: table-cell;
-    padding-right: 0.6em;
-  }
-}
-
-li ol > li {
-  margin: 0;
-
-  &:before {
-    content: counters(item, ".") " ";
-  }
+h1,h2,h3,h4,h5,h6 {
+	.index {
+	    color: $site-secondary-dark;
+	    display: none;
+	}
 }
 
 

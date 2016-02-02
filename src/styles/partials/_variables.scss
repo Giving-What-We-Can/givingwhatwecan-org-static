@@ -31,6 +31,14 @@ $site-dark: darken($site-primary, $dark-factor);
 $site-lolight: $site-dark;
 $site-darker: darken($site-primary, $darker-factor);
 
+$site-secondary-light: lighten($site-secondary, $light-factor);
+$site-secondary-highlight: $site-light;
+$site-secondary-lighter: lighten($site-secondary, $lighter-factor);
+$site-secondary-dark: darken($site-secondary, $dark-factor);
+$site-secondary-lolight: $site-dark;
+$site-secondary-darker: darken($site-secondary, $darker-factor);
+
+
 $cea: #2c5aa9;
 $gwwc: #6C0000;
 $eightythousandhours: #3FBDD1;

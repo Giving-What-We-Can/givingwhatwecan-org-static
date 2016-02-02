@@ -7,7 +7,7 @@
 <div class="row">
 {% for topCharity in topCharities %}
 	{% set charity = false %}
-	{% for c in charities %}
+	{% for c in _charities %}
 		{% if c|contains(topCharity,'slug') %}
 			{% set charity = c %}
 		{% endif %}

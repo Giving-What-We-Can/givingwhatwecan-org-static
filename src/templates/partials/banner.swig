@@ -14,7 +14,7 @@
 	</div>
 	{% if featuredImage && featuredImage.fields || featuredImageDescription %}
 	<div class="image-attribution">
-		<p>{{featuredImage|default(featuredImageDescription)|autolinker}}</p>
+		<p>{{featuredImage.fields.description|default(featuredImageDescription)|autolinker}}</p>
 	</div>
 	{% endif %}
 </div>

@@ -7,20 +7,21 @@
 
 	<div class="container">
 		<div class="row">
-			<article class="post">
-				{% include './partials/postDetails.swig' %}
-				<section class="post-content">
-					{{ contents }}
-					{% include './partials/share-button.swig' %}
-				</section>
-				{% for a in author %}
-					{% include './partials/authorinfo.swig' with a only%}		
-				{% endfor %}
-				<section class="comments">
-				{% include './partials/disqus.swig' %}
-				</section>
-			</article>
-
+			<div class="col-md-8 col-md-offset-2">
+				<article class="post">
+					{% include './partials/postDetails.swig' %}
+					<section class="post-content">
+						{{ contents }}
+						{% include './partials/share-button.swig' %}
+					</section>
+					{% for a in author %}
+						{% include './partials/authorinfo.swig' with a only%}		
+					{% endfor %}
+					<section class="comments">
+					{% include './partials/disqus.swig' %}
+					</section>
+				</article>
+			</div>
 		</div>
 		<hr>
 		<p><!-- POST FOOTER --></p>

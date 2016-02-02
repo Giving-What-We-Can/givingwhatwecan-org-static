@@ -1,7 +1,7 @@
 <div class="container">
     <nav id="footer-main">
 		<ul class="row">
-			{% for parent in menus['footer'] %}
+			{% for parent in menus['footer-menu'] %}
 				{% if parent._menu %}
 				<li class="col-md-3">
 					<h6>

@@ -22,7 +22,7 @@ var CONTENTFUL_SPACE = process.env.CONTENTFUL_SPACE
 
 if(ENVIRONMENT==='development'){
     // time requires
-    require("time-require");
+    // require("time-require");
     // cache require paths for faster builds
     require('cache-require-paths');
 }
@@ -80,6 +80,7 @@ message('Loaded static file compilation');
 // utility
 var fs = require('fs');
 var path = require('path');
+var extend = require('util')._extend;
 var each = require('async').each;
 var merge = require('merge');
 var NotificationCenter = require('node-notifier').NotificationCenter;
@@ -101,6 +102,55 @@ function build(buildCount){
         buildTime = process.hrtime();
         buildTimeDiff = buildTime;
     }
+
+
+    // hacky solution to share data between Contentful pages and the 'pagination' plugin
+    var collectionSlugs = ['blog','causes','charities','reports']
+    var collectionInfo = {
+        blog: {
+            singular: 'post',
+            sortBy: 'date',
+            reverse: true,
+            perPage: 10
+        },
+        causes: {
+            singular: 'cause'
+        },
+        charities: {
+            singular: 'charity',
+            sortBy: 'recommendationLevel'
+        },
+        reports: {
+            singular: 'report',
+            sortBy: 'date',
+            reverse: true
+        }
+    }
+    var collectionData = {};
+    collectionOptions = {};
+    var paginationOptions = {};
+    collectionSlugs.forEach(function(slug){
+        collectionData[slug] = {};
+        collectionOptions[slug] = {
+            
+                pattern: collectionInfo[slug].singular+'/**/*.html',
+                sortBy: collectionInfo[slug].sortBy || 'title',
+                reverse: collectionInfo[slug].reverse || false,
+                metadata: {
+                    singular: collectionInfo[slug].singular,
+                }
+            
+        }
+        paginationOptions['collections.'+slug] = {
+            perPage: collectionInfo[slug].perPage || 100,
+            template: './partials/collection-'+slug+'.swig',
+            first: slug+'/index.html',
+            path: slug+'/page/:num/index.html',
+            pageMetadata: collectionData[slug]
+        }
+    })
+
+
     // START THE BUILD!
     var colophonemes = new Metalsmith(__dirname);
     colophonemes
@@ -184,13 +234,25 @@ function build(buildCount){
                 } else {
                     meta['contents'] = meta.data.fields[key]
                 }
+                // add date information to the post
+                meta.date = meta.date || meta.data.sys.createdAt
+                meta.updated = meta.updated || meta.data.sys.updatedAt
+                
                 cb();
             }, cb)
         }, done)
     })
     .use(function (files,metalsmith,done){
+        // move the contentful 'fields' metadata to the file's global meta
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), function(file,cb){
+            var meta = files[file]
+            
+            cb();
+        }, done)
+    })
+    .use(function (files,metalsmith,done){
         // remove templates from content blocks
-        each(Object.keys(files).filter(minimatch.filter('@(content-block|charity)/**/*.html')), function(file,cb){
+        each(Object.keys(files).filter(minimatch.filter('@(content-block)/**/*.html')), function(file,cb){
             var meta = files[file]
             if (meta.template) delete meta.template;
             cb();
@@ -247,34 +309,41 @@ function build(buildCount){
 
     })
     .use(logMessage('Processed Contentful metadata'))
-    .use(collections({
-        // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
-        posts: {
-            pattern: 'post/**/*.html',
-            sortBy: 'date',
-            reverse: true,
-            metadata: {
-                singular: 'post',
+    .use(collections(collectionOptions))
+    .use(function (files,metalsmith,done){
+        // get metadata from the contentful pages that correspond to our collections,
+        // save them to a global variable that we can use in the 'pagination' plug-in
+        // and get rid of the original page
+        var fields = ['title','shortTitle','slug','contents','featuredImage','ogImage','redirects','excerpt']
+        collectionSlugs.forEach(function(slug){
+            var file = 'page/'+slug+'/index.html';
+            var page = files[file];
+            if(page){
+                fields.forEach(function(field){
+                    if(page[field]){
+                        collectionData[slug][(field==='contents'?'_contents':field)] = page[field];
+                    }
+                })
+                delete files[file] 
             }
-        }
-    }))
-    .use(pagination({
-        'collections.posts': {
-            perPage: 10,
-            template: 'blog.swig',
-            first: 'blog/index.html',
-            path: 'blog/page/:num/index.html',
-            pageMetadata: {
-              title: 'Blog',
-
-            }
-        }
-    }))
+        })
+        done()
+    })
+    .use(pagination(paginationOptions))
     .use(function (files, metalsmith, done) {
-        // get rid of the 'post' collections in the global metadata so that we can create clean collections when we index the rest of the content
+        // add the 'contents' back to each file generated by the 'pagination' plug-in
+        Object.keys(files).filter(minimatch.filter('@('+collectionSlugs.join('|')+')/**')).forEach(function(file){
+            files[file].contents = new Buffer( (files[file]._contents ? files[file]._contents : '') );
+            delete files[file]._contents
+        })
+        done()
+    })
+    .use(function (files, metalsmith, done) {
+        // get rid of the existing collections in the global metadata so that we can create clean collections when we index the rest of the content
         var metadata = metalsmith.metadata();
-        delete metadata.collections;
-        delete metadata.posts;
+        ['collections','posts','causes','charities','reports'].forEach(function(m){
+            delete metadata[m]
+        })
         each(Object.keys(files), apply , done)
         function apply (file, cb) {
             delete files[file].collection;
@@ -284,28 +353,28 @@ function build(buildCount){
     .use(logMessage('Prepared blog posts'))
     .use(collections({
         // just add the posts to the collection, so that we can add the blog archive pages to the 'pages' collection after the 'paginate' plugin runs
-        pages: {
+        _pages: {
             pattern: 'page/**/*.html',
             sortBy: 'menuOrder',
             metadata: {
                 singular: 'page',
             }
         },
-        blogs: {
+        _blogs: {
             pattern: 'blog/**/*.html',
             sortBy: 'menuOrder',
             metadata: {
                 singular: 'blog',
             }
         },
-        people: {
+        _people: {
             pattern: 'person/**/*.html',
             sortBy: 'menuOrder',
             metadata: {
                 singular: 'person',
             }
         },
-        posts: {
+        _posts: {
             pattern: 'post/**/*.html',
             sortBy: 'date',
             reverse: true,
@@ -313,7 +382,7 @@ function build(buildCount){
                 singular: 'post',
             }
         },
-        contentBlocks: {
+        _contentBlocks: {
             pattern: 'content-block/**/*.html',
             sortBy: 'displayOrder',
             reverse: false,
@@ -321,7 +390,7 @@ function build(buildCount){
                 singular: 'content-block',
             }
         },
-        quotations: {
+        _quotations: {
             pattern: 'quotation/**/*.html',
             sortBy: 'text',
             reverse: false,
@@ -329,12 +398,28 @@ function build(buildCount){
                 singular: 'quotation',
             }
         },
-        charities: {
+        _charities: {
             pattern: 'charity/**/*.html',
             sortBy: 'title',
             reverse: false,
             metadata: {
                 singular: 'charity',
+            }
+        },
+        _causes: {
+            pattern: 'cause/**/*.html',
+            sortBy: 'title',
+            reverse: false,
+            metadata: {
+                singular: 'cause',
+            }
+        },
+        _reports: {
+            pattern: 'report/**/*.html',
+            sortBy: 'title',
+            reverse: false,
+            metadata: {
+                singular: 'report',
             }
         }
     }))
@@ -381,8 +466,8 @@ function build(buildCount){
         }
     })
     .use(function (files,metalsmith,done){
-        // add paths to people and quotatons
-        each(Object.keys(files).filter(minimatch.filter('@(person|quotation)/**/*.html')), apply, done )
+        // add paths to all files
+        each(Object.keys(files).filter(minimatch.filter('@(quotation|person|cause|report|charity)/**/*.html')), apply, done )
         // recursively find parent links
         function apply(file, cb){
             var filePath = file.split('/')[0]
@@ -406,6 +491,7 @@ function build(buildCount){
     .use(logMessage('Added navigation metadata'))
     .use(function (files,metalsmith,done){
         // move files so that their location matches their path
+        // or add a path if they don't have one
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), apply, done )
         function apply(file, cb){
             var filepath = files[file].path
@@ -464,7 +550,7 @@ function build(buildCount){
         each(Object.keys(files).filter(minimatch.filter('**/*.html')), parse, done )
 
         function parse (file,callback){
-            files[file].contents = parseHTML(files[file].contents.toString(),files[file].collection,metalsmith.metadata().redirects)
+            files[file].contents = parseHTML(files[file].contents.toString(),files[file],metalsmith.metadata().redirects)
             callback();
         }
 
@@ -477,7 +563,7 @@ function build(buildCount){
     .use(relative())
     .use(feed({
         title: 'The Giving What We Can Blog',
-        collection: 'posts',
+        collection: '_posts',
         destination: 'blog.xml',
         feed_url: 'https://www.givingwhatwecan.org/blog.xml',
         image_url: 'https://www.givingwhatwecan.org/images/favicons/apple-touch-icon-144x144.png',
@@ -502,7 +588,13 @@ function build(buildCount){
     .use(logMessage('Generated RSS feed'))
     .use(branch(function(filename,props,i){
 
-            return props.collection && (props.collection.indexOf('posts') > -1 || props.collection.indexOf('pages') > -1);
+            return props.collection && (
+                props.collection.indexOf('_posts') > -1 ||
+                props.collection.indexOf('_causes') > -1 ||
+                props.collection.indexOf('_reports') > -1 ||
+                props.collection.indexOf('_charities') > -1 ||
+                props.collection.indexOf('_pages') > -1
+            );
         })
         .use(headingsIdentifier({
             linkTemplate: "<a class='heading-permalink' href='#%s'><span></span></a>"
@@ -527,7 +619,45 @@ function build(buildCount){
         pattern: "**/*.html",
         inPlace: true
     }))
-    .use(logMessage('In place templating done'))
+    .use(logMessage('Completed in-place templating'))
+    .use(function (files, metalsmith, done) {
+        // create matching JSON files for each piece of content
+        each(Object.keys(files).filter(minimatch.filter('**/index.html')),create,function(err){
+            if(err) throw err;
+            done();
+        })
+
+        function create(file,cb){
+            var jsonfile = file.replace('/index.html','.json')
+            if(jsonfile === file){
+                cb();
+                return;
+            }
+
+            var json = {}
+            var fields = [
+                'contents',
+                'id',
+                'contentType',
+                'title',
+                'slug',
+                'path',
+                'excerpt',
+                'headings',
+                'date',
+                'updated'
+            ]
+            fields.forEach(function(field){
+                if(files[file][field]){
+                    json[field] = files[file][field]
+                }
+            })
+            json.contents = json.contents.toString()
+            files[jsonfile] = {contents:JSON.stringify(json)}
+            cb();
+        }
+
+    })
     .use(templates({
         engine:'swig',
         directory: '../src/templates',
@@ -542,9 +672,9 @@ function build(buildCount){
     }))
     .use(logMessage('Added icon fonts'))
     .use(function (files, metalsmith, done) {
-        // we've incorporated content blocks & charities into other pages, but we don't need them as standalone pages in our final build.
+        // certain content has been incorporated into other pages, but we don't need them as standalone pages in our final build.
         Object.keys(files).forEach(function(file){
-            if(minimatch(file,'@(content-block|charity|quotation)/**')){
+            if(minimatch(file,'@(content-block|quotation)/**')){
                 delete files[file];
             }
         });
@@ -566,7 +696,8 @@ function build(buildCount){
     colophonemes
     .use(concat({
         files: ['styles/app.min.css','styles/icons.css'],
-        output: 'styles/app.concat.min.css'
+        output: 'styles/app.concat.min.css',
+        keepConcatenated: true
     }))
     .use(function (files, metalsmith, done) {
         // hacky fix to put styles back in the right place after concat
@@ -587,7 +718,7 @@ function build(buildCount){
         .use(logMessage('Cleaning CSS files',chalk.dim))
         .use(uncss({
             basepath: 'styles',
-            css: ['app.css'],
+            css: ['app.css','icons.css'],
             output: 'app.min.css',
             removeOriginal: true,
             uncss: {
@@ -607,7 +738,7 @@ function build(buildCount){
                     /slabtext/,
                     /lazyload/,
                     /tooltip/,
-                    /sb/,
+                    /sb-/,
                 ],
                 media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
             }

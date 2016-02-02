@@ -101,7 +101,7 @@ global.cookies=require("browser-cookies"),require("lazysizes"),require("lazysize
 
 },{"GSAPAttrPlugin":13,"GSAPCSSPlugin":14,"GSAPEasing":12,"GSAPScrollToPlugin":15,"bootstrapCollapse":1,"bootstrapDropdown":2,"bootstrapModal":3,"bootstrapSlider":6,"bootstrapTooltip":4,"bootstrapTransition":5,"browser-cookies":7,"chartist":9,"chartistAxisTitle":8,"gsap-timelinelite":10,"gsap-tweenlite":11,"lazysizes":16,"lazysizesBGSet":18,"lazysizesRespImg":17,"main":25,"numeral":19,"scrollmagic":20,"scrollmagicAnimationGSAP":21,"scrollmagicJQuery":22,"slabText":26,"validate.js":23}],25:[function(require,module,exports){
 (function (global){
-var __browserify_shim_require__=require;(function(i,n,o,e,a){!function(i){var n=i("#menu-main").outerHeight()+20,o=function(i){scrollBy(0,-n)};location.hash&&o(),i(window).on("hashchange",o)}(jQuery),a("undefined"!=typeof main?main:window.main)}).call(global,void 0,void 0,void 0,void 0,function(i){module.exports=i});
+var __browserify_shim_require__=require;(function(o,n,i,e,r){!function(o){var n=o("#menu-main").outerHeight()+20,i=function(o){scrollBy(0,-n)};location.hash&&i(),o(window).on("hashchange",i)}(jQuery),window.loadContent=function(o,n){jQuery.get("/"+o+".json").done(function(o){n(o)}).fail(function(){console.error("Error, could not load",o)})},r("undefined"!=typeof main?main:window.main)}).call(global,void 0,void 0,void 0,void 0,function(o){module.exports=o});
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{}],26:[function(require,module,exports){

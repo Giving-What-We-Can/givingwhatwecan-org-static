@@ -1,5 +1,5 @@
 {% if charity %}
-	{% for c in charities %}
+	{% for c in _charities %}
 		{% if c|contains(charity,'slug') %}
 			{#  #}
 			{% set charityDisplay = charityDisplay || "default" %}

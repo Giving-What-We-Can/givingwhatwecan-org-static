@@ -37,4 +37,6 @@
 	<ul class="toc">
 		<li class="level-2">Table of contents will appear here</li>
 	</ul>
+{% else %}
+<em>Error: could not render table of contents</em>
 {% endif %}
