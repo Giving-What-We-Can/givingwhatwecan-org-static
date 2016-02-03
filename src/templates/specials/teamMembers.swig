@@ -1,5 +1,5 @@
 {% if members %}
-	{% for person in people %}
+	{% for person in _people %}
 		{% if person.set && person.set|contains(members) %}
 				<div class="media team-member">
 					<div class="media-left team-member-photo">
