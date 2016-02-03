@@ -6,11 +6,12 @@ var app = express()
 var swig = require('swig')
     require('../lib/swig-filters')(swig)
 var engines = require('consolidate')
+var fs = require('fs')
+var path = require('path')
 var contentful = require('contentful');
 var parseHTML = require('../lib/parseHTML').parse
 var sanitiseSwigTags = require('../lib/sanitiseSwigTags').sanitise
 var getSpecials = require('../lib/get-specials').get
-var getStats = require('../lib/get-stats').get
 
 var https = require("https");
 
@@ -147,31 +148,28 @@ app.get('/:contentType/:contentID', function (req, res) {
                     cache: false
                 }
                 entryData.fieldNames = Object.keys(entry[0].fields)
-                getStats(function(stats){
-                    inPlaceData.stats = stats
-                    getSpecials(function(specials){
-                        Object.keys(specials).forEach(function(special){
-                            inPlaceData[special] = specials[special]
-                        })
-                        engines.swig.render(
-                            sanitiseSwigTags(
-                                parseHTML(entryData.contents,contentTypeSlug)
-                            ),
-                            inPlaceData
-                        ).then(function(rendered){
-                            entryData.collection = contentTypeSlug
-                            entryData.collections = {}
-                            entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
-                            var templateName = entryData.template || contentTypeSingular
-                            entryData.contents = rendered
-                            res.render(templateName,entryData);
-                        })
-                        .error(function(err){
-                            console.log(err)
-                        })
+                inPlaceData.stats = JSON.stringify(fs.readFileSync(path.join(__dirname,'..','src','metalsmith','settings','stats.json')))
+                getSpecials(function(specials){
+                    Object.keys(specials).forEach(function(special){
+                        inPlaceData[special] = specials[special]
+                    })
+                    engines.swig.render(
+                        sanitiseSwigTags(
+                            parseHTML(entryData.contents)
+                        ),
+                        inPlaceData
+                    ).then(function(rendered){
+                        entryData.collection = contentTypeSlug
+                        entryData.collections = {}
+                        entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
+                        var templateName = entryData.template || contentTypeSingular
+                        entryData.contents = rendered
+                        res.render(templateName,entryData);
+                    })
+                    .error(function(err){
+                        console.log(err)
                     })
                 })
-
             })
         } else {
             res.send('No content type matches ' + contentType)

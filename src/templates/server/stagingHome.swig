@@ -25,7 +25,7 @@
 
 					<h2>Choose a content type to preview:</h2>
 					<ul>
-					{% set allowedTypes = ['Page','Post','Person']%}
+					{% set allowedTypes = ['Page','Post','Person','Report','Cause','Charity']%}
 					{% for contentType in contentTypes %}
 
 						{% if allowedTypes.indexOf(contentType.name) > -1 %}

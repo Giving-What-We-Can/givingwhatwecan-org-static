@@ -12,7 +12,7 @@
 				<li><a href="/{{contentType}}/{{entry.sys.id}}">{{entry.fields.title}}</a></li>
 			{% endfor %}
 			</ul>
-			<pre>{{entries|json(4)}}</pre>
+			{# <pre>{{entries|json(4)}}</pre> #}
 		</div>
 	</div>
 </div>
