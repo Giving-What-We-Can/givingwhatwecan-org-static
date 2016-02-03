@@ -225,7 +225,7 @@ function build(buildCount){
     })
     .use(function (files,metalsmith,done){
         // move the contentful 'fields' metadata to the file's global meta
-        each(Object.keys(files).filter(minimatch.filter('**/*.html')), function(file,cb){
+        each(Object.keys(files).filter(minimatch.filter('**/*.html')), function(file,callback){
             var meta = files[file]
             if(!meta.data || !meta.data.fields){ cb(); return; }
             each(Object.keys(meta.data.fields), function(key,cb){
@@ -234,12 +234,18 @@ function build(buildCount){
                 } else {
                     meta['contents'] = meta.data.fields[key]
                 }
+                cb();
+            },function(){
                 // add date information to the post
                 meta.date = meta.date || meta.data.sys.createdAt
                 meta.updated = meta.updated || meta.data.sys.updatedAt
-                
-                cb();
-            }, cb)
+                // concat footnotes into main content field
+                if(meta.footnotes) {
+                    meta.contents = meta.contents + '\n\n' + meta.footnotes
+                    delete meta.footnotes
+                }
+                callback()
+            })
         }, done)
     })
     .use(function (files,metalsmith,done){

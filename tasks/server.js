@@ -153,6 +153,10 @@ app.get('/:contentType/:contentID', function (req, res) {
                     Object.keys(specials).forEach(function(special){
                         inPlaceData[special] = specials[special]
                     })
+                    if(entryData.footnotes){
+                        entryData.contents = entryData.contents + '\n\n' + entryData.footnotes;
+                        delete entryData.footnotes;
+                    }
                     engines.swig.render(
                         sanitiseSwigTags(
                             parseHTML(entryData.contents)
