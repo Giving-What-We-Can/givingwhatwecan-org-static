@@ -11,7 +11,7 @@
     "stats": "node ./tasks/getstats.js",
     "build": "npm run stats && npm run styles && npm run scripts && npm run metalsmith",
     "serve": "node ./tasks/server.js",
-    "server": "npm run development && npm run serve",
+    "server": "npm run serve",
     "development": "ENV=development npm run build",
     "production": "ENV=production npm run build"
   },

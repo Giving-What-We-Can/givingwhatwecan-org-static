@@ -47,11 +47,12 @@ swig.setDefaults({ cache: false });
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
 
+var srcdir = path.normalize(__dirname+'/../src/metalsmith');
 
-app.use('/scripts',express.static('dest/scripts'));
-app.use('/fonts',express.static('dest/fonts'));
-app.use('/styles',express.static('dest/styles'));
-app.use('/images',express.static('dest/images'));
+app.use('/scripts',express.static(path.join(srcdir,'scripts')));
+app.use('/fonts',express.static(path.join(srcdir,'fonts')));
+app.use('/styles',express.static(path.join(srcdir,'styles')));
+app.use('/images',express.static(path.join(srcdir,'images')));
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function (req, res) {
