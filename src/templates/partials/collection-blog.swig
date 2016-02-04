@@ -4,7 +4,7 @@
 
 	{% for post in pagination.files %}
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="text-content">
 				<article class="post collection-item">
 					<a href="{{ relative(post.path) }}">
 					<header class="post-header{% if post.featuredImage %} featured-image{% endif %}" {% if post.featuredImage %}style="background-image:url({{post.featuredImage.fields.file.url}})"{% endif %}>

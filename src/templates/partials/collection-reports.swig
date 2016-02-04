@@ -3,7 +3,7 @@
 {% block collectionItems %}
 	{% for post in pagination.files %}
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="text-content">
 				<article class="report collection-item">
 					<h3 class="title"><i class="fa fa-file-text-o"></i> <a href="/{{post.path}}">{{post.title}}</a></h3>
 					{% include './postDetails.swig' with post only %}
