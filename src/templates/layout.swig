@@ -34,8 +34,7 @@
 	{% endblock %}
 
 </head>
-
-<body class="collection-{{ collection.replace('_','') }} {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
+<body class="{% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %} {{ collections[collection].metadata.singular }} {% endif %}{{ {true:'home', false:slug}[slug==='/'] }}">
 
 {% include "./partials/nav.swig" %}
 

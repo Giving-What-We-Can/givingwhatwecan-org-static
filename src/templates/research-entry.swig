@@ -27,12 +27,14 @@
 						{{ contents }}
 					</section>
 
-					{% if report %}
-					<section class="report">
-						{% include './partials/full-report.swig' %}
-					</section>
-					{% endif %}
 				</div>
+				{% if report %}
+				<div class="report">
+					<div class="page-content">
+						{% include './partials/full-report.swig' %}
+					</div>
+				</div>
+				{% endif %}
 			</div>
 			<div class="col-md-3">
 				<hr class="visible-xs visible-sm">

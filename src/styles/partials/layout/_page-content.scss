@@ -1,0 +1,39 @@
+.page-content,.post-content, .page-content>.overview, .page-content .report-contents {
+	&>p, &>ul>li, &>ol>li {
+		font-family: $font-family-serif;
+		a, strong,b {
+			font-weight: 700;
+		}
+		a.btn {
+			font-family: $font-family-sans-serif;
+			font-weight: 400;
+		}
+	}
+	&>ul,&>ol {
+		margin-left: 0;
+		padding-left: 24px;
+		@media(min-width:$screen-sm){
+			margin-left: $grid-gutter-width*-1;
+			padding-left: $grid-gutter-width;
+		}
+	}
+
+	&>.container, &>figure>.container {
+		padding: 0;
+	}
+
+
+	.first-paragraph {
+		font-family: $font-family-sans-serif !important;
+		font-size: 1.3em !important;
+		font-style: italic;
+		a {
+			font-weight: 200 !important;
+		}
+		@media(min-width:$screen-sm){
+			font-size: 1.6em !important;
+			line-height: 1.6em !important;
+		}
+	}
+	
+}

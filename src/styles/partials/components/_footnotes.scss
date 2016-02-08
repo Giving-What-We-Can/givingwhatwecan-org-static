@@ -1,4 +1,19 @@
 .footnotes {
 	font-size: 16px;
 	line-height:1.3em;
+	.footnote-item {
+		$padding: 5px;
+		.highlighted {
+			background-color: $site-secondary;
+			padding: $padding;
+			margin-left: $padding*-1;
+		}
+	}
+}
+.footnote-ref {
+	&.highlighted {
+		background-color: $site-secondary;
+    	padding: 0 5px;
+    	font-weight: 700;
+	}
 }

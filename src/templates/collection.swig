@@ -9,9 +9,11 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="page">
-				{{contents}}
-				<hr>
+			<div class="text-content">
+				<div class="page-content">
+					{{contents}}
+					<hr>
+				</div>
 			</div>
 		</div>
 

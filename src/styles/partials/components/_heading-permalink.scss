@@ -16,10 +16,7 @@
 	color: #444;
 	vertical-align: middle;
 	opacity: 0;
-	&:hover {
-		opacity: 1;
-		color: #444;
-	}
+	z-index: 1200;
 }
 h1,h2,h3,h4,h5,h6 { 
 	position: relative;
@@ -30,6 +27,12 @@ h1,h2,h3,h4,h5,h6 {
 			left: 0px;
 			top: 0px;
 			bottom: 0px;	
+		}
+	}
+	&:hover {
+		.heading-permalink {
+			opacity: 1;
+			color: #444;
 		}
 	}
 }

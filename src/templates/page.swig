@@ -9,7 +9,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="page">
+			<div class="text-content">
 				<section class="page-content">
 					{{ contents }}
 				</section>

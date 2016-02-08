@@ -3,12 +3,7 @@
 }
 
 .post, .page, .report {
-	.first-paragraph {
-		font-size: 1.3em;
-		@media(min-width:$screen-sm){
-			font-size: 1.6em;
-		}
-	}
+
 }
 
 .charity, .cause {
@@ -24,10 +19,40 @@
 	}
 }
 
-.report {
+.report{
+	.page-content {
+		&>p,&>li {
+			font-size: 16px;
+		}
+	}
+	$width: 100px;
 	h2,h3,h4,h5,h6 {
-		.index {
-			display: inline;
+		&.indexed {
+			.index {
+				display: inline;
+			}
+			@media(min-width:$screen-md){
+				// margin-left: ($width+($grid-gutter-width/2))*-1;
+				.index {
+					width: $width;
+					// margin-right: $grid-gutter-width/2;
+					display: inline-block;
+					text-align: right;
+					position: absolute;
+					left: ($width+($grid-gutter-width/2))*-1;
+				}
+
+			}
+			@media(max-width:$screen-sm-max){
+				.heading-permalink {
+					margin-left:0;
+				}
+			}
+			&:hover {
+				.index {
+					opacity: 0;
+				}
+			}
 		}
 	}
 }

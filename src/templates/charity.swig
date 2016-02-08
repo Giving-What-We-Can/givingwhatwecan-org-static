@@ -16,7 +16,7 @@
 				</p>
 			</section>
 		</div>
-		<div class="col-sm-4 basic-info-item">
+		{# <div class="col-sm-4 basic-info-item">
 			<section class="impact-summary">
 				<ul class="charity-rating">
 					<li>Room for more funding:<br><i class="fa fa-money"></i></li>
@@ -28,7 +28,7 @@
 					<span class="sr-only">Learn More</span>
 				</a>
 			</section>
-		</div>
+		</div> #}
 	</div>
 {% endblock %}
 
