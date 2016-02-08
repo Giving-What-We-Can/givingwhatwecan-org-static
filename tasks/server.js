@@ -10,8 +10,8 @@ var fs = require('fs')
 var path = require('path')
 var contentful = require('contentful');
 var parseHTML = require('../lib/parseHTML').parse
-var sanitiseSwigTags = require('../lib/sanitiseSwigTags').sanitise
 var getSpecials = require('../lib/get-specials').get
+var sanitiseSwigTags = require('../lib/sanitiseSwigTags').sanitise
 
 var https = require("https");
 
@@ -123,12 +123,14 @@ app.get('/:contentType', function (req, res) {
 });
 
 app.get('/:contentType/:contentID', function (req, res) {
+    console.log('Starting...')
     var contentType = req.params.contentType
     var contentID = req.params.contentID
     var contentTypeName, templateName
 
     client.contentTypes()
     .then(function(contentTypes){
+        console.log('Got content types...')
         for (var i = contentTypes.length - 1; i >= 0; i--) {
             if(contentTypes[i].sys.id === contentType){
                 contentTypeName = contentTypes[i].name
@@ -136,6 +138,7 @@ app.get('/:contentType/:contentID', function (req, res) {
             }
         };
         if(contentTypeName){
+            console.log('Got entry type '+contentTypeName+'...')
             contentTypeSingular = contentTypeName.toLowerCase()
             contentTypeSlug = contentTypeSingular + 's'
             client.entries({
@@ -143,6 +146,7 @@ app.get('/:contentType/:contentID', function (req, res) {
                 include: 2
             })
             .then(function(entry){
+                console.log('Got entry...')
                 var entryData = entry[0].fields
                 var inPlaceData = {
                     server: true,
@@ -151,6 +155,7 @@ app.get('/:contentType/:contentID', function (req, res) {
                 entryData.fieldNames = Object.keys(entry[0].fields)
                 inPlaceData.stats = JSON.stringify(fs.readFileSync(path.join(__dirname,'..','src','metalsmith','settings','stats.json')))
                 getSpecials(function(specials){
+                    console.log('Got specials...')
                     Object.keys(specials).forEach(function(special){
                         inPlaceData[special] = specials[special]
                     })
@@ -158,17 +163,55 @@ app.get('/:contentType/:contentID', function (req, res) {
                         entryData.contents = entryData.contents + '\n\n' + entryData.footnotes;
                         delete entryData.footnotes;
                     }
+                    // add 'collections' metadata
+                    var collections = {
+                        'Page':'_pages',
+                        'Post':'_posts',
+                        'Charity':'_charities',
+                        'Causes':'_causes',
+                        'Report':'_reports',
+                    }
+                    entryData.collection = [collections[contentTypeName]];
+                    entryData.collections = {
+                        '_pages':{
+                            metadata: {
+                                singular: 'page'
+                            }
+                        },
+                        '_posts':{
+                            metadata: {
+                                singular: 'post'
+                            }
+                        },
+                        '_charities':{
+                            metadata: {
+                                singular: 'charity'
+                            }
+                        },
+                        '_causes':{
+                            metadata: {
+                                singular: 'cause'
+                            }
+                        },
+                        '_reports':{
+                            metadata: {
+                                singular: 'report'
+                            }
+                        },
+                    };
+                    // do in-place template rendering
                     engines.swig.render(
                         sanitiseSwigTags(
-                            parseHTML(entryData.contents)
+                            parseHTML(entryData.contents,entryData)
                         ),
                         inPlaceData
                     ).then(function(rendered){
-                        entryData.collection = contentTypeSlug
-                        entryData.collections = {}
+                        console.log('Rendered in-place templates...')
+                        // add 'collections' metadata
                         entryData.collections[contentTypeSlug] = {metadata:{singular:contentTypeSingular}}
                         var templateName = entryData.template || contentTypeSingular
                         entryData.contents = rendered
+                        console.log('Rendering templates...')
                         res.render(templateName,entryData);
                     })
                     .error(function(err){
