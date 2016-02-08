@@ -60,8 +60,9 @@ global.ScrollMagic = require('scrollmagic')
 require('scrollmagicJQuery')
 require('scrollmagicAnimationGSAP')
 
-// slabText
-require('slabText');
+// jQuery Plugins
+require('jquerySlabText');
+// require('jqueryPulse');
 
 // chartist
 global.Chartist = require('chartist')

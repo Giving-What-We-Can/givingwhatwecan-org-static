@@ -137,7 +137,8 @@
     "GSAPScrollToPlugin": "./node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js",
     "scrollmagicJQuery": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js",
     "scrollmagicAnimationGSAP": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
-    "slabText": "./src/scripts/bundle/vendor/jquery.slabtext.js",
+    "jquerySlabText": "./src/scripts/bundle/vendor/jquery.slabtext.js",
+    "jqueryPulse": "./src/scripts/bundle/vendor/jquery.pulse.js",
     "chartist": "./node_modules/chartist/dist/chartist.js",
     "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js",
     "main": "./src/scripts/bundle/main.js"
@@ -158,7 +159,7 @@
     "bootstrapSlider": "bootstrapSlider",
     "scrollmagicJQuery": "scrollmagicJQuery",
     "scrollmagicAnimationGSAP": "scrollmagicAnimationGSAP",
-    "slabText": "slabText",
+    "jquerySlabText": "jquerySlabText",
     "main": "main"
   }
 }
