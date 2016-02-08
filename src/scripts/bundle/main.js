@@ -20,14 +20,15 @@
 			t = setTimeout(function(){removeHighlights()},10000)
 		}
 	}
-	$('.footnote-ref a').click(function(){
+	var parent = $(document);
+	$(parent).on('click','.footnote-ref a',function(){
 		removeHighlights(true);
 		$($(this).attr('href')+'>p').addClass('highlighted')
-	})
-	$('.footnote-backref').click(function(){
+	});
+	$(parent).on('click','.footnote-backref',function(){
 		removeHighlights(true);
 		$($(this).attr('href')).parent('sup').addClass('highlighted')
-	})
+	});
 
 })(jQuery)
 
