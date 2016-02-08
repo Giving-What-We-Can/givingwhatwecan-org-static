@@ -9,6 +9,27 @@
 
 })(jQuery)
 
+// highlight footnotes when they're clicked
+;(function($){
+	var t;
+	var removeHighlights = function (timeout) {
+		timeout = timeout || false;
+		clearTimeout(t);
+		$('.footnote-item>p,.footnote-ref').removeClass('highlighted')
+		if(timeout) {
+			t = setTimeout(function(){removeHighlights()},10000)
+		}
+	}
+	$('.footnote-ref a').click(function(){
+		removeHighlights(true);
+		$($(this).attr('href')+'>p').addClass('highlighted')
+	})
+	$('.footnote-backref').click(function(){
+		removeHighlights(true);
+		$($(this).attr('href')).parent('sup').addClass('highlighted')
+	})
+
+})(jQuery)
 
 // load content from the JSON version of a file
 window.loadContent = function(path,callback){
@@ -21,3 +42,5 @@ window.loadContent = function(path,callback){
 		console.error('Error, could not load',path)
 	})
 }
+
+
