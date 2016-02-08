@@ -78,7 +78,7 @@
     "metalsmith-html-minifier": "^1.1.0",
     "metalsmith-icons": "^0.2.7",
     "metalsmith-ignore": "^0.1.2",
-    "metalsmith-lazysizes": "^0.3.1",
+    "metalsmith-lazysizes": "^0.3.2",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-navigation": "^0.2.5",
     "metalsmith-pagination": "^1.4.0",
