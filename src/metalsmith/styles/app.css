@@ -6458,12 +6458,22 @@ body.page.top-charities h4 {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.3em !important;
   font-style: italic; }
-  .page-content .first-paragraph a, .post-content .first-paragraph a, .page-content > .overview .first-paragraph a, .page-content .report-contents .first-paragraph a {
-    font-weight: 200 !important; }
+  .page-content .first-paragraph::first-letter, .post-content .first-paragraph::first-letter, .page-content > .overview .first-paragraph::first-letter, .page-content .report-contents .first-paragraph::first-letter {
+    line-height: 0.9em;
+    font-size: 3.9em;
+    float: left;
+    height: 2em;
+    padding: 0 6px 0 0;
+    font-weight: 400; }
   @media (min-width: 768px) {
     .page-content .first-paragraph, .post-content .first-paragraph, .page-content > .overview .first-paragraph, .page-content .report-contents .first-paragraph {
       font-size: 1.6em !important;
-      line-height: 1.6em !important; } }
+      line-height: 1.6em !important; }
+      .page-content .first-paragraph::first-letter, .post-content .first-paragraph::first-letter, .page-content > .overview .first-paragraph::first-letter, .page-content .report-contents .first-paragraph::first-letter {
+        line-height: 0.8em;
+        font-size: 3.7em; } }
+  .page-content .first-paragraph a, .post-content .first-paragraph a, .page-content > .overview .first-paragraph a, .page-content .report-contents .first-paragraph a {
+    font-weight: 200 !important; }
 
 .collection-items .collection-item {
   height: 240px;
