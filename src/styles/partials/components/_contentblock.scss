@@ -62,10 +62,11 @@ $scroll-down-size: 60px;
 			text-shadow: 0 0 16px #333;
 			font-size: 30px;
 			margin-bottom: 35vh;
+			margin-top: 70px;
 			@media(min-width:$screen-sm){
 				margin-bottom: 50vh;
 				font-size: 4em;
-				margin-top: auto;
+				margin-top: 80px;
 			}
 		}
 		a.btn {
