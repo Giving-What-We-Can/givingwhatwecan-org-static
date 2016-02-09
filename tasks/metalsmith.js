@@ -108,19 +108,23 @@ function build(buildCount){
     var collectionSlugs = ['blog','causes','charities','reports']
     var collectionInfo = {
         blog: {
+            title: 'Blog',
             singular: 'post',
             sortBy: 'date',
             reverse: true,
             perPage: 10
         },
         causes: {
+            title: 'Causes',
             singular: 'cause'
         },
         charities: {
+            title: 'Charities',
             singular: 'charity',
             sortBy: 'recommendationLevel'
         },
         reports: {
+            title: 'Reports',
             singular: 'report',
             sortBy: 'date',
             reverse: true
@@ -182,6 +186,7 @@ function build(buildCount){
         // hack to make metalsmith-feed plugin work by adding site.url to the metadata
         var meta = metalsmith.metadata();
         meta.site = {
+            'title':meta.siteInfo.title,
             'url': meta.siteInfo.protocol + meta.siteInfo.domain,
             'description': meta.siteInfo.description
         }
@@ -669,6 +674,8 @@ function build(buildCount){
         directory: '../src/templates',
         requires: {swig:swig},
         moment: moment,
+        collectionSlugs: collectionSlugs,
+        collectionInfo: collectionInfo
     }))
     .use(logMessage('Built HTML files from templates'))
     .use(icons({
