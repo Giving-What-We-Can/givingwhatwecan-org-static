@@ -77,10 +77,8 @@
 			{% endblock %}
 		</footer>
 	</div>
-	<a href="/scripts/app.min.js" id="app-script" style="display:none;">&nbsp;</a>
 	<script src="/scripts/includes/LAB.min.js"></script>
 	<script>
-		window.appScript = document.getElementById("app-script").getAttribute("href");
 		window.$LAB = window.$LAB || undefined;
 		(function($LAB){
 			if(!$LAB) return;
@@ -114,8 +112,7 @@
 					}
 				});
 			})
-			.queueScript(window.appScript)
-			// .queueScript('/scripts/app.min.js')
+			.queueScript('/scripts/app.min.js')
 			.queueScript('https://cdn.segment.com/analytics.js/v1/VtTlzxOC5QJ1H0zermvo84cAbReTofDU/analytics.min.js')
 			.queueWait(function(){
 				var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.SNIPPET_VERSION="3.1.0";
