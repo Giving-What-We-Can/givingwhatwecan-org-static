@@ -8,8 +8,14 @@
 {% block content %}
 
 
-	<div class="content">
-		{{ contents }}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<section class="page-content">
+					{{ contents }}
+				</section>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}
