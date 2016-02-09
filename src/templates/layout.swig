@@ -94,21 +94,32 @@
 				    	window.optimizely.push("timeout");
 				    }
 				}
-				setTimeout(optimizelyTimeout, 1000);
+				setTimeout(optimizelyTimeout, 2000);
 			})
 			.queueScript("https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
 			.queueWait(function(){
+				function webfontStatus(status){
+					(function($){
+						if (status){
+							$(function(){
+								$(document).trigger('WebFont',status)
+							})
+						}
+					})(jQuery)
+				}
 				WebFont.load({
 					google: {
 						families: ['Source+Sans+Pro:200,200italic,400,400italic,700,700italic:latin']
 					},
 					loading: function(){
 						clearTimeout(window.wfl);
+						webfontStatus('loading');
 					},
 					active: function() {
-						$(function(){
-							$(document).trigger('WebFont','active')
-						});
+						webfontStatus('active');
+					},
+					inactive: function() {
+						webfontStatus('inactive');
 					}
 				});
 			})

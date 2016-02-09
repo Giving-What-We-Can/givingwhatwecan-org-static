@@ -32,6 +32,25 @@
 
 })(jQuery)
 
+// trigger slabtext
+;(function($){
+	function triggerSlabtext(){
+		if($.fn.slabText !== 'undefined')
+		$('.make-slabtext').slabText({viewportBreakpoint:200});
+	}
+	if($(document.documentElement).hasClass('wf-active')){
+		triggerSlabtext()
+	} else {
+		$(document).on('WebFont', function(event,status){
+			if(status==='active' || status === 'inactive'){
+				triggerSlabtext();
+			}
+		})
+	}
+})(jQuery)
+
+
+
 // load content from the JSON version of a file
 window.loadContent = function(path,callback){
 
@@ -43,5 +62,7 @@ window.loadContent = function(path,callback){
 		console.error('Error, could not load',path)
 	})
 }
+
+
 
 

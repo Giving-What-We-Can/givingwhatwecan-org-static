@@ -3,10 +3,6 @@
 	// reuse existing controller, or instantiate new one if needed
 	window.controller = window.controller || new ScrollMagic.Controller();
 
-	//
-	var slabTextSelectors = []
-	// Trigger SlabText after webfonts are loaded
-
 
 	/*
 		
@@ -14,7 +10,7 @@
 
 	*/
 	block("#hero-image",function(el,id){
-		slabTextSelectors.push(id+' h2')
+
 	})
 
 	/*
@@ -37,7 +33,6 @@
 	*/
 	block("#we-focus-on-impact",function(el,id){
 		// Add header to slabtext
-		slabTextSelectors.push(id + ' h2');
 
 		// build chart with chartist
 		var data = {
@@ -100,8 +95,6 @@
 
 	// */
 	block("#our-top-charities-are-some-of-the-best",function(el,id){
-		// Add header to slabtext
-		slabTextSelectors.push(id + ' h2');
 
 		// add scene to timeline
 		addScene(el, function(){
@@ -117,9 +110,6 @@
 	// */
 
 	block("#our-members-have-done-some-amazing-things",function(el,id){
-
-		// Add header to slabtext
-		slabTextSelectors.push(id + ' h2');
 
 		// add scene to timeline
 		addScene(el,
@@ -171,8 +161,7 @@
 
 	*/
 	block('#how-rich-am-i',function(el,id){
-		slabTextSelectors.push(id + ' h2');
-		slabTextSelectors.push(id + ' .sub-heading p');
+
 	})
 
 
@@ -220,23 +209,6 @@
 		new ScrollMagic.Scene(defaultSceneOptions)
 		.setTween(timeline)
 		.addTo(window.controller);
-	}
-
-	// trigger any slabtext-ready elements
-
-	function triggerSlabtext(){
-		if($.fn.slabText !== 'undefined')
-		$(slabTextSelectors.join(', ')).slabText({viewportBreakpoint:200});
-	}
-
-	if($(document.documentElement).hasClass('wf-active')){
-		triggerSlabtext()
-	} else {
-		$(document).on('WebFont', function(event,status){
-			if(status==='active' || status === 'inactive'){
-				triggerSlabtext();
-			}
-		})
 	}
 	
 	

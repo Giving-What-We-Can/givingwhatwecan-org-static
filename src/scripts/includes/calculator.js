@@ -118,9 +118,6 @@
                         sharingModal(href)
                     }
                 })
-
-                // slabtext some of the text
-                $('.explanatory-interstitial:not(#calculation-details)').find('p').slabText({viewportBreakpoint:breakpoints.sm})
                 
                 // add listener for back to top button
                 $('.back-to-calculator').on('click',function(event){
