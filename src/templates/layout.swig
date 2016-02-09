@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="/styles/app.min.css">
 	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
+	{% include './partials/json-schema.swig' %}
 	<script>
 		// fast pre-rendering check for javascript capability without requiring Modernizr in the head
 		document.documentElement.className = document.documentElement.className.replace('no-js','js');
