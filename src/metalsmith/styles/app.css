@@ -7045,12 +7045,13 @@ form#calculator-controls {
     font-weight: 700;
     text-shadow: 0 0 16px #333;
     font-size: 30px;
-    margin-bottom: 35vh; }
+    margin-bottom: 35vh;
+    margin-top: 70px; }
     @media (min-width: 768px) {
       .content-block-wrapper#hero-image h2 {
         margin-bottom: 50vh;
         font-size: 4em;
-        margin-top: auto; } }
+        margin-top: 80px; } }
   @media (max-width: 767px) {
     .content-block-wrapper#hero-image a.btn {
       width: 100%;
