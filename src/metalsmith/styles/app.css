@@ -6630,40 +6630,134 @@ body.page.top-charities h4 {
 .report h2.indexed:hover .index, .report h3.indexed:hover .index, .report h4.indexed:hover .index, .report h5.indexed:hover .index, .report h6.indexed:hover .index {
   opacity: 0; }
 
-.charity .basic-info .basic-info-item {
+.basic-info .basic-info-item {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-bottom: 30px; }
-  .charity .basic-info .basic-info-item h4 {
-    margin: 0 0 15px; }
+  @media (min-width: 768px) {
+    .basic-info .basic-info-item {
+      float: left;
+      width: 50%; } }
+  @media (min-width: 1200px) {
+    .basic-info .basic-info-item {
+      float: left;
+      width: 25%; } }
+  .basic-info .basic-info-item h4 {
+    background-color: #6c0000;
+    color: #FFF;
+    padding: 5px 15px;
+    margin: -17px;
+    margin-bottom: 15px; }
+  .basic-info .basic-info-item section {
+    border: 2px solid #d8d8c7;
+    padding: 15px; }
+    @media (min-width: 768px) {
+      .basic-info .basic-info-item section {
+        height: 350px;
+        overflow: scroll-y; } }
 
-.charity .basic-info .impact-summary {
+.basic-info ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: justify;
+  margin-right: -15px; }
+
+.basic-info li {
+  text-align: left;
+  margin-right: 15px;
+  font-weight: 700; }
+
+.basic-info .logo-image {
+  width: auto;
+  max-width: 100%;
+  max-height: 160px;
+  text-align: center;
+  display: block;
+  margin: 0 auto 5px; }
+
+.basic-info .short-description {
+  font-weight: 400;
+  font-style: italic; }
+
+.basic-info .website {
+  text-align: center; }
+
+.basic-info .recommendation-level-sub-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  text-decoration: underline; }
+
+.basic-info .recommendation-level-summary {
+  font-size: 16px;
+  line-height: 1.4em; }
+  .basic-info .recommendation-level-summary a {
+    font-weight: 400;
+    text-decoration: underline; }
+
+.basic-info .donate-link {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px; }
+
+.basic-info .impact-summary {
   padding: 15px;
-  border: 2px solid #d8d8c7;
   background: #edede5;
   position: relative; }
-  .charity .basic-info .impact-summary ul {
-    padding: 0;
-    list-style-type: none;
-    text-align: justify;
-    margin-right: -15px; }
-  .charity .basic-info .impact-summary li {
+  .basic-info .impact-summary .cause-link, .basic-info .impact-summary .charity-link {
+    background-color: #d8d8c7;
+    margin: -15px;
+    margin-top: 15px;
+    padding: 5px 15px;
+    text-align: right;
+    display: block;
+    height: 42px;
+    overflow: hidden; }
+    .basic-info .impact-summary .cause-link img, .basic-info .impact-summary .charity-link img {
+      height: 20px;
+      width: auto;
+      display: inline; }
+    @media (min-width: 768px) {
+      .basic-info .impact-summary .cause-link, .basic-info .impact-summary .charity-link {
+        width: 100%;
+        position: absolute;
+        bottom: 15px; } }
+  .basic-info .impact-summary .impact-summary-item-title {
+    line-height: 1.1em;
+    display: inline-block; }
+  .basic-info .impact-summary .impact-summary-item-score-icons {
+    display: block; }
+    .basic-info .impact-summary .impact-summary-item-score-icons .icon {
+      margin-left: -2px; }
+      .basic-info .impact-summary .impact-summary-item-score-icons .icon.whole, .basic-info .impact-summary .impact-summary-item-score-icons .icon.half {
+        color: #6c0000; }
+  .basic-info .impact-summary .impact-summary-item-score-text {
     display: inline-block;
-    text-align: left;
-    margin-right: 15px;
-    font-weight: 700; }
-  .charity .basic-info .impact-summary .learn-more {
+    font-weight: 400;
+    color: #d8d8c7; }
+  .basic-info .impact-summary .impact-summary-no-data {
+    font-weight: 200;
+    font-style: italic; }
+    .basic-info .impact-summary .impact-summary-no-data strong {
+      font-weight: 400; }
+  .basic-info .impact-summary .learn-more {
     position: absolute;
     top: 0;
     right: 5px;
     color: #d8d8c7; }
 
-.charity .basic-info .info h4 {
-  margin-top: 17px; }
-
-.charity .basic-info .info .btn {
+.basic-info .btn {
   display: block;
   margin-bottom: 15px; }
 
-.charity .basic-info .info .tax-deductibility-info {
+.basic-info .tax-deductibility-info {
   font-style: italic;
   font-size: 14px;
   margin: 0; }
@@ -7522,11 +7616,16 @@ form#calculator-controls {
     background-color: #edede5;
     padding: 30px 30px 0; }
     .charity .short-description-wrapper .short-description {
-      border-bottom: 2px solid #c3c3a9;
       padding-bottom: 30px; }
+      @media (min-width: 1200px) {
+        .charity .short-description-wrapper .short-description {
+          height: 220px; } }
       .charity .short-description-wrapper .short-description p {
         margin: 0;
         font-size: 1.4em; }
+  @media (min-width: 1200px) {
+    .charity .fast-facts-wrapper {
+      height: 330px; } }
   .charity .actions {
     background-color: #edede5;
     padding: 30px 30px 15px; }

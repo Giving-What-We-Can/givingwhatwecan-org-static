@@ -249,6 +249,13 @@ function build(buildCount){
                     meta.contents = meta.contents + '\n\n' + meta.footnotes
                     delete meta.footnotes
                 }
+                // TODO caveats
+                if(meta.recommendationLevel){
+                    meta.recommendationLevel = parseInt(meta.recommendationLevel.split(' ')[0])
+                }
+                if(meta.priority){
+                    meta.priority = parseInt(meta.priority.split(' ')[0])
+                }
                 callback()
             })
         }, done)

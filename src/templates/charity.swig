@@ -1,37 +1,5 @@
 {% extends './research-entry.swig' %}
 
-{% block basicInfo %}
-	<div class="row basic-info">
-		<div class="col-sm-4 basic-info-item">
-			<img class="logo-image" src="{{logo.fields.file.url}}">
-		</div>
-		<div class="col-sm-4 basic-info-item">
-			<section class="info">
-				<p class="short-description">{{shortDescription}}</p>
-				<a href="/donate" class="btn btn-primary"><i class="icon icon-donate"></i> Donate</a>
-				<p class="tax-deductibility-info">
-					<a href="#">Tax deductibility info
-						<i class="fa fa-globe"></i> 
-					</a>
-				</p>
-			</section>
-		</div>
-		{# <div class="col-sm-4 basic-info-item">
-			<section class="impact-summary">
-				<ul class="charity-rating">
-					<li>Room for more funding:<br><i class="fa fa-money"></i></li>
-					<li>Organisational Strength:<br><i class="fa fa-money"></i><i class="fa fa-money"></i><i class="fa fa-money"></i></li>
-					<li>Cause Importance:<br><i class="fa fa-money"></i><i class="fa fa-money"></i></li>
-				</ul>
-				<a href="/research/impact-summaries" class="learn-more">
-					<i class="fa fa-question-circle"></i>
-					<span class="sr-only">Learn More</span>
-				</a>
-			</section>
-		</div> #}
-	</div>
-{% endblock %}
-
 {% block related %}
 <div class="row">
 	{% if causes && causes.length>0 %}

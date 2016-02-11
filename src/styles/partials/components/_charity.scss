@@ -38,14 +38,21 @@
 		background-color: $site-secondary;
 		padding: $grid-gutter-width $grid-gutter-width 0;
 		.short-description {
-			border-bottom: 2px solid darken($site-secondary,20%);
 			padding-bottom: $grid-gutter-width;
+			@media(min-width:$screen-lg){
+				height: 220px;
+			}
 			p {
 				margin: 0;
 			    font-size: 1.4em;
 			}
 		}
 
+	}
+	.fast-facts-wrapper {
+		@media(min-width:$screen-lg){
+			height: 330px;
+		}
 	}
 	.actions {
 		background-color: $site-secondary;

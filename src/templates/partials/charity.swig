@@ -65,7 +65,7 @@
 				</div>
 				<div class="col-sm-6 action">
 					{% if includes.actionsLearnMore && charity.page && charity.page.fields %}
-					<a href="/top-charities/{{charity.page.fields.slug}}" class="btn btn-default learn-more">Learn more</a>
+					<a href="/charity/{{charity.slug}}" class="btn btn-default learn-more">Learn more</a>
 					{% endif %}
 					{% if includes.actionsWebsite %}
 					<a href="{{charity.contact[0]}}" target="_blank" class="btn btn-default website"><i class="fa fa-globe"></i> Website</a>
