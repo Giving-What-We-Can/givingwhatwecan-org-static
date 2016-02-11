@@ -87,7 +87,7 @@
     "metalsmith-replace": "^1.0.0",
     "metalsmith-sass": "^1.3.0",
     "metalsmith-serve": "0.0.7",
-    "metalsmith-sitemap": "^1.0.0",
+    "metalsmith-sitemap": "git+https://github.com/centre-for-effective-altruism/metalsmith-sitemap.git",
     "metalsmith-slug": "0.0.5",
     "metalsmith-templates": "0.6.1",
     "metalsmith-typogr": "^0.1.2",
