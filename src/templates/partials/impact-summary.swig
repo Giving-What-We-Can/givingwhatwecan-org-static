@@ -36,7 +36,7 @@
 	{% set count+=1 %}
 	<li class="impact-summary-item">
 		<span class="impact-summary-item-title">Room for More Funding:</span>
-		<span class="impact-summary-item-score-icons"><i class="fa fa-check"></i>
+		<span class="impact-summary-item-score-icons"><i class="fa fa-ok"></i>
 			<span class="impact-summary-item-score-text">Yes</span>
 		</span>
 	</li>

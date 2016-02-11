@@ -6462,8 +6462,8 @@ body.page.top-charities h4 {
     .page-content .first-paragraph, .post-content .first-paragraph, .page-content > .overview .first-paragraph, .page-content .report-contents .first-paragraph {
       font-size: 1.6em !important;
       line-height: 1.6em !important; } }
-  .page-content .first-paragraph a, .post-content .first-paragraph a, .page-content > .overview .first-paragraph a, .page-content .report-contents .first-paragraph a {
-    font-weight: 200 !important; }
+  .page-content .first-paragraph a, .page-content .first-paragraph strong, .post-content .first-paragraph a, .post-content .first-paragraph strong, .page-content > .overview .first-paragraph a, .page-content > .overview .first-paragraph strong, .page-content .report-contents .first-paragraph a, .page-content .report-contents .first-paragraph strong {
+    font-weight: 400 !important; }
 
 .collection-items .collection-item {
   height: 240px;
@@ -6542,8 +6542,6 @@ body.page.top-charities h4 {
 
 .collection-items .post .post-header {
   background-color: #edede5; }
-  .collection-items .post .post-header h3 {
-    margin: 0; }
   .collection-items .post .post-header.featured-image {
     padding: 0 0 56%;
     margin: -15px;
@@ -6554,6 +6552,7 @@ body.page.top-charities h4 {
     background-size: cover; }
     .collection-items .post .post-header.featured-image h3 {
       position: absolute;
+      margin: 0;
       bottom: 0;
       background-color: rgba(108, 0, 0, 0.8);
       color: #FFF;
@@ -7895,6 +7894,8 @@ blockquote p {
   list-style-type: none; }
   .related-item .icon {
     display: none; }
+  .related-item.related-charity {
+    padding-bottom: 30px; }
   .related-item.related-cause:before, .related-item.related-report:before {
     font-family: "icons";
     margin: 0 11px 0 -30px; }

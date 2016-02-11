@@ -90,9 +90,6 @@
 		.post-header {
 
 			background-color: $site-secondary;
-	    	h3 {
-	    		margin:0;
-	    	}
 	    	&.featured-image {
 	    		padding:0 0 56%;
 	    		margin: $grid-gutter-width/-2;
@@ -103,6 +100,7 @@
 	    		background-size: cover;
 	    		h3 {
 	    			position: absolute;
+	    			margin:0;
 	    			bottom: 0;
 	    			background-color: transparentize($site-primary,0.2);
 	    			color: #FFF;

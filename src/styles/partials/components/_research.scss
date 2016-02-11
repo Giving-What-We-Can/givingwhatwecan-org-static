@@ -64,6 +64,9 @@ $dashed-border: 2px dashed $site-secondary-dark;
 		display: none;
 	}
 	list-style-type: none;
+	&.related-charity {
+		padding-bottom:$grid-gutter-width;
+	}
 	&.related-cause:before,&.related-report:before  {
 		font-family: "icons";
 		margin: 0 $grid-gutter-width/2-4 0 $grid-gutter-width*-1;

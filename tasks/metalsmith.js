@@ -116,7 +116,8 @@ function build(buildCount){
         },
         causes: {
             title: 'Causes',
-            singular: 'cause'
+            singular: 'cause',
+            sortBy: 'priority'
         },
         charities: {
             title: 'Charities',

@@ -14,7 +14,7 @@
 					{% endif %}
 				{% endfor %}
 				{% if inc %}
-					<li class="related-item related-charity col-xs-6">
+					<li class="related-item related-charity col-xs-12">
 						<a href="/{{charity.path}}">
 							<img src="{{charity.logo.fields.file.url}}">
 							<p class="sr-only">{{charity.title}}</p>

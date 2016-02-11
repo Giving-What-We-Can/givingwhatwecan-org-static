@@ -6,8 +6,10 @@
 
 {% block content %}
 
-
 	<div class="container">
+		{% if title !== "Blog" %}
+			{% include './partials/update-in-progress-warning.swig' %}
+		{% endif %}
 		<div class="row">
 			<div class="text-content">
 				<div class="page-content">

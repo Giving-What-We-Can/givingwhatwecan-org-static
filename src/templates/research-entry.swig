@@ -8,6 +8,7 @@
 {% block content %}
 
 	<div class="container">
+		{% include './partials/update-in-progress-warning.swig' %}
 		<div class="row">
 		<div class="col-xs-12">
 			{% block basicInfo %}
