@@ -767,6 +767,7 @@ function build(buildCount){
                     /tooltip/,
                     /sb-/,
                     /highlighted/,
+                    /report-contents/,
                 ],
                 media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
             }
