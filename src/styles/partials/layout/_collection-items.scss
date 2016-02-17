@@ -17,6 +17,9 @@
 			padding: ($grid-gutter-width/2)+2 $grid-gutter-width;
 		}
 	}
+	.fast-facts-wrapper {
+		margin-bottom: $grid-gutter-width;
+	}
 }
 
 .post, .report {

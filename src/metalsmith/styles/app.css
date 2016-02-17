@@ -6372,58 +6372,61 @@ table.table-striped > tbody > tr:nth-of-type(odd) > th {
 .blog-navigation {
   text-align: center; }
 
-body.page.home {
+body.home {
   padding-top: 0; }
-  body.page.home footer.footer {
+  body.home footer.footer {
     margin-top: 0; }
 
-body.page.how-rich-am-i div.page {
+body.how-rich-am-i div.page {
   margin: 0;
   width: 100%; }
 
-body.page.join #banner {
+body.join #banner {
   background-position: center bottom; }
 
 @media (min-width: 768px) {
-  body.page.deworm-world-initiative #banner {
+  body.deworm-world-initiative #banner {
     background-position: center bottom; } }
 
 @media (min-width: 1200px) {
-  body.page.deworm-world-initiative #banner {
+  body.deworm-world-initiative #banner {
     background-position: center 80%; } }
 
 @media (min-width: 768px) {
-  body.page.against-malaria-foundation #banner {
+  body.against-malaria-foundation #banner {
     background-position: center 20%; } }
 
-body.page.try-giving #banner {
+body.causes #banner {
+  background-position: center 15%; }
+
+body.try-giving #banner {
   background-position: center 30%; }
 
-body.page.about-us #banner {
+body.about-us #banner {
   background-position: center 20%; }
 
-body.page.history #banner {
+body.history #banner {
   background-position: center 80%; }
 
-body.page.frequently-asked-questions h2 {
+body.frequently-asked-questions h2 {
   text-transform: uppercase;
   background: #edede5;
   text-align: center;
   padding: 15px; }
 
-body.page.frequently-asked-questions h3 {
+body.frequently-asked-questions h3 {
   color: #26484e; }
 
-body.page.frequently-asked-questions #banner {
+body.frequently-asked-questions #banner {
   background-position: center 60%; }
 
-body.page.top-charities h2 {
+body.top-charities h2 {
   text-transform: uppercase;
   background: #edede5;
   text-align: center;
   padding: 15px; }
 
-body.page.top-charities h4 {
+body.top-charities h4 {
   color: #26484e; }
 
 .post.giving-what-we-cans-recommendations-for-giving-season-2015 #banner {
@@ -6436,7 +6439,7 @@ body.page.top-charities h4 {
   background-position: center 20%; }
 
 .page-content > p, .page-content > ul > li, .page-content > ol > li, .post-content > p, .post-content > ul > li, .post-content > ol > li, .page-content > .overview > p, .page-content > .overview > ul > li, .page-content > .overview > ol > li, .page-content .report-contents > p, .page-content .report-contents > ul > li, .page-content .report-contents > ol > li {
-  font-family: Georgia, "Times New Roman", Times, serif; }
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, Garamond, "Times New Roman", serif; }
   .page-content > p a, .page-content > p strong, .page-content > p b, .page-content > ul > li a, .page-content > ul > li strong, .page-content > ul > li b, .page-content > ol > li a, .page-content > ol > li strong, .page-content > ol > li b, .post-content > p a, .post-content > p strong, .post-content > p b, .post-content > ul > li a, .post-content > ul > li strong, .post-content > ul > li b, .post-content > ol > li a, .post-content > ol > li strong, .post-content > ol > li b, .page-content > .overview > p a, .page-content > .overview > p strong, .page-content > .overview > p b, .page-content > .overview > ul > li a, .page-content > .overview > ul > li strong, .page-content > .overview > ul > li b, .page-content > .overview > ol > li a, .page-content > .overview > ol > li strong, .page-content > .overview > ol > li b, .page-content .report-contents > p a, .page-content .report-contents > p strong, .page-content .report-contents > p b, .page-content .report-contents > ul > li a, .page-content .report-contents > ul > li strong, .page-content .report-contents > ul > li b, .page-content .report-contents > ol > li a, .page-content .report-contents > ol > li strong, .page-content .report-contents > ol > li b {
     font-weight: 700; }
   .page-content > p a.btn, .page-content > ul > li a.btn, .page-content > ol > li a.btn, .post-content > p a.btn, .post-content > ul > li a.btn, .post-content > ol > li a.btn, .page-content > .overview > p a.btn, .page-content > .overview > ul > li a.btn, .page-content > .overview > ol > li a.btn, .page-content .report-contents > p a.btn, .page-content .report-contents > ul > li a.btn, .page-content .report-contents > ol > li a.btn {
@@ -6455,7 +6458,6 @@ body.page.top-charities h4 {
   padding: 0; }
 
 .page-content .first-paragraph, .post-content .first-paragraph, .page-content > .overview .first-paragraph, .page-content .report-contents .first-paragraph {
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.3em !important;
   line-height: 1.3em !important; }
   @media (min-width: 768px) {
@@ -6586,6 +6588,9 @@ body.page.top-charities h4 {
   color: #FFF;
   background-color: #6c0000;
   padding: 17px 30px; }
+
+.charity .fast-facts-wrapper, .cause .fast-facts-wrapper {
+  margin-bottom: 30px; }
 
 .post .post-details, .report .post-details {
   margin-bottom: 60px; }

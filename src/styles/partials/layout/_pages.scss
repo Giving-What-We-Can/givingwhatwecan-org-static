@@ -1,4 +1,4 @@
-body.page {
+body {
 	&.home {
 		padding-top: 0;
 		footer.footer {
@@ -31,6 +31,11 @@ body.page {
 			@media(min-width:$screen-sm){
 				background-position: center 20%;
 			}
+		}
+	}
+	&.causes {
+		#banner {
+			background-position: center 15%;
 		}
 	}
 	&.try-giving{

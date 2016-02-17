@@ -85,7 +85,7 @@
 			</a>
 			<a class="cause-link" href="/cause/{{causes[0].fields.slug}}">
 				<i class="fa fa-heartbeat"></i>
-				{{causes[0].fields.title}}
+				{{causes[0].fields.title|truncate(20)}}
 				<i class="fa fa-arrow-right"></i>
 			</a>
 		</section>
