@@ -194,6 +194,12 @@ function build(buildCount){
         done();
     })
     .use(function (files,metalsmith,done){
+        // hack to add stats for AMF
+        var meta = metalsmith.metadata();
+        meta.stats.amfCostPerLifeSaved = 2838;
+        done();
+    })
+    .use(function (files,metalsmith,done){
         // add defaults to all our contentful source files
         var options = {
             space_id: CONTENTFUL_SPACE,
