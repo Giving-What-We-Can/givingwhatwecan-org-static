@@ -544,7 +544,7 @@ function build(buildCount){
                 files[file].redirects.forEach(function(redirect){
                     if(redirect !== '/'+files[file].path){
                         redirects[redirect] = files[file];
-                        redirectsFile.push(redirect + ' /' + files[file].path + ' 302')
+                        redirectsFile.push(redirect + ' /' + files[file].path + ' 301')
                     }
                 })
             }
