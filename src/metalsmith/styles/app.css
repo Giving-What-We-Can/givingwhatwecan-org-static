@@ -7685,7 +7685,7 @@ form#calculator-controls {
 h1, h2, h3, h4, h5, h6 {
   position: relative; }
   h1 .heading-permalink span:before, h2 .heading-permalink span:before, h3 .heading-permalink span:before, h4 .heading-permalink span:before, h5 .heading-permalink span:before, h6 .heading-permalink span:before {
-    content: "¶";
+    content: "#";
     position: absolute;
     left: 0px;
     top: 0px;
