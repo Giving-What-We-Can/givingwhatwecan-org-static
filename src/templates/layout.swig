@@ -141,7 +141,15 @@
 					$LAB.queueScript(s)
 				}
 			};
+
+			$LAB.queueWait(function(){
+				(function($){
+					$(document).trigger('jsready');
+				})(jQuery);
+			})
+
 			$LAB.runQueue();
+
 		})(window.$LAB)
 	</script>
 	<script>
