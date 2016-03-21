@@ -1,0 +1,12 @@
+.mailchimp-signup {
+	margin: $grid-gutter-width*2 0;
+	form {
+		padding: $grid-gutter-width 0;
+		$border: 2px solid #6C0000;
+		border-top: $border;
+		border-bottom: $border;
+	}
+	#mailchimp-signup-result {
+		margin: $grid-gutter-width/2 0 0;
+	}
+}
