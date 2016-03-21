@@ -7729,6 +7729,15 @@ h1.givingwhatwecan-logo, h2.givingwhatwecan-logo, h3.givingwhatwecan-logo, h4.gi
     color: #c7c3c0 !important;
     text-transform: lowercase !important; }
 
+.mailchimp-signup {
+  margin: 60px 0; }
+  .mailchimp-signup form {
+    padding: 30px 0;
+    border-top: 2px solid #6C0000;
+    border-bottom: 2px solid #6C0000; }
+  .mailchimp-signup #mailchimp-signup-result {
+    margin: 15px 0 0; }
+
 .pathway-model {
   overflow: scroll; }
   .pathway-model h4 {
