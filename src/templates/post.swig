@@ -17,6 +17,9 @@
 					{% for a in author %}
 						{% include './partials/authorinfo.swig' with a only%}		
 					{% endfor %}
+					<section class="newsletter">
+					{% include './partials/newsletter-signup.swig' %}
+					</section>
 					<section class="comments">
 					{% include './partials/disqus.swig' %}
 					</section>
