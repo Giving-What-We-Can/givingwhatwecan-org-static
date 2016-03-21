@@ -212,6 +212,13 @@ function build(buildCount){
             var meta = files[file];
             if(!meta.contentful) {cb(); return;}
             meta.contentful = merge(true,options,meta.contentful)
+
+            // limit to 10 blog posts in development for faster builds
+            if(ENVIRONMENT === 'development' && meta.contentful.content_type === "5TB8GVLD7UUMkEYSEuUGsM"){
+               meta.contentful.limit = 10;
+            }
+            
+
             cb();
         }
     })
