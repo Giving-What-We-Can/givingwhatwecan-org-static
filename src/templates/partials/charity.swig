@@ -64,7 +64,7 @@
 					{% endif %}
 				</div>
 				<div class="col-sm-6 action">
-					{% if includes.actionsLearnMore && charity.page && charity.page.fields %}
+					{% if includes.actionsLearnMore %}
 					<a href="/charity/{{charity.slug}}" class="btn btn-default learn-more">Learn more</a>
 					{% endif %}
 					{% if includes.actionsWebsite %}
