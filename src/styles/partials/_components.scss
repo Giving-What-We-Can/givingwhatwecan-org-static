@@ -33,6 +33,10 @@
     border-color: darken($site-secondary,20%);
 }
 
+.form-control {
+	border-radius: 0;
+}
+
 
 .contact-form-container {
 	background-color: $gray-lighter;
