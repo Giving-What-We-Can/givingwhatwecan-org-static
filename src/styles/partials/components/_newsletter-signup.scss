@@ -5,6 +5,9 @@
 		$border: 2px solid #6C0000;
 		border-top: $border;
 		border-bottom: $border;
+		.row .form-control, .btn {
+			width: 100%;
+		}
 	}
 	#mailchimp-signup-result {
 		margin: $grid-gutter-width/2 0 0;

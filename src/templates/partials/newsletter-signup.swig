@@ -3,24 +3,27 @@
 <form action="//givingwhatwecan.us10.list-manage.com/subscribe/post?u=1ab3e4a8bd58783a2adff3c2e&amp;id=3ee570d9ad" method="post" id="mailchimp-signup-form" name="mc-embedded-subscribe-form" class="form form-inline" target="_blank" novalidate>
 	<p>Opportunities to give more effectively, our latest charity evaluations, and updates from the Giving What We Can community, direct to your inbox. We send approximately one email per month, and we'll never share your email address.</p>
 	<div class="controls">
-		<div class="form-group">
-			<label for="mailchimp-signup-EMAIL" class="control-label sr-only" aria-hidden="true">Email Address  <span class="asterisk">*</span></label>
-			<input placeholder="Email Address" type="email" name="EMAIL" class="form-control" id="mailchimp-signup-EMAIL">
+		<div class="row">
+			<div class="form-group col-sm-4">
+				<label for="mailchimp-signup-EMAIL" class="control-label sr-only" aria-hidden="true">Email Address  <span class="asterisk">*</span></label>
+				<input placeholder="Email Address" type="email" name="EMAIL" class="form-control" id="mailchimp-signup-EMAIL">
+			</div>
+			<div class="form-group col-sm-3">
+				<label for="mailchimp-signup-FNAME" class="control-label sr-only" aria-hidden="true">First Name  <span class="asterisk">*</span></label>
+				<input placeholder="First Name" type="email" name="FNAME" class="form-control" id="mailchimp-signup-FNAME">
+			</div>
+			<div class="form-group col-sm-3">
+				<label for="mailchimp-signup-LNAME" class="control-label sr-only" aria-hidden="true">Last Name  <span class="asterisk">*</span></label>
+				<input placeholder="Last Name" type="email" name="LNAME" class="form-control" id="mailchimp-signup-LNAME">
+			</div>
+			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ab3e4a8bd58783a2adff3c2e_3ee570d9ad" tabindex="-1" value=""></div>
+			
+			<input type="hidden" name="group[7037][4]" value="1" />
+			<div class="form-group col-sm-2">
+				<button type="submit" name="subscribe" id="mailchimp-signup-subscribe" class="btn btn-success">Subscribe</button>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="mailchimp-signup-FNAME" class="control-label sr-only" aria-hidden="true">First Name  <span class="asterisk">*</span></label>
-			<input placeholder="First Name" type="email" name="FNAME" class="form-control" id="mailchimp-signup-FNAME">
-		</div>
-		<div class="form-group">
-			<label for="mailchimp-signup-LNAME" class="control-label sr-only" aria-hidden="true">Last Name  <span class="asterisk">*</span></label>
-			<input placeholder="Last Name" type="email" name="LNAME" class="form-control" id="mailchimp-signup-LNAME">
-		</div>
-		<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-		<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ab3e4a8bd58783a2adff3c2e_3ee570d9ad" tabindex="-1" value=""></div>
-		
-		<input type="hidden" name="group[7037][4]" value="1" />
-
-		<button type="submit" name="subscribe" id="mailchimp-signup-subscribe" class="btn btn-success">Subscribe</button>
 	</div>
 	<div id="mailchimp-signup-result" class="hidden alert"></div>
 </form>
