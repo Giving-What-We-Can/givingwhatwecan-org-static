@@ -772,6 +772,7 @@ function build(buildCount){
                     /slabtext/,
                     /lazyload/,
                     /tooltip/,
+                    /alert/,
                     /sb-/,
                     /highlighted/,
                     /report-contents/,
