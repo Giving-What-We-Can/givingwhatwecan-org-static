@@ -131,8 +131,14 @@
 
 				// Segment actions reliant on jQuery
 				(function($){
-					$("#mailchimp-signup-form").on('newsletter_signup',function(event,response){
-						if(response==="success"){
+					$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
+						console.log(data)
+						analytics.identify({
+						  email: data.email,
+						  firstName: data.firstName,
+						  lastName: data.lastName
+						});
+						if(data.status==="success"){
 							analytics.track("Signed up to Newsletter");
 						}
 					});
