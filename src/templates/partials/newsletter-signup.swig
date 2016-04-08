@@ -19,10 +19,17 @@
 			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ab3e4a8bd58783a2adff3c2e_3ee570d9ad" tabindex="-1" value=""></div>
 			
+
+			<!-- add as a 'non-member' -->
+			<input type="hidden" name="group[7037][4]" value="1" />
 			<!-- opts people into all sub-lists -->
 			<input type="hidden" name="group[7037][8]" value="1" />
 			<input type="hidden" name="group[7037][128]" value="1" />
 			<input type="hidden" name="group[7037][256]" value="1" />
+
+			<!-- track signup location on site -->
+			<input type="hidden" name="SIGNUPTYPE" value="{{collections[collection].metadata.singular}}" />
+			<input type="hidden" name="SIGNUPLOC" value="Postscript" />
 
 			<div class="form-group col-sm-2">
 				<button type="submit" name="subscribe" id="mailchimp-signup-subscribe" class="btn btn-success">Subscribe</button>
