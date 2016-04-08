@@ -167,7 +167,6 @@
                 .removeClass('alert-info')
                 .addClass('alert-success')
                 .html('<strong>Success:</strong> a confirmation email has been sent to ' + requestData.EMAIL + '. Thanks for subscribing!');
-                form.trigger('newsletter_signup','success');
             } else{
                 try {
                     var parts = data.msg.split(' - ', 2);
@@ -189,9 +188,13 @@
                 .removeClass('disabled')
                 .addClass('btn-success')
                 .removeClass('btn-default');
-
-                form.trigger('newsletter_signup','error');
             }
+            form.trigger('newsletter_signup',{
+                status:     data.result,
+                email:      requestData.EMAIL,
+                firstName:  requestData.FNAME, 
+                lastName:   requestData.LNAME 
+            });
         });
     });
 
