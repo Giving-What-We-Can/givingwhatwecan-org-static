@@ -90,7 +90,6 @@
             var validationErrors = validateLib(form,rules)
             
             if(validationErrors){
-                console.log(validationErrors)
                 for (var error in validationErrors) {
                     if(validationErrors.hasOwnProperty(error)) {
                         var el = $('[name='+error+']')
@@ -168,6 +167,7 @@
                 .removeClass('alert-info')
                 .addClass('alert-success')
                 .html('<strong>Success:</strong> a confirmation email has been sent to ' + requestData.EMAIL + '. Thanks for subscribing!');
+                form.trigger('newsletter_signup','success');
             } else{
                 try {
                     var parts = data.msg.split(' - ', 2);
@@ -189,6 +189,8 @@
                 .removeClass('disabled')
                 .addClass('btn-success')
                 .removeClass('btn-default');
+
+                form.trigger('newsletter_signup','error');
             }
         });
     });
