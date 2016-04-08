@@ -6,3 +6,5 @@ bower_components
 .env
 .cache
 .icon_cache
+src/metalsmith/styles/*
+src/metalsmith/scripts/*
