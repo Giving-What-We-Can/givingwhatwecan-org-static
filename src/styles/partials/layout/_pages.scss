@@ -72,4 +72,24 @@ body {
 			color: $site-ternary;
 		}
 	}
+	&.just-one-net {
+		.page-title, .image-attribution {
+			display: none;
+		}
+		#banner {
+			background-image: url(https://images.contentful.com/yglmadi73s3x/34XnpCG6xq648osk4QwEGs/c21c61a318105f0e69787261a9b1e51c/just-one-net-site-banner.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: $site-secondary;
+			background-size: 90%;
+			background-attachment: scroll;
+			@media(min-width:$screen-md){
+				background-size: 50%;
+			}
+			@media(min-width:$screen-lg){
+				background-size: 30%;
+			}
+		}
+	}	
+
 }
