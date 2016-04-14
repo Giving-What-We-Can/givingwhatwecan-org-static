@@ -62,46 +62,4 @@
 	var d = document.getElementById("mailchimp-signup-subscribe");
 	d.className += " disabled";
 });
-loadScript(function(){
-	// trigger modal on scroll
-	var showModal = cookies.get('newsletter_cta_shown') ? false : true;
-	$(window).scroll(function() {
-		var progress = 0.6;
-	    if($(window).scrollTop() > $(document).height()*progress && showModal){
-			newsletterModal();
-	    }
-	});
-
-	// function to display the modal
-	var newsletterModal = $.debounce(5000, true, function(){
-		console.log('called');
-		// should we actually show the modal?
-		if(typeof cookies === 'undefined'){
-			throw new Error ('Error: `browser-cookies` library is not installed.');
-		}
-
-		var form = $('.mailchimp-signup');
-		var modal = $('.mailchimp-signup-modal');
-		var parent = modal.parent();
-		console.log(modal)
-		modal.modal('show')
-		.on('shown.bs.modal', function () {
-		  form.appendTo(modal.find('.modal-body'))
-		})
-		.on('hide.bs.modal',function(){
-        	form.appendTo(parent)
-        })
-        // hide the modal if the signup is successful
-        form.on('newsletter_signup',function(event,data){
-        	if(data.status==='success'){
-        		modal.modal('hide');
-        	}
-        })
-
-		// remember that we've seen the modal
-		cookies.set('newsletter_cta_shown', "1",{expires: 14});
-		showModal = false;
-
-	});
-});
 </script>

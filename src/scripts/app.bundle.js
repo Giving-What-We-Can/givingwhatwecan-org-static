@@ -75,6 +75,9 @@ global.validate = require('validate.js')
 // number formatting
 global.numeral = require('numeral')
 
+// exit intent plugin
+global.ouibounce = require('ouibounce')
+
 // main app scripts
 require('main')
 
