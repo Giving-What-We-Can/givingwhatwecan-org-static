@@ -28,7 +28,7 @@
 			<input type="hidden" name="group[7037][256]" value="1" />
 
 			<!-- track signup location on site -->
-			<input type="hidden" name="SIGNUPTYPE" value="{{collections[collection].metadata.singular}}" />
+			<input type="hidden" name="SIGNUPTYPE" value="{{collectionSlug}}" />
 			<input type="hidden" name="SIGNUPLOC" value="Postscript" />
 
 			<div class="form-group col-sm-2">
