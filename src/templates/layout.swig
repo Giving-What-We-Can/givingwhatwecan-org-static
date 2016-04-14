@@ -35,9 +35,9 @@
 	{% endblock %}
 
 </head>
-{% set collectionSlug = "unknown-collection" %}
+{% set collectionSlug = "no-collection" %}
 {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %}
-	{% set collectionSlug = collections[collection].metadata.singular %} 
+	{% set collectionSlug = collections[collection]['metadata']['singular'] %} 
 {% endif %}
 <body class="{{collectionSlug}} {{ {true:'home', false:slug}[slug==='/'] }}">
 
