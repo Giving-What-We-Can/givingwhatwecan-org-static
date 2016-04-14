@@ -63,6 +63,10 @@ $scroll-down-size: 60px;
 			font-size: 30px;
 			margin-bottom: 35vh;
 			margin-top: 70px;
+			.give-more {
+				display: inline-block;
+				margin-bottom: 20px;
+			}
 			@media(min-width:$screen-sm){
 				margin-bottom: 50vh;
 				font-size: 4em;
