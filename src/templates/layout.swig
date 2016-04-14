@@ -136,7 +136,6 @@
 				// Segment actions reliant on jQuery
 				(function($){
 					$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
-						console.log(data)
 						analytics.identify({
 						  email: data.email,
 						  firstName: data.firstName,
@@ -146,6 +145,11 @@
 							analytics.track("Signed up to Newsletter");
 						}
 					});
+
+					$('.mailchimp-signup-modal').on('newsletter_modal_shown',function(event,data){
+						analytics.track("Saw Newsletter popup")
+					})
+
 				})(jQuery);
 			})
 			// enqueue anything that's been requested with loadScript() elsewhere in the body

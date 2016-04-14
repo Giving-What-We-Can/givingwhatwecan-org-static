@@ -28,7 +28,7 @@
 			<input type="hidden" name="group[7037][256]" value="1" />
 
 			<!-- track signup location on site -->
-			<input type="hidden" name="SIGNUPTYPE" value="{{collections[collection].metadata.singular}}" />
+			<input type="hidden" name="SIGNUPTYPE" value="{{collectionSlug}}" />
 			<input type="hidden" name="SIGNUPLOC" value="Postscript" />
 
 			<div class="form-group col-sm-2">
@@ -39,9 +39,27 @@
 	<div id="mailchimp-signup-result" class="hidden alert"></div>
 </form>
 </div>
+
+<div class="modal fade mailchimp-signup-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Subscribe to our Newsletter</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No thanks</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <script>
 (function(){
 	var d = document.getElementById("mailchimp-signup-subscribe");
 	d.className += " disabled";
-})();
+});
 </script>

@@ -121,7 +121,7 @@
 
 
 // Handler for Mailchimp signup form
-;(function($){
+;(function($,cookies){
     $(document).on('jsready',function(){
         $('#mailchimp-signup-subscribe').removeClass('disabled');
     });
@@ -167,6 +167,8 @@
                 .removeClass('alert-info')
                 .addClass('alert-success')
                 .html('<strong>Success:</strong> a confirmation email has been sent to ' + requestData.EMAIL + '. Thanks for subscribing!');
+
+                cookies.set('newsletter_subscribed','1');
             } else{
                 try {
                     var parts = data.msg.split(' - ', 2);
@@ -199,4 +201,43 @@
     });
 
 
-})(jQuery);
+})(jQuery,cookies);
+
+
+// handler for exit intent plugin
+(function($, ouibounce){
+    var form = $('.mailchimp-signup');
+    var modal = $('.mailchimp-signup-modal');
+    var parent = modal.parent();
+    // don't show anything by default, activate via optimizely
+    var showNewsletterModal = window.showNewsletterModal || false;
+    
+    if(form.length <1 || !showNewsletterModal) {
+        return;
+    }
+
+    // exit intent plugin
+    ouibounce(false, {
+        callback: newsletterModal,
+        cookieExpire: 14
+    });
+
+    // function to display the modal
+    function newsletterModal (){
+
+        modal.modal('show')
+        .on('shown.bs.modal', function () {
+          form.appendTo(modal.find('.modal-body'))
+        })
+        .on('hide.bs.modal',function(){
+            form.appendTo(parent)
+        })
+        // hide the modal if the signup is successful
+        form.on('newsletter_signup',function(event,data){
+            if(data.status==='success'){
+                modal.modal('hide');
+            }
+        })
+        modal.trigger('newsletter_modal_shown');
+    };
+})(jQuery,ouibounce);

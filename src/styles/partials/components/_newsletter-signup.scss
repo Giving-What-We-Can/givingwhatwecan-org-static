@@ -13,3 +13,30 @@
 		margin: $grid-gutter-width/2 0 0;
 	}
 }
+
+.mailchimp-signup-modal {
+	@media(max-width:$screen-xs-max){
+		.modal-title {
+			font-size: 20px;
+		}
+	}
+	.mailchimp-signup {
+		margin: 0;
+		h2 {
+			display: none;
+		}
+		form {
+			border: none;
+			padding:0;
+			@media(max-width:$screen-xs-max){
+				p {
+					font-size: 14px;
+				}
+			}
+			.form-group {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
