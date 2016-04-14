@@ -210,17 +210,31 @@
     var modal = $('.mailchimp-signup-modal');
     var parent = modal.parent();
     // don't show anything by default, activate via optimizely
-    var showNewsletterModal = window.showNewsletterModal || false;
-    
-    if(form.length <1 || !showNewsletterModal) {
-        return;
-    }
+    var optimizelyIntervalCounter = 0;
+    var optimizelyInterval = setInterval(function() {
+        if (window.showNewsletterModal != undefined) {
+            console.log('Found it')
+            clearInterval(optimizelyInterval);
 
-    // exit intent plugin
-    ouibounce(false, {
-        callback: newsletterModal,
-        cookieExpire: 14
-    });
+            showNewsletterModal = window.showNewsletterModal;
+            if(showNewsletterModal){
+                // exit intent plugin — take this out of the optimizely block to enable for all visitors
+                ouibounce(false, {
+                    callback: newsletterModal,
+                    cookieExpire: 14
+                });
+            }
+        } 
+        else if (optimizelyIntervalCounter < 100) {
+            console.log('Not here yet, looking again')
+            optimizelyIntervalCounter ++;
+        } 
+        else if (optimizelyIntervalCounter >= 100) {
+            console.log('Timed out')
+            clearInterval(optimizelyInterval);
+        }
+    }, 50);
+    
 
     // function to display the modal
     function newsletterModal (){
