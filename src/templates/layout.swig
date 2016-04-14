@@ -35,11 +35,7 @@
 	{% endblock %}
 
 </head>
-{% set collectionSlug = "unknown-collection" %}
-{% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %}
-	{% set collectionSlug = collections[collection].metadata.singular %} 
-{% endif %}
-<body class="{{collectionSlug}} {{ {true:'home', false:slug}[slug==='/'] }}">
+<body class="{{collections[collection].metadata.singular}} {{ {true:'home', false:slug}[slug==='/'] }}">
 
 {% include "./partials/nav.swig" %}
 

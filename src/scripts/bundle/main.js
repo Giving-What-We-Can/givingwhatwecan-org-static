@@ -121,7 +121,7 @@
 
 
 // Handler for Mailchimp signup form
-;(function($){
+;(function($,cookies){
     $(document).on('jsready',function(){
         $('#mailchimp-signup-subscribe').removeClass('disabled');
     });
@@ -167,6 +167,8 @@
                 .removeClass('alert-info')
                 .addClass('alert-success')
                 .html('<strong>Success:</strong> a confirmation email has been sent to ' + requestData.EMAIL + '. Thanks for subscribing!');
+
+                cookies.set('newsletter_subscribed','1');
             } else{
                 try {
                     var parts = data.msg.split(' - ', 2);
@@ -199,4 +201,4 @@
     });
 
 
-})(jQuery);
+})(jQuery,cookies);
