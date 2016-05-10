@@ -13,7 +13,7 @@
 		</tr>
 		<tr>
 			<td>Already Pledged</td>
-			<td class="right"><span class="pull-left">+</span> 193,000</td>
+			<td class="right"><span class="pull-left">-</span> 193,000</td>
 		</tr>
 		<tr class="total">
 			<td>Total</td>
