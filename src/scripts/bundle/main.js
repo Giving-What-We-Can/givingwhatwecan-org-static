@@ -168,7 +168,7 @@
                 .addClass('alert-success')
                 .html('<strong>Success:</strong> a confirmation email has been sent to ' + requestData.EMAIL + '. Thanks for subscribing!');
 
-                cookies.set('newsletter_subscribed','1');
+                cookies.set('newsletter_subscribed','1',{expires:365});
             } else{
                 try {
                     var parts = data.msg.split(' - ', 2);
@@ -205,40 +205,20 @@
 
 
 // handler for exit intent plugin
-(function($, ouibounce){
+(function($, ouibounce,cookies){
     var form = $('.mailchimp-signup');
     var modal = $('.mailchimp-signup-modal');
     var parent = modal.parent();
-    // don't show anything by default, activate via optimizely
-    var optimizelyIntervalCounter = 0;
-    var optimizelyInterval = setInterval(function() {
-        if (window.showNewsletterModal != undefined) {
-            console.log('Found it')
-            clearInterval(optimizelyInterval);
-
-            showNewsletterModal = window.showNewsletterModal;
-            if(showNewsletterModal){
-                // exit intent plugin — take this out of the optimizely block to enable for all visitors
-                ouibounce(false, {
-                    callback: newsletterModal,
-                    cookieExpire: 14
-                });
-            }
-        } 
-        else if (optimizelyIntervalCounter < 100) {
-            console.log('Not here yet, looking again')
-            optimizelyIntervalCounter ++;
-        } 
-        else if (optimizelyIntervalCounter >= 100) {
-            console.log('Timed out')
-            clearInterval(optimizelyInterval);
-        }
-    }, 50);
-    
+    var subscribed = cookies.get('newsletter_subscribed');
+    // exit intent plugin — take this out of the optimizely block to enable for all visitors
+    ouibounce(false, {
+        callback: newsletterModal,
+        cookieExpire: 14
+    });
 
     // function to display the modal
     function newsletterModal (){
-
+        if(subscribed) return;
         modal.modal('show')
         .on('shown.bs.modal', function () {
           form.appendTo(modal.find('.modal-body'))
@@ -254,4 +234,4 @@
         })
         modal.trigger('newsletter_modal_shown');
     };
-})(jQuery,ouibounce);
+})(jQuery,ouibounce,cookies);
