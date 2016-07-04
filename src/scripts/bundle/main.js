@@ -119,7 +119,7 @@
     }; 
 })( jQuery, validate );
 
-
+/*
 // Handler for Mailchimp signup form
 ;(function($,cookies){
     $(document).on('jsready',function(){
@@ -234,4 +234,4 @@
         })
         modal.trigger('newsletter_modal_shown');
     };
-})(jQuery,ouibounce,cookies);
+})(jQuery,ouibounce,cookies); */

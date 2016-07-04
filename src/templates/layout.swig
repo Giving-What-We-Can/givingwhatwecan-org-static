@@ -135,7 +135,7 @@
 
 				// Segment actions reliant on jQuery
 				(function($){
-					$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
+					/*$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
 						analytics.identify({
 						  email: data.email,
 						  firstName: data.firstName,
@@ -148,7 +148,7 @@
 
 					$('.mailchimp-signup-modal').on('newsletter_modal_shown',function(event,data){
 						analytics.track("Saw Newsletter popup")
-					})
+					})*/
 
 				})(jQuery);
 			})
@@ -163,20 +163,24 @@
 				}
 			};
 
-			$LAB.queueWait(function(){
+			$LAB
+			.queueWait(function(){
 				(function($){
 					$(document).trigger('jsready');
 				})(jQuery);
+			})
+			.queueScript(function(){
+				// load SumoMe script
+				var s = document.createElement('script')
+				s.src = 'https://load.sumome.com/';
+				s.setAttribute("data-sumo-site-id", "1ec2e8a0bddef7a74767629e1710fa6758fdfffaa94c6aca43dd7d40e546b763");
+				document.getElementsByTagName('head')[0].appendChild(s);
 			})
 
 			$LAB.runQueue();
 
 		})(window.$LAB)
 	</script>
-	<script>
-		// deferred execution for jquery-dependent scripts defined earlier in the body
-	</script>
-
 </body>
 
 </html>

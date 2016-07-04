@@ -1,4 +1,4 @@
-<div class="mailchimp-signup">
+{# <div class="mailchimp-signup">
 	<h2>Subscribe to our newsletter</h2>
 <form action="//givingwhatwecan.us10.list-manage.com/subscribe/post?u=1ab3e4a8bd58783a2adff3c2e&amp;id=3ee570d9ad" method="post" id="mailchimp-signup-form" name="mc-embedded-subscribe-form" class="form form-inline" target="_blank" novalidate>
 	<p>Opportunities to give more effectively, our latest charity evaluations, and updates from the Giving What We Can community, direct to your inbox. We send approximately one email per month, and we'll never share your email address.</p>
@@ -55,3 +55,4 @@
 	d.className += " disabled";
 });
 </script>
+#}
