@@ -84,6 +84,7 @@ var path = require('path');
 var extend = require('util')._extend;
 var each = require('async').each;
 var merge = require('merge');
+var minimatch = require('minimatch');
 var NotificationCenter = require('node-notifier').NotificationCenter;
 var notifier = new NotificationCenter;
 // var prompt = require('prompt')
@@ -774,15 +775,12 @@ function build(buildCount){
             Object.keys(files).filter(minimatch.filter('**/*.html')).forEach(function(file){
                 var match = files[file].contents.toString().match(re);
                 if (match &&match.length >= 2 && typeof match[1] === 'string' && match[1].length > 0) {
-                    console.log(match[1])
                     html.push(match[1]);
                 }
             });
             html = html.join('\n');
             var purifiedCSS = purifyCSS(html, files[cssFile].contents.toString(), {
-                whitelist: whitelist,
-                rejected: true,
-                info: true,
+                whitelist: whitelist
             });
             files[cssFile].contents = new Buffer(purifiedCSS);
             done();
