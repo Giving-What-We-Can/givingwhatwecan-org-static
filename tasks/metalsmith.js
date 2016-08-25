@@ -72,6 +72,7 @@ if(ENVIRONMENT==='production'){
     var htmlMinifier = require("metalsmith-html-minifier");
     var autoprefixer = require("metalsmith-autoprefixer");
     var cleanCSS = require("metalsmith-clean-css");
+    var purifyCSS = require('purifycss');
     var uncss = require('metalsmith-uncss');
     var sitemap = require("metalsmith-sitemap");
     // var subset = require('metalsmith-subsetfonts')
@@ -744,44 +745,55 @@ function build(buildCount){
     // stuff to only do in production
     if(ENVIRONMENT==='production'){
         colophonemes
+        .use(logMessage('Cleaning CSS files',chalk.dim))
+        .use(function purify_css (files, metalsmith, done) {
+            var cssFile = 'styles/app.min.css';
+            var whitelist = [
+                '*collaps*',
+                '*nav*',
+                '*dropdown*',
+                '*modal*',
+                '*fade*',
+                '*in*',
+                '*open*',
+                '*ct-*',
+                '*slider*',
+                'loader',
+                'transparent',
+                '*scroll-down-chevron*',
+                '*slabtext*',
+                '*lazyload*',
+                '*tooltip*',
+                '*alert*',
+                '*sb-*',
+                '*highlighted*',
+                '*report-contents*',
+            ];
+            var html = [];
+            var re = /$[\s\S]*?<body.*?>([\s\S]+)<\/body>[\s\S]*?^/im;
+            Object.keys(files).filter(minimatch.filter('**/*.html')).forEach(function(file){
+                var match = files[file].contents.toString().match(re);
+                if (match &&match.length >= 2 && typeof match[1] === 'string' && match[1].length > 0) {
+                    console.log(match[1])
+                    html.push(match[1]);
+                }
+            });
+            html = html.join('\n');
+            var purifiedCSS = purifyCSS(html, files[cssFile].contents.toString(), {
+                whitelist: whitelist,
+                rejected: true,
+                info: true,
+            });
+            files[cssFile].contents = new Buffer(purifiedCSS);
+            done();
+        })
+        .use(autoprefixer())
+        .use(cleanCSS)
         .use(logMessage('Minifying HTML',chalk.dim))
         .use(htmlMinifier({
             minifyJS: true
         }))
         .use(logMessage('Minified HTML'))
-        .use(logMessage('Cleaning CSS files',chalk.dim))
-        .use(uncss({
-            basepath: 'styles',
-            css: ['app.css','icons.css'],
-            output: 'app.min.css',
-            removeOriginal: true,
-            uncss: {
-                ignore: [
-                    /collaps/,
-                    /nav/,
-                    /dropdown/,
-                    /modal/,
-                    /.fade/,
-                    /.in/,
-                    /.open/,
-                    /ct-/,
-                    /slider/,
-                    '.loader',
-                    '.transparent',
-                    '.content-block-wrapper .scroll-down-chevron',
-                    /slabtext/,
-                    /lazyload/,
-                    /tooltip/,
-                    /alert/,
-                    /sb-/,
-                    /highlighted/,
-                    /report-contents/,
-                ],
-                media: ['(min-width: 480px)','(min-width: 768px)','(min-width: 992px)','(min-width: 1200px)']
-            }
-        }))
-        .use(autoprefixer())
-        .use(cleanCSS)
         .use(sitemap({
             hostname: 'https://www.givingwhatwecan.org',
             omitIndex: true,

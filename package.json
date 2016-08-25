@@ -104,6 +104,7 @@
     "progress": "^1.1.8",
     "promise-retry": "^1.0.1",
     "prompt": "^0.2.14",
+    "purifycss": "^1.1.9",
     "recursive-readdir": "^1.3.0",
     "request": "^2.67.0",
     "request-promise": "^1.0.2",
