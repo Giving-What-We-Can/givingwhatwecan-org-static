@@ -9,3 +9,4 @@ bower_components
 src/metalsmith/styles/*
 src/metalsmith/scripts/*
 src/metalsmith/settings/stats.json
+.netlify

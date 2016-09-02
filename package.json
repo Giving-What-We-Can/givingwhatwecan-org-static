@@ -13,7 +13,8 @@
     "serve": "npm run styles && npm run scripts && node ./tasks/server.js",
     "server": "npm run serve",
     "development": "ENV=development npm run build",
-    "production": "ENV=production npm run build"
+    "production": "ENV=production npm run build",
+    "deploy": "npm run production && netlify deploy"
   },
   "engines": {
     "node": "4.2.2"
