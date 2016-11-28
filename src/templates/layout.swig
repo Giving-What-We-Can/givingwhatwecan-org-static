@@ -64,7 +64,7 @@
 						<div class="noscript">
 							<div class="col-xs-12">
 								<div class="alert alert-warning">
-									<p> <i class="fa fa-warning"></i> You do not have Javascript enabled. Some elements
+									<p> <i class="fa fa-exclamation-triangle"></i> You do not have Javascript enabled. Some elements
 										of this website may not work&nbsp;correctly.</p>
 								</div>
 							</div>
