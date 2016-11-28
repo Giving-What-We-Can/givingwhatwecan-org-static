@@ -26,7 +26,7 @@
     var goalAmount = goalIndicator.data('amount')
     var stretchGoalAmount = stretchGoalIndicator.data('amount')
     // get data
-    $.get('http://localhost:3001/v1/payments?format=total&from=2016-11-26&to=2017-01-10')
+    $.get('http://api.effectivealtruism.org/v1/payments?format=total&from=2016-11-26&to=2017-01-10')
       .done(function (data) {
         var total = data.reduce(function (prev, curr) {
           // add the net amount to the total, correcting for exchange rate
