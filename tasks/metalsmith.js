@@ -174,6 +174,7 @@ function build(buildCount){
     // Set up some metadata
     .use(metadata({
         "siteInfo": "settings/site-info.json",
+        "fundraisingAmounts": "settings/fundraising.json",
         "stats": "settings/stats.json",
     }))
     .use(function (files,metalsmith,done){

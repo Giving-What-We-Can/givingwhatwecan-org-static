@@ -60,4 +60,5 @@
 			</ul>
 		</div>
 	</div>
+	{% include '../specials/fundraising.swig' %}
 </nav>
