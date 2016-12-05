@@ -7,7 +7,7 @@
     <p class="fundraising-cta-description">We need your support to continue to grow our community of committed, effective givers. Help us make 2017 even bigger by making a donation to our parent organisation, <a href="https://www.centreforeffectivealtruism.org/">The Centre for Effective Altruism</a>.</p>
   </div>
   <div class="row">
-    <div class="col-md-8 col-lg-9">
+    <div class="col-md-8">
       <div class="fundraising-cta-progress">
         
         <div class="fundraising-bar">
@@ -27,10 +27,13 @@
 
       </div>
     </div>
-    <div class="col-md-4 col-lg-3">
+    <div class="col-md-4">
       <div class="fundraising-cta-cta">
         <div class="row">
-          <div class="col-xs-12"><a href="https://www.centreforeffectivealtruism.org/donate" class="btn btn-primary">Donate Now <i class="fa fa-angle-double-right"></i></a></div>
+          <div class="col-xs-12 col-sm-6"><a href="https://www.centreforeffectivealtruism.org/fundraising" class="btn btn-default">More Info <i class="fa fa-file-text"></i></a>
+          </div>
+          <div class="col-xs-12 col-sm-6"><a href="https://www.centreforeffectivealtruism.org/donate" class="btn btn-primary">Donate Now <i class="fa fa-heart"></i></a>
+          </div>
         </div>
       </div>
     </div>
