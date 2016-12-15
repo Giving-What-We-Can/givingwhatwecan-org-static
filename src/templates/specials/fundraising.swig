@@ -1,4 +1,3 @@
-<!--
 <div class="fundraising-cta-navigation collapse">
   <div class="container">
     <a href="#" class="fundraising-cta-navigation-close hidden-xs hidden-sm pull-right">Close<i class="fa fa-times"> </i></a>
@@ -47,4 +46,3 @@
 <script type="text/javascript">
   loadScript('fundraising-progress')
 </script>
--->
