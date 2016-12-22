@@ -176,6 +176,11 @@
 				s.setAttribute("data-sumo-site-id", "1ec2e8a0bddef7a74767629e1710fa6758fdfffaa94c6aca43dd7d40e546b763");
 				document.getElementsByTagName('head')[0].appendChild(s);
 			})
+			.queueWait(function(){
+				window.adroll_adv_id = "A4HX22LOVRCY7J2GORFL5D";
+   			window.adroll_pix_id = "K62U3VPJ5JHJJPM5KGZWU2";
+			})
+			.queueScript('https://s.adroll.com/j/roundtrip.js')
 
 			$LAB.runQueue();
 
