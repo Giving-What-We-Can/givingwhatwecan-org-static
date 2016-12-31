@@ -648,9 +648,9 @@ function build(buildCount){
     })
     .use(function(files, metalsmith, done){
         // make sure that everything has a template key (new version of contentful-metalsmith)
-        Object.keys(files).filter(minimatch.filter('post/**')).forEach(file => {
+        Object.keys(files).forEach(file => {
             var meta = files[file]
-            if (!meta.template && meta.layout) meta.template = meta.layout
+            if (!meta.template && meta.layout && !minimatch(file,'@(content-block|quotation)/**')) meta.template = meta.layout
         })
         done()
     })
