@@ -4,5 +4,5 @@ contentful:
   content_type: 1xX8bVZt6skQKGqEgkqmS2
   entry_template: charity.swig
   order: fields.title
-  entry_filename_pattern: charity/:fields.slug
+  entry_filename_pattern: charity/${fields.slug}
 ---

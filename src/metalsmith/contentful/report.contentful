@@ -4,5 +4,5 @@ contentful:
   content_type: report
   entry_template: report.swig
   order: fields.title
-  entry_filename_pattern: report/:fields.slug
+  entry_filename_pattern: report/${fields.slug}
 ---

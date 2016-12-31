@@ -226,7 +226,7 @@ function build(buildCount){
         }
     })
     .use(logMessage('Prepared global metadata'))
-    .use(contentful({ "accessToken" : CONTENTFUL_ACCESS_TOKEN } ))
+    .use(contentful({ "access_token" : CONTENTFUL_ACCESS_TOKEN } ))
     .use(function (files,metalsmith,done){
         // get rid of the contentful source files from the build
         each(Object.keys(files), function(file,cb){

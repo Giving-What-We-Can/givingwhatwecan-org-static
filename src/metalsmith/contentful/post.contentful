@@ -6,6 +6,6 @@ contentful:
   entry_template: post.swig
   limit: 5000
   order: -fields.date
-  entry_filename_pattern: post/:fields.slug
-  permalink_style: true
+  entry_filename_pattern: post/${fields.slug}
+  create_permalinks: true
 ---

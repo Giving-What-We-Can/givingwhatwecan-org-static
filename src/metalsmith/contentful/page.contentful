@@ -5,6 +5,6 @@ contentful:
   content_type: 6na899NofSMMwaMkWoKiAA
   entry_template: page.swig
   limit: 5000
-  entry_filename_pattern: page/:fields.slug
-  permalink_style: true
+  entry_filename_pattern: page/${fields.slug}
+  create_permalinks: true
 ---

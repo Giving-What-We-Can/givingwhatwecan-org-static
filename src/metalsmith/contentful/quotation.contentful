@@ -4,5 +4,5 @@ contentful:
   content_type: 1iM3ikn0HAI4ssAaiA006y
   entry_template: quotation.swig
   order: fields.slug
-  entry_filename_pattern: quotation/:fields.slug
+  entry_filename_pattern: quotation/${fields.slug}
 ---

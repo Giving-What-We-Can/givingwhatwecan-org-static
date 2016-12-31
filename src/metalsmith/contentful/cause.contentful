@@ -4,5 +4,5 @@ contentful:
   content_type: cause
   entry_template: cause.swig
   order: fields.title
-  entry_filename_pattern: cause/:fields.slug
+  entry_filename_pattern: cause/${fields.slug}
 ---
