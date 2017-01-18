@@ -2,7 +2,7 @@
 
 <div class="fundraising-cta-navigation collapse">
   <div class="container">
-    <a href="#" class="fundraising-cta-navigation-close hidden-xs hidden-sm pull-right">Close<i class="fa fa-times"> </i></a>
+    <a href="#" class="fundraising-cta-navigation-close pull-right">Close<i class="fa fa-times"> </i></a>
     <div class="fundraising-cta">
   <div class="fundraising-cta-text">
     <h3 class="fundraising-cta-title">Giving What We Can is fundraising for 2017</h3>
@@ -41,7 +41,6 @@
     </div>
   </div>
 </div>
-    <div class="center"><a href="#" class="fundraising-cta-navigation-close hidden-md hidden-lg">Close<i class="fa fa-times"></i></a></div>
   </div>
 </div>
 
