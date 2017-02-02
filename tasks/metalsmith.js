@@ -491,6 +491,7 @@ function build(buildCount){
         }
         function getParent(parent, path){
             path = path || [];
+            if(!parent.fields) throw new Error('Parent of '+ path + 'has no fields!' + parent.sys.id)
             if(!parent.fields.slug) throw new Error('Parent has no slug!' + parent.sys.id)
             path.unshift(parent.fields.slug)
             if(parent.fields.parent){
