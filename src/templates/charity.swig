@@ -1,57 +1,72 @@
-{% extends './research-entry.swig' %}
+{% extends './layout.swig' %}
 
-{% block related %}
-<div class="row">
-	{% if causes && causes.length>0 %}
-	<div class="col-sm-6 col-md-12">
-		<section class="related related-causes">
-			<h4>Related Cause Areas</h4>
-			<ul>
-			{% for cause in _causes %}
-				{% set inc = false %}
-				{% for c in causes %}
-					{% if c.sys.id === cause.id %}
-						<li class="related-item related-cause">
-							<a href="/{{cause.path}}">
-								{{cause.title}}
-							</a>
-						</li>
-					{% endif %}
-				{% endfor %}
-			{% endfor %}
-			</ul>
-		</section>
-	</div>
-	{% endif %}
+{% block banner %}
+	{% include "./partials/banner.swig" %}
+{% endblock %}
 
-	<div class="col-sm-6 col-md-12">
-		<section class="related related-reports">
-			<h4>Related Reports</h4>
-			<ul>
-			{% for r in _reports %}
-				{% set inc = false %}
-				{% for cause in r.causes %}
-					{% for c in causes %}
-						{% if cause.sys.id === c.sys.id %}
-							{% set inc = true %}
-						{% endif %}
-					{% endfor %}
-				{% endfor %}
-				{% for charity in r.charities %}
-					{% if charity.sys.id === id %}
-						{% set inc = true %}
-					{% endif %}
-				{% endfor %}
-				{% if inc %}
-					<li class="related-item related-report">
-						<a href="/{{r.path}}">
-							{{r.title}}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row" style='margin-bottom: 15px'>
+			<div class="col-md-3">
+				<img class="logo-image" src="{{logo.fields.file.url}}">
+			</div>
+			<div class="col-md-4">
+				<p class="short-description">{{shortDescription}}</p>
+				<a href="{{website}}" target="_blank" class="btn btn-primary btn-block">
+					<i class="icon icon-donate"></i> Donate via the Trust
+				</a>
+				{% if donationLink %}
+						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+							<i class="icon icon-donate"></i> Donate Directly
 						</a>
-					</li>
 				{% endif %}
-			{% endfor %}
-			</ul>
+				{% if website %}
+						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+							<i class="fa fa-home"></i> Website
+						</a>
+				{% endif %}
+				</div>
+			</div>
+		<div class="row">
+			<div class="col-md-9">
+				<div class="page-content">
+					{% if fastFacts && fastFacts.length>0 %}
+					<section class="fast-facts">
+						{% set f = {fastFacts:fastFacts} %}
+						{% include './partials/fast-facts.swig' with f only %}
+					</section>
+					{% endif %}
+				</div>
+			</div>
 		</div>
-	</section>
-</div>
+		<div class="row">
+			<div class="col-md-9">
+				{{ contents }}
+			</div>
+		</div>
+		<div class='row'>
+			<div class="col-sm-3">
+				<a href="{{website}}" target="_blank" class="btn btn-primary btn-block">
+					<i class="icon icon-donate"></i> Donate via the Trust
+				</a>
+			</div>
+				{% if donationLink %}
+					<div class="col-sm-3">
+						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+							<i class="icon icon-donate"></i> Donate Directly
+						</a>
+					</div>
+				{% endif %}
+				{% if website %}
+					<div class="col-sm-3">
+						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+							<i class="fa fa-home"></i> Website
+						</a>
+					</div>
+				{% endif %}
+		</div>
+	</div>
+
 {% endblock %}
