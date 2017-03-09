@@ -48,13 +48,13 @@
 		</div>
 		<div class='row'>
 			<div class="col-sm-3">
-				<a href="{{website}}" target="_blank" class="btn btn-primary btn-block">
+				<a href="/donate/#the-uk-giving-what-we-can-trust" target="_blank" class="btn btn-primary btn-block">
 					<i class="icon icon-donate"></i> Donate via the Trust
 				</a>
 			</div>
 				{% if donationLink %}
 					<div class="col-sm-3">
-						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+						<a href="{{donationLink}}" target="_blank" class="btn btn-default btn-block">
 							<i class="icon icon-donate"></i> Donate Directly
 						</a>
 					</div>
