@@ -14,11 +14,11 @@
 			</div>
 			<div class="col-md-4">
 				<p class="short-description">{{shortDescription}}</p>
-				<a href="{{website}}" target="_blank" class="btn btn-primary btn-block">
-					<i class="icon icon-donate"></i> Donate via the Trust
+				<a href="/trust" target="_blank" class="btn btn-primary btn-block">
+					<i class="icon icon-donate"></i> Donate with the Trust
 				</a>
 				{% if donationLink %}
-						<a href="{{website}}" target="_blank" class="btn btn-default btn-block">
+						<a href="{{donationLink}}" target="_blank" class="btn btn-default btn-block">
 							<i class="icon icon-donate"></i> Donate Directly
 						</a>
 				{% endif %}
