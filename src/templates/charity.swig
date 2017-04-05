@@ -14,8 +14,8 @@
 			</div>
 			<div class="col-md-4">
 				<p class="short-description">{{shortDescription}}</p>
-				<a href="/trust" target="_blank" class="btn btn-primary btn-block">
-					<i class="icon icon-donate"></i> Donate with the Trust
+				<a href="https://app.effectivealtruism.org/donations/new?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations" target="_blank" class="btn btn-primary btn-block">
+					<i class="icon icon-donate"></i> Donate with Effective Altruism Funds
 				</a>
 				{% if donationLink %}
 						<a href="{{donationLink}}" target="_blank" class="btn btn-default btn-block">
