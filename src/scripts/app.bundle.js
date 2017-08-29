@@ -62,7 +62,7 @@ require('scrollmagicAnimationGSAP')
 
 // jQuery Plugins
 require('jquerySlabText');
-require('jqueryThrottleDebounce');
+// require('jqueryThrottleDebounce');
 // require('jqueryPulse');
 
 // chartist
