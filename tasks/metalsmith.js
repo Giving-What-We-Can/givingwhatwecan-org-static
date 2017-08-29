@@ -629,9 +629,7 @@ function build (buildCount) {
       Object.keys(files).forEach(file => {
         var meta = files[file]
         if (!meta.template && meta.layout && !minimatch(file, '@(content-block|quotation)/**')) {
-            meta.template = meta.layout
-            console.log(file)
-            console.log(meta.template)
+          meta.template = meta.layout
         }
       })
       done()
