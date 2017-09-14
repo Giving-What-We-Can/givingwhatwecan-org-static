@@ -9,7 +9,7 @@
     "scripts": "node ./tasks/scripts.js",
     "styles": "node ./tasks/styles.js",
     "stats": "node ./tasks/getstats.js",
-    "build": "npm run stats && npm run styles && npm run scripts && npm run metalsmith",
+    "build": "npm run styles && npm run scripts && npm run metalsmith",
     "serve": "npm run styles && npm run scripts && node ./tasks/server.js",
     "server": "npm run serve",
     "development": "ENV=development npm run build",
