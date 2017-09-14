@@ -9,5 +9,4 @@ bower_components
 .icon_cache
 src/metalsmith/styles/*
 src/metalsmith/scripts/*
-src/metalsmith/settings/stats.json
 .netlify
