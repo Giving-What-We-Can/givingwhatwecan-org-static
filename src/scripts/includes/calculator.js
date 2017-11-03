@@ -14,7 +14,7 @@
             var householdAdults = calculatorControls.find('input[name=adults]');
             var householdChildren = calculatorControls.find('input[name=children]');
             var calculateButton = calculatorControls.find('button[type=submit]');
-            
+
 
 
             // get URL vars
@@ -30,7 +30,7 @@
                     md:992,
                     lg:1200
                 };
-                
+
                 // set up selectors
 
                 var calculationDetails = calculatorBody.find('#calculation-details');
@@ -49,12 +49,12 @@
 
                 var richestPercentileAfterDonatingDisplay = calculatorBody.find('.richest-percentile-after-donating');
                 var globalAverageMultipleAfterDonatingDisplay = calculatorBody.find('.global-average-multiple-after-donating');
-                
+
 
                 var comparisonsBefore = calculatorBody.find('#comparisons-before')
                 var multipleComparison = calculatorBody.find('.calculator-comparison.multiple')
                 var percentileComparison = calculatorBody.find('.calculator-comparison.percentile')
-                
+
                 var comparisonsAfter = calculatorBody.find('#comparisons-after')
                 var multipleComparisonAfterDonating = calculatorBody.find('.calculator-comparison.multiple-after-donating')
                 var percentileComparisonAfterDonating = calculatorBody.find('.calculator-comparison.percentile-after-donating')
@@ -88,7 +88,7 @@
                     formatter: function(value) {
                         return 'Donate ' + value + '%';
                     }
-                    
+
                 });
 
                 donationAmountSlider
@@ -118,7 +118,7 @@
                         sharingModal(href)
                     }
                 })
-                
+
                 // add listener for back to top button
                 $('.back-to-calculator').on('click',function(event){
                     event.preventDefault();
@@ -168,10 +168,10 @@
             function calculate(callback){
 
                 if(!calculatorBodyPresent) return;
-                
+
 
                 if(validate()){
-                    
+
                     update();
 
                     if(typeof callback === 'function'){
@@ -184,7 +184,7 @@
 
                 // calculatorBody.removeClass('calculated uncalculated').addClass('calculating')
 
-                
+
 
 
 
@@ -212,7 +212,7 @@
                 }
 
                 var validationErrors = validateLib(calculatorControls,rules)
-                
+
                 if(validationErrors){
                     for (var error in validationErrors) {
                         if(validationErrors.hasOwnProperty(error)) {
@@ -348,14 +348,14 @@
                 $('#sharing-modal')
                 .attr('data-percentile',values.percentage.toFixed(1))
                 .attr('data-multiple',Math.floor(values.multiple))
-                    
+
             }
 
             function animate(section){
 
                 killAnimation()
-                
-                
+
+
                 section = section || "intro";
                 section = section === "intro" ? ['details','before','donationpercentage','after','outcomes','calltoaction'] : section;
                 section = section === "changepercentage" ? ['after','outcomes','calltoaction'] : section;
@@ -365,7 +365,7 @@
 
                 // calculate window width to work out if we need keyframes for wrapped elements
                 var docWidth = $(document).width();
-                
+
 
 
                 // calculate element offsets
@@ -389,31 +389,31 @@
                 };
 
 
-                
+
                 // timeline.clear()
 
                 // timeline = new TimelineLite()
 
                 // build a timeline
-                
+
                 var delay = "+=1.5";
 
                 if( section.indexOf("details") >-1 ){
                     timeline.to(window, 0.6, {
-                        scrollTo:{y:calculationDetails.data('offset')}, 
+                        scrollTo:{y:calculationDetails.data('offset')},
                     })
                     delay = "+=3"
                 }
 
                 if( section.indexOf("before") >-1 ){
                     timeline.to(window, 0.6, {
-                        scrollTo:{y:comparisonsBefore.data('offset')}, 
+                        scrollTo:{y:comparisonsBefore.data('offset')},
                     },delay)
                     timeline.from(percentileComparison,0.6,{opacity:0})
                     timeline.from(chartPercentile.container,0.6,{opacity:0,scale:0.7})
                     if(docWidth<breakpoints.sm){
                         timeline.to(window, 0.6, {
-                            scrollTo:{y:multipleComparison.data('offset')}, 
+                            scrollTo:{y:multipleComparison.data('offset')},
                         },delay)
                     }
                     timeline.from(multipleComparison,0.6,{opacity:0})
@@ -426,7 +426,7 @@
                     donationAmountSlider.slider('setValue',0); calculate();
                     timeline
                     .to(window, 0.6, {
-                        scrollTo:{y:donationAmount.data('offset')}, 
+                        scrollTo:{y:donationAmount.data('offset')},
                     },delay)
                     .from(donationAmount,0.6,{opacity:0},"+=0")
                     .from(donationVal,1.3,{number:0,ease:Power1.easeIn,onUpdate:function(){
@@ -437,16 +437,16 @@
                 if( section.indexOf("after") >-1 ){
                     timeline
                     .to(window, 0.6, {
-                        scrollTo:{y:donationAmount.data('offset')}, 
+                        scrollTo:{y:donationAmount.data('offset')},
                     })
                     .to(window, 0.6, {
-                        scrollTo:{y:comparisonsAfter.data('offset')}, 
+                        scrollTo:{y:comparisonsAfter.data('offset')},
                     })
                     // .from(comparisonsAfter,0.6,{opacity:0},"-=0.6")
                     .from(chartPercentileAfterDonating.container,0.6,{scale:0.7})
                     if(docWidth<breakpoints.sm){
                         timeline.to(window, 0.6, {
-                            scrollTo:{y:multipleComparisonAfterDonating.data('offset')}, 
+                            scrollTo:{y:multipleComparisonAfterDonating.data('offset')},
                         },delay)
                         // .from(multipleComparisonAfterDonating,0.6,{opacity:0},"-=0.6")
                     }
@@ -456,7 +456,7 @@
                 if( section.indexOf("outcomes") >-1 ){
                     timeline
                     .to(window, 0.6, {
-                        scrollTo:{y:eachYear.data('offset')}, 
+                        scrollTo:{y:eachYear.data('offset')},
                     },delay)
                     .from(eachYear,0.6,{opacity:0},"-=0.6")
                     if(docWidth>=breakpoints.sm){
@@ -469,7 +469,7 @@
                             var outcome = $(this)
                             timeline
                             .to(window, 0.6, {
-                                scrollTo:{y:outcome.offset().top-navOffset}, 
+                                scrollTo:{y:outcome.offset().top-navOffset},
                             },delay)
                             .from(outcome,0.6,{opacity:0},"-=0.5")
                         })
@@ -479,13 +479,13 @@
                 if( section.indexOf("calltoaction") >-1 ){
                     timeline
                     .to(window, 0.6, {
-                        scrollTo:{y:callToAction.data('offset')}, 
+                        scrollTo:{y:callToAction.data('offset')},
                     },delay)
                     .from(callToAction,0.6,{opacity:0,scale:0.8})
                     if(docWidth<breakpoints.sm){
                         timeline
                         .to(window, 0.6, {
-                            scrollTo:{y:callToAction.data('offset')}, 
+                            scrollTo:{y:callToAction.data('offset')},
                         },delay)
                     }
                     timeline
@@ -496,7 +496,7 @@
                 if( section.indexOf("top") >-1 ){
                     timeline
                     .to(window, 0.6, {
-                        scrollTo:{y:calculatorControls.data('offset')}, 
+                        scrollTo:{y:calculatorControls.data('offset')},
                     })
 
                 }
@@ -531,7 +531,7 @@
                         shareText += "Differences in global income are amazing. "
                     }
                     shareText += "How rich are you?"
-                    
+
                     var url = $(this).attr('href').replace('{url}',encodeURIComponent(shareUrl)).replace('{text}',encodeURIComponent(shareText));
                     window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + 520 + ',height=' + 350);
                     dismissButton.text('All done!')
@@ -552,9 +552,9 @@
 
 
             /*
-            
+
             Logic for calculator controls
-            
+
             */
 
             updateCurrencyDisplay();
@@ -586,7 +586,7 @@
             })
 
 
-            // update display depending on 
+            // update display depending on
             householdButtons.on('click',function(e){
                 e.preventDefault();
                 var el = $(this), sel, min;
@@ -691,12 +691,12 @@
 
 
 
-    /* 
+    /*
 
     logic to display calculator results
 
     */
-    
+
 
     /*
 
@@ -724,8 +724,9 @@
         //prices from GiveWell in dollars
         var dollarspernet=(5.30+7.30)/2;//$5.30-$7.30 per net according to http://www.givewell.org/international/top-charities/AMF#CostperLLINdistributed
         var dollarsperdewormingtreatment=1.23;//$1.23 per treatment according to http://www.givewell.org/international/top-charities/schistosomiasis-control-initiative#Whatdoyougetforyourdollar
-        var dollarsperlifesaved=3340;//$3,340 per life saved according to http://www.givewell.org/international/top-charities/AMF#Costperlifesaved
-        var dollarsperdaly=(100+100)/2  // AMF averts 1 DALY for around $100, SCI averts 1 DALY for around $100 
+        // var dollarsperlifesaved=3340;//$3,340 per life saved according to http://www.givewell.org/international/top-charities/AMF#Costperlifesaved
+        var dollarsperlifesaved=7500;// The line above has changed. $7,500
+        var dollarsperdaly=(100+100)/2  // AMF averts 1 DALY for around $100, SCI averts 1 DALY for around $100
 
         //world income distribution in 2008 PPP USD
         //The data from 0-72.736 is from PovcalNet ( http://iresearch.worldbank.org/PovcalNet/index.htm?1 ). These raw centile values have been multiplied by 0.8 to account for the fact that rich countries are excluded from the surveys. The figure of 0.8 was chosen by cross-referencing the data with Branko Milanovic's in order to produce a smooth curve.
@@ -1686,13 +1687,13 @@
         //this function not actually used for anything
         /*
         function calcPreTax(threshold, incomeLevels, taxPercents, maxIncomeLevel) {
-                
+
             var incomeLevel;
             var nextIncomeLevel;
             var taxPercent;
             var preTaxSoFar = 0;
             var postTaxSoFar = 0;
-            
+
             for (var i = 0; ; i++){
                 incomeLevel = incomeLevels[i];
                 nextIncomeLevel = incomeLevels[i+1];
@@ -1708,8 +1709,8 @@
                     preTaxSoFar += (nextIncomeLevel - incomeLevel);
                 }
             }
-            
-            return preTaxSoFar;    
+
+            return preTaxSoFar;
         }
         */
 
@@ -1773,6 +1774,6 @@
 
 
     }
-    
+
     $.gwwcCalculator()
 })(jQuery,Chartist,TimelineLite,validate);
