@@ -105,8 +105,8 @@
 
 	<div class="row show-calculated explanatory-interstitial" id="call-to-action">
 		<div class="col-sm-12">
-			<p class="challenge make-slabtext"><span class="slabtext">So will you step up?</span></p>
-			<p class="action make-slabtext"><span class="slabtext">Are you ready to take our <a href="/pledge">10% pledge</a>?</span></p>
+			<p class="challenge">Interested in helping?</p>
+			<p class="action make-slabtext"><span class="slabtext">Consider taking our <a href="/pledge">10% pledge</a></span></p>
 		</div>
 	</div>
 
