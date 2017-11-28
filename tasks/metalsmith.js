@@ -532,7 +532,7 @@ function build (buildCount) {
     })
     .use(logMessage('Moved files into place'))
     .use(function (files, metalsmith, done) {
-      var dynamicSiteRedirects = files['settings/_redirects'].contents.toString().split('\n').sort()
+      var dynamicSiteRedirects = files['settings/_redirects'].contents.toString().split('\n')
         // build a list of redirects from file meta
       var metadata = metalsmith.metadata()
       var redirects = {}
@@ -553,7 +553,6 @@ function build (buildCount) {
 
         // create a _redirects file for Netlify
       redirectsFile.sort()
-      dynamicSiteRedirects.sort()
       redirectsFile = redirectsFile.concat(dynamicSiteRedirects)
       files['_redirects'] = {contents: redirectsFile.join('\n')}
       done()
