@@ -2,4 +2,6 @@
 /optimizely.js https://cdn.optimizely.com/js/3479250027.js 200
 /segment-js https://cdn.segment.com/analytics.js/v1/VtTlzxOC5QJ1H0zermvo84cAbReTofDU/analytics.min.js 200
 /optimizely-js https://cdn.optimizely.com/js/3479250027.js 200
+/join https://app.effectivealtruism.org/pledge/take?pledgeType=givingwhatwecan 301
+/try-giving https://app.effectivealtruism.org/pledge/take?pledgeType=trygiving 301
 /* https://www1.givingwhatwecan.org/:splat 200
