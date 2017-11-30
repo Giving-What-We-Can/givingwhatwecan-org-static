@@ -1,6 +1,6 @@
 <div class="join-matrix">
 	<div class="row">
-		<div class="col col-sm-6 pledge">
+		<div class="col-sm-6 pledge">
 			<h3>I'm ready to commit:</h3>
 			<h2>Take the pledge</h2>
 			<ul class="features">
@@ -12,7 +12,7 @@
 				<a href="/join" class="btn btn-primary">Take the pledge and become a member</a>
 			</p>
 		</div>
-		<div class="col col-sm-6 try-giving">
+		<div class="col-sm-6 try-giving">
 			<h3>I'd like to try it out first:</h3>
 			<h2>Try Giving</h2>
 			<ul class="features">
