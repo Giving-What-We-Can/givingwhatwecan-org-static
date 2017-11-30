@@ -1,5 +1,5 @@
 .join-matrix {
-	.col {
+	.pledge, .try-giving {
 		background-color: $site-secondary;
 		text-align: center;
 		padding: $grid-gutter-width/2 0;
@@ -16,16 +16,9 @@
 		ul {
 			text-align: left;
 		}
-		&.pledge {
+		.pledge {
 			border-right: 1px solid darken($site-secondary,10%);
 			padding-right: 14px;
-		}
-		&.try-giving {
-
-		}
-		.action {
-			// text-align: center;
-			// padding: $grid-gutter-width;
 		}
 	}
 }
