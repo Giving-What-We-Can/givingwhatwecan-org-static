@@ -3,7 +3,7 @@ title: Posts
 contentful:
   content_type: 5TB8GVLD7UUMkEYSEuUGsM
   entry_template: post.swig
-  limit: 5000
+  limit: 1000
   order: -fields.date
   entry_filename_pattern: post/${fields.slug}
   create_permalinks: true
