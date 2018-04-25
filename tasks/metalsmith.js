@@ -199,7 +199,7 @@ function build (buildCount) {
         // add defaults to all our contentful source files
       var options = {
         space_id: CONTENTFUL_SPACE,
-        limit: 2000,
+        limit: 1000,
         permalink_style: true
       }
       each(Object.keys(files), apply, done)

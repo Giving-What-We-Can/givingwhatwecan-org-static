@@ -1,7 +1,6 @@
 ---
 title: Posts
 contentful:
-  space_id: yglmadi73s3x
   content_type: 5TB8GVLD7UUMkEYSEuUGsM
   entry_template: post.swig
   limit: 5000
