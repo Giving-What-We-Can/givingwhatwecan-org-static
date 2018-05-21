@@ -1,3 +1,2 @@
 /join https://app.effectivealtruism.org/pledge/take?pledgeType=givingwhatwecan 301
 /try-giving https://app.effectivealtruism.org/pledge/take?pledgeType=trygiving 301
-/* https://www1.givingwhatwecan.org/:splat 200
