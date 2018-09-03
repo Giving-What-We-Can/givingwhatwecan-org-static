@@ -254,9 +254,13 @@ function build (buildCount) {
           meta.date = meta.date || meta.data.sys.createdAt
           meta.updated = meta.updated || meta.data.sys.updatedAt
                 // concat footnotes into main content field
-          if (meta.footnotes) {
-            meta.contents = meta.contents + '\n\n' + meta.footnotes
-            delete meta.footnotes
+          if (meta.body2 || meta.footnotes) {
+            meta.contents = [meta.contents, meta.body2, meta.footnotes]
+              .filter(a => a)
+              .map(a => a.trim())
+              .join('\n\n')
+            if (meta.footnotes) delete meta.footnotes
+            if (meta.body2) delete meta.body2
           }
                 // TODO caveats
           if (meta.recommendationLevel) {
