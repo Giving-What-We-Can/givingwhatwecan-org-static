@@ -1,0 +1,31 @@
+fragment pledgeFields on GwwcPledgesEdge {
+  node {
+    rankByPledgeType
+    fullName
+    pledgeStart
+    pledgeEnd
+    pledgePercentage
+    pledgeType
+  }
+}
+
+query gwwcStats {
+  Pledges: allGwwcPledges (
+    condition: {
+      pledgeType:GIVING_WHAT_WE_CAN
+    }
+  ) {
+    edges {
+      ...pledgeFields
+    }
+  }
+  TryGivers: allGwwcPledges (
+    condition: {
+      pledgeType:TRY_GIVING
+    }
+  ) {
+    edges {
+      ...pledgeFields
+    }
+  }
+}
