@@ -1,22 +1,27 @@
 fragment pledgeFields on GwwcPledgesEdge {
   node {
     rankByPledgeType
-    fullName
-    pledgeStart
-    pledgeEnd
-    pledgePercentage
-    pledgeType
+        fullName
+        pledgeStart
+        pledgeEnd
+        pledgePercentage
+        pledgeType
   }
 }
 
-query gwwcStats {
-  Pledges: allGwwcPledges (
+query stats {
+  TotalPledges: getGwwcMemberCount(pledgeType:GIVING_WHAT_WE_CAN)
+  TotalTryGivers: getGwwcMemberCount(pledgeType:TRY_GIVING)
+  TotalPayments: getPledgesTotalPayments
+  TotalLiability: getPledgesTotalLiability
+  TotalCompletion: getPledgesTotalCompletion
+  Pledgers: allGwwcPledges (
     condition: {
       pledgeType:GIVING_WHAT_WE_CAN
     }
   ) {
     edges {
-      ...pledgeFields
+     ...pledgeFields
     }
   }
   TryGivers: allGwwcPledges (
@@ -25,7 +30,7 @@ query gwwcStats {
     }
   ) {
     edges {
-      ...pledgeFields
+     ...pledgeFields
     }
   }
 }

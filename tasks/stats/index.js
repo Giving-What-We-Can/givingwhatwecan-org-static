@@ -4,12 +4,20 @@ const {GRAPHQL_ENDPOINT} = process.env
 const {GraphQLClient} = require('graphql-request')
 const fs = require('mz/fs')
 const path = require('path')
-const client = new GraphQLClient(GRAPHQL_ENDPOINT)
+const retry = require('async-retry')
 
-// run as CLI
-;(async () => {
-  await getStats().then(res => console.log(res))
-})()
+const client = new GraphQLClient(GRAPHQL_ENDPOINT)
+const STATS_FILEPATH = path.join(__dirname, path.normalize('../../src/metalsmith/settings/stats.json'))
+
+  // 'numberofmembers',
+  // 'amountpledged',
+  // 'amountpledgedwords',
+  // 'amountdonatedsofar',
+  // 'igivechart',
+  // 'igivechartwithoutother',
+  // 'citieschart',
+  // 'chaptermap',
+  // 'listofmembers'
 
 async function getStats () {
   // get all pledges
@@ -29,4 +37,23 @@ function flattenGQLResponse (res) {
   return flatResponse
 }
 
-module.exports = getStats
+// ============================ //
+if (require.main === module) {
+  // run as CLI with retry
+  (async () => {
+    try {
+      const stats = await retry(async (bail, n) => {
+        console.log(`Getting GWWC stats...${n > 1 ? ` (attempt ${n})`: ''}`)
+        return getStats()
+      }, {retries: 5})
+      await fs.writeFile(STATS_FILEPATH, JSON.stringify(stats, null, 2))
+      console.log(`Stats written to ${STATS_FILEPATH}`)
+    } catch (err) {
+      console.error(err)
+      process.exit(1)
+    }
+  })()
+} else {
+  // export as module
+  module.exports = getStats
+}
