@@ -17,7 +17,7 @@
     "deploy": "npm run production && netlify deploy"
   },
   "engines": {
-    "node": "4.2.2"
+    "node": "8.11.3"
   },
   "repository": {
     "type": "git",
