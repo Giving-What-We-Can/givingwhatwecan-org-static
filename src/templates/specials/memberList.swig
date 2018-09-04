@@ -1,15 +1,27 @@
-{% if stats.memberList %}
+{% if stats.Pledgers %}
 <div class="row">
 	<ul class="member-list list-unstyled">
-	{% for member in stats.memberList %}
-		{% if member[0].length > 30%}
-			{% set memberDetailsClass = "col-sm-8 col-md-6" %}
-		{% else %}
+	{% for Pledger in stats.Pledgers %}
+		{% set isActive = true %}
+		{% if Pledger.pledgeEnd !== 'infinity' %}
+			{% set isActive = false %}
+		{% elseif moment(Pledger.pledgeEnd, 'YYYY-MM-DD').isAfter(moment()) %}
+			{% set isActive = false %}
 		{% endif %}
-			{% set memberDetailsClass = "col-sm-4 col-md-3" %}
-		<li class="{{memberDetailsClass}} member-details">
-			<h4 id="{{member[0]|slug}}" class="member-name">{{member[0]}}</h4>
-			{% if member[1] %}<p class="member-occupation">{{member[1]}}</p>{% endif %}
+		<li class="col-sm-4 col-md-3">
+			<div class="member-details">
+				<h4 id="{{Pledger.fullName|slug}}" class="member-name">
+					{% if isActive %}
+						{% if Pledger.isAnonymous %}
+							<em>Anonymous</em>
+						{% else %}
+							{{Pledger.fullName}}
+						{% endif %}
+					{% else %}
+						<em>(Member Withdrawn)</em>
+					{% endif %}
+				</h4>
+			<div>
 		</li>
 	{% endfor %}
 	</ul>
