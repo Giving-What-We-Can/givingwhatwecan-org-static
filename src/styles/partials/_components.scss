@@ -103,9 +103,11 @@ span {
 	.member-details {
 		overflow: hidden;
 		height: 70px;
+		margin-bottom: $grid-gutter-width / 2;
 	}
 	.member-name {
 		display: inline-block;
+		margin: 0;
 	}
 	.member-occupation {
 		line-height: 1.4em;

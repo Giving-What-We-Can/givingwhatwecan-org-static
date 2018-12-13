@@ -2,11 +2,11 @@
 {% set contentBlockSet = 'home' %}
 
 {% block banner %}
-	
+
 {% endblock %}
 
 {% block content %}
-	{% include './partials/content-block-set.swig' %}
+	{% include './specials/memberList.swig' %}
 	<div class="container">
 		{% include './partials/newsletter-signup.swig' %}
 	</div>
@@ -24,7 +24,7 @@
 			});
 
 			/*
-			
+
 			SCROLLMAGIC!!!
 
 			*/
@@ -33,7 +33,7 @@
 			var controller = new ScrollMagic.Controller();
 
 			/*
-			
+
 			Scene - fade and shrink nav at top of page
 
 			*/
@@ -56,7 +56,7 @@
 			.addTo(controller);
 	})
 
-		
+
 	</script>
 {% endblock %}
 
