@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-	{% include './specials/memberList.swig' %}
+	{% include './partials/content-block-set.swig' %}
 	<div class="container">
 		{% include './partials/newsletter-signup.swig' %}
 	</div>
