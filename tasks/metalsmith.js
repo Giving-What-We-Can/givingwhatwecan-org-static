@@ -38,7 +38,7 @@ var getSpecials = require('../lib/get-specials').get
 var contentful = require('contentful-metalsmith')
 var slug = require('slug'); slug.defaults.mode = 'rfc3986'
 // var filemetadata = require('metalsmith-filemetadata')
-// var copy = require('metalsmith-copy')
+var assets = require('metalsmith-assets')
 // var replace = require('metalsmith-replace')
 // var strip = require('strip')
 var templates = require('metalsmith-templates')
@@ -193,6 +193,9 @@ function build (buildCount) {
         // hack to add stats for AMF
       var meta = metalsmith.metadata()
       meta.stats.amfCostPerLifeSaved = 2838
+      meta.stats.numberMembers = meta.stats.TotalPledges
+      meta.stats.amountDonated = meta.stats.TotalPayments
+      meta.stats.amountPledged = meta.stats.TotalLiability
       done()
     })
     .use(function (files, metalsmith, done) {
@@ -254,9 +257,13 @@ function build (buildCount) {
           meta.date = meta.date || meta.data.sys.createdAt
           meta.updated = meta.updated || meta.data.sys.updatedAt
                 // concat footnotes into main content field
-          if (meta.footnotes) {
-            meta.contents = meta.contents + '\n\n' + meta.footnotes
-            delete meta.footnotes
+          if (meta.body2 || meta.footnotes) {
+            meta.contents = [meta.contents, meta.body2, meta.footnotes]
+              .filter(a => a)
+              .map(a => a.trim())
+              .join('\n\n')
+            if (meta.footnotes) delete meta.footnotes
+            if (meta.body2) delete meta.body2
           }
                 // TODO caveats
           if (meta.recommendationLevel) {
@@ -729,6 +736,10 @@ function build (buildCount) {
       done()
     })
     .use(logMessage('Concatenated CSS files'))
+    .use(assets({
+      source: '../src/public'
+    }))
+    .use(logMessage('Moved static files into place'))
 
     // stuff to only do in production
   if (NODE_ENV === 'production') {
