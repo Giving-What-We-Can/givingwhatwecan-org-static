@@ -193,9 +193,9 @@ function build (buildCount) {
         // hack to add stats for AMF
       var meta = metalsmith.metadata()
       meta.stats.amfCostPerLifeSaved = 2838
-      meta.stats.numberMembers = meta.stats.TotalPledges
-      meta.stats.amountDonated = meta.stats.TotalPayments
-      meta.stats.amountPledged = meta.stats.TotalLiability
+      // meta.stats.numberMembers = meta.stats.TotalPledges
+      // meta.stats.amountDonated = meta.stats.TotalPayments
+      // meta.stats.amountPledged = meta.stats.TotalLiability
       done()
     })
     .use(function (files, metalsmith, done) {
