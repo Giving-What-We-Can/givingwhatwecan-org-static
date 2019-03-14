@@ -140,7 +140,6 @@
 	</div>
 
 </div>
-<hr>
 
 <!-- MODAL -->
 
@@ -177,14 +176,15 @@
 		      	</p>
 	        </div>
       	</div>
-		<div class="row">
-			<div class="col-lg-12">
-			    <div class="input-group">
-			    	<span class="input-group-addon"><i class="fa fa-link"></i> Link:</span>
-			    	<input class="input-lg form-control get-link" value="">
-			    </div>
-			</div>
-		</div>
+				<div class="row">
+					<div class="col-lg-12">
+					    <div class="input-group">
+					    	<span class="input-group-addon"><i class="fa fa-link"></i> Link:</span>
+					    	<input class="input-lg form-control get-link" value="">
+					    </div>
+					</div>
+				</div>
+    	</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">No thanks</button>
       </div>
