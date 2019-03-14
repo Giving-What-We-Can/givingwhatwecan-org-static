@@ -22,7 +22,14 @@ const STATS_FILEPATH = path.join(__dirname, path.normalize('../../src/metalsmith
 async function getStats () {
   // get all pledges
   const allPledgesQuery = await fs.readFile(path.join(__dirname, 'statsQuery.gql'), 'utf8')
-  return client.request(allPledgesQuery).then(flattenGQLResponse)
+  const res = await client.request(allPledgesQuery)
+  const stats = flattenGQLResponse(res)
+  // count number of members
+  stats.TotalPledges = stats.Pledgers.length + stats.TryGivers.length
+  stats.TotalGWWCMembers = stats.Pledgers.length
+  stats.TotalTryGivers = stats.TryGivers.length
+  // count try givers
+  return stats
 }
 
 function flattenGQLResponse (res) {
@@ -43,7 +50,7 @@ if (require.main === module) {
   (async () => {
     try {
       const stats = await retry(async (bail, n) => {
-        console.log(`Getting GWWC stats...${n > 1 ? ` (attempt ${n})`: ''}`)
+        console.log(`Getting GWWC stats...${n > 1 ? ` (attempt ${n})` : ''}`)
         return getStats()
       }, {retries: 5})
       await fs.writeFile(STATS_FILEPATH, JSON.stringify(stats, null, 2))

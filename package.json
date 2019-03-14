@@ -70,7 +70,6 @@
     "metalsmith-clean-css": "^5.0.1",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-concat": "^6.0.0",
-    "metalsmith-copy": "https://github.com/mattwidmann/metalsmith-copy/tarball/master",
     "metalsmith-debug": "1.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "https://github.com/colophonemes/metalsmith-excerpts.git",

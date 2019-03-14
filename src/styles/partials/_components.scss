@@ -104,6 +104,12 @@ span {
 		overflow: hidden;
 		height: 70px;
 		margin-bottom: $grid-gutter-width / 2;
+		&.member-details-anonymous {
+			h4 {
+				color: #999;
+				font-style: italic;
+			}
+		}
 	}
 	.member-name {
 		display: inline-block;

@@ -1,4 +1,4 @@
-fragment pledgeFields on GwwcPledgesEdge {
+fragment pledgeFields on AllPledgesPublicsEdge {
   node {
     rankByPledgeType
         fullName
@@ -11,21 +11,16 @@ fragment pledgeFields on GwwcPledgesEdge {
 }
 
 query stats {
-  TotalPledges: getGwwcMemberCount(pledgeType:GIVING_WHAT_WE_CAN)
-  TotalTryGivers: getGwwcMemberCount(pledgeType:TRY_GIVING)
-  TotalPayments: getPledgesTotalPayments
-  TotalLiability: getPledgesTotalLiability
-  TotalCompletion: getPledgesTotalCompletion
-  Pledgers: allGwwcPledges (
+  Pledgers: allAllPledgesPublics (
     condition: {
-      pledgeType:GIVING_WHAT_WE_CAN
+      pledgeType:GIVING_WHAT_WE_CAN,
     }
   ) {
     edges {
      ...pledgeFields
     }
   }
-  TryGivers: allGwwcPledges (
+  TryGivers: allAllPledgesPublics (
     condition: {
       pledgeType:TRY_GIVING
     }

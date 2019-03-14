@@ -3036,13 +3036,13 @@ lodash@3.x, lodash@^3.10.0, lodash@^3.10.1, lodash@^3.2.0, lodash@^3.3.1:
   version "3.10.1"
   resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^2.4.1, lodash@~2.4.1:
-  version "2.4.2"
-  resolved "http://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
-
 lodash@^4.0.0, lodash@^4.1.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.2.0, lodash@^4.8.0, lodash@~4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
+lodash@~2.4.1:
+  version "2.4.2"
+  resolved "http://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
 lodash@~3.3.1:
   version "3.3.1"
@@ -3210,14 +3210,6 @@ metalsmith-concat@^6.0.0:
     async "2.0.0-rc.6"
     glob "7.0.3"
     minimatch "3.0.0"
-
-"metalsmith-copy@https://github.com/mattwidmann/metalsmith-copy/tarball/master":
-  version "0.4.0"
-  resolved "https://github.com/mattwidmann/metalsmith-copy/tarball/master#f737a058f485f862b96e760893641d796fb181a8"
-  dependencies:
-    debug "^0.8.1"
-    lodash "^2.4.1"
-    minimatch "^3.0.2"
 
 metalsmith-debug@1.1.0:
   version "1.1.0"
