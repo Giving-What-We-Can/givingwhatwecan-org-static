@@ -18,3 +18,7 @@ CONTENTFUL_SPACE=<contenful space>
 ```
 - Build the site using `node index`
 - The site builds to the `./dest` directory --- the simplest way to serve this is to install [http-server](https://www.npmjs.com/package/http-server) globally (`npm install -g http-server`), open a new Terminal tab, `cd ./dest && http-server`. You can leave the server running between builds.
+
+### Browserstack thank you
+
+[Browserstack](https://www.browserstack.com/) has generously granted us an open source license for this project. We're an all mac dev shop and it's useful to test out on windows.

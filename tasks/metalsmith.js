@@ -38,7 +38,7 @@ var getSpecials = require('../lib/get-specials').get
 var contentful = require('contentful-metalsmith')
 var slug = require('slug'); slug.defaults.mode = 'rfc3986'
 // var filemetadata = require('metalsmith-filemetadata')
-// var copy = require('metalsmith-copy')
+var assets = require('metalsmith-assets')
 // var replace = require('metalsmith-replace')
 // var strip = require('strip')
 var templates = require('metalsmith-templates')
@@ -190,15 +190,15 @@ function build (buildCount) {
       done()
     })
     .use(function (files, metalsmith, done) {
-        // hack to add stats for AMF
+      // hack to add stats for AMF
       var meta = metalsmith.metadata()
       meta.stats.amfCostPerLifeSaved = 2838
       meta.stats.numberMembers = meta.stats.TotalGWWCMembers
       // hardcode numbers from database
       // parfit=> SELECT sum(amount_normalized)::MONEY from pledges.reported_donation;
-      meta.stats.amountDonated = 126751939 //meta.stats.TotalPayments
+      meta.stats.amountDonated = 126751939 // meta.stats.TotalPayments
       // just copied from the front page
-      meta.stats.amountPledged = 1572586402 //meta.stats.TotalLiability
+      meta.stats.amountPledged = 1572586402 // meta.stats.TotalLiability
       done()
     })
     .use(function (files, metalsmith, done) {
@@ -739,6 +739,10 @@ function build (buildCount) {
       done()
     })
     .use(logMessage('Concatenated CSS files'))
+    .use(assets({
+      source: '../src/public'
+    }))
+    .use(logMessage('Moved static files into place'))
 
     // stuff to only do in production
   if (NODE_ENV === 'production') {
