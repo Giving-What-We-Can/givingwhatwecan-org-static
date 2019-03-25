@@ -190,12 +190,15 @@ function build (buildCount) {
       done()
     })
     .use(function (files, metalsmith, done) {
-        // hack to add stats for AMF
+      // hack to add stats for AMF
       var meta = metalsmith.metadata()
       meta.stats.amfCostPerLifeSaved = 2838
-      // meta.stats.numberMembers = meta.stats.TotalPledges
-      // meta.stats.amountDonated = meta.stats.TotalPayments
-      // meta.stats.amountPledged = meta.stats.TotalLiability
+      meta.stats.numberMembers = meta.stats.TotalGWWCMembers
+      // hardcode numbers from database
+      // parfit=> SELECT sum(amount_normalized)::MONEY from pledges.reported_donation;
+      meta.stats.amountDonated = 126751939 // meta.stats.TotalPayments
+      // just copied from the front page
+      meta.stats.amountPledged = 1572586402 // meta.stats.TotalLiability
       done()
     })
     .use(function (files, metalsmith, done) {

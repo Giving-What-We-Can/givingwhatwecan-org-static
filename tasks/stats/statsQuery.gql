@@ -1,0 +1,32 @@
+fragment pledgeFields on AllPledgesPublicsEdge {
+  node {
+    rankByPledgeType
+        fullName
+        pledgeStart
+        pledgeEnd
+        pledgePercentage
+        pledgeType
+        anonymous
+  }
+}
+
+query stats {
+  Pledgers: allAllPledgesPublics (
+    condition: {
+      pledgeType:GIVING_WHAT_WE_CAN,
+    }
+  ) {
+    edges {
+     ...pledgeFields
+    }
+  }
+  TryGivers: allAllPledgesPublics (
+    condition: {
+      pledgeType:TRY_GIVING
+    }
+  ) {
+    edges {
+     ...pledgeFields
+    }
+  }
+}

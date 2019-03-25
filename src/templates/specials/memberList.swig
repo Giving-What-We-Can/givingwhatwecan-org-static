@@ -1,17 +1,16 @@
-{% if stats.memberList %}
+{% if stats.Pledgers %}
 <div class="row">
-	<ul class="member-list list-unstyled">
-	{% for member in stats.memberList %}
-		{% if member[0].length > 30%}
-			{% set memberDetailsClass = "col-sm-8 col-md-6" %}
-		{% else %}
-		{% endif %}
-			{% set memberDetailsClass = "col-sm-4 col-md-3" %}
-		<li class="{{memberDetailsClass}} member-details">
-			<h4 id="{{member[0]|slug}}" class="member-name">{{member[0]}}</h4>
-			{% if member[1] %}<p class="member-occupation">{{member[1]}}</p>{% endif %}
+	<ol class="member-list">
+	{% for Pledger in stats.Pledgers %}
+		<li class="col-sm-4">
+			<div class="member-details{% if Pledger.anonymous%} member-details-anonymous{% endif %}">
+				<h4 id="{{Pledger.rankByPledgeType}}-{{Pledger.fullName|slug}}" class="member-name">
+					{{Pledger.fullName}}
+				</h4>
+				<p>{{ moment(Pledger.pledgeStart, 'YYYY-MM-DD').format('MMMM YYYY') }}</p>
+			<div>
 		</li>
 	{% endfor %}
-	</ul>
+	</ol>
 </div>
 {% endif %}

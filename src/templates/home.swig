@@ -2,7 +2,7 @@
 {% set contentBlockSet = 'home' %}
 
 {% block banner %}
-	
+
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
 			});
 
 			/*
-			
+
 			SCROLLMAGIC!!!
 
 			*/
@@ -33,7 +33,7 @@
 			var controller = new ScrollMagic.Controller();
 
 			/*
-			
+
 			Scene - fade and shrink nav at top of page
 
 			*/
@@ -56,7 +56,7 @@
 			.addTo(controller);
 	})
 
-		
+
 	</script>
 {% endblock %}
 

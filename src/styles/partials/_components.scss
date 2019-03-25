@@ -101,8 +101,19 @@ span {
 
 .member-list {
 	.member-details {
-		height: 140px;
 		overflow: hidden;
+		height: 70px;
+		margin-bottom: $grid-gutter-width / 2;
+		&.member-details-anonymous {
+			h4 {
+				color: #999;
+				font-style: italic;
+			}
+		}
+	}
+	.member-name {
+		display: inline-block;
+		margin: 0;
 	}
 	.member-occupation {
 		line-height: 1.4em;
@@ -117,5 +128,3 @@ h1,h2,h3,h4,h5,h6 {
 	    display: none;
 	}
 }
-
-

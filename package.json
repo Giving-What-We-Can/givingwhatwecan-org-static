@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "metalsmith": "node ./tasks/metalsmith.js",
-    "scripts": "node ./tasks/scripts.js",
-    "styles": "node ./tasks/styles.js",
-    "stats": "node ./tasks/getstats.js",
-    "build": "npm run styles && npm run scripts && npm run metalsmith",
+    "scripts": "node ./tasks/scripts",
+    "styles": "node ./tasks/styles",
+    "stats": "node ./tasks/stats",
+    "build": "npm run stats && npm run styles && npm run scripts && npm run metalsmith",
     "serve": "npm run styles && npm run scripts && node ./tasks/server.js",
     "server": "npm run serve",
     "development": "ENV=development npm run build",
@@ -17,7 +17,7 @@
     "deploy": "npm run production && netlify deploy"
   },
   "engines": {
-    "node": "4.2.2"
+    "node": "8.11.3"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.5.0",
+    "async-retry": "^1.2.1",
     "autolinker": "^1.4.3",
+    "better-console": "^1.0.1",
     "bluebird-queue": "0.0.8",
     "bootstrap-sass": "^3.3.7",
     "bootstrap-slider": "^9.8.1",
@@ -47,6 +49,7 @@
     "dotenv": "^4.0.0",
     "exorcist": "^0.4.0",
     "express": "^4.15.4",
+    "graphql-request": "^1.8.2",
     "gsap": "^1.20.2",
     "html-entities": "^1.2.1",
     "image-size": "^0.6.1",
@@ -68,7 +71,6 @@
     "metalsmith-clean-css": "^5.0.1",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-concat": "^6.0.0",
-    "metalsmith-copy": "https://github.com/mattwidmann/metalsmith-copy/tarball/master",
     "metalsmith-debug": "1.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "https://github.com/colophonemes/metalsmith-excerpts.git",
@@ -97,6 +99,7 @@
     "minifyify": "^7.3.5",
     "minimatch": "^3.0.4",
     "moment": "^2.18.1",
+    "mz": "^2.7.0",
     "ncp": "^2.0.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.5.3",
