@@ -287,6 +287,11 @@ async@2.1.4:
   dependencies:
     lodash "^4.14.0"
 
+async@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-0.7.0.tgz#4429e0e62f5de0a54f37458c49f0b897eb52ada5"
+  integrity sha1-RCng5i9d4KVPN0WMSfC4l+tSraU=
+
 async@^1.4.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -3160,6 +3165,17 @@ merge@^1.1.3, merge@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
+metalsmith-assets@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-assets/-/metalsmith-assets-0.1.0.tgz#c838d483f09723ede8387449c6bfda9b3da3cc40"
+  integrity sha1-yDjUg/CXI+3oOHRJxr/amz2jzEA=
+  dependencies:
+    async "^0.7.0"
+    debug "^0.8.1"
+    merge "^1.1.3"
+    recursive-readdir "^1.0.0"
+    stat-mode "^0.2.0"
+
 metalsmith-autoprefixer@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/metalsmith-autoprefixer/-/metalsmith-autoprefixer-1.1.2.tgz#d86506c799438db38131e46fbef9c6089cc35f31"
@@ -3508,6 +3524,14 @@ minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
 minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
+
+minimatch@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-0.3.0.tgz#275d8edaac4f1bb3326472089e7949c8394699dd"
+  integrity sha1-J12O2qxPG7MyZHIInnlJyDlGmd0=
+  dependencies:
+    lru-cache "2"
+    sigmund "~1.0.0"
 
 "minimatch@2 || 3", minimatch@3.0.4, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
@@ -4352,6 +4376,13 @@ readable-stream@~2.0.0, readable-stream@~2.0.5:
     process-nextick-args "~1.0.6"
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
+
+recursive-readdir@^1.0.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-1.3.0.tgz#c6e66c9ae473f4928f8e6c67a05d80e7a56528ef"
+  integrity sha1-xuZsmuRz9JKPjmxnoF2A56VlKO8=
+  dependencies:
+    minimatch "0.3.0"
 
 recursive-readdir@^2.1.0, recursive-readdir@^2.2.1:
   version "2.2.2"
