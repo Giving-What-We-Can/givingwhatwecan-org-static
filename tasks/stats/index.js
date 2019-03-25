@@ -27,10 +27,13 @@ async function getStats () {
   const allPledgesQuery = await fs.readFile(path.join(__dirname, 'statsQuery.gql'), 'utf8')
   const res = await client.request(allPledgesQuery)
   const stats = flattenGQLResponse(res)
-  // count number of members
-  stats.TotalPledges = stats.Pledgers.length + stats.TryGivers.length
-  stats.TotalGWWCMembers = stats.Pledgers.length
-  stats.TotalTryGivers = stats.TryGivers.length
+  // count number of members (excluding withdrawn/inactive)
+  const numActivePledgers = stats.Pledgers.filter(isPledgerActive).length
+  const numActiveTryGivers = stats.TryGivers.filter(isPledgerActive).length
+  stats.TotalPledges = numActivePledgers + numActiveTryGivers
+  stats.TotalGWWCMembers = numActivePledgers
+  stats.TotalGWWCMembersWithdrawn = stats.Pledgers.length - numActivePledgers
+  stats.TotalTryGivers = numActiveTryGivers
   // count try givers
   return stats
 }
@@ -45,6 +48,10 @@ function flattenGQLResponse (res) {
     }
   }
   return flatResponse
+}
+
+function isPledgerActive (Pledger) {
+  return !Pledger.inactive
 }
 
 // ============================ //
