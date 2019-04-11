@@ -200,8 +200,8 @@
                         numericality: {
                             onlyInteger: true,
                             greaterThan: 0,
+                            message: 'must only be digits (0-9), with no commas, spaces or other characters'
                         },
-                        message: 'must only be digits (0-9), with no commas, spaces or other characters'
                     },
                     adults : {
                         presence : true,
