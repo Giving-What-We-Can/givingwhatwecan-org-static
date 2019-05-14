@@ -4,9 +4,14 @@
 	background-position: center center;
 	background-color: $site-secondary-dark;
 	min-height: 40vh;
-	@media(min-width:$screen-sm){
-	    min-height: 80vh;
-	    background-attachment: fixed;
+	&.banner-background {
+		.text-background {
+			width: 100%;
+		}
+		@media(min-width:$screen-sm){
+			min-height: 80vh;
+			background-attachment: fixed;
+		}
 	}
 }
 .page-title-wrapper {
@@ -44,11 +49,6 @@
 	margin: 75px auto 75px;
 }
 
-.banner-background {
-	.text-background {
-		width: 100%;
-	}
-}
 .header {
 	position: relative;
 	.image-attribution {
