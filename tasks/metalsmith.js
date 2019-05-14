@@ -215,10 +215,11 @@ function build (buildCount) {
         if (!meta.contentful) { cb(); return }
         meta.contentful = merge(true, options, meta.contentful)
 
-            // limit to 10 blog posts in development for faster builds
-        if (NODE_ENV === 'development' && meta.contentful.content_type === '5TB8GVLD7UUMkEYSEuUGsM') {
-          meta.contentful.limit = 10
-        }
+        // TODO;
+        // // limit to 10 blog posts in development for faster builds
+        // if (NODE_ENV === 'development' && meta.contentful.content_type === '5TB8GVLD7UUMkEYSEuUGsM') {
+        //   meta.contentful.limit = 10
+        // }
 
         cb()
       }
@@ -366,7 +367,8 @@ function build (buildCount) {
       done()
     })
     .use(function (files, metalsmith, done) {
-        // get rid of the existing collections in the global metadata so that we can create clean collections when we index the rest of the content
+      // get rid of the existing collections in the global metadata so that we
+      // can create clean collections when we index the rest of the content
       var metadata = metalsmith.metadata();
       ['collections', 'posts', 'causes', 'charities', 'reports'].forEach(function (m) {
         delete metadata[m]
@@ -596,6 +598,7 @@ function build (buildCount) {
         if (file.author) {
           for (var i = 0; i < file.author.length; i++) {
             authors += file.author[i].fields.title
+            // TODO; what does this do without a person
             if (file.author.length > 2 && i < file.author.length - 1) {
               authors += ', '
             }
@@ -689,6 +692,9 @@ function build (buildCount) {
         cb()
       }
     })
+    .use(function () {
+      console.log('yeah boi')
+    })
     .use(templates({
       engine: 'swig',
       directory: '../src/templates',
@@ -705,7 +711,8 @@ function build (buildCount) {
     }))
     .use(logMessage('Added icon fonts'))
     .use(function (files, metalsmith, done) {
-        // certain content has been incorporated into other pages, but we don't need them as standalone pages in our final build.
+      // certain content has been incorporated into other pages, but we don't
+      // need them as standalone pages in our final build.
       Object.keys(files).forEach(function (file) {
         if (minimatch(file, '@(content-block|quotation)/**')) {
           delete files[file]

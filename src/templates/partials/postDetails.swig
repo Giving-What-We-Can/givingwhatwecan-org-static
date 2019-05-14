@@ -1,7 +1,17 @@
 <section class="post-details">
 	<ul class="list-unstyled">
 		<li class="post-author"><i class="fa fa-user"></i> By
-			{% for a in author %}{% if !loop.last && loop.index !== 1%}, {% endif %}{% if loop.last && loop.index !== 1%} &amp; {% endif %}<a href="/person/{{a.fields.slug}}" class="author-name">{{ a.fields.title }}</a>{% endfor %}
+			{% if author[0].fields %}
+				{% for a in author %}
+					{% if a.fields %}
+						{% if !loop.last && loop.index !== 1%}, {% endif %}
+						{% if loop.last && loop.index !== 1%} &amp; {% endif %}
+						<a href="/person/{{a.fields.slug}}" class="author-name">{{ a.fields.title }}</a>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				Anonymous
+			{% endif %}
 		</li>
 		{% set pattern = 'D MMM YYYY'%}
 		{% set publishDate = date|moment(pattern)%}

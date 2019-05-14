@@ -3,7 +3,7 @@
 {% block title %}{{title}} - the {{ siteInfo.title}} Blog{% endblock %}
 
 {% block content %}
-	
+
 
 	<div class="container">
 		<div class="row">
@@ -15,7 +15,9 @@
 						{% include './partials/share-button.swig' %}
 					</section>
 					{% for a in author %}
-						{% include './partials/authorinfo.swig' with a only%}		
+						{% if a.fields %}
+							{% include './partials/authorinfo.swig' with a only%}
+						{% endif %}
 					{% endfor %}
 					<section class="newsletter">
 					{% include './partials/newsletter-signup.swig' %}
