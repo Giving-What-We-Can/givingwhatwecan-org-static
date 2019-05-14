@@ -215,11 +215,10 @@ function build (buildCount) {
         if (!meta.contentful) { cb(); return }
         meta.contentful = merge(true, options, meta.contentful)
 
-        // TODO;
-        // // limit to 10 blog posts in development for faster builds
-        // if (NODE_ENV === 'development' && meta.contentful.content_type === '5TB8GVLD7UUMkEYSEuUGsM') {
-        //   meta.contentful.limit = 10
-        // }
+        // limit to 10 blog posts in development for faster builds
+        if (NODE_ENV === 'development' && meta.contentful.content_type === '5TB8GVLD7UUMkEYSEuUGsM') {
+          meta.contentful.limit = 10
+        }
 
         cb()
       }
@@ -598,7 +597,6 @@ function build (buildCount) {
         if (file.author) {
           for (var i = 0; i < file.author.length; i++) {
             authors += file.author[i].fields.title
-            // TODO; what does this do without a person
             if (file.author.length > 2 && i < file.author.length - 1) {
               authors += ', '
             }
@@ -691,9 +689,6 @@ function build (buildCount) {
         files[jsonfile] = {contents: JSON.stringify(json)}
         cb()
       }
-    })
-    .use(function () {
-      console.log('yeah boi')
     })
     .use(templates({
       engine: 'swig',
