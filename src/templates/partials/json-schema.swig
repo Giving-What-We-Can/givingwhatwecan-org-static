@@ -96,7 +96,7 @@
   "dateModified":"{{updated|moment(null)}}",
   "author":{
   	"@type": "Person",
-  	"name": "{{author[0].fields.title}}"
+  	"name": "{% if author[0].fields %}{{author[0].fields.title}}{% else %}Anonymous{% endif %}"
   },
   "description": "{{excerpt}}"
 }
