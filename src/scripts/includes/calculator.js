@@ -320,7 +320,7 @@
                 },pieChartOptions)
 
                 chartMultiple.update({
-                    labels:["Average person's income",'Your income'],
+                    labels:["Median person's income",'Your income'],
                     series:[
                         [1,values.multiple]
                     ]
@@ -338,7 +338,7 @@
                 },pieChartOptions)
 
                 chartMultipleAfterDonating.update({
-                    labels:["Average person's income",'Your income after donating'],
+                    labels:["Median person's income",'Your income after donating'],
                     series:[
                         [0,values.multiple],
                         [1,values.multipleafterdonating]

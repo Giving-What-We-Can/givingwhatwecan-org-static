@@ -46,7 +46,7 @@
 		</div>
 		<div class="col-sm-6">
 			<div class="calculator-comparison multiple">
-				<p>Your income is more than <span class="number"><span class="global-average-multiple"></span> times</span> the global average.</p>
+				<p>Your income is more than <span class="number"><span class="global-average-multiple"></span> times</span> the global median.</p>
 			</div>
 			<div id="chart-multiple" class="ct-octave"></div>
 		</div>
@@ -68,7 +68,7 @@
 		</div>
 		<div class="col-sm-6">
 			<div class="calculator-comparison multiple-after-donating">
-				<p>... you'd still have more than <span class="number"><span class="global-average-multiple-after-donating"></span> times</span> the global average income...</p>
+				<p>... you'd still have more than <span class="number"><span class="global-average-multiple-after-donating"></span> times</span> the global median income...</p>
 			</div>
 			<div id="chart-multiple-after-donating" class="ct-octave"></div>
 		</div>
