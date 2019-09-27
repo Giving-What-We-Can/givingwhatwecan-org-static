@@ -1,4 +1,4 @@
-<form action="http://localhost:3001" method="get" id="calculator-controls">
+<form action="https://howrichami.givingwhatwecan.org" method="get" id="calculator-controls">
     <div class="row">
         <div class="form-group col-md-3 country-container">
             <label for="country"><i class="fa fa-globe"></i> Location</label>
