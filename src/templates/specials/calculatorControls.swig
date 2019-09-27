@@ -1,4 +1,4 @@
-<form action="/get-involved/how-rich-am-i" method="get" id="calculator-controls">
+<form action="http://localhost:3001" method="get" id="calculator-controls">
     <div class="row">
         <div class="form-group col-md-3 country-container">
             <label for="country"><i class="fa fa-globe"></i> Location</label>
@@ -210,7 +210,7 @@
         <div class="form-group col-md-3 col-lg-2 income-container">
             <label for="income"><i class="fa fa-money"></i> Annual income</label>
             <div class="input-group">
-                <input type="text" name="income" class="form-control"> 
+                <input type="text" name="income" class="form-control">
                 <span class="input-group-addon currency-display"></span>
             </div>
             <p class="help-text"> The total income for your household after tax. </p>

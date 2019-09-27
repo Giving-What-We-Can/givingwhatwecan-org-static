@@ -2,13 +2,13 @@
 
 	## app.bundle.js ##
 
-	This is the master file that organises all of the other scripts used by the site. 
+	This is the master file that organises all of the other scripts used by the site.
 
-	It uses Browserify to bundle scripts together into a single script, enabling control 
+	It uses Browserify to bundle scripts together into a single script, enabling control
 	over load order (as opposed to simply concatenating the directory), and keeps most
 	scripts out of the global scope.
 
-	All plugins are installed via NPM to the master node_modules directory. 
+	All plugins are installed via NPM to the master node_modules directory.
 
 	If a plugin is not available via NPM, or the NPM package's 'main' script is not the
 	script you want, you may need to set a 'browser' key in the master package.json.
@@ -22,7 +22,7 @@
 	handles the dependency resolution automatically.
 
 	See this post for more details:
-	http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm 
+	http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm
 
 */
 // cookies
@@ -78,7 +78,7 @@ global.numeral = require('numeral')
 // exit intent plugin
 global.ouibounce = require('ouibounce')
 
+require('iframeResizer')
+
 // main app scripts
 require('main')
-
-

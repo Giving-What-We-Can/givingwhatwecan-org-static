@@ -2,7 +2,7 @@ require('dotenv').load({silent: true})
 console.log('Building Javascript files')
 
 const Promise = require('bluebird')
-const fs = Promise.promisifyAll(require('fs'))
+const fs = require('mz/fs')
 const path = require('path')
 const cp = Promise.promisify(require('ncp').ncp)
 const rm = Promise.promisify(require('rimraf'))
@@ -30,7 +30,7 @@ const isJS = minimatch.filter('**/*.js')
   return rm(DESTINATION_PATH)
     .then(() => fs.mkdir(DESTINATION_PATH))
     .then(() => cp(path.join(SOURCE_PATH, 'includes'), path.join(DESTINATION_PATH, 'includes')))
-    .then(() => fs.readdirAsync(SOURCE_PATH))
+    .then(() => fs.readdir(SOURCE_PATH))
     .then(fileNames => {
       // Bundle files
       const bundleFileNames = fileNames.filter(isBundle)
@@ -46,7 +46,7 @@ const isJS = minimatch.filter('**/*.js')
     })
     .then(() => {
       if (process.env.NODE_ENV !== 'development') return
-      return fs.readdirAsync(BUILD_PATH)
+      return fs.readdir(BUILD_PATH)
         .then(() => cp(DESTINATION_PATH, BUILD_PATH))
         .catch(err => {
           if (err.code === 'ENOENT') return
@@ -80,8 +80,8 @@ function minify (filePath) {
   const outFileName = path.basename(outFilePath)
   const mapFileName = path.basename(mapFilePath)
   return Promise.all([
-    fs.readFileAsync(filePath),
-    fs.readFileAsync(`${filePath}.map`).catch(err => {
+    fs.readFile(filePath),
+    fs.readFile(`${filePath}.map`).catch(err => {
       if (err.code === 'ENOENT') return undefined
       else throw err
     })
@@ -98,7 +98,7 @@ function minify (filePath) {
       })
     })
     .then(({code, map}) => Promise.all([
-      fs.writeFileAsync(outFilePath, code),
-      fs.writeFileAsync(mapFilePath, map)
+      fs.writeFile(outFilePath, code),
+      fs.writeFile(mapFilePath, map)
     ]))
 }

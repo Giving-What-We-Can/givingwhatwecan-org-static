@@ -2575,6 +2575,11 @@ ieee754@^1.1.4:
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.12.tgz#50bf24e5b9c8bb98af4964c941cdb0918da7b60b"
   integrity sha512-GguP+DRY+pJ3soyIiGPTvdiVXjZ+DbXOxGpXn3eMvNW4x4irjqXm4wHKscC+TfxSJ0yw/S1F24tqdMNsMZTiLA==
 
+iframe-resizer@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/iframe-resizer/-/iframe-resizer-4.2.1.tgz#618330cdae190a379646fa7d5de5c2b94b387294"
+  integrity sha512-KvNkwvTg75b5qCyEG8xTCguMG54oBE55NzE6dQOrqTaDMmeGhCqkFefRoEoa/XoMeeMR5FWnlTmGrI83SKrZsg==
+
 image-size@^0.6.1:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"

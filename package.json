@@ -52,6 +52,7 @@
     "graphql-request": "^1.8.2",
     "gsap": "^1.20.2",
     "html-entities": "^1.2.1",
+    "iframe-resizer": "^4.2.1",
     "image-size": "^0.6.1",
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.0-rc3",
@@ -148,6 +149,7 @@
     "scrollmagicAnimationGSAP": "./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
     "jquerySlabText": "./src/scripts/bundle/vendor/jquery.slabtext.js",
     "jqueryPulse": "./src/scripts/bundle/vendor/jquery.pulse.js",
+    "iframeResizer": "./src/scripts/bundle/vendor/iframeResizer.js",
     "chartist": "./node_modules/chartist/dist/chartist.js",
     "chartistAxisTitle": "./node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js",
     "main": "./src/scripts/bundle/main.js"
