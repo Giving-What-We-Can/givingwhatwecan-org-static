@@ -29,7 +29,7 @@
 		window.q=[];window.$=function(f){q.push(f)}
 		// enqueue scripts at the end of the page from before the closing body tag
 		window.d=[];window.loadScript=function(path){d.push(path)}
-		
+
 	</script>
 	{% block head %}
 	{% endblock %}
@@ -37,7 +37,7 @@
 </head>
 {% set collectionSlug = "no-collection" %}
 {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %}
-	{% set collectionSlug = collections[collection]['metadata']['singular'] %} 
+	{% set collectionSlug = collections[collection]['metadata']['singular'] %}
 {% endif %}
 <body class="{{collectionSlug}} {{ {true:'home', false:slug}[slug==='/'] }}">
 
@@ -47,7 +47,7 @@
 	{% block banner %}
 		{% include './partials/banner.swig' %}
 	{% endblock %}
-	
+
 	<div id="wrapper">
 		<div class="content">
 
@@ -169,18 +169,6 @@
 					$(document).trigger('jsready');
 				})(jQuery);
 			})
-			.queueScript(function(){
-				// load SumoMe script
-				var s = document.createElement('script')
-				s.src = 'https://load.sumome.com/';
-				s.setAttribute("data-sumo-site-id", "1ec2e8a0bddef7a74767629e1710fa6758fdfffaa94c6aca43dd7d40e546b763");
-				document.getElementsByTagName('head')[0].appendChild(s);
-			})
-			.queueWait(function(){
-				window.adroll_adv_id = "A4HX22LOVRCY7J2GORFL5D";
-   			window.adroll_pix_id = "K62U3VPJ5JHJJPM5KGZWU2";
-			})
-			.queueScript('https://s.adroll.com/j/roundtrip.js')
 
 			$LAB.runQueue();
 
