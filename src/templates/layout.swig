@@ -90,17 +90,6 @@
 			// labjs script loader
 			$LAB
 			.queueScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-			.queueScript("https://cdn.optimizely.com/js/3479250027.js")
-			.queueWait(function(){
-				// kill optimizely if it hasn't loaded within a second
-				function optimizelyTimeout() {
-				    window.optimizely = window.optimizely|| [];
-				    if (!window.optimizely.data) {
-				    	window.optimizely.push("timeout");
-				    }
-				}
-				setTimeout(optimizelyTimeout, 2000);
-			})
 			.queueScript("https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
 			.queueWait(function(){
 				function webfontStatus(status){
