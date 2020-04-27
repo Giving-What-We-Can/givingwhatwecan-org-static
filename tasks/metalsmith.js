@@ -198,7 +198,7 @@ function build (buildCount) {
       // parfit=> SELECT sum(amount_normalized)::MONEY from pledges.reported_donation;
       meta.stats.amountDonated = 126751939 // meta.stats.TotalPayments
       // just copied from the front page
-      meta.stats.amountPledged = 1572586402 // meta.stats.TotalLiability
+      meta.stats.amountPledged = meta.stats.ProjectedDonations.projectedDonationsTotal
       done()
     })
     .use(function (files, metalsmith, done) {
