@@ -30,5 +30,10 @@ query stats {
     edges {
      ...pledgeFields
     }
+  },
+  ProjectedDonations: getTotalProjectedDonations {
+    projectedDonationsTotal
+    projectedIncomeTotal
+    numPledges
   }
 }
