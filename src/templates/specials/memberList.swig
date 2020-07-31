@@ -5,7 +5,7 @@
 		<li class="col-sm-4">
 			<div class="member-details{% if Pledger.anonymous%} member-details-anonymous{% endif %}">
 				<h4 id="{{Pledger.rankByPledgeType}}-{{Pledger.fullName|slug}}" class="member-name">
-					{{Pledger.fullName}}
+					{{Pledger.fullName|default('(Anonymous)')}}
 				</h4>
 				<p>{{ moment(Pledger.pledgeStart, 'YYYY-MM-DD').format('MMMM YYYY') }}</p>
 			<div>
