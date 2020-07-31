@@ -3795,10 +3795,10 @@ metalsmith-drafts@0.0.1:
     cheerio "^0.15.0"
     debug "~0.7.4"
 
-metalsmith-feed@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-0.3.0.tgz#6fac6296ef114c4c49ed5a08b106177f3f8b49cf"
-  integrity sha1-b6xilu8RTExJ7VoIsQYXfz+LSc8=
+metalsmith-feed@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-1.0.0.tgz#0dd44bcf8185770716dec149dcad089052e13530"
+  integrity sha512-FoBM1g5qkaN0EhxxRk4GaUAFENTbHXauxtMSVEb7KZT3mUxWPIsFtNL+YS4DnWwOsH1HF0YUROPuofqNM5tY5Q==
   dependencies:
     extend "^3.0.0"
     rss "^1.2.2"

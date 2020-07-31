@@ -591,20 +591,16 @@ function build (buildCount) {
       destination: 'blog.xml',
       feed_url: 'https://www.givingwhatwecan.org/blog.xml',
       image_url: 'https://www.givingwhatwecan.org/images/favicons/apple-touch-icon-144x144.png',
+      preprocess: file => ({
+        ...file,
+        author: file.author ? file.author.map(a => a.fields.title).join(', ') : ''
+      }),
       postDescription: function (file) {
         var text = file.excerpt || file.contents
         var authors = ''
         if (file.author) {
-          for (var i = 0; i < file.author.length; i++) {
-            authors += file.author[i].fields.title
-            if (file.author.length > 2 && i < file.author.length - 1) {
-              authors += ', '
-            }
-            if (file.author.length > 1 && i === file.author.length - 1) {
-              authors += ' and '
-            }
-          }
-          authors += ' — '
+          const authorNames = file.author.map(a => a.fields.title).join(', ')
+          authors += authorNames + ' — '
         }
         return authors + text
       }
