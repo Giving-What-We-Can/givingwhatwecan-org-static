@@ -29,6 +29,7 @@
 		window.d=[];window.loadScript=function(path){d.push(path)}
 
 	</script>
+	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/52b028e7f799cca137ef74763/e24293ca80c233f9705b98d15.js");</script>
 	{% block head %}
 	{% endblock %}
 
@@ -117,7 +118,6 @@
 			})
 			.queueScript('/scripts/app.min.js')
 			.queueScript('https://cdn.segment.com/analytics.js/v1/VtTlzxOC5QJ1H0zermvo84cAbReTofDU/analytics.min.js')
-			.queueScript('https://chimpstatic.com/mcjs-connected/js/users/52b028e7f799cca137ef74763/e24293ca80c233f9705b98d15.js')
 			.queueWait(function(){
 				// Segment actions
 
