@@ -90,6 +90,11 @@ body {
 				background-size: 30%;
 			}
 		}
-	}	
-
+	}
+	// turn off heading permalinks
+	&.giving-recommendations {
+		a.heading-permalink {
+			display: none;
+		}
+	}
 }
