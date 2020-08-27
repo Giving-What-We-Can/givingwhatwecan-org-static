@@ -268,6 +268,10 @@ function build (buildCount) {
             if (meta.footnotes) delete meta.footnotes
             if (meta.body2) delete meta.body2
           }
+          // set page title and description
+          const pageTitleBase = meta.slug === '/' ? meta.pageTitle : meta.pageTitle || meta.title
+          meta.pageTitle = [pageTitleBase, meta.siteInfo.title].filter(a => a).join(' · ')
+          meta.description = meta.description || meta.excerpt
                 // TODO caveats
           if (meta.recommendationLevel) {
             meta.recommendationLevel = parseInt(meta.recommendationLevel.split(' ')[0])

@@ -4,8 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{% if slug === '/' %}{% set title = siteInfo.title %}{% endif %}
-	<title>{% block title %}{{ title|default(siteInfo.title)|escape }}{% endblock head %}</title>
+	<title>{% block title %}{{ pageTitle }}{% endblock head %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% if slug === '/' %}
 		{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' %}
@@ -13,8 +12,7 @@
 		{% set canonicalURL = siteInfo.protocol + siteInfo.domain + '/' + path + '/'  %}
 	{% endif %}
 	<link rel="canonical" href="{{canonicalURL|escape}}" />
-	{% set description = excerpt|default(siteInfo.description) %}
-	<meta name="description" content="{{description|escape}}">
+	<meta name="description" content="{{description|default(siteInfo.description)|escape}}">
 	<link rel="stylesheet" type="text/css" href="/styles/app.min.css">
 	{% include './partials/og-images.swig' %}
 	{% include './partials/favicons.swig' %}
