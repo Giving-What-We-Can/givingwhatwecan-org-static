@@ -30,7 +30,7 @@
 											]
 			%}
 			{% if recommendationLevel %}
-				
+
 					<span class="recommendation-level recommendation-level-{{recommendationLevel}}">
 						<h4 class="recommendation-level-heading">Rating</h4>
 						<h5>{{recommendationHeadings[recommendationLevel]}}</h5>
@@ -57,7 +57,7 @@
 
 
 	{% endif %}
-	
+
 
 	{# Main Impact Summary for causes and charities #}
 	{% if collection|contains('_charities') || collection|contains('_causes') %}
@@ -65,10 +65,6 @@
 		<section class="impact-summary">
 			<h4>Impact Summary</h4>
 			{% include './impact-summary.swig' %}
-			<a href="/research/impact-summaries" class="learn-more">
-				<i class="fa fa-question-circle"></i>
-				<span class="sr-only">Learn More</span>
-			</a>
 		</section>
 	</div>
 	{% endif %}
@@ -79,10 +75,6 @@
 		<section class="impact-summary">
 			<h4>Cause Impact</h4>
 			{% include './impact-summary.swig' with causes[0].fields only %}
-			<a href="/research/impact-summaries" class="learn-more">
-				<i class="fa fa-question-circle"></i>
-				<span class="sr-only">Learn More</span>
-			</a>
 			<a class="cause-link" href="/cause/{{causes[0].fields.slug}}">
 				<i class="fa fa-heartbeat"></i>
 				{{causes[0].fields.title|truncate(20)}}
