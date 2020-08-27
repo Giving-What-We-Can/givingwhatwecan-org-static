@@ -117,6 +117,7 @@
 			})
 			.queueScript('/scripts/app.min.js')
 			.queueScript('https://cdn.segment.com/analytics.js/v1/VtTlzxOC5QJ1H0zermvo84cAbReTofDU/analytics.min.js')
+			.queueScript('https://chimpstatic.com/mcjs-connected/js/users/52b028e7f799cca137ef74763/e24293ca80c233f9705b98d15.js')
 			.queueWait(function(){
 				// Segment actions
 
