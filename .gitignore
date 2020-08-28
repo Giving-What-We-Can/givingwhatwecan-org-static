@@ -13,3 +13,4 @@ src/metalsmith/scripts/*
 src/metalsmith/settings/stats.json
 .netlify
 yarn-error.log
+.vscode
