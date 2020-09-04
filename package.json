@@ -103,7 +103,7 @@
     "mz": "^2.7.0",
     "ncp": "^2.0.0",
     "node-notifier": "^5.1.2",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "numeral": "^2.0.6",
     "ouibounce": "0.0.12",
     "progress": "^2.0.0",
