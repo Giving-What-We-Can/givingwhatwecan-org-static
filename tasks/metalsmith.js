@@ -795,11 +795,18 @@ function build (buildCount) {
           minifyJS: true
         }))
         .use(logMessage('Minified HTML'))
+        // add trailing slash to sitemap
+        .use(function (files, metalsmith, done) {
+          Object.keys(files).filter(minimatch.filter('**/*.html')).forEach(function (file) {
+            file.canonical = /\/$/.test(file.path) ? file.path : file.path + '/'
+          })
+          done()
+        })
         .use(sitemap({
           hostname: 'https://www.givingwhatwecan.org',
           omitIndex: true,
           modified: 'data.sys.updatedAt',
-          urlProperty: 'path'
+          urlProperty: 'canonical'
         }))
         .use(logMessage('Built sitemap'))
   }
