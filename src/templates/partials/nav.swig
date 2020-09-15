@@ -41,7 +41,7 @@
 									</li>
 								{% endif %}
 							{% endfor %}
-						</ul> 
+						</ul>
 					</li>
 					{% elif parent._page %}
 					<li class="nav {{parent._page.slug}}">

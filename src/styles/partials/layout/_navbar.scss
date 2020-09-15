@@ -36,8 +36,11 @@
 			// padding-top:5px;
 		}
 	 	&:hover, &:focus {
-	 		background-color: transparent;
-	 	}
+	 	  background-color: transparent;
+		}
+		img {
+			max-height: 43px;
+		}
 	}
 	button {
 		color: #FFF;
