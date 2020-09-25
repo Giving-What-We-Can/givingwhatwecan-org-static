@@ -1,7 +1,8 @@
-{% if stats.Pledgers %}
+{% set memberList = memberList || stats.Pledgers %}
+{% if memberList %}
 <div class="row">
 	<ol class="member-list">
-	{% for Pledger in stats.Pledgers %}
+	{% for Pledger in memberList %}
 		<li class="col-sm-4">
 			<div class="member-details{% if Pledger.anonymous%} member-details-anonymous{% endif %}">
 				<h4 id="{{Pledger.rankByPledgeType}}-{{Pledger.fullName|slug}}" class="member-name">
