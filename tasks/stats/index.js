@@ -37,6 +37,7 @@ async function getStats () {
   stats.TotalTryGiversWithdrawn = stats.TryGivers.length - numActiveTryGivers
   stats.PledgersActive = stats.Pledgers.filter(isPledgerActive)
   stats.TryGiversActive = stats.TryGivers.filter(isPledgerActive)
+  stats.TotalGWWCMemberCountries = stats.GWWCMemberCountries.length
   // count try givers
   return stats
 }

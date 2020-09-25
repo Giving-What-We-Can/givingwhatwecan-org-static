@@ -13,27 +13,31 @@ fragment pledgeFields on AllPledgesPublicsEdge {
 }
 
 query stats {
-  Pledgers: allAllPledgesPublics (
-    condition: {
-      pledgeType:GIVING_WHAT_WE_CAN,
-    }
+  Pledgers: allAllPledgesPublics(
+    condition: { pledgeType: GIVING_WHAT_WE_CAN }
   ) {
     edges {
-     ...pledgeFields
+      ...pledgeFields
     }
   }
-  TryGivers: allAllPledgesPublics (
-    condition: {
-      pledgeType:TRY_GIVING
-    }
-  ) {
+  TryGivers: allAllPledgesPublics(condition: { pledgeType: TRY_GIVING }) {
     edges {
-     ...pledgeFields
+      ...pledgeFields
     }
-  },
+  }
   ProjectedDonations: getTotalProjectedDonations {
     projectedDonationsTotal
     projectedIncomeTotal
     numPledges
+  }
+  TotalGWWCDonations: getTotalGwwcDonations
+  TotalCompletionPayments: getTotalCompletionPayments
+  GWWCMemberCountries: getGwwcMemberCountries {
+    edges {
+      node {
+        countryCode
+        count
+      }
+    }
   }
 }

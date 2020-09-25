@@ -194,10 +194,7 @@ function build (buildCount) {
       var meta = metalsmith.metadata()
       meta.stats.amfCostPerLifeSaved = 2838
       meta.stats.numberMembers = meta.stats.TotalGWWCMembers
-      // hardcode numbers from database
-      // parfit=> SELECT sum(amount_normalized)::MONEY from pledges.reported_donation;
-      meta.stats.amountDonated = 126751939 // meta.stats.TotalPayments
-      // just copied from the front page
+      meta.stats.amountDonated = meta.stats.TotalGWWCDonations
       meta.stats.amountPledged = meta.stats.ProjectedDonations.projectedDonationsTotal
       done()
     })
