@@ -37,7 +37,7 @@
 								{% elif child._link %}
 									<li class="{{ {true:'active',false:''}[path === child._page.path] }} {{ {true:child._link.linkURL.substr(0),false:'external-link'}[child._link.linkURL.charAt(0)==='/'] }}">
 										{% set childTitle = child._link.shortTitle || child._link.title %}
-										<a href="{{ relative(child._link.linkURL) }}">{{ childTitle }}</a>
+										<a href="{{ child._link.linkURL }}">{{ childTitle }}</a>
 									</li>
 								{% endif %}
 							{% endfor %}
