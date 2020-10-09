@@ -38,6 +38,11 @@ async function getStats () {
   stats.PledgersActive = stats.Pledgers.filter(isPledgerActive)
   stats.TryGiversActive = stats.TryGivers.filter(isPledgerActive)
   stats.TotalGWWCMemberCountries = stats.GWWCMemberCountries.filter(C => C.countryCode).length
+  // round monetary values
+  stats.ProjectedDonations.projectedDonationsTotal = Math.floor(stats.ProjectedDonations.projectedDonationsTotal)
+  stats.ProjectedDonations.projectedIncomeTotal = Math.floor(stats.ProjectedDonations.projectedIncomeTotal)
+  stats.TotalGWWCDonations = Math.floor(stats.TotalGWWCDonations)
+  stats.TotalCompletionPayments = Math.floor(stats.TotalCompletionPayments)
   // count try givers
   return stats
 }
