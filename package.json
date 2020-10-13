@@ -31,7 +31,7 @@
     "autolinker": "^1.4.3",
     "better-console": "^1.0.1",
     "bluebird-queue": "0.0.8",
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass": "^3.4.1",
     "bootstrap-slider": "^9.8.1",
     "bower-files": "^4.0.0",
     "browser-cookies": "^1.1.0",
