@@ -17,7 +17,7 @@
     "deploy": "npm run production && netlify deploy"
   },
   "engines": {
-    "node": "8.11.3"
+    "node": "12.14"
   },
   "repository": {
     "type": "git",
@@ -89,7 +89,7 @@
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-relative": "^1.0.3",
     "metalsmith-replace": "^1.0.0",
-    "metalsmith-sass": "^1.4.0",
+    "metalsmith-sass": "^1.7.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-sitemap": "git+https://github.com/centre-for-effective-altruism/metalsmith-sitemap.git",
     "metalsmith-slug": "0.2.1",
@@ -103,7 +103,7 @@
     "mz": "^2.7.0",
     "ncp": "^2.0.0",
     "node-notifier": "^5.1.2",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.14.1",
     "numeral": "^2.0.6",
     "ouibounce": "0.0.12",
     "progress": "^2.0.0",
@@ -128,7 +128,6 @@
     "validate.js": "^0.11.1",
     "yamljs": "^0.3.0"
   },
-  "devDependencies": {},
   "browser": {
     "lazysizes": "./node_modules/lazysizes/lazysizes.js",
     "lazysizesBGSet": "./node_modules/lazysizes/plugins/respimg/ls.respimg.js",
