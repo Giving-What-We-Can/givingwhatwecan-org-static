@@ -8,10 +8,13 @@
 						{% endif %}
 					</div>
 					<div class="media-body media-bottom team-member-details">
-						<h4 class="team-member-name media-heading">{{ person.title }}</h4>
+						<a href='/person/{{person.slug}}'>
+							<h4 class="team-member-name media-heading">{{ person.title }}</h4>
+						</a>
 						<p class="team-member-position">{{ person.position }}</p>
 						<div class="team-member-bio">
-							{{person.contents}}
+							<p>{{person.shortBio|default(person.excerpt)}}</p>
+							<a href='/person/{{person.slug}}'>Read more...</a>
 						</div>
 					</div>
 				</div>
