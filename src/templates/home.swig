@@ -7,9 +7,6 @@
 
 {% block content %}
 	{% include './partials/content-block-set.swig' %}
-	<div class="container">
-		{% include './partials/newsletter-signup.swig' %}
-	</div>
 	<script>
 		loadScript(function(){
 			var $ = window.jQuery;

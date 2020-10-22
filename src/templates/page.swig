@@ -13,9 +13,6 @@
 				<section class="page-content">
 					{{ contents }}
 				</section>
-				<div>
-					{% include './partials/newsletter-signup.swig' %}
-				</div>
 			</div>
 		</div>
 	</div>

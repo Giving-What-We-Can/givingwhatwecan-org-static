@@ -1,58 +1,14 @@
-{# <div class="mailchimp-signup">
-	<h2>Subscribe to our newsletter</h2>
-<form action="//givingwhatwecan.us10.list-manage.com/subscribe/post?u=1ab3e4a8bd58783a2adff3c2e&amp;id=3ee570d9ad" method="post" id="mailchimp-signup-form" name="mc-embedded-subscribe-form" class="form form-inline" target="_blank" novalidate>
-	<p>Opportunities to give more effectively, our latest charity evaluations, and updates from the Giving What We Can community, direct to your inbox. We send approximately one email per month, and we'll never share your email address.</p>
-	<div class="controls">
-		<div class="row">
-			<div class="form-group col-sm-8">
-				<label for="mailchimp-signup-EMAIL" class="control-label sr-only" aria-hidden="true">Email Address  <span class="asterisk">*</span></label>
-				<input placeholder="Email Address" type="email" name="EMAIL" class="form-control" id="mailchimp-signup-EMAIL">
-			</div>
-			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ab3e4a8bd58783a2adff3c2e_3ee570d9ad" tabindex="-1" value=""></div>
-			
-
-			<!-- add as a 'non-member' -->
-			<input type="hidden" name="group[7037][4]" value="1" />
-			<!-- opts people into all sub-lists -->
-			<input type="hidden" name="group[7037][8]" value="1" />
-			<input type="hidden" name="group[7037][128]" value="1" />
-			<input type="hidden" name="group[7037][256]" value="1" />
-
-			<!-- track signup location on site -->
-			<input type="hidden" name="SIGNUPTYPE" value="{{collectionSlug}}" />
-			<input type="hidden" name="SIGNUPLOC" value="Postscript" />
-
-			<div class="form-group col-sm-4">
-				<button type="submit" name="subscribe" id="mailchimp-signup-subscribe" class="btn btn-success">Subscribe</button>
+<form action="https://givingwhatwecan.us8.list-manage.com/subscribe/post?u=52b028e7f799cca137ef74763&amp;id=a08869629e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+	<div class='form-group'>
+		<div class='input-group input-group-sm'>
+			<input class='form-control' type='email' name="EMAIL" placeholder='youremail@example.com' required aria-required='true'/>
+			<div class='input-group-btn'>
+				<button class='btn btn-default' type='submit'>
+					Sign up <i class='fa fa-chevron-right' />
+				</button>
 			</div>
 		</div>
 	</div>
-	<div id="mailchimp-signup-result" class="hidden alert"></div>
+	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_52b028e7f799cca137ef74763_51c1df13ac" tabindex="-1" value=""></div>
 </form>
-</div>
-
-<div class="modal fade mailchimp-signup-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Subscribe to our Newsletter</h4>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">No thanks</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-<script>
-(function(){
-	var d = document.getElementById("mailchimp-signup-subscribe");
-	d.className += " disabled";
-});
-</script>
-#}
