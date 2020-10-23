@@ -1,54 +1,52 @@
 $font-size: 14px;
-$link-color: #AAA;
-$link-color-hover: #FFF;
-$heading-font-color: #CCC;
+$link-color: #aaa;
+$link-color-hover: #fff;
+$font-color: #ccc;
+$heading-font-color: $font-color;
 
 footer.footer {
-	margin-top:$content-padding;
-	background-color: #333;
-	a{
-		&:link,&:visited{
-			color: $link-color;
-		}
-		&:hover,&:focus,&:active{
-			color: $link-color-hover;
-		}
-	}
-	min-height: 130px;
-	padding: $grid-gutter-width 0;
-	.colophon{
-		min-height: 90px;
-	}
+  margin-top: $content-padding;
+  background-color: #333;
+  color: $font-color;
+  h6 {
+    color: $heading-font-color;
+    font-size: $font-size;
+    border-bottom: 1px $heading-font-color solid;
+    margin: 5px 0;
+    text-transform: uppercase;
+  }
+  p,
+  li {
+    a {
+      &:link,
+      &:visited {
+        color: $link-color;
+        text-decoration: none;
+      }
+      &:hover,
+      &:active {
+        color: $link-color-hover;
+        text-decoration: underline;
+      }
+    }
+  }
 
+  min-height: 130px;
+  padding: $grid-gutter-width 0;
+  .colophon {
+    min-height: 90px;
+  }
 
-	nav {
-		font-size: $font-size;
-		ul {
-			padding: 0;
-			li {
-				list-style-type: none;
-				h6 {
-					color: $heading-font-color;
-					font-size: $font-size;
-					border-bottom: 1px $heading-font-color solid;
-					margin: 5px 0;
-					text-transform: uppercase;
-				}
-				a {
-					&:link, &:visited {
-						color: $link-color;
-						text-decoration: none;
-					}
-					&:hover, &:active {
-						color: $link-color-hover;
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
-	hr {
-		border-color: $heading-font-color;
-	}
-
+  nav {
+    font-size: $font-size;
+    ul {
+      padding: 0;
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  hr {
+    border-color: $heading-font-color;
+  }
 }
