@@ -1,63 +1,60 @@
 @import "utilities/responsive-heights";
 @import "utilities/brand-colors";
 
-.text-content{
-	@include text-content();
+.text-content {
+  @include text-content();
 }
 
 // highlight the text background
 .text-background {
-	background: $site-primary;
-	color: #FFF;
-	display: inline-block;
-	padding: 0.25em 0.5em;
-    border-radius: 0.3em;
-	* {
-		display: inline-block;
-	}
+  background: $site-primary;
+  color: #fff;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  border-radius: 0.3em;
+  * {
+    display: inline-block;
+  }
 }
-
 
 // transparency for effects
 .transparent {
-	visibility: hidden;
-	.opacity &{
-		visibility: visible;
-		opacity: 0;
-		pointer-events: none;
-	}
+  visibility: hidden;
+  .opacity & {
+    visibility: visible;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
-
 
 // text alignment
 .left {
-	text-align: left;
-	img {
-		margin-left: 0;
-		margin-right: auto;
-	}
+  text-align: left;
+  img {
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 .right {
-	text-align: right;
-	img {
-		margin-left: auto;
-		margin-right: 0;
-	}
+  text-align: right;
+  img {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 .center {
-	text-align: center;
-	img {
-		margin-left: auto;
-		margin-right: auto;
-	}
+  text-align: center;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-
-p,h1,h2,h3,h4,h5,.navbar a,li {
-	.wf-loading & {
-		visibility: hidden;
-	}
-	.wf-active &, .wf-inactive & {
-		visibility: visible;
-	}
-}
+// p,h1,h2,h3,h4,h5,.navbar a,li {
+// 	.wf-loading & {
+// 		visibility: hidden;
+// 	}
+// 	.wf-active &, .wf-inactive & {
+// 		visibility: visible;
+// 	}
+// }
