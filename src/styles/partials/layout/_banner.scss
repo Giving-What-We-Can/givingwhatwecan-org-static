@@ -1,75 +1,73 @@
 #banner {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	background-color: $site-secondary-dark;
-	min-height: 40vh;
-	&.banner-background {
-		.text-background {
-			width: 100%;
-		}
-		@media(min-width:$screen-sm){
-			min-height: 80vh;
-			background-attachment: fixed;
-		}
-	}
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: $site-secondary-dark;
+  min-height: 40vh;
+  &.banner-background {
+    .text-background {
+      width: 100%;
+    }
+    @media (min-width: $screen-sm) {
+      min-height: 80vh;
+    }
+  }
 }
 .page-title-wrapper {
-	margin-bottom: $content-padding;
-	text-align:center;
-	position: relative;
-	padding: 0;
-	@media(min-width:$screen-sm){
-	    height: 1px;
-	    margin-top: -1px;
-	}
+  margin-bottom: $content-padding;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  @media (min-width: $screen-sm) {
+    height: 1px;
+    margin-top: -1px;
+  }
 }
 .page-title {
-	color: #FFF;
-	text-transform: uppercase;
-	background-color: $site-primary;
-	font-size: 1.8em;
-	padding: $grid-gutter-width/2;
-	margin:0;
-	text-align: left;
-	@media(min-width:$screen-sm){
-		font-size: 3em;
-		background-color: transparentize($site-primary,0.2);
-		position:absolute;
-		bottom: 0;
-		width:100%;
-	    margin: 0 -50%;
-		padding: $grid-gutter-width;
-		text-align: center;
-	    left:50%;
-
-	}
+  color: #fff;
+  text-transform: uppercase;
+  background-color: $site-primary;
+  font-size: 1.8em;
+  padding: $grid-gutter-width/2;
+  margin: 0;
+  text-align: left;
+  @media (min-width: $screen-sm) {
+    font-size: 3em;
+    background-color: transparentize($site-primary, 0.2);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 -50%;
+    padding: $grid-gutter-width;
+    text-align: center;
+    left: 50%;
+  }
 }
 #site-logo {
-	margin: 75px auto 75px;
+  margin: 75px auto 75px;
 }
 
 .header {
-	position: relative;
-	.image-attribution {
-		display: none;
-		@media(min-width:$screen-sm){
-			display: block;
-		}
-		position: absolute;
-		height: 30px;
-		bottom: 30px;
-		width: 100%;
-		text-align: right;
-		padding: 0 30px;
-		font-size: 14px;
-		color: #CCC;
-		@media(min-width:$screen-sm){
-			color: #999;
-		}
-		a {
-			color: inherit;
-			text-decoration: underline;
-		}
-	}
+  position: relative;
+  .image-attribution {
+    display: none;
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+    position: absolute;
+    height: 30px;
+    bottom: 30px;
+    width: 100%;
+    text-align: right;
+    padding: 0 30px;
+    font-size: 14px;
+    color: #ccc;
+    @media (min-width: $screen-sm) {
+      color: #999;
+    }
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
 }
