@@ -342,8 +342,8 @@ function build (buildCount) {
         const alert = files[file]
         const ISO_SHORT_DATE = 'YYYY-MM-DD'
         if(
-          moment(alert.startDate, ISO_SHORT_DATE).isAfter(moment()) ||
-          (alert.endDate && moment(alert.endDate, ISO_SHORT_DATE).isBefore(moment()))
+          moment(alert.startDate, ISO_SHORT_DATE).isAfter(moment(), 'day') ||
+          (alert.endDate && moment(alert.endDate, ISO_SHORT_DATE).isBefore(moment(), 'day'))
         ) {
           delete files[file]
         }
