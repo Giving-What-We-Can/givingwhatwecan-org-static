@@ -336,6 +336,20 @@ function build (buildCount) {
         return found ? files[found] : false
       }
     })
+    .use(function (files, metalsmith, done) {
+      // remove any alerts that are out of date bounds
+      Object.keys(files).filter(minimatch.filter('@(alert)/**/*.html')).forEach(function (file) {
+        const alert = files[file]
+        const ISO_SHORT_DATE = 'YYYY-MM-DD'
+        if(
+          moment(alert.startDate, ISO_SHORT_DATE).isAfter(moment()) ||
+          (alert.endDate && moment(alert.endDate, ISO_SHORT_DATE).isBefore(moment()))
+        ) {
+          delete files[file]
+        }
+      })
+      done()
+    })
     .use(logMessage('Processed Contentful metadata'))
     .use(collections(collectionOptions))
     .use(function (files, metalsmith, done) {
@@ -449,6 +463,14 @@ function build (buildCount) {
         reverse: false,
         metadata: {
           singular: 'report'
+        }
+      },
+      _alerts: {
+        pattern: 'alert/**/*.html',
+        sortBy: 'startDate',
+        reverse: true,
+        metadata: {
+          singular: 'alert'
         }
       }
     }))
@@ -635,7 +657,7 @@ function build (buildCount) {
         // make sure that everything has a template key (new version of contentful-metalsmith)
       Object.keys(files).forEach(file => {
         var meta = files[file]
-        if (!meta.template && meta.layout && !minimatch(file, '@(content-block|quotation)/**')) {
+        if (!meta.template && meta.layout && !minimatch(file, '@(content-block|quotation|alert)/**')) {
           meta.template = meta.layout
         }
       })

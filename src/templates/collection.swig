@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+	{% include './partials/custom-alert.swig' %}
 	<div class="container">
 		{% if title !== "Blog" %}
 			{% include './partials/update-in-progress-warning.swig' %}
@@ -22,7 +22,7 @@
 		<div class="collection-items">
 		{% block collectionItems %}{% endblock %}
 		</div>
-		
+
 	</div>
 
 	{% if pagination.pages.length > 1%}

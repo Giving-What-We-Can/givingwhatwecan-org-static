@@ -1,0 +1,8 @@
+---
+title: Causes
+contentful:
+  content_type: alert
+  entry_template: alert.swig
+  order: -fields.startDate
+  entry_filename_pattern: alert/${sys.id}
+---

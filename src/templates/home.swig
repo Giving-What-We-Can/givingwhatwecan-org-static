@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+	{% include './partials/custom-alert.swig' %}
 	{% include './partials/content-block-set.swig' %}
 	<script>
 		loadScript(function(){

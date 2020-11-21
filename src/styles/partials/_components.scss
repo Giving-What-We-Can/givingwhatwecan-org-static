@@ -1,136 +1,132 @@
-@import 'components/calculator';
-@import 'components/contentblock';
-@import 'components/footnotes';
-@import 'components/fundraising';
-@import 'components/fundraising-bar';
-@import 'components/charity';
-@import 'components/heading-permalink';
-@import 'components/join-matrix';
-@import 'components/logo';
-@import 'components/newsletter-signup';
-@import 'components/pathway-model';
-@import 'components/post-details';
-@import 'components/progress-bar';
-@import 'components/quotation';
-@import 'components/research';
-@import 'components/social';
-@import 'components/team-member';
-@import 'components/toc';
+@import "components/calculator";
+@import "components/contentblock";
+@import "components/custom-alert";
+@import "components/footnotes";
+@import "components/fundraising";
+@import "components/fundraising-bar";
+@import "components/charity";
+@import "components/heading-permalink";
+@import "components/join-matrix";
+@import "components/logo";
+@import "components/newsletter-signup";
+@import "components/pathway-model";
+@import "components/post-details";
+@import "components/progress-bar";
+@import "components/quotation";
+@import "components/research";
+@import "components/social";
+@import "components/team-member";
+@import "components/toc";
 
-.content{
-	overflow: hidden;
+.content {
+  overflow: hidden;
 }
 
 .btn {
-	border-radius: 0 !important;
-	// border-width: 2px;
-	@media(max-width:$screen-xs-max){
-		white-space: inherit;
-	}
+  border-radius: 0 !important;
+  // border-width: 2px;
+  @media (max-width: $screen-xs-max) {
+    white-space: inherit;
+  }
 }
 .btn-secondary {
-    color: $site-primary;
-    background-color: $site-secondary;
-    border-color: darken($site-secondary,20%);
+  color: $site-primary;
+  background-color: $site-secondary;
+  border-color: darken($site-secondary, 20%);
 }
 
 .form-control {
-	border-radius: 0;
+  border-radius: 0;
 }
-
 
 .contact-form-container {
-	background-color: $gray-lighter;
-	padding-bottom: $grid-gutter-width/2;
-	@media(max-width:$container-md){
-		padding-top: $grid-gutter-width /2;
-	}
+  background-color: $gray-lighter;
+  padding-bottom: $grid-gutter-width/2;
+  @media (max-width: $container-md) {
+    padding-top: $grid-gutter-width / 2;
+  }
 }
-
-
 
 .centered-heading {
-	@include centered-heading();
+  @include centered-heading();
 }
-
 
 .bg-alternate {
-	background-color: lighten($site-primary,50%)
+  background-color: lighten($site-primary, 50%);
 }
 
-
 .embed-responsive {
-	width: 100%;
+  width: 100%;
 }
 
 .noscript {
-	display:none;
-	.no-js & {
-		display:block;
-	}
+  display: none;
+  .no-js & {
+    display: block;
+  }
 }
 .onlyscript {
-	display:inherit;
-	.no-js & {
-		display:none;
-	}
+  display: inherit;
+  .no-js & {
+    display: none;
+  }
 }
 
 .footnote-backref {
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
-
-
 
 span {
+  &.gwwc {
+    color: $gwwc !important;
+  }
 
-	&.gwwc {
-		color: $gwwc !important;
-	}
-
-	&.eightythousandhours {
-		color: $eightythousandhours !important;
-	}
-	&.gpp {
-		color: $gpp !important;
-	}
+  &.eightythousandhours {
+    color: $eightythousandhours !important;
+  }
+  &.gpp {
+    color: $gpp !important;
+  }
 }
-
 
 // members page
 
 .member-list {
-	.member-details {
-		overflow: hidden;
-		height: 80px;
-		margin-bottom: $grid-gutter-width / 2;
-		&.member-details-anonymous {
-			h4 {
-				color: #999;
-				font-style: italic;
-			}
-		}
-	}
-	.member-name {
-		display: inline-block;
-		margin: 0;
-	}
-	.member-occupation {
-		line-height: 1.4em;
-		font-size: 16px;
-	}
+  .member-details {
+    overflow: hidden;
+    height: 80px;
+    margin-bottom: $grid-gutter-width / 2;
+    &.member-details-anonymous {
+      h4 {
+        color: #999;
+        font-style: italic;
+      }
+    }
+  }
+  .member-name {
+    display: inline-block;
+    margin: 0;
+  }
+  .member-occupation {
+    line-height: 1.4em;
+    font-size: 16px;
+  }
 }
 
-
-h1,h2,h3,h4,h5,h6 {
-	.index {
-	    color: $site-secondary-dark;
-	    display: none;
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  .index {
+    color: $site-secondary-dark;
+    display: none;
+  }
 }
 
 .resize-iframe {
-	border: none;
-	width: 1px;
-	min-width: 100%;
+  border: none;
+  width: 1px;
+  min-width: 100%;
 }
