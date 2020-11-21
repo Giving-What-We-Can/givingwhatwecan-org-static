@@ -2,4 +2,4 @@
 /try-giving https://app.effectivealtruism.org/pledge/take?pledgeType=trygiving 301!
 /get-involved/how-rich-am-i https://howrichami.givingwhatwecan.org/how-rich-am-i 301!
 /how-rich-am-i https://howrichami.givingwhatwecan.org/how-rich-am-i 301!
-/charities/* /donate/ 301
+/charities/ /donate/ 301!
