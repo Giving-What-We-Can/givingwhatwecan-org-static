@@ -102,7 +102,7 @@
     "moment": "^2.18.1",
     "mz": "^2.7.0",
     "ncp": "^2.0.0",
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^8.0.1",
     "node-sass": "^4.14.1",
     "numeral": "^2.0.6",
     "ouibounce": "0.0.12",
