@@ -55,7 +55,7 @@
     "iframe-resizer": "^4.2.1",
     "image-size": "^0.6.1",
     "jquery": "^3.2.1",
-    "lazysizes": "^4.0.0-rc3",
+    "lazysizes": "^5.2.1",
     "markdown-it": "^8.3.2",
     "markdown-it-attrs": "^1.0.1",
     "markdown-it-footnote": "^3.0.1",
