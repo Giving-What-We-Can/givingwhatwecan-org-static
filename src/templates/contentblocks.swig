@@ -1,13 +1,11 @@
 {% extends './layout.swig' %}
 
 {% block banner %}
-
 {% endblock %}
 
 {% block content %}
   {{ contents }}
 	{% include './partials/custom-alert.swig' %}
-	{% include './partials/content-block-set.swig' %}
 	<script>
 		loadScript(function(){
 			var $ = window.jQuery;
