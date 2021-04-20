@@ -37,7 +37,7 @@
 {% if collections[collection] && collections[collection].metadata && collections[collection].metadata.singular  %}
 	{% set collectionSlug = collections[collection]['metadata']['singular'] %}
 {% endif %}
-<body class="{{collectionSlug}} {{ {true:'home', false:slug}[slug==='/'] }}">
+<body class="{{collectionSlug}} {{ {true:'home', false:slug}[slug==='/'] }} template-{{template|replace('.swig','')|default('default')}}">
 
 {% include "./partials/nav.swig" %}
 
