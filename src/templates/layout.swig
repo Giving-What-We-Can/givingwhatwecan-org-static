@@ -32,6 +32,12 @@
 		window.WRITE_CODE = "VtTlzxOC5QJ1H0zermvo84cAbReTofDU"
 
 	</script>
+	<script>
+	!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="VtTlzxOC5QJ1H0zermvo84cAbReTofDU";analytics.SNIPPET_VERSION="4.13.2";
+		analytics.load("VtTlzxOC5QJ1H0zermvo84cAbReTofDU");
+		analytics.page();
+	}}();
+	</script>
 	{% block head %}
 	{% endblock %}
 
@@ -119,85 +125,7 @@
 				});
 			})
 			.queueScript('/scripts/app.min.js')
-			.queueWait(function () {
-				/*
-				 * Segment Analytics Preload
-				 * From: https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/
-				 * - used unminified on purpose as we need to integrate it with $LAB and keep things readable
-				 */
-				var analytics = window.analytics = window.analytics || [];
-				// If the real analytics.js is already on the page return.
-				if (analytics.initialize) return;
-				// If the snippet was invoked already show an error.
-				if (analytics.invoked) {
-					if (window.console && console.error) {
-					console.error('Segment snippet included twice.');
-					}
-					return;
-				}
-				// Invoked flag, to make sure the snippet
-				// is never invoked twice.
-				analytics.invoked = true;
-				// A list of the methods in Analytics.js to stub.
-				analytics.methods = [
-					'trackSubmit',
-					'trackClick',
-					'trackLink',
-					'trackForm',
-					'pageview',
-					'identify',
-					'reset',
-					'group',
-					'track',
-					'ready',
-					'alias',
-					'debug',
-					'page',
-					'once',
-					'off',
-					'on',
-					'addSourceMiddleware',
-					'addIntegrationMiddleware',
-					'setAnonymousId',
-					'addDestinationMiddleware'
-				];
-				// Define a factory to create stubs. These are placeholders
-				// for methods in Analytics.js so that you never have to wait
-				// for it to load to actually record data. The `method` is
-				// stored as the first argument, so we can replay the data.
-				analytics.factory = function(method){
-					return function(){
-					var args = Array.prototype.slice.call(arguments);
-					args.unshift(method);
-					analytics.push(args);
-					return analytics;
-					};
-				};
-				// For each of our methods, generate a queueing stub.
-				for (var i = 0; i < analytics.methods.length; i++) {
-					var key = analytics.methods[i];
-					analytics[key] = analytics.factory(key);
-				}
-
-			})
-			/* Segment Analytics load */
-			.queueScript('https://cdn.segment.com/analytics.js/v1/'+ window.WRITE_CODE +'/analytics.min.js')
 			.queueWait(function(){
-				/*
-				 * Segment Analytics postload
-				 * Also copied from: https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/
-				 */
-				// Segment actions
-				analytics._writeKey = window.WRITE_CODE
-				// Add a version to keep track of what's in the wild.
-				analytics.SNIPPET_VERSION = '4.13.2';
-				// Load Analytics.js with your key, which will automatically
-				// load the tools you've enabled for your account. Boosh!
-				analytics.load(window.WRITE_CODE);
-				// Make the first page call to load the integrations.
-				analytics.page();
-				/* end copy */
-
 				// Segment actions reliant on jQuery
 				(function($){
 					/*$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
