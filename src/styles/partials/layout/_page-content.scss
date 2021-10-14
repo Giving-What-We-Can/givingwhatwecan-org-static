@@ -11,10 +11,6 @@
 	&>ul,&>ol {
 		margin-left: 0;
 		padding-left: 24px;
-		@media(min-width:$screen-sm){
-			margin-left: $grid-gutter-width*-1;
-			padding-left: $grid-gutter-width;
-		}
 	}
 
 	&>.container, &>figure>.container {
