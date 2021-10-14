@@ -1,6 +1,5 @@
 .page-content,.post-content, .page-content>.overview, .page-content .report-contents {
 	&>p, &>ul>li, &>ol>li {
-		font-family: $font-family-serif;
 		a, strong,b {
 			font-weight: 700;
 		}
@@ -24,16 +23,8 @@
 
 
 	.first-paragraph {
-		// font-family: $font-family-sans-serif !important;
-		font-size: $first-paragraph-small-size !important;
-		line-height: $first-paragraph-small-size !important;
-		@media(min-width:$screen-sm){
-			font-size: $first-paragraph-large-size !important;
-			line-height: $first-paragraph-large-size !important;
-		}
-		a, strong {
-			font-weight: 400 !important;
-		}
+		font-weight: 200;
+		font-size: 1.4em;
+		padding-bottom: 24px;
 	}
-	
 }
