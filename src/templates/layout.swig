@@ -128,6 +128,20 @@
 			.queueWait(function(){
 				// Segment actions reliant on jQuery
 				(function($){
+					// Track any form submission for forms with data-analytics-category & data-analytics-event
+					$("form").on("submit", function (e){
+						const target = $(e.currentTarget)
+						const category = target.data("analytics-category")
+						const event = target.data("analytics-event")
+						const properties = target.data("analytics-properties") || undefined;
+
+						if (event && category) {
+							analytics.track(event, {
+								category,
+								...properties
+							})
+						}
+					})
 					/*$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
 						analytics.identify({
 						  email: data.email,
