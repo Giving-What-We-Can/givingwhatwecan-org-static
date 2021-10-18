@@ -26,28 +26,6 @@
 	.post-details {
 		margin-bottom: $grid-gutter-width*2;
 	}
-	.first-paragraph {
-		$border: 1px solid $site-secondary-dark;
-		border-top: $border;
-		&::first-letter {
-		    font-size: $first-paragraph-small-size*2;
-		    line-height: 0.9em;
-		    padding: 0.05em;
-		    margin-right: 0.05em;
-		    font-weight: 400;
-		    float: left;
-		    font-weight: 400;
-		    background-color: $site-secondary;
-		    color: $site-primary;
-			border-left: $border;
-		}
-		@media(min-width:$screen-sm){
-			&::first-letter {
-			    font-size: $first-paragraph-large-size*2;
-			    height: $first-paragraph-large-size*2;
-			}
-		}
-	}
 }
 
 
@@ -114,7 +92,6 @@
 	ul {
 		padding: 0;
 		list-style-type: none;
-		text-align: justify;
 		margin-right: $grid-gutter-width/-2;
 	}
 	li {

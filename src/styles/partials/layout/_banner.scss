@@ -8,9 +8,6 @@
     .text-background {
       width: 100%;
     }
-    @media (min-width: $screen-sm) {
-      min-height: 80vh;
-    }
   }
 }
 .page-title-wrapper {
@@ -25,7 +22,6 @@
 }
 .page-title {
   color: #fff;
-  text-transform: uppercase;
   background-color: $site-primary;
   font-size: 1.8em;
   padding: $grid-gutter-width/2;
