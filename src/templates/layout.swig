@@ -130,33 +130,23 @@
 				(function($){
 					// Track any form submission for forms with data-analytics-category & data-analytics-event
 					$("form").on("submit", function (e){
-						const target = $(e.currentTarget)
-						const category = target.data("analytics-category")
-						const event = target.data("analytics-event")
+						const target = $(e.currentTarget);
+						// required
+						const category = target.data("analytics-category");
+						const event = target.data("analytics-event");
+						// optional
+						const label = target.data("analytics-label") || undefined;
 						const properties = target.data("analytics-properties") || {};
 
 						if (event && category) {
 							analytics.track(event, {
 								category,
+								label,
 								pathname: window.location.pathname,
 								...properties
-							})
-						}
-					})
-					/*$("#mailchimp-signup-form").on('newsletter_signup',function(event,data){
-						analytics.identify({
-						  email: data.email,
-						  firstName: data.firstName,
-						  lastName: data.lastName
-						});
-						if(data.status==="success"){
-							analytics.track("Signed up to Newsletter");
+							});
 						}
 					});
-
-					$('.mailchimp-signup-modal').on('newsletter_modal_shown',function(event,data){
-						analytics.track("Saw Newsletter popup")
-					})*/
 
 				})(jQuery);
 			})
