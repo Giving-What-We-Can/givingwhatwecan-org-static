@@ -133,11 +133,12 @@
 						const target = $(e.currentTarget)
 						const category = target.data("analytics-category")
 						const event = target.data("analytics-event")
-						const properties = target.data("analytics-properties") || undefined;
+						const properties = target.data("analytics-properties") || {};
 
 						if (event && category) {
 							analytics.track(event, {
 								category,
+								pathname: window.location.pathname,
 								...properties
 							})
 						}
