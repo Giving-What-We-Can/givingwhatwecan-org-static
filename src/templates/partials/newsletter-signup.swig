@@ -1,4 +1,4 @@
-<form action="https://givingwhatwecan.us8.list-manage.com/subscribe/post?u=52b028e7f799cca137ef74763&amp;id=a08869629e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+<form data-analytics-event="Newsletter form submitted" data-analytics-category="GWWC Homepage" action="https://givingwhatwecan.us8.list-manage.com/subscribe/post?u=52b028e7f799cca137ef74763&amp;id=a08869629e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
 	<div class='form-group'>
 		<div class='input-group input-group-sm'>
 			<input class='form-control' type='email' name="EMAIL" placeholder='youremail@example.com' required aria-required='true'/>
