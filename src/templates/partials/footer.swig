@@ -1,10 +1,6 @@
 <div class="container">
     <nav id="footer-main">
-		<div class='row'>
-			<div class='col-sm-6'>
-				<h6>Join our effective giving community</h6>
-				<a class='btn btn-primary btn-block btn-sm' href='/pledge'>Take a pledge</a>
-			</div>
+		<div class='row newsletter-row'>
 			<div class='col-sm-6'>
 				<h6>Sign up for our newsletter</h6>
 				{% include "./newsletter-signup.swig" %}
@@ -42,24 +38,43 @@
 				<h6>Follow us and join the conversation</h6>
 				<ul class='list-inline list-unstyled'>
 					<li>
-						<a href='https://facebook.com/givingwhatwecan' target='_blank'>
+						<a title="FaceBook" href='https://facebook.com/givingwhatwecan' target='_blank'>
 							<i class='fa fa-facebook'></i>
 						</a>
 					</li>
 					<li>
-						<a href='https://twitter.com/Effect_Altruism' target='_blank'>
+						<a title="Instagram" href='https://www.instagram.com/giving_what_we_can' target='_blank'>
+							<i class='fa fa-instagram'></i>
+						</a>
+					</li>
+					<li>
+						<a title="Twitter" href='https://twitter.com/Effect_Altruism' target='_blank'>
 							<i class='fa fa-twitter'></i>
 						</a>
 					</li>
 					<li>
-						<strong>#GivingWhatWeCan</strong>
+						<a title="Youtube" href='https://www.youtube.com/c/GivingWhatWeCanCommunity' target='_blank'>
+							<i class='fa fa-youtube'></i>
+						</a>
 					</li>
 					<li>
-						<strong>#EffectiveAltruism</strong>
+						<a title="LinkedIn" href='https://www.linkedin.com/company/giving-what-we-can' target='_blank'>
+							<i class='fa fa-linkedin'></i>
+						</a>
 					</li>
-
-				</
+					<li>
+						<a title="TikTok" href='https://www.tiktok.com/@givingwhatwecan' target='_blank'>
+							TikTok
+						</a>
+					</li>
+				</ul>
 			</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-4'>
+			<h6>Join our effective giving community</h6>
+			<a class='btn btn-primary btn-block btn-sm' href='/pledge'>Take a pledge</a>
+		</div>
 	</div>
   <div class="row">
     <div class="col-sm-12 center">
