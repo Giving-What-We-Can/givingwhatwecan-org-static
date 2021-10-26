@@ -9,7 +9,7 @@ $gray:                   #777; // #555
 $gray-light:             lighten($gray-base, 60%);   // #999
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-primary:         #6E0000;
+$brand-primary:           $site-primary;
 
 
 //== Scaffolding

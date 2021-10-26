@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="toc">
-			<h3 class="toc-header">Contents <small>{{title}}</small></h3>
+			<h3 class="toc-header">Contents</h3>
 			<ol class="toc-contents">
 			{% set depth = tocDepth|default(3) %}
 			{% set lastHeading = 2 %}

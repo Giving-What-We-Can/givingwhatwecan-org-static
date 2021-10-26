@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="toc col-xs-12">
-		<h3 class="toc-header">Contents <small>Fundraising — Winter 2015</small></h3>
+		<h3 class="toc-header">Contents
 		<ol class="toc-contents">
 			<li class="level-h2"><a href="#introduction">Introduction</a></li>
 			<li class="level-h2"><a href="#quick-stats">Quick Stats</a></li>

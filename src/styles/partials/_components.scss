@@ -23,7 +23,8 @@
 }
 
 .btn {
-  border-radius: 0 !important;
+  border-radius: 2px !important;
+  text-transform: uppercase;
   // border-width: 2px;
   @media (max-width: $screen-xs-max) {
     white-space: inherit;

@@ -1,13 +1,15 @@
 // FONT FACES
-$font-family-serif: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Georgia, Garamond, 'Times New Roman', serif;
-$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia,
+  Garamond, "Times New Roman", serif;
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
 
 // COLOURS
 
-$site-primary: #6c0000;
+$site-primary: #ab2b24;
 $site-secondary: #f2f2f2;
-$site-ternary: #26484e;
-$site-quaternary: #57b6a4;
+$site-ternary: #d9753d;
+$site-quaternary: #a73273;
 $site-quinary: #e9c46a;
 $site-senary: #f4a261;
 
@@ -42,12 +44,11 @@ $site-secondary-dark: darken($site-secondary, $dark-factor);
 $site-secondary-lolight: $site-dark;
 $site-secondary-darker: darken($site-secondary, $darker-factor);
 
-
 $cea: #2c5aa9;
-$gwwc: #6C0000;
-$eightythousandhours: #3FBDD1;
-$gpp: #7E95CC;
-$tlycs: #ED1A24;
+$gwwc: $site-primary;
+$eightythousandhours: #3fbdd1;
+$gpp: #7e95cc;
+$tlycs: #ed1a24;
 $ace: #349895;
 
 $grid-gutter-width: 30px;
