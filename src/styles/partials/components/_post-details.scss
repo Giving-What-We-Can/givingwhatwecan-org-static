@@ -1,8 +1,9 @@
 .post-details {
-	background-color: $site-secondary;
-	border: 2px solid $site-secondary-dark;
-    padding: 5px $grid-gutter-width/2;
-    margin: 0 0 $grid-gutter-width/2;
+	background: lighten($site-primary, 57%);
+	padding: $grid-gutter-width/2 $grid-gutter-width;
+	margin: $grid-gutter-width 0;
+	color: $site-primary !important;
+	border-radius: 4px;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -13,8 +14,8 @@
 		@media(min-width:$screen-sm){
 			display: inline-block;
 		}
-		&.updated {
-			color: $gray-light;
-		}
+	}
+	a {
+		text-decoration: underline;
 	}
 }

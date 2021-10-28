@@ -2,6 +2,7 @@
   background: lighten($site-primary, 57%);
   padding: $grid-gutter-width;
   margin: $grid-gutter-width 0;
+  border-radius: 4px;
   .toc-header {
     text-transform: uppercase;
     font-size: 14px;
