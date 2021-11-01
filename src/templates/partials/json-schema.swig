@@ -13,9 +13,9 @@
 	"url" : "{{site.url}}",
 	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	},
 	"contactPoint" : [
 		{ "@type" : "ContactPoint",
@@ -57,9 +57,9 @@
   	"name": "{{site.title}}",
   	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	}
   },
   "datePublished": "{{date|moment(null)}}",
@@ -87,9 +87,9 @@
   	"name": "{{site.title}}",
   	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	}
   },
   "datePublished":"{{date|moment(null)}}",
