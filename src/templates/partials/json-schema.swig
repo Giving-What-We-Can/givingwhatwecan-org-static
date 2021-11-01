@@ -21,15 +21,14 @@
 		{ "@type" : "ContactPoint",
 			"telephone" : "+44 (0) 1865 241188",
 			"contactType" : "customer service"
-		} 
+		}
 	],
-	"sameAs" : [ 
-			"https://www.facebook.com/givingwhatwecan/",
-			"https://twitter.com/GivingWhatWeCan",
-			"https://plus.google.com/+givingwhatwecan",
-			"https://www.youtube.com/givingwhatwecan"
-		]
-	}
+	"sameAs" : [
+	"https://www.facebook.com/givingwhatwecan/",
+	"https://twitter.com/GivingWhatWeCan",
+	"https://plus.google.com/+givingwhatwecan",
+	"https://www.youtube.com/givingwhatwecan"
+	]
 }
 </script>
 {% if collection|contains('_reports') %}
