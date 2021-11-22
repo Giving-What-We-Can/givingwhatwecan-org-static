@@ -13,23 +13,22 @@
 	"url" : "{{site.url}}",
 	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	},
 	"contactPoint" : [
 		{ "@type" : "ContactPoint",
 			"telephone" : "+44 (0) 1865 241188",
 			"contactType" : "customer service"
-		} 
+		}
 	],
-	"sameAs" : [ 
-			"https://www.facebook.com/givingwhatwecan/",
-			"https://twitter.com/GivingWhatWeCan",
-			"https://plus.google.com/+givingwhatwecan",
-			"https://www.youtube.com/givingwhatwecan"
-		]
-	}
+	"sameAs" : [
+	"https://www.facebook.com/givingwhatwecan/",
+	"https://twitter.com/GivingWhatWeCan",
+	"https://plus.google.com/+givingwhatwecan",
+	"https://www.youtube.com/givingwhatwecan"
+	]
 }
 </script>
 {% if collection|contains('_reports') %}
@@ -57,9 +56,9 @@
   	"name": "{{site.title}}",
   	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	}
   },
   "datePublished": "{{date|moment(null)}}",
@@ -87,9 +86,9 @@
   	"name": "{{site.title}}",
   	"logo": {
   		"@type": "ImageObject",
-  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-126x60.png",
-  		"width": 126,
-  		"height": 60
+  		"url": "{{site.url}}/images/logos/gwwc-logo-schema-white-shadow-260x260.png",
+  		"width": 260,
+  		"height": 260
   	}
   },
   "datePublished":"{{date|moment(null)}}",

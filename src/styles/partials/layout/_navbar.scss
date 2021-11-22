@@ -9,9 +9,6 @@
 // 	}
 // }
 #menu-main {
-	&:hover {
-		background-color: $site-primary !important;
-	}
 	& > .container {
 		@media(min-width: $screen-md ){
 			width: auto;
@@ -24,26 +21,20 @@
 .navbar {
 	transition: opacity .25s ease-in-out;
 	transition: background-color .25s ease-in-out;
-	background-color: $site-primary;
+	background-color: #FFF;
 	box-shadow: 0px 0px 15px #333;
 	font-weight: 200;
 }
 .navbar-header {
 	.navbar-brand {
 		padding-top:10px;
-		background-color: $site-primary;
-		@media(max-width:$screen-xs-max){
-			// padding-top:5px;
-		}
-	 	&:hover, &:focus {
-	 	  background-color: transparent;
-		}
+		background-color: transparent;
 		img {
 			max-height: 43px;
 		}
 	}
 	button {
-		color: #FFF;
+		color: $site-primary;
 	}
 	.link-collapsed {
 		color: #333;
@@ -71,27 +62,25 @@
 	border: none;
 	.navbar-nav {
 		> li > a {
-			color: #FFF;
 			&:hover, &:focus {
-				background-color: $site-dark;
-				color: #FFF;
+				color: $site-dark;
 			}
 		}
 		> .active > a, > .open > a {
-			background-color: $site-dark;
+			background-color: $site-primary;
 			color: #FFF;
 			&:hover, &:focus {
-				background-color: $site-dark;
+				background-color: $site-primary;
 				color: #FFF;
 			}
 		}
 		> .nav.pledge,.nav.my-giving,.nav.fundraising {
 			font-weight: 700;
-			background-color: $site-secondary;
+			background-color: $site-primary;
 			a {
-				color: #333;
+				color: #FFF;
 				&:hover, &:focus {
-					color: #FFF;
+					background-color: $site-dark;
 				}
 			}
 		}
@@ -100,13 +89,12 @@
 
 .dropdown-menu{
 	&>li>a {
-
+		color: $site-primary;
 		&:hover, &:focus {
 			background-color: $site-primary;
 			color: #FFF;
 		}
 		@media(max-width:$screen-sm-max){
-			color: #FFF;
 			&:hover, &:focus {
 				background-color: $site-lolight;
 			}

@@ -1,28 +1,30 @@
 $pad: 15px;
 .team-member {
-	border: $pad solid $site-secondary;
-	.team-member-photo {
-		overflow: hidden;
-		background-color: #edede5;
-		display: block;
-		width: 100%;
-		padding-right: 0;
-		@media(min-width:$screen-xs){
-			display: table-cell;
-			padding-right: $pad;
-			margin-right: $pad;
-			width: 150px;
-			img {
-				width: 150px;
-			}
-		}
-
-	}
-	.team-member-details {
-		padding:$pad;
-	}
-	.team-member-position{
-		font-style: italic;
-		border-bottom: 2px solid $site-secondary
-	}
+  .team-member-photo {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    @media (min-width: $screen-xs) {
+      display: table-cell;
+      padding-right: $pad;
+      margin-right: $pad;
+      width: 150px;
+      img {
+        border-radius: 4px;
+        width: 150px;
+        margin-top: 18px;
+        /* Poor mans version of a diamond shaped image (no rounded corners, no shadow possible) */
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+    }
+  }
+  .team-member-details {
+    padding: $pad;
+  }
+  .team-member-position {
+    font-style: italic;
+    border-bottom: 1px solid $site-secondary;
+  }
 }

@@ -14,7 +14,7 @@
 				<i class="icon-donate"></i>
 			</a> #}
 			<a href="{{ relative('/')|default('/') }}" class="navbar-brand">
-				<img src="/images/logos/gwwc-logo-transparent-nav.png">
+				<img src="/images/logos/gwwc-logo-transparent-nav-2021.png">
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav-collapse">
@@ -49,7 +49,7 @@
 						<a href="{{ relative(parent._page.path) }}">{{pageTitle}}</a>
 					</li>
 					{% elif parent._link %}
-					<li class="nav {{ {true:parent._link.linkURL.substr(1),false:'external-link'}[parent._link.linkURL.charAt(0)==='/'] }} {{ {true:'active',false:''}[path === parent._link.linkURL.substr(1)] }}">
+					<li class="nav {{ {true:parent._link.linkURL.substr(1),false:'external-link'}[parent._link.linkURL.charAt(0)==='/'] }}">
 						{% set linkTitle = parent._link.shortTitle || parent._link.title %}
 						<a href="{{ parent._link.linkURL }}">
 							{{linkTitle}}
