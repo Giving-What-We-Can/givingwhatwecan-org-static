@@ -138,6 +138,20 @@ $scroll-down-size: 60px;
     h2 {
       color: #222;
     }
+    #top-causes-header {
+      small {
+        display: block;
+        color: #222;
+      }
+      font-size: 4em;
+      text-transform: capitalize;
+    }
+    #top-causes-caption {
+      max-width: 800px;
+      font-size: 1.6em;
+      margin: 0 auto;
+      margin-bottom: $grid-gutter-width;
+    }
     .cause-areas {
       @include make-row();
       max-width: 1600px;
@@ -159,6 +173,7 @@ $scroll-down-size: 60px;
           font-weight: 400;
           font-style: initial;
           font-size: 1.4em;
+          line-height: 1.3;
         }
       }
     }
