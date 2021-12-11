@@ -129,7 +129,7 @@ $scroll-down-size: 60px;
 		}
 	}
 	&#homepage-top-causes {
-	background: #ffff;
+	background: lighten($site-primary, 57%);
 		p,
 		h2 {
 			color: #222;
