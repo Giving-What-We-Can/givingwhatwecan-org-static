@@ -1,332 +1,367 @@
 $min-height: 400px;
 $scroll-down-size: 60px;
 
-
-
 .content-block-wrapper {
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	display: table;
-	// min-height: $min-height;
-	text-align: center;
-	background-color: #444;
-	color: #FFF;
-	h1,h2,h3,h4,h5,h6{
-		color: #FFF;
-	}
-	width: 100%;
-	position:relative;
-	overflow: hidden;
-	&.fullheight {
-		padding-bottom:0;
-	}
-	.scroll-down-chevron {
-	    font-size: $scroll-down-size - 20px;
-	    position: absolute;
-	    bottom: 0;
-	    left: 50%;
-	    margin-left: -15px;
-	    color: #FFF;
-	    text-shadow: 0 0 16px #333;
-	    padding-bottom: 0.3em;
-	    line-height: 1em;
-	}
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: table;
+  // min-height: $min-height;
+  text-align: center;
+  background-color: #444;
+  color: #fff;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &.fullheight {
+    padding-bottom: 0;
+  }
+  .scroll-down-chevron {
+    font-size: $scroll-down-size - 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    color: #fff;
+    text-shadow: 0 0 16px #333;
+    padding-bottom: 0.3em;
+    line-height: 1em;
+  }
 }
 .content-block {
-	display: table-cell;
-	vertical-align: middle;
-	// height: $min-height;
-	// height: 50vh;
-	.content-block-content {
-		padding-bottom: $scroll-down-size;
-	}
+  display: table-cell;
+  vertical-align: middle;
+  // height: $min-height;
+  // height: 50vh;
+  .content-block-content {
+    padding-bottom: $scroll-down-size;
+  }
 }
 
 // specific content blocks
 .content-block-wrapper {
-	// background-attachment: fixed;
-	&#hero-image {
-		background-position: 35% center;
-		.content-block {
-			vertical-align: bottom;
-			.content-block-content {
-				@media(max-width:$screen-xs-max){
-					padding-bottom: 0;
-				}
-			}
-		}
-		h2 {
-			text-transform: uppercase;
-			font-weight: 700;
-			text-shadow: 0 0 16px #333;
-			font-size: 30px;
-			margin-bottom: 35vh;
-			margin-top: 70px;
-			.give-more {
-				display: inline-block;
-				margin-bottom: 20px;
-			}
-			@media(min-width:$screen-sm){
-				margin-bottom: 50vh;
-				font-size: 4em;
-				margin-top: 80px;
-			}
-		}
-		a.btn {
-			@media(max-width:$screen-xs-max){
-				width: 100%;
-				margin-bottom: $grid-gutter-width/2;
-				font-size: 20px;
-			}
-			@media(min-width:$screen-sm){
-				&.btn-primary {
-					margin-right: $grid-gutter-width;
-				}
-			}
-		}
-	}
-	&#we-are-giving-what-we-can {
-		background-position: center center;
-		@media(max-width:$screen-md){
-			background-image: none !important;
-		}
-		.content-block {
-			background-color: transparentize($site-primary,0.4);
-			.weare {
-				font-size: 30px;
-				margin-top: 90px;
-				text-transform: lowercase;
-				@media(min-width:$screen-md){
-					// margin-top: auto;
-				}
-			}
-			.givingwhatwecan-logo {
-				font-size: 80px;
-				margin: 40px auto;
-				@media(min-width:$screen-lg){
-					font-size: 100px;
-				}
-
-			}
-			.aim {
-				margin-bottom: $grid-gutter-width;
-				.icons {
-					line-height: 1em;
-				}
-				.fa, .icon {
-					font-size: 4em;
-				}
-				.fa.fa-arrow-down, .icon.icon-arrow-down {
-					font-size: 2em;
-				}
-				h4 {
-					@media(min-width:$screen-md){
-						height: 2em;
-					}
-				}
-			}
-		}
-	}
-	&#homepage-top-causes {
-	background: lighten($site-primary, 57%);
-		p,
-		h2 {
-			color: #222;
-		}
-	}
+  // background-attachment: fixed;
+  &#hero-image {
+    background-position: 35% center;
+    .content-block {
+      vertical-align: bottom;
+      .content-block-content {
+        @media (max-width: $screen-xs-max) {
+          padding-bottom: 0;
+        }
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: 700;
+      text-shadow: 0 0 16px #333;
+      font-size: 30px;
+      margin-bottom: 35vh;
+      margin-top: 70px;
+      .give-more {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      @media (min-width: $screen-sm) {
+        margin-bottom: 50vh;
+        font-size: 4em;
+        margin-top: 80px;
+      }
+    }
+    a.btn {
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        margin-bottom: $grid-gutter-width/2;
+        font-size: 20px;
+      }
+      @media (min-width: $screen-sm) {
+        &.btn-primary {
+          margin-right: $grid-gutter-width;
+        }
+      }
+    }
+  }
+  &#we-are-giving-what-we-can {
+    background-position: center center;
+    @media (max-width: $screen-md) {
+      background-image: none !important;
+    }
+    .content-block {
+      background-color: transparentize($site-primary, 0.4);
+      .weare {
+        font-size: 30px;
+        margin-top: 90px;
+        text-transform: lowercase;
+        @media (min-width: $screen-md) {
+          // margin-top: auto;
+        }
+      }
+      .givingwhatwecan-logo {
+        font-size: 80px;
+        margin: 40px auto;
+        @media (min-width: $screen-lg) {
+          font-size: 100px;
+        }
+      }
+      .aim {
+        margin-bottom: $grid-gutter-width;
+        .icons {
+          line-height: 1em;
+        }
+        .fa,
+        .icon {
+          font-size: 4em;
+        }
+        .fa.fa-arrow-down,
+        .icon.icon-arrow-down {
+          font-size: 2em;
+        }
+        h4 {
+          @media (min-width: $screen-md) {
+            height: 2em;
+          }
+        }
+      }
+    }
+  }
+  &#homepage-top-causes {
+    background: lighten($site-primary, 57%);
+    p,
+    h2 {
+      color: #222;
+    }
+    .cause-areas {
+      @include make-row();
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .cause-area-wrapper {
+      @include make-md-column(6);
+      @include make-lg-column(3);
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    .cause-area {
+      margin: 0 $grid-gutter-width * 2;
+      figure {
+        max-width: 480px;
+        figcaption {
+          border: none;
+          text-align: center;
+          font-weight: 400;
+          font-style: initial;
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
   div#our-members-have-done-some-amazing-things {
     background-color: #fdf5f5 !important;
   }
 
-	&#we-focus-on-impact {
-		background-color: #FFF;
-		color: #333;
-		h1,h2,h3,h4,h5,h6{
-			color:#333;
-		}
-		h2 {
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-		.ct-bar {
-			stroke-width: 20%;
-		}
-		.ct-label {
-			font-weight: bold;
-		}
-		.comparison-text {
-    		
-	    	@media(min-width:$screen-md){
-    			text-align: left;
-	    	}
+  &#we-focus-on-impact {
+    background-color: #fff;
+    color: #333;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #333;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .ct-bar {
+      stroke-width: 20%;
+    }
+    .ct-label {
+      font-weight: bold;
+    }
+    .comparison-text {
+      @media (min-width: $screen-md) {
+        text-align: left;
+      }
 
-			p {
-	    		font-weight: 700;
-				margin-top: $grid-gutter-width;
-	    		@media(min-width:$screen-md){
-	    			text-align: left;
-					margin-top: -15px;
-		    		font-size: 26px;
-		    	}
-		    }
-		    
-		    
-		}
-	}
-	&#our-top-charities-are-some-of-the-best {
-		background-color: $site-primary;
-		.content-block {
-			background-color: transparent;
-			background-color: transparentize(#333,0.7)
-		}
-		h2 {
-			text-transform: uppercase;
-			font-weight: bold;
-			margin-top: 80px;
-		}
-		.charity {
-			padding: 15px;
-			margin-bottom: 30px;
-			color: #333;
-		    display: table;
-		    width: 100%;
-			h1,h2,h3,h4,h5,h6{
-				color:#333;
-			}
-			.logo {
-				height: 80px;
-				@media(min-width:$screen-sm){
-					height: 100px;
-				}
-				width: 100%;
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-				img {
-					display: inline-block;
-					width: auto;
-					height: 100px;
-				}
-			}
-			h4 {
-			    text-transform: uppercase;
-			    font-weight: 700;
-			    margin: 30px 0 0;
-			}
-			p {
-				margin: 0 auto 30px;
-				font-weight: 700;
-				@media(min-width:$screen-md){
-					height: 2em;
-				}
-			}
-			&.project-healthy-children {
-				.logo {
-					img {
-						height: 40px;
-						margin: 30px 0;
-						@media(min-width:$screen-md){
-							height: 60px;
-							margin: 0;
-						}
-					}
-				}
-			}
-			background-color: rgba(255,255,255,0.9);
-		}
-		.explanation-wrapper {
-			@media(max-width:$screen-xs-max){
-				background-color: #FFF;
-			    color: #333;
-			    padding: 30px;
-			    margin-bottom: 30px;
-			}
-			@media(min-width:$screen-sm){
-				text-align: left;
-			}
-			.explanation {
-				p {
-					font-size: 1.4em;
-					font-weight: 700;
-				}
-				a {
-					color: inherit;
-					text-decoration: underline;
-				}
-			}
-		}
-	}
-	&#our-members-have-done-some-amazing-things {
-		background-color: #FFF;
-		color: #444;
-		@media(min-width:$screen-sm){
-			font-size: 1.5em;
-		}
-		@media(min-width:$screen-lg){
-			font-size: 2em;
-		}
-		.number {
-			font-size: 2em;
-			display: block;
-			font-weight: 700;
-		}
-		.and {
-			@media(min-width:$screen-sm){
-				margin-top: 2.75em;
-			}
-			display: inline-block;
-		    font-style: italic;
-		}
-		a.btn {
-			@media(max-width:$screen-xs-max){
-				margin-bottom: $grid-gutter-width/2;
-				width: 100%;
-				&.btn-primary {
-					margin-top: $grid-gutter-width/2;
-				}
-			}
-		}
-
-	}
-	&#how-rich-am-i {
-		.heading {
-			h2 {
-				text-shadow: 0 0 16px #333;
-				text-transform: uppercase;
-	   			font-weight: 700;
-			    margin: 1em 0;
-   			    font-size: 2.2em;
-   			    @media(min-width:$screen-sm){
-   			    	font-size: 4em;
-   			    }
-			}
-		}
-		.sub-heading {
-			p {
-			    margin: 1em 0;
-				font-size: 1.3em;
-    			color: #DDD;
-			}
-		}
-		.slabtext {
-			@media(max-width:$screen-xs-max){
-				white-space: normal;
-			}
-		}
-		.sub-heading, .calculator-wrapper {
-			background-color: $site-primary;
-			background-color: transparentize($site-primary,0.2);
-		}
-		#calculator-controls {
-			margin-bottom: $grid-gutter-width;
-			.help-text {
-				color: #CCC;
-				a {
-					color: #CCC;
-					text-decoration: underline;
-				}
-			}
-		}
-	}
+      p {
+        font-weight: 700;
+        margin-top: $grid-gutter-width;
+        @media (min-width: $screen-md) {
+          text-align: left;
+          margin-top: -15px;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  &#our-top-charities-are-some-of-the-best {
+    background-color: $site-primary;
+    .content-block {
+      background-color: transparent;
+      background-color: transparentize(#333, 0.7);
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 80px;
+    }
+    .charity {
+      padding: 15px;
+      margin-bottom: 30px;
+      color: #333;
+      display: table;
+      width: 100%;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #333;
+      }
+      .logo {
+        height: 80px;
+        @media (min-width: $screen-sm) {
+          height: 100px;
+        }
+        width: 100%;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        img {
+          display: inline-block;
+          width: auto;
+          height: 100px;
+        }
+      }
+      h4 {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 30px 0 0;
+      }
+      p {
+        margin: 0 auto 30px;
+        font-weight: 700;
+        @media (min-width: $screen-md) {
+          height: 2em;
+        }
+      }
+      &.project-healthy-children {
+        .logo {
+          img {
+            height: 40px;
+            margin: 30px 0;
+            @media (min-width: $screen-md) {
+              height: 60px;
+              margin: 0;
+            }
+          }
+        }
+      }
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    .explanation-wrapper {
+      @media (max-width: $screen-xs-max) {
+        background-color: #fff;
+        color: #333;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+      @media (min-width: $screen-sm) {
+        text-align: left;
+      }
+      .explanation {
+        p {
+          font-size: 1.4em;
+          font-weight: 700;
+        }
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &#our-members-have-done-some-amazing-things {
+    background-color: #fff;
+    color: #444;
+    @media (min-width: $screen-sm) {
+      font-size: 1.5em;
+    }
+    @media (min-width: $screen-lg) {
+      font-size: 2em;
+    }
+    .number {
+      font-size: 2em;
+      display: block;
+      font-weight: 700;
+    }
+    .and {
+      @media (min-width: $screen-sm) {
+        margin-top: 2.75em;
+      }
+      display: inline-block;
+      font-style: italic;
+    }
+    a.btn {
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: $grid-gutter-width/2;
+        width: 100%;
+        &.btn-primary {
+          margin-top: $grid-gutter-width/2;
+        }
+      }
+    }
+  }
+  &#how-rich-am-i {
+    .heading {
+      h2 {
+        text-shadow: 0 0 16px #333;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 1em 0;
+        font-size: 2.2em;
+        @media (min-width: $screen-sm) {
+          font-size: 4em;
+        }
+      }
+    }
+    .sub-heading {
+      p {
+        margin: 1em 0;
+        font-size: 1.3em;
+        color: #ddd;
+      }
+    }
+    .slabtext {
+      @media (max-width: $screen-xs-max) {
+        white-space: normal;
+      }
+    }
+    .sub-heading,
+    .calculator-wrapper {
+      background-color: $site-primary;
+      background-color: transparentize($site-primary, 0.2);
+    }
+    #calculator-controls {
+      margin-bottom: $grid-gutter-width;
+      .help-text {
+        color: #ccc;
+        a {
+          color: #ccc;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
