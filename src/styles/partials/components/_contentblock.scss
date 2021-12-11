@@ -151,7 +151,7 @@ $scroll-down-size: 60px;
 	    	}
 
 			p {
-	    		font-weight: 400;
+	    		font-weight: 700;
 				margin-top: $grid-gutter-width;
 	    		@media(min-width:$screen-md){
 	    			text-align: left;
@@ -205,7 +205,7 @@ $scroll-down-size: 60px;
 			}
 			p {
 				margin: 0 auto 30px;
-				font-weight: 400;
+				font-weight: 700;
 				@media(min-width:$screen-md){
 					height: 2em;
 				}
@@ -237,7 +237,7 @@ $scroll-down-size: 60px;
 			.explanation {
 				p {
 					font-size: 1.4em;
-					font-weight: 400;
+					font-weight: 700;
 				}
 				a {
 					color: inherit;
@@ -266,7 +266,6 @@ $scroll-down-size: 60px;
 			}
 			display: inline-block;
 		    font-style: italic;
-		    font-weight: 200;
 		}
 		a.btn {
 			@media(max-width:$screen-xs-max){

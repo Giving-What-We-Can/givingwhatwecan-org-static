@@ -4,12 +4,6 @@ html,body {
 body {
 	padding-top: 68px;
 }
-p,li {
-	font-weight: 200;
-	strong {
-		font-weight: 400;
-	}
-}
 h1,h2,h3,h4,h5,h6 {
 	color: $site-primary;
 }
@@ -38,7 +32,6 @@ figure {
 	}
 	figcaption {
 		text-align: right;
-		font-weight: 200;
 		font-style: italic;
 		border-bottom: 2px dashed $site-secondary-darker;
 		padding: 5px 0;
