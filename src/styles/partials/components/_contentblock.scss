@@ -167,6 +167,8 @@ $scroll-down-size: 60px;
       margin: 0 $grid-gutter-width * 2;
       figure {
         max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
         figcaption {
           border: none;
           text-align: center;
