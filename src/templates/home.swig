@@ -1,5 +1,5 @@
 {% extends './layout.swig' %}
-{% set contentBlockSet = 'home' %}
+{% set contentBlockSet = 'newhome' %}
 
 {% block banner %}
 
@@ -8,22 +8,29 @@
 {% block content %}
 	{% include './partials/custom-alert.swig' %}
 	{% include './partials/content-block-set.swig' %}
-	<script>
-		loadScript(function(){
-			var $ = window.jQuery;
-			// Add down chevrons to content blocks
-			$(function(){
-				$(".content-block-wrapper").not(':first').not(':last').append('<a class="scroll-down scroll-down-chevron" href="#"><i class="icon icon-chevron-down"></i></a>');
-				$('.scroll-down').click(function(e){
-					e.preventDefault();
-					var parent = $(this).parents('.content-block-wrapper');
-					TweenLite.to(window, 1, {scrollTo:{y:parent.position().top+parent.outerHeight()}, ease:Power2.easeOut});
-				})
-			});
+
+<script>
+loadScript(function(){
+	$(document).ready(function() {
+		$('.scroll-to').click(function(e){
+			e.preventDefault();
+			var element = $($(this).attr('href'));
+			console.log ($(this).attr('href'), $(this), element)
+			if(element.length)
+			  element[0].scrollIntoView({behavior: "smooth"});
+		})
+
+		$('.video-modal-link').on('click', function () {
+			$('#videoModal').modal('show')
+			$('#video').attr('src', $(this).data( 'src' ) + '?autoplay=1&modestbranding=1&showinfo=0' ); 
+		})
+		$('#videoModal').on('hide.bs.modal', function () {
+			$('#video').attr('src',''); 
+		})
 	})
+})
+</script>
 
-
-	</script>
 {% endblock %}
 
 {% block scripts %}
