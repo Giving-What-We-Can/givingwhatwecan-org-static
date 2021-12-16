@@ -14,7 +14,8 @@
 				<i class="icon-donate"></i>
 			</a> #}
 			<a href="{{ relative('/')|default('/') }}" class="navbar-brand">
-				<img src="/images/logos/gwwc-logo-transparent-nav-2021.png">
+				<img class='navbar-brand-logo' src="/images/logos/gwwc-logo-transparent-nav-2021.png">
+				<img class='navbar-brand-logo-xxs' src="/images/logos/gwwc-logo-transparent-nav-2021-small.png">
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav-collapse">

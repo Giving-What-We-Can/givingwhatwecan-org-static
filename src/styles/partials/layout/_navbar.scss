@@ -31,6 +31,24 @@
 		img {
 			max-height: 43px;
 		}
+
+		.navbar-brand-logo {
+			display: inline-block;
+		}
+
+		.navbar-brand-logo-xxs {
+			display: none;
+		}
+
+		@media(max-width: 400px ){
+			.navbar-brand-logo {
+				display: none;
+			}
+	
+			.navbar-brand-logo-xxs {
+				display: inline-block;
+			}
+		}
 	}
 	button {
 		color: $site-primary;

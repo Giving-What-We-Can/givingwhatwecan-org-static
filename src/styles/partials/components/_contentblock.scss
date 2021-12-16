@@ -52,7 +52,13 @@ html {
 
 // specific content blocks
 .content-block-wrapper {
-  // background-attachment: fixed;
+  &.newhome {
+    @media(min-width: $screen-md ){
+      padding: $grid-gutter-width * 2 0;
+    }
+  }
+  
+
   &#newhome-hero-image {
     .row{
       display: flex;
@@ -98,6 +104,12 @@ html {
     #videoModal.in {
       display: flex !important;
       align-items: center;
+
+      @media (max-width: $screen-xs-max) {
+        .modal-dialog {
+          width: 100%;
+        }
+      }
     }
 
     #videoModalLink {
@@ -105,15 +117,16 @@ html {
       line-height: 80px;
       padding: 0;
       height: 80px;
-      margin: 0 auto;
+      margin: $grid-gutter-width 0;
+      overflow: hidden;
 
       @media (min-width: $screen-lg) {
         transition: width 0.5s;
-        overflow: hidden;
         width: 80px;
         bottom: 40px;
         position: absolute;
         left: 610px;
+        margin: 0;
 
         &:hover {
           width: 250px;
@@ -165,6 +178,7 @@ html {
     color: #222;
 
     .row{
+      margin: 0;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -198,13 +212,17 @@ html {
       background-color: #faf0eb;
       border-radius: 10px;
       color: #645f5d;
-      padding: $grid-gutter-width;
-      margin: $grid-gutter-width;
       position: relative;
-      img{
-        position: absolute;
-        bottom: -$grid-gutter-width * 1.5;
-        left: $grid-gutter-width * 2;
+      padding: $grid-gutter-width / 2;
+      
+      @media (min-width: $screen-lg) {
+        padding: $grid-gutter-width;
+        margin: $grid-gutter-width;
+        img{
+          position: absolute;
+          bottom: -$grid-gutter-width * 1.5;
+          left: $grid-gutter-width * 2;
+        }
       }
     }
 
@@ -494,9 +512,9 @@ html {
     }
   }
   &#newhome-how-rich-am-i {
+    background-color: #AB2C41;
     .heading {
       h2 {
-        text-transform: uppercase;
         font-weight: 700;
         margin: 1em 1em;
         font-size: 2.2em;
@@ -517,14 +535,7 @@ html {
         white-space: normal;
       }
     }
-    .heading,
-    .sub-heading,
-    .calculator-wrapper {
-      background-color: $site-primary;
-      background-color: transparentize($site-primary, 0.2);
-    }
     #calculator-controls {
-      margin-bottom: $grid-gutter-width;
       .help-text {
         color: #ccc;
         a {
