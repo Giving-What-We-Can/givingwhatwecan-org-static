@@ -248,7 +248,7 @@
         </div>
 
         <div class="col-sm-6 col-sm-offset-3 col-lg-2 col-lg-offset-0 submit-container">
-            <button type="submit" class="btn btn-primary">Calculate! <i class="fa fa-calculator"></i></button>
+            <button type="submit" class="btn btn-default">Calculate! <i class="fa fa-calculator"></i></button>
         </div>
     </div>
 </form>

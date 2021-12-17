@@ -1,6 +1,10 @@
 $min-height: 400px;
 $scroll-down-size: 60px;
 
+html {
+  scroll-padding-top: $scroll-down-size;
+}
+
 .content-block-wrapper {
   background-size: cover;
   background-position: center center;
@@ -48,47 +52,220 @@ $scroll-down-size: 60px;
 
 // specific content blocks
 .content-block-wrapper {
-  // background-attachment: fixed;
-  &#hero-image {
-    background-position: 35% center;
-    .content-block {
-      vertical-align: bottom;
-      .content-block-content {
-        @media (max-width: $screen-xs-max) {
-          padding-bottom: 0;
-        }
+  &.newhome {
+    @media(min-width: $screen-md ){
+      padding: $grid-gutter-width * 2 0;
+    }
+  }
+  
+
+  &#newhome-hero-image {
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .box {
+      margin: 218px 0 90px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 40px;
+      color: #222;
+      text-align: left;
+      position: relative;
+
+      @media (min-width: $screen-lg) {
+        margin: 318px 0 190px;
       }
     }
-    h2 {
-      text-transform: uppercase;
-      font-weight: 700;
-      text-shadow: 0 0 16px #333;
-      font-size: 30px;
-      margin-bottom: 35vh;
-      margin-top: 70px;
-      .give-more {
-        display: inline-block;
-        margin-bottom: 20px;
-      }
-      @media (min-width: $screen-sm) {
-        margin-bottom: 50vh;
-        font-size: 4em;
-        margin-top: 80px;
-      }
+
+    h1 {
+      color: #222;
+      font-size: 48px;
+      line-height: 61px;
+      margin-top: 0
     }
-    a.btn {
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .close {
+      color: #fff;
+      opacity: 1;
+      margin-bottom: $grid-gutter-width/2;
+    }
+
+    #videoModal.in {
+      display: flex !important;
+      align-items: center;
+
       @media (max-width: $screen-xs-max) {
-        width: 100%;
-        margin-bottom: $grid-gutter-width/2;
-        font-size: 20px;
-      }
-      @media (min-width: $screen-sm) {
-        &.btn-primary {
-          margin-right: $grid-gutter-width;
+        .modal-dialog {
+          width: 100%;
         }
+      }
+    }
+
+    #videoModalLink {
+      border-radius: 100px !important;
+      line-height: 80px;
+      padding: 0;
+      height: 80px;
+      margin: $grid-gutter-width 0;
+      overflow: hidden;
+
+      @media (min-width: $screen-lg) {
+        transition: width 0.5s;
+        width: 80px;
+        bottom: 40px;
+        position: absolute;
+        left: 610px;
+        margin: 0;
+
+        &:hover {
+          width: 250px;
+        }
+      }
+
+      span {
+        padding-right: $grid-gutter-width/2;
+        top: -5px;
+        position: relative;
+        display: inline-block;
+      }
+
+      i {
+        font-size: 38px;
+        line-height: 80px;
+        width: 80px;
+        display: inline-block;
       }
     }
   }
+
+  &#newhome-giving-guide {
+    background-color: #AB2C41;
+
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      margin: 80px 0 40px;
+      font-size: 48px;
+      line-height: 61px;
+      letter-spacing: 1.4px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &#newhome-what-we-do {
+    background-color: #fff;
+    color: #222;
+
+    .row{
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      margin: 80px 0 40px;
+      font-size: 48px;
+      line-height: 61px;
+      letter-spacing: 1.4px;
+      color: #222;
+    }
+
+    h3 {
+      color: #222;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: #222;
+    }
+
+    .btn {
+      margin-bottom: $grid-gutter-width;
+    }
+
+    figure {
+      background-color: #faf0eb;
+      border-radius: 10px;
+      color: #645f5d;
+      position: relative;
+      padding: $grid-gutter-width / 2;
+      
+      @media (min-width: $screen-lg) {
+        padding: $grid-gutter-width;
+        margin: $grid-gutter-width;
+        img{
+          position: absolute;
+          bottom: -$grid-gutter-width * 1.5;
+          left: $grid-gutter-width * 2;
+        }
+      }
+    }
+
+    blockquote { border: none; font-style: italic; }
+    figcaption { border: none; }
+  }
+
+  &#newhome-community {
+    background-color: #fff;
+    color: #222;
+
+    .row {
+      text-align: left;
+
+      @media (max-width: $screen-md) {
+        text-align: center;
+      }
+    }
+
+    h2 {
+      margin: 80px 0 40px;
+      font-size: 48px;
+      line-height: 61px;
+      letter-spacing: 1.4px;
+      color: #222;
+    }
+
+    p {
+      text-transform: uppercase;
+      padding: $grid-gutter-width/2 0;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    .number {
+      display: inline-block;
+      width: 100%;
+      font-size: 36px;
+      line-height: 42px;
+      font-weight: bold;
+    }
+  }
+
   &#we-are-giving-what-we-can {
     background-position: center center;
     @media (max-width: $screen-md) {
@@ -132,13 +309,29 @@ $scroll-down-size: 60px;
       }
     }
   }
-  &#homepage-top-causes {
+  &#newhome-top-causes {
     background: lighten($site-primary, 57%);
-    p,
-    h2 {
+    p, h2, h3, li, ul {
       color: #222;
     }
+
+    h3 {
+      margin-top: 0;
+      a {
+        font-weight: bold;
+        color: #222;
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      display: inline-block;
+      margin-bottom: $grid-gutter-width
+    }
+
     #top-causes-header {
+      margin-top: $grid-gutter-width * 2;
       small {
         display: block;
         color: #222;
@@ -152,32 +345,12 @@ $scroll-down-size: 60px;
       margin: 0 auto;
       margin-bottom: $grid-gutter-width;
     }
-    .cause-areas {
-      @include make-row();
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-    .cause-area-wrapper {
-      @include make-md-column(6);
-      @include make-lg-column(3);
-      text-align: center;
-      padding-bottom: 40px;
-    }
-    .cause-area {
-      margin: 0 $grid-gutter-width * 2;
-      figure {
-        max-width: 480px;
-        figcaption {
-          border: none;
-          text-align: center;
-          font-weight: 400;
-          font-style: initial;
-          font-size: 1.4em;
-          line-height: 1.3;
-        }
-      }
+
+    .row{
+      margin: $grid-gutter-width * 2 0;
     }
   }
+  
   div#our-members-have-done-some-amazing-things {
     background-color: #fdf5f5 !important;
   }
@@ -338,13 +511,12 @@ $scroll-down-size: 60px;
       }
     }
   }
-  &#how-rich-am-i {
+  &#newhome-how-rich-am-i {
+    background-color: #AB2C41;
     .heading {
       h2 {
-        text-shadow: 0 0 16px #333;
-        text-transform: uppercase;
         font-weight: 700;
-        margin: 1em 0;
+        margin: 1em 1em;
         font-size: 2.2em;
         @media (min-width: $screen-sm) {
           font-size: 4em;
@@ -363,13 +535,7 @@ $scroll-down-size: 60px;
         white-space: normal;
       }
     }
-    .sub-heading,
-    .calculator-wrapper {
-      background-color: $site-primary;
-      background-color: transparentize($site-primary, 0.2);
-    }
     #calculator-controls {
-      margin-bottom: $grid-gutter-width;
       .help-text {
         color: #ccc;
         a {
