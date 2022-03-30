@@ -379,12 +379,12 @@ function build(buildCount) {
               label: "Cause prioritisation",
             },
             {
-              href: `${GWWC_WWW_URL}/choosing-a-cause`,
-              label: "Tax-deductibility",
+              href: `${GWWC_WWW_URL}/get-involved/tax-deductibility/`,
+              label: 'Tax-deductibility',
             },
             {
-              href: `${GWWC_WWW_URL}/get-involved/tax-deductibility`,
-              label: "How rich are you",
+              href: `https://howrichami.givingwhatwecan.org/how-rich-am-i`,
+              label: 'How rich are you',
             },
             {
               href: `${GWWC_WWW_URL}/post/2021/06/can-money-buy-happiness-a-review-of-new-data`,
