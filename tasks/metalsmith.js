@@ -450,7 +450,7 @@ function build(buildCount) {
           ];
 
           function routeToNav(route) {
-            if(/^http/.test(route.href)){
+            if (/^http/.test(route.href)) {
               return {
                 _link: {
                   title: route.label,
@@ -479,6 +479,15 @@ function build(buildCount) {
             {
               _menu: { fields: { title: "My giving", slug: "giving" } },
               _children: givingRoutes.map(routeToNav),
+            },
+
+            {
+              _link: {
+                shortTitle: "Donate",
+                title: "Donate",
+                linkURL: GWWC_DONATE_URL,
+                className: 'donate'
+              },
             },
           ];
           // END TEMP

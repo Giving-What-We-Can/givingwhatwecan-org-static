@@ -91,7 +91,12 @@
 				color: #FFF;
 			}
 		}
-		> .nav.pledge,.nav.my-giving,.nav.fundraising {
+		> .nav.donate {
+			@media(min-width: $screen-md ){
+				margin-left: 25px;
+			}
+		}
+		> .nav.donate,.nav.pledge,.nav.my-giving,.nav.fundraising {
 			font-weight: 700;
 			background-color: $site-primary;
 			a {
