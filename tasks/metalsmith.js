@@ -337,6 +337,160 @@ function build(buildCount) {
         apply,
         function () {
           var metadata = metalsmith.metadata();
+          // TEMP: HARDCODED MENU
+
+          const GWWC_WWW_URL = process.env.GWWC_WWW_URL || "";
+          const GWWC_PLEDGE_URL =
+            process.env.GWWC_PLEDGE_URL || "https://signup.givingwhatwecan.org";
+          const GWWC_MY_URL =
+            process.env.GWWC_MY_URL || "https://my.givingwhatwecan.org";
+          const GWWC_DONATE_URL =
+            process.env.GWWC_DONATE_URL || "https://donate.givingwhatwecan.org";
+
+          const communityRoutes = [
+            { label: "About us", href: `${GWWC_WWW_URL}/about-us` },
+            {
+              label: "Our members",
+              href: `${GWWC_WWW_URL}/about-us/members`,
+            },
+            {
+              label: "Get involved",
+              href: `${GWWC_WWW_URL}/get-involved`,
+            },
+            { label: "Pledge to give", href: `${GWWC_WWW_URL}/pledge` },
+            { label: "Events", href: `${GWWC_WWW_URL}/events` },
+            { label: "Blog", href: `${GWWC_WWW_URL}/blog` },
+          ];
+          const guidesRoutes = [
+            {
+              href: `${GWWC_WWW_URL}/best-charities-to-donate-to`,
+              label: "Best charities",
+            },
+            {
+              href: `${GWWC_WWW_URL}/cause-areas`,
+              label: "High-impact causes",
+            },
+            {
+              href: `${GWWC_WWW_URL}/choosing-a-charity`,
+              label: "Charity evaluation",
+            },
+            {
+              href: `${GWWC_WWW_URL}/choosing-a-cause`,
+              label: "Cause prioritisation",
+            },
+            {
+              href: `${GWWC_WWW_URL}/get-involved/tax-deductibility/`,
+              label: 'Tax-deductibility',
+            },
+            {
+              href: `https://howrichami.givingwhatwecan.org/how-rich-am-i`,
+              label: 'How rich are you',
+            },
+            {
+              href: `${GWWC_WWW_URL}/post/2021/06/can-money-buy-happiness-a-review-of-new-data`,
+              label: "Money & happiness",
+            },
+            {
+              href: `${GWWC_WWW_URL}/post/2021/05/how-much-money-should-we-donate-to-charity`,
+              label: "How much to give",
+            },
+            {
+              href: `${GWWC_WWW_URL}/post/2021/06/should-charity-be-anonymous`,
+              label: "Donating anonymously",
+            },
+            {
+              href: `${GWWC_WWW_URL}/get-involved/videos-books-and-essays/famine-affluence-and-morality-peter-singer`,
+              label: "Famine, affluence, morality",
+            },
+            {
+              href: `${GWWC_WWW_URL}/research/the-moral-imperative-towards-cost-effectiveness`,
+              label: "Morality & cost-effectiveness",
+            },
+            {
+              href: `${GWWC_WWW_URL}/what-is-effective-altruism`,
+              label: "Effective altruism defined",
+            },
+            {
+              href: `${GWWC_WWW_URL}/post/2021/03/why-should-we-donate-to-charity`,
+              label: "Why donate",
+            },
+            {
+              href: `${GWWC_WWW_URL}/post/2021/06/10-reasons-why-we-should-donate-to-the-most-effective-charities`,
+              label: "Why donate effectively",
+            },
+            {
+              href: `${GWWC_WWW_URL}/pledge/why-pledge`,
+              label: "Why pledge",
+            },
+            {
+              href: `${GWWC_WWW_URL}/charity-comparisons`,
+              label: "Charity comparison",
+            },
+          ];
+
+          const givingRoutes = [
+            {
+              label: "Donate",
+              href: `${GWWC_DONATE_URL}`,
+            },
+            {
+              label: "Donation dashboard",
+              href: `${GWWC_DONATE_URL}/dashboard/`,
+            },
+            { label: "Donation help", href: `${GWWC_DONATE_URL}/help/` },
+            { label: "Pledge", href: `${GWWC_WWW_URL}/pledge` },
+            {
+              label: "Pledge dashboard",
+              href: `${GWWC_MY_URL}/dashboard/pledge/`,
+            },
+            {
+              label: "Pledge FAQ",
+              href: `${GWWC_WWW_URL}/about-us/frequently-asked-questions`,
+            },
+          ];
+
+          function routeToNav(route) {
+            if (/^http/.test(route.href)) {
+              return {
+                _link: {
+                  title: route.label,
+                  linkURL: route.href,
+                },
+              };
+            }
+            return {
+              _page: {
+                shortTitle: route.label,
+                path: route.href,
+                slug: route.label.replace(/\s/g, "-"),
+              },
+            };
+          }
+
+          menus["main"] = [
+            {
+              _menu: { fields: { title: "Guides", slug: "guides" } },
+              _children: guidesRoutes.map(routeToNav),
+            },
+            {
+              _menu: { fields: { title: "Community", slug: "community" } },
+              _children: communityRoutes.map(routeToNav),
+            },
+            {
+              _menu: { fields: { title: "My giving", slug: "giving" } },
+              _children: givingRoutes.map(routeToNav),
+            },
+
+            {
+              _link: {
+                shortTitle: "Donate",
+                title: "Donate",
+                linkURL: GWWC_DONATE_URL,
+                className: 'donate'
+              },
+            },
+          ];
+          // END TEMP
           metadata.menus = menus;
           done();
         }

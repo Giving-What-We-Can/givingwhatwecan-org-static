@@ -19,7 +19,7 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav-collapse">
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav">
 				{% set menu = menu || 'main' %}
 				{% for parent in menus[menu] %}
 					{% if parent._menu %}
@@ -50,7 +50,7 @@
 						<a href="{{ relative(parent._page.path) }}">{{pageTitle}}</a>
 					</li>
 					{% elif parent._link %}
-					<li class="nav {{ {true:parent._link.linkURL.substr(1),false:'external-link'}[parent._link.linkURL.charAt(0)==='/'] }}">
+					<li class="nav {{ {true:parent._link.linkURL.substr(1),false:'external-link'}[parent._link.linkURL.charAt(0)==='/'] }} {{ parent._link.className }}">
 						{% set linkTitle = parent._link.shortTitle || parent._link.title %}
 						<a href="{{ parent._link.linkURL }}">
 							{{linkTitle}}
