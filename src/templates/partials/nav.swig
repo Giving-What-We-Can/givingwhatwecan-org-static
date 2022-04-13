@@ -19,7 +19,7 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav-collapse">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav navbar-right">
 				{% set menu = menu || 'main' %}
 				{% for parent in menus[menu] %}
 					{% if parent._menu %}
