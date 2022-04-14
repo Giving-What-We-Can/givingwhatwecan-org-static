@@ -14,8 +14,8 @@
 			</div>
 			<div class="col-md-4">
 				<p class="short-description">{{shortDescription}}</p>
-				<a href="https://app.effectivealtruism.org/donations/new/organizations?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations" target="_blank" class="btn btn-primary btn-block">
-					<i class="icon icon-donate"></i> Donate with Effective Altruism Funds
+				<a href="https://donate.givingwhatwecan.org/donate/organizations?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations" target="_blank" class="btn btn-primary btn-block">
+					<i class="icon icon-donate"></i> Donate
 				</a>
 				{% if donationLink %}
 						<a href="{{donationLink}}" target="_blank" class="btn btn-default btn-block">
@@ -48,8 +48,8 @@
 		</div>
 		<div class='row'>
 			<div class="col-sm-3">
-				<a href="https://app.effectivealtruism.org/donations/new/organizations?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations" target="_blank" class="btn btn-primary btn-block ea">
-					<i class="icon icon-donate"></i> Donate via EA Funds
+				<a href="https://donate.givingwhatwecan.org/donate/organizations?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations" target="_blank" class="btn btn-primary btn-block ea">
+					<i class="icon icon-donate"></i> Donate
 				</a>
 			</div>
 				{% if donationLink %}
