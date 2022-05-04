@@ -434,10 +434,10 @@ function build(buildCount) {
               href: `${GWWC_DONATE_URL}`,
             },
             {
-              label: "Donation dashboard",
+              label: "Payments dashboard",
               href: `${GWWC_DONATE_URL}/dashboard/`,
             },
-            { label: "Donation help", href: `${GWWC_DONATE_URL}/help/` },
+            { label: "Payments help", href: `${GWWC_DONATE_URL}/help/` },
             { label: "Pledge", href: `${GWWC_WWW_URL}/pledge` },
             {
               label: "Pledge dashboard",
