@@ -1,5 +1,7 @@
 # Giving What We Can static
 
+(Note: This repo is now deprecated and has been replaced by lyra)
+
 A simple statically-generated site, implemented in [Metalsmith](http://www.metalsmith.io/).
 
 Currently deprecated.
